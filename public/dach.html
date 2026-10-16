@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kalkulator powierzchni dachu: ile blachodachówki, dachówki i membrany</title>
+<meta name="description" content="Policz powierzchnię dachu z wymiarów domu, kąta nachylenia i okapu, a potem ilość blachodachówki, dachówki, membrany i długość rynien. Działa dla dachów dwu- i czterospadowych.">
+<style>
+:root{--bg:#fff;--fg:#1d2430;--mut:#5b6575;--acc:#e8a317;--box:#f5f7fa;--br:#dde2ea}
+@media (prefers-color-scheme:dark){:root{--bg:#12161c;--fg:#e8ecf2;--mut:#9aa4b2;--box:#1b2129;--br:#2c3440}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,sans-serif}
+main{max-width:760px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:1.7rem;line-height:1.2}label{display:block;margin:12px 0 4px;font-weight:600}
+input,select{width:100%;padding:10px;border:1px solid var(--br);border-radius:8px;background:var(--box);color:var(--fg);font-size:1rem}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}@media(max-width:560px){.grid{grid-template-columns:1fr}}
+.out{background:var(--box);border:1px solid var(--br);border-radius:12px;padding:16px;margin:24px 0}
+.out b{font-size:1.25rem}.mut{color:var(--mut);font-size:.9rem}
+.cta{display:block;text-align:center;background:var(--acc);color:#1d2430;font-weight:700;padding:14px;border-radius:10px;text-decoration:none}
+details{margin-top:16px}
+h2{margin-top:32px;font-size:1.25rem}li{margin:6px 0}
+.tip{border-left:3px solid var(--acc);padding:4px 0 4px 12px;margin:16px 0}
+table{border-collapse:collapse;width:100%;margin:12px 0}td,th{border-bottom:1px solid var(--br);padding:8px 6px;text-align:left;vertical-align:top}
+</style>
+</head>
+<body>
+<main>
+<nav class="mut"><a href="/"><b>Budlicz</b></a> · <a href="/beton">Beton i stal</a> · <a href="/sciany">Ściany</a> · <a href="/dach">Dach</a> · <a href="/wylewka">Wylewka</a> · <a href="/lawy-czy-plyta">Ławy czy płyta</a></nav>
+<h1>Kalkulator powierzchni dachu</h1>
+<p>Rzeczywista powierzchnia dachu jest większa niż powierzchnia domu w rzucie, bo połacie są pochyłe. Przy dachu o jednakowym kącie wszystkich połaci, czyli przy typowym dachu dwu- lub czterospadowym, wystarczy rzut z okapami podzielić przez cosinus kąta. Ten kalkulator robi to za Ciebie.</p>
+<div class="grid">
+<div><label for="dl">Długość domu (m)</label><input id="dl" type="number" value="12" step="0.1"></div>
+<div><label for="sz">Szerokość domu (m)</label><input id="sz" type="number" value="9" step="0.1"></div>
+<div><label for="okap">Wysięg okapu (cm)</label><input id="okap" type="number" value="60" step="5"></div>
+<div><label for="kat">Kąt nachylenia dachu (°)</label><input id="kat" type="number" value="35" min="5" max="60"></div>
+<div><label for="typ">Kształt dachu</label><select id="typ">
+<option value="2">Dwuspadowy</option><option value="4">Czterospadowy (kopertowy)</option></select></div>
+<div><label for="pokr">Pokrycie</label><select id="pokr">
+<option value="blacha">Blachodachówka (liczona w m²)</option>
+<option value="dachowka">Dachówka (liczona w sztukach)</option></select></div>
+<div id="wSzt" hidden><label for="szt">Dachówek na m² (z karty producenta)</label><input id="szt" type="number" value="12" step="0.5"></div>
+</div>
+<div class="out" id="wynik" aria-live="polite"></div>
+
+<h2>Jak czytać wynik</h2>
+<ul>
+<li><b>Zapas</b> ustawiamy automatycznie: przy dwuspadowym ok. 7%, przy czterospadowym ok. 12%. Kopertowy ma narożniki (grzbiety), wzdłuż których każdy arkusz albo dachówkę trzeba ciąć skośnie, a odpady z jednej strony rzadko pasują na drugą.</li>
+<li><b>Membrana</b> idzie na zakład ok. 10–15 cm, stąd dodatkowe 10%.</li>
+<li><b>Rynny</b> liczymy wzdłuż okapów. Przy dachu dwuspadowym okapy są tylko na dłuższych bokach, przy czterospadowym dookoła domu.</li>
+</ul>
+
+<h2>Zanim zamówisz pokrycie</h2>
+<div class="tip"><b>Blachodachówkę zamawia się pod wymiar.</b> Arkusze tnie się w fabryce na długość połaci, a każda połać ma swój wymiar. Producent albo skład robi rozkrój za darmo z rysunku dachu. Ten kalkulator służy do wstępnej wyceny, a nie do zamówienia arkuszy.</div>
+<div class="tip"><b>Kąt decyduje o pokryciu.</b> Każda dachówka i blacha ma minimalny kąt nachylenia, przy którym producent daje gwarancję. Przy niskich dachach sprawdź to w karcie technicznej przed wyborem modelu.</div>
+<div class="tip"><b>Lukarny i kosze.</b> Jeśli dach ma lukarny, kosze albo różne kąty połaci, policz każdą część osobno. Wynik dla całości będzie wtedy zaniżony.</div>
+<details><summary>Jak liczymy</summary>
+<p>Rzut dachu = (długość + 2 × okap) × (szerokość + 2 × okap). Powierzchnia połaci = rzut ÷ cos(kąt). Wzór jest dokładny dla każdego dachu, którego wszystkie połacie mają ten sam kąt. Rynny: dwuspadowy 2 × (długość + 2 × okap), czterospadowy cały obwód rzutu.</p>
+</details>
+</main>
+<script>
+const v=id=>parseFloat(document.getElementById(id).value)||0;
+function licz(){
+  const o=v("okap")/100, L=v("dl")+2*o, S=v("sz")+2*o;
+  const rzut=L*S, kat=Math.min(60,Math.max(5,v("kat")))*Math.PI/180;
+  const pow=rzut/Math.cos(kat), cztery=document.getElementById("typ").value==="4";
+  const zapas=cztery?0.12:0.07, dach=document.getElementById("pokr").value==="dachowka";
+  document.getElementById("wSzt").hidden=!dach;
+  const rynny=cztery?2*(L+S):2*L;
+  const f=n=>n.toLocaleString("pl-PL",{maximumFractionDigits:1});
+  let h=`Powierzchnia dachu: <b>${f(pow)} m²</b> (rzut ${f(rzut)} m²)<br>`;
+  h+=dach?`Dachówki: <b>ok. ${Math.ceil(pow*v("szt")*(1+zapas)).toLocaleString("pl-PL")} szt.</b><br>`
+         :`Blachodachówka: <b>ok. ${f(pow*(1+zapas))} m²</b><br>`;
+  h+=`Membrana dachowa: <b>ok. ${f(pow*1.1)} m²</b><br>Rynny: <b>ok. ${f(rynny)} m</b>`;
+  h+=`<p class="mut">Zapas na docinki ${Math.round(zapas*100)}%. Bez gąsiorów, obróbek i okien dachowych.</p>`;
+  document.getElementById("wynik").innerHTML=h;
+}
+document.querySelectorAll("input,select").forEach(e=>e.addEventListener("input",licz));licz();
+</script>
+</body>
+</html>

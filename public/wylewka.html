@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kalkulator wylewki: ile worków jastrychu na m² i jak długo schnie</title>
+<meta name="description" content="Policz objętość wylewki, liczbę worków gotowej mieszanki i orientacyjny czas schnięcia. Jaka grubość na styropianie i nad ogrzewaniem podłogowym, i kiedy można kłaść panele.">
+<style>
+:root{--bg:#fff;--fg:#1d2430;--mut:#5b6575;--acc:#e8a317;--box:#f5f7fa;--br:#dde2ea}
+@media (prefers-color-scheme:dark){:root{--bg:#12161c;--fg:#e8ecf2;--mut:#9aa4b2;--box:#1b2129;--br:#2c3440}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,sans-serif}
+main{max-width:760px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:1.7rem;line-height:1.2}label{display:block;margin:12px 0 4px;font-weight:600}
+input,select{width:100%;padding:10px;border:1px solid var(--br);border-radius:8px;background:var(--box);color:var(--fg);font-size:1rem}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}@media(max-width:560px){.grid{grid-template-columns:1fr}}
+.out{background:var(--box);border:1px solid var(--br);border-radius:12px;padding:16px;margin:24px 0}
+.out b{font-size:1.25rem}.mut{color:var(--mut);font-size:.9rem}
+.cta{display:block;text-align:center;background:var(--acc);color:#1d2430;font-weight:700;padding:14px;border-radius:10px;text-decoration:none}
+details{margin-top:16px}
+h2{margin-top:32px;font-size:1.25rem}li{margin:6px 0}
+.tip{border-left:3px solid var(--acc);padding:4px 0 4px 12px;margin:16px 0}
+table{border-collapse:collapse;width:100%;margin:12px 0}td,th{border-bottom:1px solid var(--br);padding:8px 6px;text-align:left;vertical-align:top}
+</style>
+</head>
+<body>
+<main>
+<nav class="mut"><a href="/"><b>Budlicz</b></a> · <a href="/beton">Beton i stal</a> · <a href="/sciany">Ściany</a> · <a href="/dach">Dach</a> · <a href="/wylewka">Wylewka</a> · <a href="/lawy-czy-plyta">Ławy czy płyta</a></nav>
+<h1>Kalkulator wylewki (jastrychu)</h1>
+<p>Podaj powierzchnię i grubość, a policzymy objętość, liczbę worków gotowej mieszanki i orientacyjny czas schnięcia. Gotowe mieszanki mają zużycie ok. 2 kg na m² na każdy milimetr grubości. Dokładną wartość znajdziesz na worku, możesz ją poprawić niżej.</p>
+<div class="grid">
+<div><label for="pow">Powierzchnia (m²)</label><input id="pow" type="number" value="100" step="1"></div>
+<div><label for="gr">Grubość wylewki (cm)</label><input id="gr" type="number" value="6" step="0.5"></div>
+<div><label for="zuz">Zużycie mieszanki (kg/m²/mm)</label><input id="zuz" type="number" value="2" step="0.1"></div>
+<div><label for="worek">Worek (kg)</label><input id="worek" type="number" value="25" step="1"></div>
+<div><label for="cena">Cena worka (zł, opcjonalnie)</label><input id="cena" type="number" value="0" step="0.5"></div>
+</div>
+<div class="out" id="wynik" aria-live="polite"></div>
+
+<h2>Jaka grubość?</h2>
+<table>
+<tr><th>Sytuacja</th><th>Typowa grubość jastrychu cementowego</th></tr>
+<tr><td>Na styropianie, bez ogrzewania podłogowego</td><td>ok. 5 cm</td></tr>
+<tr><td>Nad ogrzewaniem podłogowym</td><td>min. 4,5 cm nad rurami, razem z rurą zwykle 6–7 cm</td></tr>
+<tr><td>Na stropie, bez izolacji (warstwa związana)</td><td>od ok. 2,5–3 cm</td></tr>
+</table>
+<p class="mut">Ostateczną grubość podaje projekt. Jastrych anhydrytowy może być cieńszy niż cementowy, sprawdź kartę produktu.</p>
+
+<h2>Kiedy można kłaść podłogę</h2>
+<p>Popularna reguła mówi, że wylewka cementowa schnie ok. tydzień na każdy centymetr do grubości 4 cm. Każdy kolejny centymetr schnie dłużej, bo woda ma dalej do powierzchni. Zimą, bez wietrzenia i przy dużej wilgotności powietrza wszystko trwa jeszcze dłużej. Reguła daje tylko pojęcie o skali, a o terminie decyduje pomiar.</p>
+<div class="tip"><b>Mierz, nie zgaduj.</b> Przed panelami albo parkietem wykonawca podłogi powinien zmierzyć wilgotność metodą karbidową (CM). Dla jastrychu cementowego pod drewno przyjmuje się zwykle maks. 2%, a przy ogrzewaniu podłogowym 1,8%. Wilgotna wylewka to najczęstsza przyczyna wypaczonych paneli i odspojonych płytek.</div>
+<div class="tip"><b>Wygrzewanie podłogówki</b> to procedura z protokołem, a nie „podkręcenie pieca”. Temperaturę podnosi się stopniowo według zaleceń producenta systemu, zwykle po ok. 3 tygodniach od wylania jastrychu cementowego.</div>
+<div class="tip"><b>Dylatacje.</b> Przy ścianach układa się taśmę dylatacyjną, a duże powierzchnie i progi między pomieszczeniami dzieli szczelinami. Wylewka bez dylatacji pęka, a pęknięcia przechodzą potem na płytki.</div>
+</main>
+<script>
+const v=id=>parseFloat(document.getElementById(id).value)||0;
+function licz(){
+  const mm=v("gr")*10, obj=v("pow")*v("gr")/100, kg=v("pow")*mm*v("zuz");
+  const worki=v("worek")>0?Math.ceil(kg/v("worek")):0;
+  const cm=v("gr"), tyg=cm<=4?cm:4+(cm-4)*2;
+  const f=n=>n.toLocaleString("pl-PL",{maximumFractionDigits:1});
+  let h=`Objętość: <b>${f(obj)} m³</b><br>Gotowa mieszanka: <b>${f(kg/1000)} t</b>, czyli <b>${worki.toLocaleString("pl-PL")} worków</b>`;
+  if(v("cena")>0)h+=`<br>Koszt mieszanki: <b>${Math.round(worki*v("cena")).toLocaleString("pl-PL")} zł</b>`;
+  h+=`<br>Schnięcie (jastrych cementowy): <b>ok. ${f(tyg)} tyg.</b>, potem pomiar CM`;
+  h+=`<p class="mut">Przy ${f(obj)} m³ warto porównać cenę worków z wylewką maszynową (miksokretem), którą wykonawcy zwykle wyceniają za m².</p>`;
+  document.getElementById("wynik").innerHTML=h;
+}
+document.querySelectorAll("input").forEach(e=>e.addEventListener("input",licz));licz();
+</script>
+</body>
+</html>

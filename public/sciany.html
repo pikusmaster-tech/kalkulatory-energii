@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ile pustaków na dom? Kalkulator ścian: ceramika, silikat, beton komórkowy</title>
+<meta name="description" content="Policz, ile pustaków ceramicznych, bloczków silikatowych lub z betonu komórkowego potrzeba na ściany domu, po odjęciu okien i drzwi. Z podpowiedziami, na czym ludzie najczęściej się mylą.">
+<style>
+:root{--bg:#fff;--fg:#1d2430;--mut:#5b6575;--acc:#e8a317;--box:#f5f7fa;--br:#dde2ea}
+@media (prefers-color-scheme:dark){:root{--bg:#12161c;--fg:#e8ecf2;--mut:#9aa4b2;--box:#1b2129;--br:#2c3440}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,sans-serif}
+main{max-width:760px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:1.7rem;line-height:1.2}label{display:block;margin:12px 0 4px;font-weight:600}
+input,select{width:100%;padding:10px;border:1px solid var(--br);border-radius:8px;background:var(--box);color:var(--fg);font-size:1rem}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}@media(max-width:560px){.grid{grid-template-columns:1fr}}
+.out{background:var(--box);border:1px solid var(--br);border-radius:12px;padding:16px;margin:24px 0}
+.out b{font-size:1.25rem}.mut{color:var(--mut);font-size:.9rem}
+.cta{display:block;text-align:center;background:var(--acc);color:#1d2430;font-weight:700;padding:14px;border-radius:10px;text-decoration:none}
+details{margin-top:16px}
+h2{margin-top:32px;font-size:1.25rem}li{margin:6px 0}
+.tip{border-left:3px solid var(--acc);padding:4px 0 4px 12px;margin:16px 0}
+table{border-collapse:collapse;width:100%;margin:12px 0}td,th{border-bottom:1px solid var(--br);padding:8px 6px;text-align:left;vertical-align:top}
+</style>
+</head>
+<body>
+<main>
+<nav class="mut"><a href="/"><b>Budlicz</b></a> · <a href="/beton">Beton i stal</a> · <a href="/sciany">Ściany</a> · <a href="/dach">Dach</a> · <a href="/wylewka">Wylewka</a> · <a href="/lawy-czy-plyta">Ławy czy płyta</a></nav>
+<h1>Ile pustaków na ściany? Kalkulator</h1>
+<p>Liczysz ściany zewnętrzne albo jedną ścianę działową. Podaj długość, wysokość i otwory, wybierz materiał. Liczba sztuk na m² wynika z wymiarów elementu i spoiny. Jeśli Twój producent podaje inną wartość w karcie technicznej, wpisz ją ręcznie.</p>
+<div class="grid">
+<div><label for="mat">Materiał</label><select id="mat">
+<option value="10.7">Pustak ceramiczny 25 cm, 373×250×238 (ok. 10,7 szt./m²)</option>
+<option value="8.3">Beton komórkowy 24 cm, 599×240×199 (ok. 8,3 szt./m²)</option>
+<option value="15">Bloczek silikatowy 24 cm, 333×240×198 (ok. 15 szt./m²)</option>
+<option value="inny">Inny: wpiszę sam</option></select></div>
+<div id="wIle" hidden><label for="ile">Sztuk na m² (z karty producenta)</label><input id="ile" type="number" value="10" step="0.1"></div>
+<div><label for="dl">Łączna długość ścian (m)</label><input id="dl" type="number" value="42" step="0.5"></div>
+<div><label for="wys">Wysokość ścian (m)</label><input id="wys" type="number" value="2.7" step="0.05"></div>
+<div><label for="otw">Okna i drzwi razem (m²)</label><input id="otw" type="number" value="24" step="0.5"></div>
+<div><label for="zapas">Zapas na docinki i stłuczki (%)</label><input id="zapas" type="number" value="5" step="1"></div>
+<div><label for="cena">Cena za sztukę (zł, opcjonalnie)</label><input id="cena" type="number" value="0" step="0.1"></div>
+</div>
+<div class="out" id="wynik" aria-live="polite"></div>
+
+<h2>Skąd wziąć liczby do kalkulatora</h2>
+<ul>
+<li><b>Długość ścian zewnętrznych</b> mierz po zewnętrznym obrysie, z rzutu parteru w projekcie. Narożniki liczone dwa razy dają ok. 1–2% zapasu, co przy pustakach i tak się przydaje.</li>
+<li><b>Wysokość</b> to wysokość muru do spodu wieńca, a nie wysokość pomieszczenia. Wieniec leje się z betonu, więc pustaków na tej wysokości nie liczysz. Wieniec policzysz w <a href="/beton">kalkulatorze betonu</a>.</li>
+<li><b>Otwory</b> znajdziesz w zestawieniu stolarki w projekcie. Okno 150×150 cm to 2,25 m², drzwi wejściowe 100×210 cm to 2,1 m².</li>
+</ul>
+
+<h2>Na czym najczęściej ludzie się mylą</h2>
+<div class="tip"><b>Elementy uzupełniające.</b> Do pustaków ceramicznych dochodzą połówki, elementy narożne i wyrównujące. Producenci liczą je osobno. Zamówienie samych pustaków podstawowych kończy się docinaniem całych sztuk piłą, co zjada zapas i czas ekipy.</div>
+<div class="tip"><b>Ściana z otworami to nie ściana pełna.</b> Kto liczy „obwód × wysokość” bez odjęcia okien, zwykle zamawia 15–25% za dużo. Zwrot palet do składu bywa możliwy, ale nie zawsze i rzadko za darmo.</div>
+<div class="tip"><b>Palety i kaucje.</b> Materiał przyjeżdża na paletach, za które skład pobiera kaucję. Zamawiaj pełne palety, ale zapytaj o zwrot paleciaków.</div>
+<div class="tip"><b>Nadproża.</b> Nad otworami są nadproża prefabrykowane albo wylewane. W tym miejscu też nie ma pustaków, ale to zwykle pas o wysokości 20–25 cm, więc przy małej liczbie okien różnica jest niewielka.</div>
+<p class="mut">Wynik to szacunek do pierwszego zamówienia. Dokładne zestawienie materiałów robi kierownik budowy albo dział techniczny producenta, często bezpłatnie na podstawie projektu.</p>
+</main>
+<script>
+const v=id=>parseFloat(document.getElementById(id).value)||0;
+function licz(){
+  const m=document.getElementById("mat").value, inny=m==="inny";
+  document.getElementById("wIle").hidden=!inny;
+  const szt_m2=inny?v("ile"):parseFloat(m);
+  const pow=Math.max(0,v("dl")*v("wys")-v("otw"));
+  const szt=Math.ceil(pow*szt_m2*(1+v("zapas")/100));
+  const f=n=>n.toLocaleString("pl-PL",{maximumFractionDigits:1});
+  let h=`Powierzchnia muru: <b>${f(pow)} m²</b><br>Do zamówienia: <b>${szt.toLocaleString("pl-PL")} szt.</b>`;
+  if(v("cena")>0)h+=`<br>Koszt materiału: <b>${Math.round(szt*v("cena")).toLocaleString("pl-PL")} zł</b>`;
+  h+=`<p class="mut">${f(szt_m2)} szt./m², zapas ${v("zapas")}%. Bez elementów uzupełniających, zaprawy i nadproży.</p>`;
+  document.getElementById("wynik").innerHTML=h;
+}
+document.querySelectorAll("input,select").forEach(e=>e.addEventListener("input",licz));licz();
+</script>
+</body>
+</html>
