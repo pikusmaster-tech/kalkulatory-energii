@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kalkulator pompy ciepła 2026: moc i koszt ogrzewania</title>
+<meta name="description" content="Dobierz moc pompy ciepła do powierzchni domu i porównaj roczny koszt ogrzewania z gazem i węglem. Bezpłatny kalkulator z założeniami do edycji.">
+<style>
+:root{--bg:#fff;--fg:#1d2430;--mut:#5b6575;--acc:#e8a317;--box:#f5f7fa;--br:#dde2ea}
+@media (prefers-color-scheme:dark){:root{--bg:#12161c;--fg:#e8ecf2;--mut:#9aa4b2;--box:#1b2129;--br:#2c3440}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,sans-serif}
+main{max-width:760px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:1.7rem;line-height:1.2}label{display:block;margin:12px 0 4px;font-weight:600}
+input,select{width:100%;padding:10px;border:1px solid var(--br);border-radius:8px;background:var(--box);color:var(--fg);font-size:1rem}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}@media(max-width:560px){.grid{grid-template-columns:1fr}}
+.out{background:var(--box);border:1px solid var(--br);border-radius:12px;padding:16px;margin:24px 0}
+.out b{font-size:1.25rem}.mut{color:var(--mut);font-size:.9rem}
+.cta{display:block;text-align:center;background:var(--acc);color:#1d2430;font-weight:700;padding:14px;border-radius:10px;text-decoration:none}
+details{margin-top:16px}
+</style>
+</head>
+<body>
+<main>
+<nav class="mut"><a href="/">Fotowoltaika</a> · <a href="/pompa-ciepla">Pompa ciepła</a></nav>
+<h1>Kalkulator pompy ciepła</h1>
+<p>Podaj powierzchnię i stan domu. Kalkulator dobierze moc pompy i porówna roczny koszt ogrzewania z gazem i węglem.</p>
+<div class="grid">
+<div><label for="pow">Ogrzewana powierzchnia (m²)</label><input id="pow" type="number" value="140" min="0"></div>
+<div><label for="stan">Stan budynku</label><select id="stan">
+<option value="40,60">Nowy dom (po 2021, WT2021)</option>
+<option value="60,100" selected>Docieplony, nowe okna</option>
+<option value="100,160">Stary, bez docieplenia</option></select></div>
+<div><label for="inst">Ogrzewanie</label><select id="inst">
+<option value="3.8">Podłogówka</option><option value="2.9">Grzejniki</option></select></div>
+<div><label for="osoby">Liczba domowników (ciepła woda)</label><input id="osoby" type="number" value="4" min="0"></div>
+<div><label for="prad">Cena prądu dla pompy (zł/kWh)</label><input id="prad" type="number" value="0.85" step="0.01"></div>
+<div><label for="gaz">Cena gazu z opłatami (zł/kWh)</label><input id="gaz" type="number" value="0.32" step="0.01"></div>
+<div><label for="wegiel">Cena węgla (zł/t)</label><input id="wegiel" type="number" value="1600" step="50"></div>
+</div>
+<div class="out" id="wynik" aria-live="polite"></div>
+<a class="cta" id="cta" href="#" rel="sponsored nofollow">Zamów bezpłatną wycenę pompy ciepła</a>
+<p class="mut">Link partnerski. Za zgłoszenie przez ten link serwis może otrzymać prowizję, dla Ciebie wycena jest bezpłatna.</p>
+<details><summary>Jak liczymy</summary>
+<p>Moc szacujemy jako zapotrzebowanie na m² zależne od stanu budynku, plus 1 kW na ciepłą wodę. Roczne zapotrzebowanie na ciepło to typowy wskaźnik kWh/m² dla danego stanu, plus ok. 800 kWh na osobę na ciepłą wodę. Pompa zużywa prąd równy ciepłu podzielonemu przez sezonową sprawność (SCOP), wyższą przy podłogówce. Kocioł gazowy liczymy ze sprawnością 95%, węglowy 65% przy 7 kWh energii w kilogramie węgla. Pełny dobór zrobi instalator na podstawie audytu, ten wynik to szacunek.</p>
+</details>
+</main>
+<script>
+const v=id=>parseFloat(document.getElementById(id).value)||0;
+const zl=n=>Math.round(n).toLocaleString("pl-PL")+" zł";
+function licz(){
+  const [wm2,kwhm2]=document.getElementById("stan").value.split(",").map(Number);
+  const scop=v("inst");
+  const moc=Math.ceil((v("pow")*wm2/1000+1)*2)/2;
+  const cieplo=v("pow")*kwhm2+v("osoby")*800;
+  const pompa=cieplo/scop*v("prad"), gaz=cieplo/0.95*v("gaz"), wegiel=cieplo/0.65/7000*v("wegiel");
+  document.getElementById("wynik").innerHTML=
+   `Sugerowana moc pompy: <b>${moc.toLocaleString("pl-PL")} kW</b><br>`+
+   `Roczne zapotrzebowanie na ciepło: ok. ${Math.round(cieplo).toLocaleString("pl-PL")} kWh<br><br>`+
+   `Pompa ciepła: <b>${zl(pompa)}</b> rocznie<br>`+
+   `Gaz: <b>${zl(gaz)}</b> rocznie<br>`+
+   `Węgiel: <b>${zl(wegiel)}</b> rocznie`+
+   `<p class="mut">Pompa zużyje ok. ${Math.round(cieplo/scop).toLocaleString("pl-PL")} kWh prądu rocznie.</p>`;
+}
+["pow","stan","inst","osoby","prad","gaz","wegiel"].forEach(id=>document.getElementById(id).addEventListener("input",licz));licz();
+</script>
+</body>
+</html>
