@@ -3,66 +3,42 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kalkulator opłacalności fotowoltaiki 2026 (net-billing)</title>
-<meta name="description" content="Policz, ile kosztuje instalacja fotowoltaiczna, ile zaoszczędzisz rocznie w net-billingu i po ilu latach się zwróci. Bezpłatny kalkulator z założeniami do edycji.">
+<title>Budlicz: kalkulatory budowlane online</title>
+<meta name="description" content="Darmowe kalkulatory budowlane: ile betonu i stali na fundamenty, płytę i strop, koszty budowy i energii w domu. Policz, zanim zamówisz.">
 <style>
 :root{--bg:#fff;--fg:#1d2430;--mut:#5b6575;--acc:#e8a317;--box:#f5f7fa;--br:#dde2ea}
 @media (prefers-color-scheme:dark){:root{--bg:#12161c;--fg:#e8ecf2;--mut:#9aa4b2;--box:#1b2129;--br:#2c3440}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,sans-serif}
 main{max-width:760px;margin:0 auto;padding:24px 16px 64px}
 h1{font-size:1.7rem;line-height:1.2}label{display:block;margin:12px 0 4px;font-weight:600}
-input{width:100%;padding:10px;border:1px solid var(--br);border-radius:8px;background:var(--box);color:var(--fg);font-size:1rem}
+input,select{width:100%;padding:10px;border:1px solid var(--br);border-radius:8px;background:var(--box);color:var(--fg);font-size:1rem}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}@media(max-width:560px){.grid{grid-template-columns:1fr}}
 .out{background:var(--box);border:1px solid var(--br);border-radius:12px;padding:16px;margin:24px 0}
 .out b{font-size:1.25rem}.mut{color:var(--mut);font-size:.9rem}
 .cta{display:block;text-align:center;background:var(--acc);color:#1d2430;font-weight:700;padding:14px;border-radius:10px;text-decoration:none}
 details{margin-top:16px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:20px 0}
+.tile{display:block;background:var(--box);border:1px solid var(--br);border-radius:12px;padding:16px;color:var(--fg);text-decoration:none}
+.tile b{display:block;margin-bottom:4px}
+h2{margin-top:32px}
 </style>
 </head>
 <body>
 <main>
-<nav class="mut"><a href="/">Fotowoltaika</a> · <a href="/pompa-ciepla">Pompa ciepła</a> · <a href="/pompa-ciepla-stary-dom">Poradnik: stary dom</a></nav>
-<h1>Kalkulator opłacalności fotowoltaiki</h1>
-<p>Wpisz roczne zużycie prądu. Resztę założeń możesz zmienić, jeśli znasz swoje liczby.</p>
-
-<div class="grid">
-<div><label for="zuzycie">Roczne zużycie prądu (kWh)</label><input id="zuzycie" type="number" value="4000" min="0"></div>
-<div><label for="cenaZakupu">Cena zakupu prądu z opłatami (zł/kWh)</label><input id="cenaZakupu" type="number" value="1.10" step="0.01"></div>
-<div><label for="koszt">Koszt instalacji (zł za kWp)</label><input id="koszt" type="number" value="4500" step="100"></div>
-<div><label for="uzysk">Roczny uzysk (kWh z 1 kWp)</label><input id="uzysk" type="number" value="1000" step="10"></div>
-<div><label for="autokons">Autokonsumpcja (% produkcji zużyte od razu)</label><input id="autokons" type="number" value="35" min="0" max="100"></div>
-<div><label for="cenaSprzedazy">Średnia cena sprzedaży nadwyżki (zł/kWh)</label><input id="cenaSprzedazy" type="number" value="0.30" step="0.01"></div>
-<div><label for="dotacja">Dotacja (zł)</label><input id="dotacja" type="number" value="0" step="500"></div>
+<nav class="mut"><a href="/"><b>Budlicz</b></a> · <a href="/beton">Beton i stal</a> · <a href="/fotowoltaika">Fotowoltaika</a> · <a href="/pompa-ciepla">Pompa ciepła</a></nav>
+<h1>Budlicz: policz budowę, zanim zapłacisz</h1>
+<p>Proste kalkulatory budowlane: ile materiału zamówić, ile to kosztuje i co się opłaca. Wpisujesz wymiary, wynik widzisz od razu.</p>
+<h2>Konstrukcja</h2>
+<div class="tiles">
+<a class="tile" href="/beton"><b>Beton i stal zbrojeniowa</b><span class="mut">Ławy, płyta fundamentowa, strop: m³ betonu, kg stali, liczba gruszek i koszt.</span></a>
 </div>
-
-<div class="out" id="wynik" aria-live="polite"></div>
-
-<a class="cta" id="cta" href="#" rel="sponsored nofollow">Zamów bezpłatną wycenę instalacji</a>
-<p class="mut">Link partnerski. Za zgłoszenie przez ten link serwis może otrzymać prowizję, dla Ciebie wycena jest bezpłatna.</p>
-
-<details>
-<summary>Jak liczymy</summary>
-<p>Moc instalacji dobieramy tak, by roczna produkcja pokryła ok. 110% zużycia. Część produkcji zużywasz od razu (autokonsumpcja) i oszczędzasz pełną cenę zakupu. Nadwyżkę w net-billingu sprzedajesz po cenie rynkowej, a pieniądze trafiają na konto prosumenckie. Okres zwrotu to koszt po dotacji podzielony przez roczną korzyść. Wynik jest szacunkiem, nie ofertą. Domyślne wartości to typowe poziomy z 2026 roku i warto je zastąpić własnymi.</p>
-</details>
+<h2>Energia w domu</h2>
+<div class="tiles">
+<a class="tile" href="/fotowoltaika"><b>Opłacalność fotowoltaiki</b><span class="mut">Moc instalacji, koszt i zwrot w net-billingu.</span></a>
+<a class="tile" href="/pompa-ciepla"><b>Pompa ciepła</b><span class="mut">Dobór mocy i koszt ogrzewania vs gaz i węgiel.</span></a>
+<a class="tile" href="/pompa-ciepla-stary-dom"><b>Poradnik: pompa w starym domu</b><span class="mut">Kiedy się opłaca i co sprawdzić.</span></a>
+</div>
+<p class="mut">Nowe kalkulatory dochodzą co kilka dni. Wyniki to szacunki, a przy konstrukcji wiążący jest zawsze projekt.</p>
 </main>
-<script>
-const ids=["zuzycie","cenaZakupu","koszt","uzysk","autokons","cenaSprzedazy","dotacja"];
-const v=id=>parseFloat(document.getElementById(id).value)||0;
-const zl=n=>Math.round(n).toLocaleString("pl-PL")+" zł";
-function licz(){
-  const moc=Math.max(1,Math.ceil(v("zuzycie")*1.1/v("uzysk")*2)/2);
-  const prod=moc*v("uzysk"), auto=prod*v("autokons")/100, nadw=prod-auto;
-  const korzysc=auto*v("cenaZakupu")+nadw*v("cenaSprzedazy");
-  const koszt=Math.max(0,moc*v("koszt")-v("dotacja"));
-  const zwrot=korzysc>0?koszt/korzysc:Infinity;
-  document.getElementById("wynik").innerHTML=
-   `Sugerowana moc: <b>${moc.toLocaleString("pl-PL")} kWp</b><br>`+
-   `Koszt po dotacji: <b>${zl(koszt)}</b><br>`+
-   `Roczna korzyść: <b>${zl(korzysc)}</b><br>`+
-   `Zwrot po ok. <b>${isFinite(zwrot)?zwrot.toFixed(1).replace(".",","):"–"} latach</b>`+
-   `<p class="mut">Produkcja ${Math.round(prod)} kWh/rok, z czego ${Math.round(auto)} kWh zużyjesz od razu.</p>`;
-}
-ids.forEach(id=>document.getElementById(id).addEventListener("input",licz));licz();
-</script>
 </body>
 </html>
