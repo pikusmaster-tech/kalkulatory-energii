@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kalkulator betonu i stali zbrojeniowej: ławy, płyta, strop</title>
+<meta name="description" content="Policz, ile betonu (m³) i stali zbrojeniowej potrzeba na ławy fundamentowe, płytę lub strop, ile gruszek zamówić i ile to kosztuje. Bezpłatny kalkulator.">
+<style>
+:root{--bg:#fff;--fg:#1d2430;--mut:#5b6575;--acc:#e8a317;--box:#f5f7fa;--br:#dde2ea}
+@media (prefers-color-scheme:dark){:root{--bg:#12161c;--fg:#e8ecf2;--mut:#9aa4b2;--box:#1b2129;--br:#2c3440}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,sans-serif}
+main{max-width:760px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:1.7rem;line-height:1.2}label{display:block;margin:12px 0 4px;font-weight:600}
+input,select{width:100%;padding:10px;border:1px solid var(--br);border-radius:8px;background:var(--box);color:var(--fg);font-size:1rem}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}@media(max-width:560px){.grid{grid-template-columns:1fr}}
+.out{background:var(--box);border:1px solid var(--br);border-radius:12px;padding:16px;margin:24px 0}
+.out b{font-size:1.25rem}.mut{color:var(--mut);font-size:.9rem}
+.cta{display:block;text-align:center;background:var(--acc);color:#1d2430;font-weight:700;padding:14px;border-radius:10px;text-decoration:none}
+details{margin-top:16px}
+</style>
+</head>
+<body>
+<main>
+<nav class="mut"><a href="/beton">Kalkulator betonu</a></nav>
+<h1>Kalkulator betonu i stali zbrojeniowej</h1>
+<p>Wybierz element, wpisz wymiary i sprawdź, ile betonu zamówić, ile stali kupić i ile to mniej więcej kosztuje.</p>
+<div class="grid">
+<div><label for="el">Element</label><select id="el">
+<option value="lawa">Ławy fundamentowe</option>
+<option value="plyta">Płyta fundamentowa / posadzka</option>
+<option value="strop">Strop monolityczny</option></select></div>
+<div id="wDl"><label for="dl">Łączna długość ław (m)</label><input id="dl" type="number" value="48" step="0.5"></div>
+<div id="wSz"><label for="sz">Szerokość ławy (cm)</label><input id="sz" type="number" value="60" step="5"></div>
+<div id="wWys"><label for="wys">Wysokość ławy (cm)</label><input id="wys" type="number" value="40" step="5"></div>
+<div id="wPow"><label for="pow">Powierzchnia (m²)</label><input id="pow" type="number" value="120" step="1"></div>
+<div id="wGr"><label for="gr">Grubość (cm)</label><input id="gr" type="number" value="20" step="1"></div>
+<div><label for="stal">Stal zbrojeniowa (kg na m³ betonu)</label><input id="stal" type="number" value="70" step="5"></div>
+<div><label for="zapas">Zapas betonu (%)</label><input id="zapas" type="number" value="5" step="1"></div>
+<div><label for="cB">Cena betonu z dowozem (zł/m³)</label><input id="cB" type="number" value="430" step="10"></div>
+<div><label for="cS">Cena stali (zł/kg)</label><input id="cS" type="number" value="4.2" step="0.1"></div>
+</div>
+<div class="out" id="wynik" aria-live="polite"></div>
+<details><summary>Jak liczymy</summary>
+<p>Objętość to długość × szerokość × wysokość (ławy) albo powierzchnia × grubość (płyta, strop), plus zapas na straty i nierówności wykopu. Ilość stali to orientacyjny wskaźnik kg na m³ betonu, typowy dla danego elementu. Dokładną ilość stali podaje projekt konstrukcyjny w zestawieniu stali i to on jest wiążący. Jedna gruszka (betonowóz) wozi zwykle ok. 8–9 m³, liczymy 8. Ceny to przykładowe poziomy i różnią się w zależności od regionu i klasy betonu, więc wpisz ceny z lokalnej betoniarni.</p>
+</details>
+</main>
+<script>
+const v=id=>parseFloat(document.getElementById(id).value)||0;
+const zl=n=>Math.round(n).toLocaleString("pl-PL")+" zł";
+const domyslnaStal={lawa:70,plyta:90,strop:110};
+let ostatni="lawa";
+function licz(){
+  const el=document.getElementById("el").value;
+  if(el!==ostatni){document.getElementById("stal").value=domyslnaStal[el];ostatni=el;}
+  const lawa=el==="lawa";
+  ["wDl","wSz","wWys"].forEach(i=>document.getElementById(i).hidden=!lawa);
+  ["wPow","wGr"].forEach(i=>document.getElementById(i).hidden=lawa);
+  const obj=lawa? v("dl")*v("sz")/100*v("wys")/100 : v("pow")*v("gr")/100;
+  const zam=obj*(1+v("zapas")/100), stal=obj*v("stal");
+  const f=n=>n.toLocaleString("pl-PL",{maximumFractionDigits:1});
+  document.getElementById("wynik").innerHTML=
+   `Beton do zamówienia: <b>${f(zam)} m³</b> (netto ${f(obj)} m³)<br>`+
+   `Betonowozy: <b>${Math.ceil(zam/8)}</b><br>`+
+   `Stal zbrojeniowa: <b>ok. ${Math.round(stal).toLocaleString("pl-PL")} kg</b><br>`+
+   `Koszt materiału: <b>${zl(zam*v("cB")+stal*v("cS"))}</b>`+
+   `<p class="mut">Beton ${zl(zam*v("cB"))}, stal ${zl(stal*v("cS"))}. Bez robocizny, deskowania i pompy.</p>`;
+}
+document.querySelectorAll("input,select").forEach(e=>e.addEventListener("input",licz));licz();
+</script>
+</body>
+</html>
