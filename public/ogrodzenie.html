@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ogrodzenie: ile słupków, przęseł i betonu</title>
+<meta name="description" content="Policz przęsła, słupki i beton pod fundamenty dla ogrodzenia o zadanej długości. Przekrój fragmentu pokazuje proporcje słupków i przęseł.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/style.css"><link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 32 32' aria-hidden='true'%3E%3Crect width='32' height='32' rx='9' fill='%23e8590c'/%3E%3Cpath d='M7 16.5 16 9l9 7.5' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.5 15v8h11v-8' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linejoin='round'/%3E%3Cpath d='M14 19.5h4' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E"><meta name="theme-color" content="#e8590c">
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="logo" href="/" aria-label="Budlicz, strona główna"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#e8590c"/><path d="M7 16.5 16 9l9 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 15v8h11v-8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><path d="M14 19.5h4" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg><span>Bud<b>licz</b></span></a><nav aria-label="Kalkulatory i poradniki"><details class="grp"><summary>Fundamenty</summary><div class="dd"><a href="/beton">Beton i stal</a><a href="/lawy-czy-plyta">Ławy czy płyta</a><a href="/hydroizolacja-fundamentow">Hydroizolacja</a><a href="/wykop">Ziemia z wykopu</a></div></details><details class="grp"><summary>Konstrukcja</summary><div class="dd"><a href="/strop">Strop</a><a href="/schody">Schody</a><a href="/nadproza">Nadproża</a><a href="/dylatacje">Dylatacje</a></div></details><details class="grp"><summary>Ściany i dach</summary><div class="dd"><a href="/sciany">Pustaki na ściany</a><a href="/ocieplenie">Ocieplenie ścian</a><a href="/sciana-dzialowa">Ścianka z płyt GK</a><a href="/dach">Dach</a></div></details><details class="grp cur"><summary>Wykończenie i teren</summary><div class="dd"><a href="/wylewka">Wylewka</a><a href="/kostka">Kostka i płytki</a><a href="/ogrodzenie" aria-current="page">Ogrodzenie</a></div></details><details class="grp"><summary>Energia</summary><div class="dd"><a href="/fotowoltaika">Fotowoltaika</a><a href="/pompa-ciepla">Pompa ciepła</a><a href="/pompa-ciepla-stary-dom">Pompa w starym domu</a></div></details><details class="grp"><summary>Plan budowy</summary><div class="dd"><a href="/etapy-budowy">Etapy budowy</a><a href="/kredyt">Kredyt na budowę</a></div></details></nav></div></header>
+<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Kalkulatory</div>
+<h1>Ogrodzenie: ile słupków, przęseł i betonu</h1>
+<p class="lead">Podaj długość granicy, rozstaw słupków i wysokość. Zobaczysz liczbę przęseł, słupków i beton pod fundamenty.</p>
+<section class="calc"><div class="panel"><div class="grid">
+<div><label for="dl">Długość ogrodzenia (m)</label><input id="dl" type="number" value="40" step="0.5"></div>
+<div><label for="rozst">Rozstaw słupków, szerokość przęsła (m)</label><input id="rozst" type="number" value="2.5" step="0.05"></div>
+<div><label for="wys">Wysokość przęsła (m)</label><input id="wys" type="number" value="1.8" step="0.1"></div>
+<div><label for="zag">Zagłębienie słupka (m)</label><input id="zag" type="number" value="0.9" step="0.1"></div>
+<div><label for="bok">Fundament pod słupek: bok (cm)</label><input id="bok" type="number" value="40" step="5"></div>
+</div></div>
+<div class="out" id="wynik" aria-live="polite"></div></section>
+<figure class="panel fig"><figcaption>Fragment ogrodzenia <span>trzy przęsła w skali</span></figcaption><svg id="elewacja" viewBox="0 0 640 240" role="img" aria-label="Fragment ogrodzenia: słupki z fundamentem i przęsła między nimi"></svg><p class="note">Pokazany jest fragment, nie całe ogrodzenie. Przęsła i słupki to schemat, system zależy od wybranego producenta.</p></figure>
+<h2>Na czym ludzie się mylą</h2>
+<div class="tip"><b>Granica musi być pewna.</b> Sprawdź ją na mapie geodezyjnej przed postawieniem słupka. Przesunięcie o kilkanaście centymetrów kończy się sporem z sąsiadem.</div>
+<div class="tip"><b>Słupek sięga poniżej przemarzania.</b> Zagłębienie to nie tylko stabilność. Słupek musi być osadzony w gruncie tak, jak wskazuje projekt lub producent.</div>
+<div class="tip"><b>Przy spadku terenu przęsło się nie dopasuje.</b> Na pochyłym terenie przęsła trzeba ustawić schodkowo albo z przerwą. Płaskie przęsło na spadku wygląda źle i obciąża słupki.</div>
+<div class="tip"><b>Bramy i furtki liczy się osobno.</b> Kalkulator zakłada same przęsła pełne. Brama ma własne słupki i fundamenty.</div>
+<details><summary>Jak liczymy</summary>
+<p>Liczba przęseł to długość ogrodzenia podzielona przez rozstaw słupków, zaokrąglona w górę. Słupków jest o jeden więcej, bo ogrodzenie zaczyna się i kończy słupkiem.</p>
+<p>Długość słupka to wysokość przęsła plus zagłębienie. Beton pod każdy słupek to kwadrat fundamentu razy zagłębienie, pomnożone przez liczbę słupków.</p>
+</details>
+</main>
+<footer><div class="wrap"><span><b>Budlicz</b> · kalkulatory budowlane. Wyniki to szacunki, wiążący jest projekt i wycena wykonawcy.</span><span><a href="/o-serwisie">O serwisie</a> · <a href="/">Wszystkie kalkulatory</a></span></div></footer>
+<script>
+const v=id=>parseFloat(document.getElementById(id).value)||0;
+const f=(n,d=1)=>n.toLocaleString("pl-PL",{maximumFractionDigits:d});
+function licz(){
+  const L=v("dl"), rs=Math.max(0.5,v("rozst")), wys=v("wys"), zag=v("zag"), bok=v("bok")/100;
+  const przesla=Math.ceil(L/rs), slupki=przesla+1, dlS=wys+zag, mbS=slupki*dlS, beton=slupki*bok*bok*zag, pole=L*wys;
+  document.getElementById("wynik").innerHTML=
+    `Przęsła: <b>${przesla} szt.</b> po ${f(rs,2)} m<br>`+
+    `Słupki: <b>${slupki} szt.</b>, każdy ${f(dlS,2)} m (razem ${f(mbS,0)} mb)<br>`+
+    `Beton pod słupki: <b>${f(beton,2)} m³</b><br>`+
+    `Pole ogrodzenia: <b>${f(pole,1)} m²</b>`+
+    `<p class="mut">Bez bram i furtek. Wymiar fundamentu wpisz z projektu lub z karty systemu.</p>`;
+  rysuj(rs,wys,zag);
+}
+function rysuj(rs,wys,zag){
+  const bays=3, ground=200, k=Math.min(560/(bays*rs),170/(wys+zag)), x0=40;
+  let g=`<rect class="grunt" x="0" y="${ground}" width="640" height="40"/><rect class="grunt2" x="0" y="${ground}" width="640" height="5"/>`;
+  for(let i=0;i<bays;i++){
+    const x=x0+i*rs*k+4, w=rs*k-8, top=ground-wys*k;
+    g+=`<rect class="eps pop" x="${x.toFixed(1)}" y="${top.toFixed(1)}" width="${w.toFixed(1)}" height="${(wys*k).toFixed(1)}"/>`;
+    for(let j=1;j<=3;j++){const yy=top+j*wys*k/4; g+=`<path class="dim" d="M${x.toFixed(1)} ${yy.toFixed(1)}H${(x+w).toFixed(1)}"/>`;}
+  }
+  for(let i=0;i<=bays;i++){
+    const x=x0+i*rs*k;
+    g+=`<rect class="beton" x="${(x-4).toFixed(1)}" y="${(ground-wys*k).toFixed(1)}" width="8" height="${((wys+zag)*k).toFixed(1)}"/>`;
+  }
+  g+=`<text class="tm" x="${x0}" y="${(ground+zag*k+22).toFixed(1)}">przęsło ${f(rs,2)} m, wysokość ${f(wys,1)} m, zagłębienie ${f(zag,1)} m</text>`;
+  document.getElementById("elewacja").innerHTML=g;
+}
+document.querySelectorAll("input").forEach(e=>e.addEventListener("input",licz));licz();
+document.addEventListener("click",e=>{document.querySelectorAll(".grp[open]").forEach(d=>{if(!d.contains(e.target))d.open=false})});
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ścianka z płyt GK: ile płyt, profili i wełny</title>
+<meta name="description" content="Policz płyty gipsowo-kartonowe, słupki, prowadnice i wełnę na ściankę działową. Przekrój pokazuje warstwy ścianki.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/style.css"><link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 32 32' aria-hidden='true'%3E%3Crect width='32' height='32' rx='9' fill='%23e8590c'/%3E%3Cpath d='M7 16.5 16 9l9 7.5' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.5 15v8h11v-8' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linejoin='round'/%3E%3Cpath d='M14 19.5h4' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E"><meta name="theme-color" content="#e8590c">
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="logo" href="/" aria-label="Budlicz, strona główna"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#e8590c"/><path d="M7 16.5 16 9l9 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 15v8h11v-8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><path d="M14 19.5h4" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg><span>Bud<b>licz</b></span></a><nav aria-label="Kalkulatory i poradniki"><details class="grp"><summary>Fundamenty</summary><div class="dd"><a href="/beton">Beton i stal</a><a href="/lawy-czy-plyta">Ławy czy płyta</a><a href="/hydroizolacja-fundamentow">Hydroizolacja</a><a href="/wykop">Ziemia z wykopu</a></div></details><details class="grp"><summary>Konstrukcja</summary><div class="dd"><a href="/strop">Strop</a><a href="/schody">Schody</a><a href="/nadproza">Nadproża</a><a href="/dylatacje">Dylatacje</a></div></details><details class="grp cur"><summary>Ściany i dach</summary><div class="dd"><a href="/sciany">Pustaki na ściany</a><a href="/ocieplenie">Ocieplenie ścian</a><a href="/sciana-dzialowa" aria-current="page">Ścianka z płyt GK</a><a href="/dach">Dach</a></div></details><details class="grp"><summary>Wykończenie i teren</summary><div class="dd"><a href="/wylewka">Wylewka</a><a href="/kostka">Kostka i płytki</a><a href="/ogrodzenie">Ogrodzenie</a></div></details><details class="grp"><summary>Energia</summary><div class="dd"><a href="/fotowoltaika">Fotowoltaika</a><a href="/pompa-ciepla">Pompa ciepła</a><a href="/pompa-ciepla-stary-dom">Pompa w starym domu</a></div></details><details class="grp"><summary>Plan budowy</summary><div class="dd"><a href="/etapy-budowy">Etapy budowy</a><a href="/kredyt">Kredyt na budowę</a></div></details></nav></div></header>
+<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Kalkulatory</div>
+<h1>Ścianka działowa z płyt GK: ile materiału</h1>
+<p class="lead">Wpisz długość i wysokość ścianki oraz wymiary płyty. Zobaczysz liczbę płyt, profili i wełny mineralnej.</p>
+<section class="calc"><div class="panel"><div class="grid">
+<div><label for="dl">Długość ścianki (m)</label><input id="dl" type="number" value="4" step="0.1"></div>
+<div><label for="wys">Wysokość ścianki (m)</label><input id="wys" type="number" value="2.6" step="0.1"></div>
+<div><label for="plsz">Szerokość płyty (m)</label><input id="plsz" type="number" value="1.2" step="0.01"></div>
+<div><label for="plwys">Wysokość płyty (m)</label><input id="plwys" type="number" value="2.6" step="0.01"></div>
+<div><label for="warst">Warstwy płyt na stronę</label><input id="warst" type="number" value="1" step="1"></div>
+<div><label for="strony">Strony ścianki</label><input id="strony" type="number" value="2" step="1"></div>
+<div><label for="rozst">Rozstaw słupków (m)</label><input id="rozst" type="number" value="0.6" step="0.05"></div>
+<div><label for="prof">Długość profilu handlowego (m)</label><input id="prof" type="number" value="3" step="0.1"></div>
+<div><label for="plgr">Grubość płyty (mm)</label><input id="plgr" type="number" value="12.5" step="0.5"></div>
+<div><label for="profgr">Grubość ścianki z profilem (mm)</label><input id="profgr" type="number" value="50" step="5"></div>
+<div><label for="zapas">Zapas na docinki (%)</label><input id="zapas" type="number" value="10" step="1"></div>
+</div></div>
+<div class="out" id="wynik" aria-live="polite"></div></section>
+<figure class="panel fig"><figcaption>Przekrój ścianki <span>warstwy od lewej do prawej</span></figcaption><svg id="przekroj" viewBox="0 0 640 300" role="img" aria-label="Przekrój ścianki działowej: płyta, wełna ze słupkiem, płyta"></svg><p class="note">Schemat poglądowy. Układ profili, wkręty i wypełnienie określa karta systemu wybranego producenta.</p></figure>
+<h2>Na czym ludzie się mylą</h2>
+<div class="tip"><b>Rodzaj płyty zależy od pomieszczenia.</b> W łazience i kuchni potrzebne są płyty przystosowane do wilgoci. Oznaczenie na płycie mówi, do czego jest przeznaczona.</div>
+<div class="tip"><b>Wysokość płyty decyduje o łączeniach.</b> Płyta o długości równej wysokości ścianki nie daje poziomych styków. Krótsze płyty to więcej spoin do szpachlowania.</div>
+<div class="tip"><b>Profile liczy się z długości handlowej.</b> Każdy odcinek kończy się resztką z cięcia. Dlatego liczba profili jest większa niż suma metrów podzielona przez długość profilu.</div>
+<div class="tip"><b>Wkręty, taśmy i masy to osobne pozycje.</b> Kalkulator nie liczy ich, bo zależą od systemu i od tego, jak wykończysz spoiny.</div>
+<details><summary>Jak liczymy</summary>
+<p>Płyty na stronę to liczba płyt w poziomie (długość podzielona przez szerokość płyty, w górę) razy liczba w pionie (wysokość podzielona przez wysokość płyty, w górę) razy liczba warstw. Razem z obu stron i zapasem.</p>
+<p>Słupki to liczba słupków (długość podzielona przez rozstaw, w górę, plus jeden) razy liczba profili na każdy słupek, czyli wysokość podzielona przez długość handlową, w górę. Prowadnice to dwa odcinki długości ścianki, też z zaokrągleniem do profili.</p>
+<p>Wełna to pole ścianki, bo wypełnia całą przestrzeń między płytami.</p>
+</details>
+</main>
+<footer><div class="wrap"><span><b>Budlicz</b> · kalkulatory budowlane. Wyniki to szacunki, wiążący jest projekt i wycena wykonawcy.</span><span><a href="/o-serwisie">O serwisie</a> · <a href="/">Wszystkie kalkulatory</a></span></div></footer>
+<script>
+const v=id=>parseFloat(document.getElementById(id).value)||0;
+const f=(n,d=1)=>n.toLocaleString("pl-PL",{maximumFractionDigits:d});
+const T=(x,y,t,c="t",a="start")=>`<text class="${c}" x="${x}" y="${y}" text-anchor="${a}">${t}</text>`;
+function licz(){
+  const L=v("dl"), H=v("wys"), zap=1+v("zapas")/100, pw=Math.max(0.1,v("plsz")), ph=Math.max(0.1,v("plwys"));
+  const naStrone=Math.ceil(L/pw)*Math.ceil(H/ph)*v("warst");
+  const plyty=Math.ceil(naStrone*v("strony")*zap);
+  const dl=Math.max(0.5,v("prof")), nsl=Math.ceil(L/Math.max(0.1,v("rozst")))+1;
+  const sztSl=nsl*Math.ceil(H/dl), sztPr=2*Math.ceil(L/dl), wel=L*H;
+  document.getElementById("wynik").innerHTML=
+    `Płyty GK: <b>${plyty} szt.</b><br>`+
+    `Słupki: <b>${nsl} szt.</b> po ${f(H,2)} m, czyli ${sztSl} profili<br>`+
+    `Prowadnice: <b>${sztPr} szt.</b> po ${f(dl,1)} m (góra i dół)<br>`+
+    `Wełna: <b>${f(wel,2)} m²</b>`+
+    `<p class="mut">Profile liczone z długości handlowych, bez wykorzystania resztek z cięć. Wkręty, taśmy i masy są osobno.</p>`;
+  rysuj();
+}
+function rysuj(){
+  const t=Math.max(5,v("plgr")), p=Math.max(10,v("profgr"));
+  const total=2*t+p, k=Math.min(2.2,400/total);
+  const tp=t*k, tw=p*k, x0=(640-(2*tp+tw))/2, yT=60, hh=200;
+  let g=`<rect class="eps" x="${x0.toFixed(1)}" y="${yT}" width="${tp.toFixed(1)}" height="${hh}"/>`;
+  g+=`<rect class="xps" x="${(x0+tp).toFixed(1)}" y="${yT}" width="${tw.toFixed(1)}" height="${hh}"/>`;
+  g+=`<rect class="chudy" x="${(x0+tp+tw/2-3).toFixed(1)}" y="${yT}" width="6" height="${hh}"/>`;
+  g+=`<rect class="eps" x="${(x0+tp+tw).toFixed(1)}" y="${yT}" width="${tp.toFixed(1)}" height="${hh}"/>`;
+  g+=T((x0+tp/2).toFixed(1),yT-12,"płyta","tm","middle")+T((x0+tp+tw/2).toFixed(1),yT-12,"wełna i słupek","tm","middle")+T((x0+tp+tw+tp/2).toFixed(1),yT-12,"płyta","tm","middle");
+  g+=`<path class="dim" d="M${x0.toFixed(1)} ${yT+hh+18}H${(x0+2*tp+tw).toFixed(1)}"/>`;
+  g+=T((x0+(2*tp+tw)/2).toFixed(1),yT+hh+38,`${f(total,1)} mm`,"t","middle");
+  document.getElementById("przekroj").innerHTML=g;
+}
+document.querySelectorAll("input").forEach(e=>e.addEventListener("input",licz));licz();
+document.addEventListener("click",e=>{document.querySelectorAll(".grp[open]").forEach(d=>{if(!d.contains(e.target))d.open=false})});
+</script>
+</body>
+</html>

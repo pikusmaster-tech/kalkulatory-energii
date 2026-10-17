@@ -122,3 +122,21 @@ svg .draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.2s ease forwar
 @media (prefers-reduced-motion:reduce){svg .draw,.pop{animation:none;stroke-dashoffset:0}}
 svg .odsetki{fill:var(--brand)}
 svg .kapital{fill:var(--accent)}
+svg .schod{fill:none;stroke:var(--brand);stroke-width:3}
+svg .hydro{fill:none;stroke:var(--ink);stroke-width:3}
+svg .halo{paint-order:stroke;stroke:var(--surface);stroke-width:4px;stroke-linejoin:round}
+.top nav{overflow:visible;flex-wrap:wrap;row-gap:4px}
+@media(max-width:720px){.top nav{overflow:visible;width:100%;margin:6px 0 0;padding:0 0 10px;gap:0 2px}}
+.grp{position:relative}
+.grp summary{list-style:none;cursor:pointer;color:var(--muted);font-weight:600;font-size:.93rem;padding:8px 12px;border-radius:999px;white-space:nowrap;user-select:none}
+.grp summary::-webkit-details-marker{display:none}
+.grp summary::after{content:" ▾";font-size:.75em;opacity:.7}
+.grp summary:hover,.grp[open] summary{color:var(--ink);background:var(--bg)}
+.grp.cur summary{color:var(--brand)}
+.top .dd{position:absolute;top:calc(100% + 6px);left:0;min-width:230px;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:6px;z-index:30;display:flex;flex-direction:column;gap:2px}
+.top .dd a{display:block;padding:9px 12px;border-radius:8px;color:var(--ink);font-weight:600;font-size:.92rem;white-space:nowrap}
+.top .dd a:hover{background:var(--bg);color:var(--brand)}
+.top .dd a[aria-current]{color:var(--brand);background:var(--brand-soft)}
+.kroki{padding-left:22px}
+.kroki li{margin:12px 0;max-width:72ch}
+.grp{margin:0;padding:0;background:none;border:0;border-radius:0}
