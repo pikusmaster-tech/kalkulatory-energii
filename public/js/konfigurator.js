@@ -232,7 +232,7 @@ const model=(()=>{
     if(!g.dach4&&E>=4){
       [-1,1].forEach(sg=>{const x=sg>0?g.L/2-g.t:-g.L/2;
         if(g.pod)box(g.t,g.k,g.W-2*g.t,x+g.t/2,y0+g.h+g.k/2,0,ccol,"sc",4);
-        prism([[x,top,-g.W/2],[x,top,g.W/2],[x,top+g.hs,0]],g.t,ccol,"sc",4);
+        prism([[x,top-0.03,-g.W/2],[x,top-0.03,g.W/2],[x,top+g.hs-0.03,0]],g.t,ccol,"sc",4);
       });
     }
     // otwory i okna
@@ -253,7 +253,7 @@ const model=(()=>{
     const lx=g.L/2+g.o,wz=g.W/2+g.o,ye=top-g.o*g.tg,yr=top+g.W/2*g.tg,lr=Math.max(0,lx-wz);
     if(E>=5){
       const off=0.12,sp=0.9;
-      box(g.L,0.14,0.14,0,top+0.07,g.W/2-g.t/2,C.drewno,"wiezba",5);box(g.L,0.14,0.14,0,top+0.07,-g.W/2+g.t/2,C.drewno,"wiezba",5);
+      box(g.L,0.14,0.14,0,top-0.07,g.W/2-g.t/2,C.drewno,"wiezba",5);box(g.L,0.14,0.14,0,top-0.07,-g.W/2+g.t/2,C.drewno,"wiezba",5);
       if(!g.dach4){
         beam([-lx,yr-off,0],[lx,yr-off,0],0.18,C.drewno,"wiezba",5);
         for(let x=-lx+0.2;x<=lx-0.19;x+=sp){[1,-1].forEach(sg=>beam([x,ye-off,sg*wz],[x,yr-off,0],0.16,C.drewno,"wiezba",5));}
@@ -274,9 +274,10 @@ const model=(()=>{
     }
     // elewacja
     if(E>=8){
-      const e=g.eps,yb=y0;
-      walls(g,yb,top,C.elew,"elew",8,e,e);
-      if(!g.dach4){[-1,1].forEach(sg=>{const x=sg>0?g.L/2:-g.L/2-e;prism([[x,top,-g.W/2-e],[x,top,g.W/2+e],[x,top+g.hs+e*g.tg,0]],e,C.elew,"elew",8);});}
+      // ocieplenie kończy się pod połacią: przy zewnętrznym licu połać jest niżej o e·tg
+      const e=g.eps,yb=y0,yk=top-e*g.tg-0.03; // 3 cm pod połacią, żeby krawędzie nie migotały
+      walls(g,yb,yk,C.elew,"elew",8,e,e);
+      if(!g.dach4){[-1,1].forEach(sg=>{const x=sg>0?g.L/2:-g.L/2-e;prism([[x,yk,-g.W/2-e],[x,yk,g.W/2+e],[x,top+g.hs-0.03,0]],e,C.elew,"elew",8);});}
     }
     // animacja nowych elementów
     const now=performance.now();
