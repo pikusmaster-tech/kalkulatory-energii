@@ -120,3 +120,5 @@ svg .draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.2s ease forwar
 .pop{animation:pop .5s ease both}
 @keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){svg .draw,.pop{animation:none;stroke-dashoffset:0}}
+svg .odsetki{fill:var(--brand)}
+svg .kapital{fill:var(--accent)}

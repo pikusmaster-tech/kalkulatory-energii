@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strop monolityczny czy gęstożebrowy: kalkulator</title>
+<meta name="description" content="Porównaj strop monolityczny i gęstożebrowy: beton, stal, deskowanie, belki i pustaki. Przekroje w tej samej skali i kalkulator materiałów.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/style.css"><link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 32 32' aria-hidden='true'%3E%3Crect width='32' height='32' rx='9' fill='%23e8590c'/%3E%3Cpath d='M7 16.5 16 9l9 7.5' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.5 15v8h11v-8' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linejoin='round'/%3E%3Cpath d='M14 19.5h4' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E"><meta name="theme-color" content="#e8590c">
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="logo" href="/" aria-label="Budlicz, strona główna"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#e8590c"/><path d="M7 16.5 16 9l9 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 15v8h11v-8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><path d="M14 19.5h4" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg><span>Bud<b>licz</b></span></a><nav><a href="/beton">Beton i stal</a><a href="/sciany">Ściany</a><a href="/dach">Dach</a><a href="/wylewka">Wylewka</a><a href="/lawy-czy-plyta">Ławy czy płyta</a><a href="/strop" aria-current="page">Strop</a><a href="/kredyt">Kredyt</a><a href="/fotowoltaika">Energia</a></nav></div></header>
+<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Kalkulatory</div>
+<h1>Strop monolityczny czy gęstożebrowy?</h1>
+<p class="lead">Oba stropy przenoszą obciążenia, ale zużywają inną ilość betonu, stali i pracy. Wpisz wymiary i ceny z ofert, a zobaczysz, który wariant wychodzi taniej w samych materiałach.</p>
+<section class="calc"><div class="panel"><div class="grid">
+<div><label for="pow">Powierzchnia stropu (m²)</label><input id="pow" type="number" value="80" step="1"></div>
+<div><label for="zapas">Zapas betonu (%)</label><input id="zapas" type="number" value="5" step="1"></div>
+<div><label for="cB">Cena betonu z dowozem (zł/m³)</label><input id="cB" type="number" value="430" step="10"></div>
+<div><label for="cS">Cena stali (zł/kg)</label><input id="cS" type="number" value="4.2" step="0.1"></div>
+<p class="mut" style="grid-column:1/-1;margin:18px 0 0"><b>Strop monolityczny</b></p>
+<div><label for="gr">Grubość płyty (cm)</label><input id="gr" type="number" value="18" step="1"></div>
+<div><label for="stalM">Stal (kg na m³ betonu)</label><input id="stalM" type="number" value="100" step="5"></div>
+<div><label for="desk">Deskowanie (zł/m², przykładowe)</label><input id="desk" type="number" value="60" step="5"></div>
+<p class="mut" style="grid-column:1/-1;margin:18px 0 0"><b>Strop gęstożebrowy</b></p>
+<div><label for="hs">Wysokość stropu (cm)</label><input id="hs" type="number" value="24" step="1"></div>
+<div><label for="nad">Nadbeton (cm)</label><input id="nad" type="number" value="4" step="1"></div>
+<div><label for="roz">Rozstaw belek (cm)</label><input id="roz" type="number" value="60" step="5"></div>
+<div><label for="bw">Szerokość żebra belki (cm)</label><input id="bw" type="number" value="12" step="1"></div>
+<div><label for="dl">Długość pustaka (cm)</label><input id="dl" type="number" value="25" step="1"></div>
+<div><label for="stalG">Stal w nadbetonie (kg/m², przykładowe)</label><input id="stalG" type="number" value="4" step="0.5"></div>
+<div><label for="belka">Belka (zł/mb, przykładowe)</label><input id="belka" type="number" value="35" step="1"></div>
+<div><label for="pustak">Pustak (zł/szt., przykładowe)</label><input id="pustak" type="number" value="4" step="0.5"></div>
+</div></div>
+<div class="out" id="wynik" aria-live="polite"></div></section>
+<figure class="panel fig"><figcaption>Przekroje stropów <span>ta sama skala pionowa</span></figcaption><div class="figs2"><div><svg id="sM" viewBox="0 0 300 230" role="img" aria-label="Przekrój stropu monolitycznego: płyta żelbetowa między ścianami"></svg></div><div><svg id="sG" viewBox="0 0 300 230" role="img" aria-label="Przekrój stropu gęstożebrowego: belki, pustaki i nadbeton"></svg></div></div><p class="note">Schemat poglądowy. Rozstaw belek i zbrojenie są uproszczone, układ określa projekt konstrukcyjny. Ceny w formularzu są przykładowe.</p></figure>
+<h2>Na czym ludzie się mylą</h2>
+<div class="tip"><b>Porównuj całość, nie sam beton.</b> Monolit wymaga deskowania na całą powierzchnię i wylewa się go za jednym razem, z pompą. Gęstożebrowy wymaga podpór pod belki, montażu i więcej ręcznej pracy. Robocizna potrafi zmienić wynik bardziej niż cena betonu.</div>
+<div class="tip"><b>Belki i pustaki dobiera projekt.</b> Rozpiętość, obciążenia i producent wyznaczają wysokość stropu i rozstaw. Kalkulator pokazuje różnice w materiałach, nie to, czy dany wariant jest dopuszczalny.</div>
+<div class="tip"><b>Nadbeton nie jest dodatkiem.</b> Rozkłada obciążenia między belkami i zwykle ma zbrojenie siatką. Zbyt cienki albo źle zbrojony nadbeton daje pęknięcia i kłopoty z posadzką.</div>
+<div class="tip"><b>Ceny wpisz z ofert.</b> Wszystkie ceny w formularzu są przykładowe. Zbierz wyceny od dwóch lub trzech dostawców belek, pustaków i betonu i porównaj je przy tym samym zapasie.</div>
+<details><summary>Jak liczymy</summary>
+<p><b>Monolit:</b> objętość to powierzchnia razy grubość płyty, plus zapas na straty. Stal to kg na m³ betonu. Deskowanie liczymy od powierzchni stropu.</p>
+<p><b>Gęstożebrowy:</b> beton to nadbeton plus żebra belek. Długość belek na powierzchnię to pole podzielone przez rozstaw. Liczba pustaków to pole podzielone przez iloczyn rozstawu i długości pustaka. Stali w żebrach belek nie liczymy, bo podaje ją karta belki.</p>
+<p>Wiążący jest projekt konstrukcyjny. Płytę pod same ściany policzysz w <a href="/beton">kalkulatorze betonu i stali</a>.</p>
+</details>
+</main>
+<footer><div class="wrap"><span><b>Budlicz</b> · kalkulatory budowlane. Wyniki to szacunki, wiążący jest projekt i wycena wykonawcy.</span><span><a href="/">Wszystkie kalkulatory</a></span></div></footer>
+<script>
+const v=id=>parseFloat(document.getElementById(id).value)||0;
+const f=(n,d=1)=>n.toLocaleString("pl-PL",{maximumFractionDigits:d});
+const zl=n=>Math.round(n).toLocaleString("pl-PL")+" zł";
+const T=(x,y,t,c="t",a="start")=>`<text class="${c}" x="${x}" y="${y}" text-anchor="${a}">${t}</text>`;
+const pret=(x,y)=>`<circle class="stal pop" cx="${x}" cy="${y}" r="3"/>`;
+function licz(){
+  const pow=v("pow"), zap=1+v("zapas")/100, cB=v("cB"), cS=v("cS");
+  const objM=pow*v("gr")/100, betM=objM*zap, kgM=objM*v("stalM"), descM=pow*v("desk");
+  const kosztM=betM*cB+kgM*cS+descM;
+  const roz=Math.max(20,v("roz"))/100, bw=v("bw")/100, hb=Math.max(0,v("hs")-v("nad"))/100;
+  const mb=pow/roz, belkiM3=mb*bw*hb, nadM=pow*v("nad")/100;
+  const szt=pow/(Math.max(10,v("dl"))/100*roz), betG=(nadM+belkiM3)*zap, kgG=pow*v("stalG");
+  const kosztG=betG*cB+kgG*cS+mb*v("belka")+szt*v("pustak");
+  const taniej = kosztG<kosztM ? "Gęstożebrowy" : "Monolityczny";
+  document.getElementById("wynik").innerHTML=
+    `Strop monolityczny: <b>ok. ${zl(kosztM)}</b><br>`+
+    `Strop gęstożebrowy: <b>ok. ${zl(kosztG)}</b><br>`+
+    `${taniej} wychodzi taniej o <b>${zl(Math.abs(kosztM-kosztG))}</b> w samych materiałach.`+
+    `<p class="mut">Monolit: beton ${f(betM)} m³, stal ${f(kgM,0)} kg, deskowanie ${zl(descM)}. Gęstożebrowy: beton ${f(betG)} m³, belki ${f(mb,0)} mb, pustaki ${f(szt,0)} szt., stal ${f(kgG,0)} kg. Bez robocizny, podpór, dźwigu i pompy.</p>`;
+}
+function rysuj(){
+  const gr=Math.max(5,v("gr")), hs=Math.max(10,v("hs")), nad=Math.max(3,v("nad"));
+  const S=Math.min(7,170/Math.max(gr,hs)), W=300, H=230, yb=H-20;
+  const h1=gr*S, y1=yb-h1;
+  let m=`<rect class="mur" x="0" y="${y1}" width="20" height="${yb-y1}"/><rect class="mur" x="280" y="${y1}" width="20" height="${yb-y1}"/>`;
+  m+=`<rect class="beton" x="20" y="${y1}" width="260" height="${h1}" rx="2"/>`;
+  const c=Math.max(6,2.5*S);
+  for(let x=40;x<=268;x+=22){m+=pret(x,y1+c)+pret(x,yb-c);}
+  m+=T(20,18,`Płyta monolityczna, ${f(gr,0)} cm`,"t")+T(W/2,H-4,"beton zbrojony, siatka góra i dół","tm","middle");
+  const yT=yb-hs*S, yN=yT+nad*S;
+  let g=`<rect class="mur" x="0" y="${yT}" width="20" height="${yb-yT}"/><rect class="mur" x="280" y="${yT}" width="20" height="${yb-yT}"/>`;
+  g+=`<rect class="eps" x="20" y="${yN}" width="260" height="${yb-yN}"/>`;
+  for(let i=0;i<5;i++){const bx=20+i*60; g+=`<rect class="chudy" x="${bx}" y="${yN}" width="14" height="${yb-yN}"/>`+pret(bx+7,yb-7);}
+  g+=`<rect class="beton" x="20" y="${yT}" width="260" height="${nad*S}" rx="2"/>`;
+  for(let x=40;x<=268;x+=22){g+=pret(x,yT+nad*S/2);}
+  g+=T(20,18,`Strop gęstożebrowy, ${f(hs,0)} cm`,"t")+T(W/2,H-4,"belka · pustak · nadbeton","tm","middle");
+  document.getElementById("sM").innerHTML=m;
+  document.getElementById("sG").innerHTML=g;
+}
+document.querySelectorAll("input").forEach(e=>e.addEventListener("input",()=>{licz();rysuj();}));licz();rysuj();
+</script>
+</body>
+</html>

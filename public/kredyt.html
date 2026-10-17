@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kalkulator raty kredytu na budowę domu</title>
+<meta name="description" content="Policz ratę kredytu na budowę domu, odsetki i koszt całego kredytu. Wykres pokazuje, jak zmienia się udział odsetek w racie rok po roku.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/style.css"><link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 32 32' aria-hidden='true'%3E%3Crect width='32' height='32' rx='9' fill='%23e8590c'/%3E%3Cpath d='M7 16.5 16 9l9 7.5' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.5 15v8h11v-8' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linejoin='round'/%3E%3Cpath d='M14 19.5h4' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E"><meta name="theme-color" content="#e8590c">
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="logo" href="/" aria-label="Budlicz, strona główna"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#e8590c"/><path d="M7 16.5 16 9l9 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 15v8h11v-8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><path d="M14 19.5h4" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg><span>Bud<b>licz</b></span></a><nav><a href="/beton">Beton i stal</a><a href="/sciany">Ściany</a><a href="/dach">Dach</a><a href="/wylewka">Wylewka</a><a href="/lawy-czy-plyta">Ławy czy płyta</a><a href="/strop">Strop</a><a href="/kredyt" aria-current="page">Kredyt</a><a href="/fotowoltaika">Energia</a></nav></div></header>
+<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Kalkulatory</div>
+<h1>Kalkulator raty kredytu na budowę domu</h1>
+<p class="lead">Wpisz kwotę, oprocentowanie i okres. Zobaczysz ratę, koszt kredytu i to, jak zmienia się udział odsetek w racie z roku na rok.</p>
+<section class="calc"><div class="panel"><div class="grid">
+<div><label for="kwota">Kwota kredytu (zł)</label><input id="kwota" type="number" value="400000" step="10000"></div>
+<div><label for="oproc">Oprocentowanie roczne (%, przykładowe)</label><input id="oproc" type="number" value="7" step="0.1"></div>
+<div><label for="lata">Okres spłaty (lat)</label><input id="lata" type="number" value="25" step="1"></div>
+<div><label for="prow">Prowizja banku (%)</label><input id="prow" type="number" value="2" step="0.5"></div>
+</div></div>
+<div class="out" id="wynik" aria-live="polite"></div></section>
+<figure class="panel fig"><figcaption>Raty rok po roku <span>odsetki na dole, kapitał u góry</span></figcaption><svg id="rok" viewBox="0 0 640 260" role="img" aria-label="Wykres: w każdym roku spłaty rata składa się z odsetek i kapitału, a udział odsetek maleje"></svg><p class="note">Przy racie równej, zwanej annuitetową, suma raty w każdym roku jest stała. Zmienia się tylko proporcja odsetek i kapitału.</p></figure>
+<h2>Na czym ludzie się mylą</h2>
+<div class="tip"><b>Kredyt na budowę nie wypłaca się jednym przelewem.</b> Bank wypłaca pieniądze w transzach po etapach budowy, a odsetki płaci się zwykle od kwoty już wypłaconej. Ten kalkulator liczy pełną kwotę od razu, więc to górna granica kosztu.</div>
+<div class="tip"><b>Oprocentowanie to nie koszt.</b> Doliczaj prowizję i ubezpieczenia. Porównuj oferty po RRSO, bo on zawiera wszystkie opłaty.</div>
+<div class="tip"><b>Dłuższy okres obniża ratę, ale zwiększa odsetki.</b> Na wykresie widać, że w pierwszych latach większość raty to odsetki.</div>
+<div class="tip"><b>Stopa jest zwykle zmienna.</b> Oprocentowanie to zwykle WIBOR plus marża banku. Policz wariant z wyższą stopą, zanim podpiszesz umowę.</div>
+<div class="tip"><b>Nadpłaty sprawdź w umowie.</b> Zanim zaplanujesz nadpłatę, zobacz, czy umowa nie przewiduje opłaty za wcześniejszą spłatę.</div>
+<details><summary>Jak liczymy</summary>
+<p>Rata annuitetowa to kwota kredytu razy stopa miesięczna, podzielona przez jeden minus (jeden plus stopa) do potęgi minus liczba rat. Stopa miesięczna to roczna podzielona przez 12. Odsetki w danym miesiącu to saldo razy stopa miesięczna, a kapitał to rata minus odsetki.</p>
+<p>Koszt kredytu to suma odsetek i prowizji. Ubezpieczenia i opłaty za prowadzenie rachunku nie są tu liczone, więc rzeczywisty koszt będzie wyższy.</p>
+<p>Wynik to wyliczenie poglądowe, nie oferta kredytu. Każdy bank liczy po swojemu, a wiążąca jest umowa. Przykładowe oprocentowanie wpisz z aktualnej oferty.</p>
+<p>Porównanie kosztu budowy: policz beton i stal w <a href="/beton">kalkulatorze betonu i stali</a> albo strop w <a href="/strop">porównaniu stropów</a>.</p>
+</details>
+</main>
+<footer><div class="wrap"><span><b>Budlicz</b> · kalkulatory budowlane. Wyniki to szacunki, wiążący jest projekt i wycena wykonawcy.</span><span><a href="/">Wszystkie kalkulatory</a></span></div></footer>
+<script>
+const v=id=>parseFloat(document.getElementById(id).value)||0;
+const f=(n,d=0)=>n.toLocaleString("pl-PL",{maximumFractionDigits:d});
+const zl=n=>Math.round(n).toLocaleString("pl-PL")+" zł";
+const T=(x,y,t,c="t",a="start")=>`<text class="${c}" x="${x}" y="${y}" text-anchor="${a}">${t}</text>`;
+function licz(){
+  const P=v("kwota"), r=v("oproc")/1200, n=Math.max(1,Math.round(v("lata")*12)), prow=P*v("prow")/100;
+  const rata = r>0 ? P*r/(1-Math.pow(1+r,-n)) : P/n;
+  const razem=rata*n, odsetki=razem-P;
+  let bal=P; const rok=[];
+  for(let m=0;m<n;m++){
+    const o=bal*r, k=rata-o; bal-=k;
+    const y=Math.floor(m/12); rok[y]=rok[y]||{o:0,k:0}; rok[y].o+=o; rok[y].k+=k;
+  }
+  document.getElementById("wynik").innerHTML=
+    `Rata miesięczna: <b>${zl(rata)}</b><br>`+
+    `Odsetki w całym okresie: <b>${zl(odsetki)}</b><br>`+
+    `Koszt kredytu z prowizją: <b>${zl(odsetki+prow)}</b><br>`+
+    `Do spłaty z odsetkami: <b>${zl(razem)}</b>`+
+    `<p class="mut">Bez ubezpieczeń i opłat za prowadzenie rachunku. Porównuj oferty po RRSO, bo on je zawiera.</p>`;
+  rysuj(rok);
+}
+function rysuj(rok){
+  const W=640,H=260,pl=44,pb=28,pt=28,top=H-pb,hMax=top-pt;
+  const maxT=Math.max(...rok.map(y=>y.o+y.k)), N=rok.length, step=(W-pl-16)/N, bw=Math.max(3,step*0.72);
+  let g=`<rect class="odsetki" x="${pl}" y="8" width="12" height="12"/>`+T(pl+18,18,"odsetki","tm")+`<rect class="kapital" x="${pl+96}" y="8" width="12" height="12"/>`+T(pl+114,18,"kapitał","tm");
+  rok.forEach((y,i)=>{
+    const x=pl+i*step+(step-bw)/2, ho=y.o/maxT*hMax, hk=y.k/maxT*hMax, d=`animation-delay:${i*25}ms`;
+    g+=`<rect class="odsetki pop" style="${d}" x="${x}" y="${top-ho}" width="${bw}" height="${ho}"/>`;
+    g+=`<rect class="kapital pop" style="${d}" x="${x}" y="${top-ho-hk}" width="${bw}" height="${hk}"/>`;
+  });
+  g+=`<path class="dim" d="M${pl} ${top}H${W-16}"/>`;
+  [1,5,10,15,20,25,30,35,40].filter(t=>t<=N).forEach(t=>{g+=T(pl+(t-0.5)*step,top+18,`rok ${t}`,"tm","middle");});
+  document.getElementById("rok").innerHTML=g;
+}
+document.querySelectorAll("input").forEach(e=>e.addEventListener("input",licz));licz();
+</script>
+</body>
+</html>
