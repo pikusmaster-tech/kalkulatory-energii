@@ -223,3 +223,46 @@ svg .trk{fill:var(--bg);stroke:var(--line);stroke-width:1}
 @media(max-width:560px){.dur,.out .cols2{grid-template-columns:1fr}.row.p{grid-template-columns:1fr 1fr 1fr}}
 @media (prefers-color-scheme:dark){svg .mokro{fill:#5b8db0}svg .kresl,svg .kresr{stroke:#5b8db0}}
 .top nav .grp:nth-last-child(-n+2) .dd{left:auto;right:0}
+/* konfigurator domu */
+.kfg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:20px;margin:28px 0 20px;align-items:start}
+.kfg .model{margin:0;position:sticky;top:84px}
+.kfg .model canvas{height:440px}
+.kfg #ilosci{margin:16px 0 0;line-height:1.5}
+.etapy{display:flex;align-items:center;gap:14px;margin-top:12px}
+.etapy input[type=range]{flex:1;padding:0;border:0;background:none;box-shadow:none;accent-color:var(--brand);height:28px}
+.etapy .btn{white-space:nowrap}
+#wynik{position:static;margin:0 0 8px}
+table.kt{margin-top:12px}
+.kt tr.gh th{background:var(--bg);font:700 .95rem/1.3 "Manrope","Inter",sans-serif;padding-top:14px}
+.kt tbody tr[data-tag]{transition:background .12s}
+.kt tbody tr[data-tag]:hover td{background:var(--brand-soft)}
+.kt td.cmr{text-align:center;font-size:.85rem}
+.kt .qm{display:none}
+.ceny{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:8px 28px}
+.ceny label.inl input{width:96px}
+details h3{font-size:1rem;margin:20px 0 10px}
+.feat{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 28px;align-items:center;background:var(--accent);color:#fff;border-radius:var(--radius);padding:24px 28px;margin:20px 0 4px;text-decoration:none;box-shadow:var(--shadow);transition:transform .15s}
+.feat:hover{transform:translateY(-2px)}
+.feat .tag{grid-column:1;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#ffc9a3}
+.feat b{grid-column:1;font:800 1.45rem/1.25 "Manrope","Inter",sans-serif}
+.feat span:not(.tag):not(.go){grid-column:1;color:rgba(255,255,255,.82);max-width:62ch;line-height:1.55}
+.feat .go{grid-column:2;grid-row:1/4;background:var(--brand);color:#fff;font-weight:700;padding:12px 18px;border-radius:12px;white-space:nowrap}
+@media (prefers-color-scheme:dark){.feat{background:#223644}}
+@media(max-width:960px){.kfg{grid-template-columns:1fr}.kfg .model{position:static;order:-1}.kfg .model canvas{height:340px}}
+@media(max-width:560px){
+  .kt .q{display:none}
+  .kt .qm{display:inline}
+  .kt td,.kt th{padding:9px 6px;font-size:.85rem}
+  .kt td.num{white-space:normal}
+  .kfg .model canvas{height:280px}
+  .etapy{flex-wrap:wrap}.etapy input[type=range]{flex-basis:100%}
+  .ceny{grid-template-columns:1fr}
+  .feat{grid-template-columns:1fr;padding:20px}.feat .go{grid-column:1;grid-row:auto;justify-self:start;margin-top:8px}
+}
+@media print{.kfg,#cenyD,.feat{display:none!important}}
+/* cennik cen */
+table.cennik td{font-size:.9rem;vertical-align:top}
+table.cennik td.src{font-size:.82rem;color:var(--muted);min-width:220px}
+table.cennik td.src a{color:var(--muted);text-decoration:underline;text-underline-offset:2px}
+table.cennik td.src a:hover{color:var(--brand)}
+@media(max-width:560px){table.cennik{font-size:.85rem}table.cennik td,table.cennik th{padding:9px 8px}}
