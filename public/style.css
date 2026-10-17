@@ -140,3 +140,6 @@ svg .halo{paint-order:stroke;stroke:var(--surface);stroke-width:4px;stroke-linej
 .kroki{padding-left:22px}
 .kroki li{margin:12px 0;max-width:72ch}
 .grp{margin:0;padding:0;background:none;border:0;border-radius:0}
+svg .otwor{fill:var(--surface);stroke:var(--muted);stroke-width:1.2}
+svg .lukob{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round}
+svg .sila{fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}

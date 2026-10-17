@@ -14,22 +14,29 @@
 <h1>Nadproża nad oknami i drzwiami</h1>
 <p class="lead">Nadproże przenosi obciążenie ze ściany nad otworem na ściany po bokach. Typ dobiera się do rozpiętości, obciążenia i systemu murowania.</p>
 <figure class="panel fig"><figcaption>Otwór w ścianie <span>schemat</span></figcaption>
-<svg viewBox="0 0 640 300" role="img" aria-label="Ściana z otworem okiennym, nadprożem i oparciem po obu stronach">
+<svg viewBox="0 0 640 300" role="img" aria-label="Schemat: ciężar z góry przechodzi łukiem nad otworem na ściany po bokach, a nadproże opiera się na ścianach po obu stronach otworu">
 <rect class="mur" x="120" y="40" width="400" height="220"/>
-<rect class="eps" x="240" y="122" width="160" height="138"/>
+<path class="lukob draw" pathLength="1" d="M200 96Q320 6 440 96"/>
+<rect class="otwor" x="240" y="122" width="160" height="138"/>
+<text class="tm" x="320" y="196" text-anchor="middle">okno lub drzwi</text>
 <rect class="beton" x="220" y="100" width="200" height="22" rx="2"/>
-<path class="strzem draw" pathLength="1" d="M180 94Q340 20 500 94"/>
-<path class="strzem" d="M150 8V34M146 28L150 34L154 28M290 8V34M286 28L290 34L294 28M430 8V34M426 28L430 34L434 28"/>
-<text class="tm halo" x="446" y="206">ściana</text>
+<path class="sila" d="M190 4V34M184 28L190 36L196 28M320 4V34M314 28L320 36L326 28M450 4V34M444 28L450 36L456 28"/>
+<text class="t" x="470" y="20">ciężar z góry</text>
+<text class="tm halo" x="528" y="70">łuk przenosi</text>
+<text class="tm halo" x="528" y="84">ciężar na ściany</text>
+<text class="tm halo" x="528" y="98">po bokach</text>
+<path class="dim" d="M526 92L446 94"/>
 <text class="tm halo" x="20" y="116">nadproże</text><path class="dim" d="M110 112H218"/>
-<text class="tm halo" x="20" y="150">oparcie po obu stronach</text><path class="dim" d="M200 146L220 130"/>
-<path class="dim" d="M220 94H240M400 94H420"/>
+<path class="dim" d="M220 136H240M220 132V140M240 132V140M400 136H420M400 132V140M420 132V140"/>
+<text class="tm halo" x="216" y="152" text-anchor="end">oparcie</text>
+<text class="tm halo" x="424" y="152">oparcie</text>
+<text class="tm halo" x="446" y="206">ściana</text>
 <path class="dim" d="M240 268H400M240 262V274M400 262V274"/>
 <text class="tm" x="320" y="290" text-anchor="middle">światło otworu</text>
 </svg>
-<p class="note">Schemat poglądowy. Wymiary i typ nadproża wpisuje projekt konstrukcyjny.</p></figure>
+<p class="note">Schemat poglądowy. Strzałki to ciężar z góry, granatna linia to łuk, który przenosi go na ściany po bokach. Szare linie z opisem to wymiary. Wymiary i typ nadproża wpisuje projekt konstrukcyjny.</p></figure>
 <h2>Jak działa nadproże</h2>
-<p>Ściana nad otworem nie wisi cała na nadprożu. Dzięki wiązaniu murów część obciążenia przenosi się łukowo na ściany po bokach. Nadproże dźwiga więc tylko fragment masy, ale jego podparcie musi być solidne.</p>
+<p>Nad otworem ściana nie wisi cała na nadprożu. Dzięki wiązaniu cegieł ciężar muru przechodzi łukowo na słupy po bokach otworu, czyli na granatną linię na schemacie. Nadproże bierze na siebie to, co leży bezpośrednio na nim, na przykład belkę stropu opartą na ścianie nad oknem. Dlatego jego oparcie musi być solidne, a długość oparcia podaje projekt.</p>
 <h2>Typy</h2>
 <ul>
 <li><b>Prefabrykowane belki.</b> Szybki montaż, a nośność i wymiary podaje karta producenta. Montuje się je dokładnie tak, jak opisano.</li>
@@ -40,11 +47,11 @@
 <ul>
 <li>Rozpiętość światła otworu i obciążenie nad nim: strop, dach, inne ściany.</li>
 <li>Długość oparcia po obu stronach. Wartość bierze się z karty producenta albo z projektu, nie z wyczucia.</li>
-<li>Czy nadproże jest w projekcie. Dobór „na oko” to jeden z częstszych błędów na budowie.</li>
+<li>Czy nadproże jest w projekcie. Dobór „na oko” prowadzi do błędu, którego na budowie zwykle nie widać od razu.</li>
 </ul>
 <h2>Na czym ludzie się mylą</h2>
-<div class="tip"><b>Nie skracaj oparcia na budowie.</b> Jeśli brakuje kilku centymetrów, zmień element albo wymiar otworu w porozumieniu z projektantem, a nie ustawienie.</div>
-<div class="tip"><b>Wysokość muru nie decyduje o nośności.</b> Liczy się szerokość otworu i obciążenie nad nim. Wysoki mur nad niskim otworem nie oznacza mocniejszego nadproża.</div>
+<div class="tip"><b>Nie skracaj oparcia na budowie.</b> Jeśli brakuje kilku centymetrów, nie kombinuj na miejscu. Zmianę elementu albo wymiaru otworu uzgodnij z projektantem.</div>
+<div class="tip"><b>Sama wysokość muru to za mało.</b> Liczy się szerokość otworu i obciążenie z góry: strop, dach, belki, które się na tym opierają. Wysoki mur nad otworem nie wystarcza do doboru nadproża.</div>
 <div class="tip"><b>Ocieplenie nad nadprożem.</b> Nadproże bywa mostkiem termicznym. Projekt energetyczny często wymaga dodatkowej izolacji w tym miejscu.</div>
 <p>Powiązane: <a href="/sciany">kalkulator pustaków na ściany</a>, <a href="/strop">strop: monolit czy gęstożebrowy</a>.</p>
 </main>
