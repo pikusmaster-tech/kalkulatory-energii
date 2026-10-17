@@ -9,10 +9,10 @@ _KIND=[('m','Materiały','Cena materiału netto, z dostawą na budowę według �
        ('i','Instalacje (z materiałem i montażem)','Stawka za m² lub sztukę, w której zawarty jest materiał i montaż.'),
        ('z','Zużycie według producentów','Ilości na jednostkę, nie ceny. Konfigurator mnoży je przez wymiary.')]
 def _e(x): return html.escape(str(x),quote=True)
+VAT={'netto':'netto','brutto8':'brutto, VAT 8%','brutto23':'brutto, VAT 23%','?':'VAT nieokreślony, przyjęto netto'}
 def _liczba(x,d=2):
     return f"{x:,.{d}f}".replace(',',' ').replace('.',',') if d else f"{x:,.0f}".replace(',',' ')
 def _zakres(p):
-    if p['n_zr']<2: return f"{_liczba(p['lo'],2)} do {_liczba(p['hi'],2)} (1 źródło, ±10%)"
     return f"{_liczba(p['lo'],2)} do {_liczba(p['hi'],2)}"
 def _zmiana(p):
     z=p.get('zmiana')
@@ -22,8 +22,9 @@ def _wiersze(k):
     rows=[]
     for id_,p in sorted(_P.items(),key=lambda kv:kv[1]['n']):
         if p['k']!=k: continue
-        zr='<br>'.join(f'<a href="{_e(z["url"])}" rel="nofollow noopener">{_e(z["nazwa"])}</a> <span class="mut">({_e(z["data"])})</span>' for z in p['zrodla'])
-        rows.append(f'<tr><td>{_e(p["n"])}</td><td>{_e(p["jm"])}</td><td class="num"><b>{_liczba(p["c"])}</b></td><td class="num">{_zakres(p)}</td><td class="num">{_zmiana(p)}</td><td class="src">{zr}</td></tr>')
+        zr='<br>'.join(f'<a href="{_e(z["url"])}" rel="nofollow noopener">{_e(z["nazwa"])}</a> <span class="mut">({_e(z["data_zrodla"])}, {_e(VAT[z["vat"]])})</span>' for z in p['zrodla'])
+        uw=f'<br><span class="mut">{_e(p["uwaga"])}</span>' if p.get('uwaga') else ''
+        rows.append(f'<tr><td>{_e(p["n"])}{uw}</td><td>{_e(p["jm"])}</td><td class="num"><b>{_liczba(p["c"])}</b></td><td class="num">{_zakres(p)}</td><td class="num">{_zmiana(p)}</td><td class="src">{zr}</td></tr>')
     return rows
 def _tabela():
     out=[]
@@ -41,9 +42,10 @@ _main=f'''<main class="wrap">
 {_tabela()}
 <h2>Jak liczymy cenę</h2>
 <ul>
-<li><b>Mediana, nie średnia.</b> Cena to środkowa wartość ze wszystkich źródeł danej pozycji, więc jedna skrajna oferta jej nie przesuwa.</li>
+<li><b>Mediana, nie średnia.</b> Cena to środek przedziału z każdego źródła, a z nich środkowa wartość. Jedna skrajna oferta jej nie przesuwa.</li>
+<li><b>Netto.</b> Źródła podające cenę brutto przeliczamy na netto: brutto 8% dzielimy przez 1,08, brutto 23% przez 1,23. Źródła bez podanego VAT traktujemy jako netto. Ta część może zawyżać cenę najwyżej o 8%.</li>
 <li><b>Zakres.</b> Od najniższej do najwyższej wartości z źródeł. Konfigurator pokazuje go obok wyniku, żeby było widać rozrzut cen.</li>
-<li><b>Przeliczenia.</b> Jeśli źródło podaje cenę za sztukę, przeliczamy ją na metr kwadratowy przez zużycie z opisu produktu. Przelicznik jest podany w danych źródłowych.</li>
+<li><b>Przeliczenia.</b> Jeśli źródło podaje cenę w innej jednostce, przeliczamy ją na jednostkę konfiguratora (np. cenę za metr obwodu okna na sztukę, przy obwodzie 5,06 m). Przelicznik jest zapisany w danych źródłowych.</li>
 <li><b>Zmiana m/m.</b> Różnica względem poprzedniej aktualizacji. Pokazuje tylko, czy rynek idzie w górę, czy w dół.</li>
 <li><b>Robocizna.</b> To stawki za pracę ekipy, a nie wynagrodzenia pracowników. Źródło każdej stawki jest podane w tabeli.</li>
 </ul>

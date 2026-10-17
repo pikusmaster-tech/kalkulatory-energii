@@ -1,0 +1,1451 @@
+{
+ "miesiac": "2026-10",
+ "sprawdzone": "2026-10-17",
+ "pozycje": {
+  "r_wykop": {
+   "n": "Wykop pod fundamenty koparką (robocizna)",
+   "jm": "zł/m³",
+   "k": "r",
+   "uwaga": "Wykop pod ławy i stopy. Stawki za godzinę koparki pominięte, bo wymagają wydajności. Wywóz urobku osobno.",
+   "zrodla": [
+    {
+     "nazwa": "cenauslug.pl – Prace ziemne i fundamenty: Cennik usług 2026",
+     "url": "https://cenauslug.pl/przewodnik/prace-ziemne-i-fundamenty",
+     "data_zrodla": "2026-09-24",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 36.0,
+     "max": 75.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": "Strona usługi (12.05.2026) podaje średnio 56 zł/m3; obejmuje pracę operatora i paliwo, bez wywozu urobku."
+    },
+    {
+     "nazwa": "ewtrans.pl – Roboty ziemne Warszawa, cennik 2026 (firma)",
+     "url": "https://ewtrans.pl/oferta/roboty-ziemne-warszawa-8211-cennik-2026/",
+     "data_zrodla": "2026 (tytuł cennika, brak daty)",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 15.0,
+     "max": 30.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Urobek zostaje na działce."
+    },
+    {
+     "nazwa": "izolacjapianka.pl – Ława fundamentowa: cennik i koszt 2026",
+     "url": "https://izolacjapianka.pl/baza-wiedzy/lawa-fundamentowa-cennik-i-koszt-2026.html",
+     "data_zrodla": "2026-08-03",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 25.0,
+     "max": 45.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": "Nie zaznaczono wprost, że to sama robocizna."
+    },
+    {
+     "nazwa": "algrom.pl – Ile kosztuje wylanie fundamentów",
+     "url": "https://algrom.pl/ile-kosztuje-wylanie-fundamentow/",
+     "data_zrodla": "2025-06-19",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 15.0,
+     "max": 25.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": ""
+    }
+   ]
+  },
+  "r_lawy": {
+   "n": "Betonowanie ław fundamentowych (robocizna)",
+   "jm": "zł/m³",
+   "k": "r",
+   "uwaga": "Tylko betonowanie, bez szalunku i zbrojenia (te w pozycji r_szal_law). Źródło z 2023 pominięte.",
+   "zrodla": [
+    {
+     "nazwa": "cenauslug.pl – Wylewanie ław fundamentowych",
+     "url": "https://cenauslug.pl/budowa-i-remont/wylewanie-law-fundamentowych",
+     "data_zrodla": "2026-06-04",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 203.0,
+     "max": 290.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": "Sama robocizna wylewania; strona: wycena NIE obejmuje prac ziemnych, szalunków ani zbrojenia."
+    },
+    {
+     "nazwa": "kosztorysujemy.com.pl – Stawki robocizny budowlanej 2026",
+     "url": "https://kosztorysujemy.com.pl/stawki-robocizny-budowlanej-2026-aktualny-cennik-dla-wszystkich-branz/",
+     "data_zrodla": "2026-07-27",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 250.0,
+     "max": 450.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Tylko betonowanie; szalowanie+zbrojenie osobno (wpis niżej)."
+    }
+   ]
+  },
+  "r_szal_law": {
+   "n": "Szalowanie i zbrojenie ław (robocizna)",
+   "jm": "zł/mb",
+   "k": "r",
+   "uwaga": "Zakres szalowania i zbrojenia. Jedno źródło podaje zakres niespójny z własnymi etapami.",
+   "zrodla": [
+    {
+     "nazwa": "kosztorysujemy.com.pl – Stawki robocizny budowlanej 2026",
+     "url": "https://kosztorysujemy.com.pl/stawki-robocizny-budowlanej-2026-aktualny-cennik-dla-wszystkich-branz/",
+     "data_zrodla": "2026-07-27",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 90.0,
+     "max": 160.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "esitolo.pl – Ławy fundamentowe cena robocizny",
+     "url": "https://esitolo.pl/lawy-fundamentowe-cena-robocizny",
+     "data_zrodla": "2026-08-04",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 80.0,
+     "max": 140.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": "Rozbicie na etapy w tym samym artykule sumuje się do 100–165 zł/mb (niespójne)."
+    }
+   ]
+  },
+  "r_sciany_fund": {
+   "n": "Murowanie ścian fundamentowych z bloczków (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "uwaga": "Ściany fundamentowe z bloczków betonowych. Szalowanie i betonowanie ścian pominięte.",
+   "zrodla": [
+    {
+     "nazwa": "kb.pl – Cennik usług budowlanych 2026",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-uslug-budowlanych/",
+     "data_zrodla": "2026-01-07",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 85.0,
+     "max": 140.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "kb.pl – Cennik budowy ścian fundamentowych",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-budowy-scian-fundamentowych/",
+     "data_zrodla": "2026-01-07",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 85.0,
+     "max": 150.0,
+     "vat": "brutto8",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "kosztorysujemy.com.pl – Stawki robocizny budowlanej 2026",
+     "url": "https://kosztorysujemy.com.pl/stawki-robocizny-budowlanej-2026-aktualny-cennik-dla-wszystkich-branz/",
+     "data_zrodla": "2026-07-27",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 55.0,
+     "max": 90.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "domiporta.pl – Budowa ścian fundamentowych (cennik październik 2026)",
+     "url": "https://www.domiporta.pl/cennik-uslug-budowlanych/uslugi-budowlane/fundamenty/budowa-scian-fundamentowych/",
+     "data_zrodla": "2026-10",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 80.9,
+     "max": 110.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": "Strona nie mówi wprost, czy bez materiału; tabela miast zawiera też wartości niższe (np. 59,36)."
+    },
+    {
+     "nazwa": "esitolo.pl – Ściany fundamentowe z bloczków betonowych",
+     "url": "https://esitolo.pl/sciany-fundamentowe-z-bloczkow-betonowych",
+     "data_zrodla": "2026-05-07",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 45.0,
+     "max": 65.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": ""
+    }
+   ]
+  },
+  "r_hydro": {
+   "n": "Izolacja przeciwwilgociowa fundamentów (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "uwaga": "Sama hydroizolacja. Ocieplenie XPS osobno (r_xps). Dwa źródła.",
+   "zrodla": [
+    {
+     "nazwa": "kosztorysujemy.com.pl – Stawki robocizny budowlanej 2026",
+     "url": "https://kosztorysujemy.com.pl/stawki-robocizny-budowlanej-2026-aktualny-cennik-dla-wszystkich-branz/",
+     "data_zrodla": "2026-07-27",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 25.0,
+     "max": 45.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Tylko izolacja przeciwwilgociowa (bez XPS)."
+    },
+    {
+     "nazwa": "kb.pl – Cennik budowy i izolacji fundamentów 2026",
+     "url": "https://kb.pl/aktualnosci/budowa-domu/cennik-budowy-i-izolacji-fundamentow-2026/",
+     "data_zrodla": "2026-02-10",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 89.0,
+     "max": 89.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": "Izolacja przeciwwilgociowa (pojedyncza wartość)."
+    }
+   ]
+  },
+  "r_xps": {
+   "n": "Ocieplenie fundamentów XPS (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "uwaga": "Montaż płyt XPS na fundamentach, bez materiału. Wariant standardowy z poilerobocizna.",
+   "zrodla": [
+    {
+     "nazwa": "domiporta.pl – Ocieplenie fundamentów styrodurem (październik 2026)",
+     "url": "https://www.domiporta.pl/cennik-uslug-budowlanych/uslugi-budowlane/fundamenty/ocieplenie-fundamentow-styrodurem/",
+     "data_zrodla": "2026-10",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 78.0,
+     "max": 95.5,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": "Montaż płyt XPS, 'bez kosztów materiału'. Tylko ocieplenie."
+    },
+    {
+     "nazwa": "kb.pl – Cennik ocieplenia fundamentów styrodurem z robocizną",
+     "url": "https://kb.pl/cenniki/uslugi/ocieplenie-fundamentow-styrodurem/",
+     "data_zrodla": "2026-01-07",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 65.0,
+     "max": 100.0,
+     "vat": "brutto8",
+     "przelicznik": 1,
+     "uwaga": "Tabela 'tylko robocizna'. Tylko ocieplenie."
+    },
+    {
+     "nazwa": "cenauslug.pl – Ocieplenie fundamentów styrodurem XPS",
+     "url": "https://cenauslug.pl/budowa-i-remont/ocieplenie-fundamentow-styrodurem-xps",
+     "data_zrodla": "2026-05-12",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 70.0,
+     "max": 90.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": "Średnia 148 zł/m2 na tej stronie obejmuje też materiały – nie używać."
+    },
+    {
+     "nazwa": "poilerobocizna.pl – Ocieplenie fundamentów cena robocizny 2026",
+     "url": "https://poilerobocizna.pl/ocieplenie-fundamentow-cena-robocizny",
+     "data_zrodla": "2026-02-24",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 40.0,
+     "max": 60.0,
+     "vat": "brutto8",
+     "przelicznik": 1,
+     "uwaga": "min/max = wariant standardowy; pełne widełki 25–90."
+    },
+    {
+     "nazwa": "kb.pl – Cennik usług budowlanych 2026",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-uslug-budowlanych/",
+     "data_zrodla": "2026-01-07",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 80.0,
+     "max": 150.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": ""
+    }
+   ]
+  },
+  "r_podloga": {
+   "n": "Podłoga na gruncie (robocizna, bez materiałów)",
+   "jm": "zł/m²",
+   "k": "r",
+   "uwaga": "Podsypka, chudziak i izolacja jako jedna pozycja. Zagęszczanie samo (cenauslug) pominięte.",
+   "zrodla": [
+    {
+     "nazwa": "kb.pl – Cennik usług budowlanych 2026",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-uslug-budowlanych/",
+     "data_zrodla": "2026-01-07",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 30.0,
+     "max": 55.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "kb.pl – Cennik zleceń budowlanych",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-zlecen-budowlanych-ile-kosztuja-rozne-prace/",
+     "data_zrodla": "2026-01-07",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 25.0,
+     "max": 50.0,
+     "vat": "brutto8",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "bursatm.pl – Podłoga na gruncie cena 2026",
+     "url": "https://bursatm.pl/podloga-na-gruncie-cena",
+     "data_zrodla": "2026-06-10",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 25.0,
+     "max": 35.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "Chudziak: budujmodulowo.pl (Warszawa 45–70 i Kraków 35–55 połączone)",
+     "url": "https://budujmodulowo.pl/chudziak-na-gruncie-co-to-jest-i-kiedy-jest-potrzebny/",
+     "data_zrodla": "2025-03-01",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 35,
+     "max": 70,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": ""
+    }
+   ]
+  },
+  "r_plyta": {
+   "n": "Płyta fundamentowa (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "uwaga": "Szalunek, zbrojenie i betonowanie płyty. Źródło z wykopem pominięte.",
+   "zrodla": [
+    {
+     "nazwa": "domprojekt.pro – Płyta fundamentowa cena 2026",
+     "url": "https://domprojekt.pro/wiedza/plyta-fundamentowa-cena/",
+     "data_zrodla": "2026-09-15",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 110.0,
+     "max": 150.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "grunttofundament.pl – Ile kosztują fundamenty pod dom w 2026?",
+     "url": "https://grunttofundament.pl/poradnik/ile-kosztuja-fundamenty-pod-dom-2026/",
+     "data_zrodla": "2026-01-02",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 130.0,
+     "max": 180.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "esitolo.pl – Fundamenty koszt robocizny 2026",
+     "url": "https://esitolo.pl/fundamenty-koszt-robocizny",
+     "data_zrodla": "2026-08-16",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 120.0,
+     "max": 180.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": "Bez izolacji krawędzi i dylatacji."
+    }
+   ]
+  },
+  "r_mur": {
+   "n": "Murowanie ścian nośnych zewnętrznych (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "uwaga": "Pustaki i bloczki (ceramika, beton komórkowy, silikat). Tylko robocizna.",
+   "zrodla": [
+    {
+     "nazwa": "domiporta.pl – Budowa ścian nośnych (październik 2026)",
+     "url": "https://www.domiporta.pl/cennik-uslug-budowlanych/uslugi-budowlane/sciany/budowa-scian-nosnych/",
+     "data_zrodla": "2026-10",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 87.0,
+     "max": 107.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": "Pustaki ceramiczne do 44 cm, bez materiałów."
+    },
+    {
+     "nazwa": "cenauslug.pl – Murowanie ścian konstrukcyjnych",
+     "url": "https://cenauslug.pl/budowa-i-remont/murowanie-scian-konstrukcyjnych",
+     "data_zrodla": "2026-05-12",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 78.0,
+     "max": 115.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "kb.pl – Cennik usług budowlanych 2026",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-uslug-budowlanych/",
+     "data_zrodla": "2026-01-07",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 90.0,
+     "max": 160.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "kb.pl – Stawki ekip budowlanych 2026 (aktualności)",
+     "url": "https://kb.pl/aktualnosci/budowa-domu/koszty-robocizny-budowlanej-w-2026-roku/",
+     "data_zrodla": "2026-05-04",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 120.0,
+     "max": 200.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "extradom.pl – Aktualny cennik usług budowlanych 2026",
+     "url": "https://www.extradom.pl/porady/artykul-cennik-uslug-budowlanych",
+     "data_zrodla": "2026-01-19",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 80.0,
+     "max": 110.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": "Ten sam artykuł: beton komórkowy 70–100, silikaty 90–120 zł/m²."
+    },
+    {
+     "nazwa": "oferteo.pl – Murowanie ścian",
+     "url": "https://www.oferteo.pl/murowanie-scian?pid=63103",
+     "data_zrodla": "2026 (ranking 2026, brak daty FAQ)",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 60.0,
+     "max": 100.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "kosztorysujemy.com.pl – Stawki robocizny budowlanej 2026",
+     "url": "https://kosztorysujemy.com.pl/stawki-robocizny-budowlanej-2026-aktualny-cennik-dla-wszystkich-branz/",
+     "data_zrodla": "2026-07-27",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 45.0,
+     "max": 75.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "solidnyfundament.pl – Ile kosztuje murowanie ścian zewnętrznych za m² w 2026",
+     "url": "https://solidnyfundament.pl/ile-kosztuje-murowanie-scian-zewnetrznych-za-m%C2%B2-w-2025/",
+     "data_zrodla": "2026-09",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 65.0,
+     "max": 105.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Artykuł wewnętrznie niespójny (inne sekcje: 90–270, 130–220)."
+    },
+    {
+     "nazwa": "kb.pl – Cennik prac murarskich 2026 po województwach",
+     "url": "https://kb.pl/budownictwo/ceny-uslug-budowlanych/cennik-prac-murarskich-po-wojewodztwach/",
+     "data_zrodla": "2026-01-07",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 77.7,
+     "max": 108.0,
+     "vat": "brutto8",
+     "przelicznik": 1,
+     "uwaga": "Ta sama tabela: pustak ceramiczny P+W 25 cm 146–193 zł/m2 brutto."
+    }
+   ]
+  },
+  "r_mur_wew": {
+   "n": "Murowanie ścian wewnętrznych (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "uwaga": "Ścianki działowe 11,5–12 cm. Nośne ściany wewnętrzne liczone stawką r_mur.",
+   "zrodla": [
+    {
+     "nazwa": "domiporta.pl – Budowa ściany działowej (październik 2026)",
+     "url": "https://www.domiporta.pl/cennik-uslug-budowlanych/uslugi-budowlane/sciany/budowa-sciany-dzialowej/",
+     "data_zrodla": "2026-10",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 57.3,
+     "max": 75.9,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": "Pustaki ceramiczne lub beton, bez materiałów."
+    },
+    {
+     "nazwa": "cenauslug.pl – Budowa domów, stany surowe 2026",
+     "url": "https://cenauslug.pl/przewodnik/budowa-domow-stany-surowe",
+     "data_zrodla": "2026-09-24",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 70.0,
+     "max": 105.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "kb.pl – Cennik usług budowlanych 2026",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-uslug-budowlanych/",
+     "data_zrodla": "2026-01-07",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 60.0,
+     "max": 100.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "oferteo.pl – Murowanie ścian",
+     "url": "https://www.oferteo.pl/murowanie-scian?pid=63103",
+     "data_zrodla": "2026 (ranking 2026, brak daty FAQ)",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 70.0,
+     "max": 110.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "extradom.pl – Aktualny cennik usług budowlanych 2026",
+     "url": "https://www.extradom.pl/porady/artykul-cennik-uslug-budowlanych",
+     "data_zrodla": "2026-01-19",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 50.0,
+     "max": 70.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": "Beton komórkowy 40–60, silikaty 55–75 zł/m²."
+    },
+    {
+     "nazwa": "kosztorysujemy.com.pl – Stawki robocizny budowlanej 2026",
+     "url": "https://kosztorysujemy.com.pl/stawki-robocizny-budowlanej-2026-aktualny-cennik-dla-wszystkich-branz/",
+     "data_zrodla": "2026-07-27",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 40.0,
+     "max": 65.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "kb.pl – Cennik prac murarskich 2026 po województwach",
+     "url": "https://kb.pl/budownictwo/ceny-uslug-budowlanych/cennik-prac-murarskich-po-wojewodztwach/",
+     "data_zrodla": "2026-01-07",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 48.4,
+     "max": 65.2,
+     "vat": "brutto8",
+     "przelicznik": 1,
+     "uwaga": "Pustak ceramiczny P+W 11,5 cm: 59,50–81,50 zł/m2 brutto."
+    }
+   ]
+  },
+  "r_wieniec": {
+   "n": "Wieniec żelbetowy (robocizna)",
+   "jm": "zł/mb",
+   "k": "r",
+   "uwaga": "Wieniec około 25×25 cm. Tylko 2 źródła.",
+   "zrodla": [
+    {
+     "nazwa": "cenauslug.pl – Wykonanie wieńca żelbetowego",
+     "url": "https://cenauslug.pl/budowa-i-remont/wykonanie-wienca-zelbetowego",
+     "data_zrodla": "2026-05-12",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 102.0,
+     "max": 145.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": "Wieniec ok. 25x25 cm; 'Kwoty nie zawierają kosztów materiałów'. To samo w przewodniku cenauslug z 24.09.2026: 'Wykonanie wieńca żelbetowego 102 - 145 zł / mb'."
+    },
+    {
+     "nazwa": "kosztorysujemy.com.pl – Stawki robocizny budowlanej 2026",
+     "url": "https://kosztorysujemy.com.pl/stawki-robocizny-budowlanej-2026-aktualny-cennik-dla-wszystkich-branz/",
+     "data_zrodla": "2026-07-27",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 80.0,
+     "max": 140.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": ""
+    }
+   ]
+  },
+  "r_nadproze": {
+   "n": "Montaż nadproża prefabrykowanego (robocizna)",
+   "jm": "zł/szt",
+   "k": "r",
+   "uwaga": "Za jeden element. Dwa źródła, zakres wysoki. Wynik orientacyjny. Zleca.pl i solidnyfundament pominięte (remont albo nieokreślony zakres).",
+   "zrodla": [
+    {
+     "nazwa": "cenauslug.pl – Montaż nadproży prefabrykowanych",
+     "url": "https://cenauslug.pl/budowa-i-remont/montaz-nadprozy-prefabrykowanych",
+     "data_zrodla": "2026-05-28",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 90.0,
+     "max": 145.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": "Robocizna za osadzenie jednego elementu; przewodnik 24.09.2026: 'Montaż nadproży prefabrykowanych 90 - 145 zł / szt'."
+    },
+    {
+     "nazwa": "kb.pl – Stawki ekip budowlanych 2026 (aktualności)",
+     "url": "https://kb.pl/aktualnosci/budowa-domu/koszty-robocizny-budowlanej-w-2026-roku/",
+     "data_zrodla": "2026-05-04",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 150.0,
+     "max": 400.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": ""
+    }
+   ]
+  },
+  "r_strop": {
+   "n": "Strop gęstożebrowy Teriva (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "uwaga": "Montaż stropu Teriva. Źródło blogowe pominięte.",
+   "zrodla": [
+    {
+     "nazwa": "kb.pl – Cennik usług budowlanych 2026",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-uslug-budowlanych/",
+     "data_zrodla": "2026-01-07",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 85.0,
+     "max": 130.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "kb.pl – Cennik stropów Teriva",
+     "url": "https://kb.pl/cenniki/uslugi/strop-teriva/",
+     "data_zrodla": "2026-01-07",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 90.0,
+     "max": 160.0,
+     "vat": "brutto8",
+     "przelicznik": 1,
+     "uwaga": "Wyższy stopień skomplikowania: 130–200 zł/m2."
+    },
+    {
+     "nazwa": "extradom.pl – Aktualny cennik usług budowlanych 2026",
+     "url": "https://www.extradom.pl/porady/artykul-cennik-uslug-budowlanych",
+     "data_zrodla": "2026-01-19",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 70.0,
+     "max": 120.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "kosztorysujemy.com.pl – Stawki robocizny budowlanej 2026",
+     "url": "https://kosztorysujemy.com.pl/stawki-robocizny-budowlanej-2026-aktualny-cennik-dla-wszystkich-branz/",
+     "data_zrodla": "2026-07-27",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 45.0,
+     "max": 75.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": ""
+    }
+   ]
+  },
+  "r_wiezba": {
+   "n": "Więźba dachowa (robocizna ciesielska)",
+   "jm": "zł/m²",
+   "k": "r",
+   "uwaga": "Na m² połaci. Źródło podające cenę za m² rzutu przeliczone cosinusem kąta dachu (38°).",
+   "zrodla": [
+    {
+     "nazwa": "domiporta.pl – Wykonanie więźby dachowej (październik 2026)",
+     "url": "https://www.domiporta.pl/cennik-uslug-budowlanych/uslugi-budowlane/dachy/wykonanie-wiezby-dachowej/",
+     "data_zrodla": "2026-10",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 62.0,
+     "max": 86.2,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": "Dach dwuspadowy, bez kosztu komponentów."
+    },
+    {
+     "nazwa": "kb.pl – Cennik usług budowlanych 2026",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-uslug-budowlanych/",
+     "data_zrodla": "2026-01-07",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 60.0,
+     "max": 110.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "cenauslug.pl – Ile kosztuje więźba dachowa w 2026?",
+     "url": "https://cenauslug.pl/poradniki/ile-kosztuje-wiezba-dachowa-cennik-drewna-robocizny-i-kompletny-przewodnik-po-konstrukcji-dachu",
+     "data_zrodla": "2026-09-25",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 45.0,
+     "max": 108.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "extradom.pl – Aktualny cennik usług budowlanych 2026",
+     "url": "https://www.extradom.pl/porady/artykul-cennik-uslug-budowlanych",
+     "data_zrodla": "2026-01-19",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 65.0,
+     "max": 90.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "kosztorysujemy.com.pl – Stawki robocizny budowlanej 2026",
+     "url": "https://kosztorysujemy.com.pl/stawki-robocizny-budowlanej-2026-aktualny-cennik-dla-wszystkich-branz/",
+     "data_zrodla": "2026-07-27",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 45.0,
+     "max": 80.0,
+     "vat": "netto",
+     "przelicznik": 0.7880107536067219,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "dealuj.pl – Wielki Cennik Usług Budowlanych 2026",
+     "url": "https://dealuj.pl/poradniki/cennik-uslug-budowlanych-2026-robocizna/",
+     "data_zrodla": "2026-02-05",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 60.0,
+     "max": 90.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": ""
+    }
+   ]
+  },
+  "r_pokrycie_b": {
+   "n": "Pokrycie blachodachówką (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "uwaga": "Robocizna krycia. Materiał osobno.",
+   "zrodla": [
+    {
+     "nazwa": "domiporta.pl – Wykonanie pokrycia z blachodachówki (październik 2026)",
+     "url": "https://www.domiporta.pl/cennik-uslug-budowlanych/uslugi-budowlane/dachy/wykonanie-pokrycia-z-blachodachowki/",
+     "data_zrodla": "2026-10",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 82.5,
+     "max": 111.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": "Dach dwuspadowy, bez materiałów."
+    },
+    {
+     "nazwa": "kb.pl – Cennik usług budowlanych 2026",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-uslug-budowlanych/",
+     "data_zrodla": "2026-01-07",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 85.0,
+     "max": 160.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "kb.pl – Cennik dachów i pokryć dachowych 2026",
+     "url": "https://kb.pl/aktualnosci/budowa-domu/cennik-dachow-i-pokryc-dachowych-2026/",
+     "data_zrodla": "2026-03-06",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 90.0,
+     "max": 90.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "extradom.pl – Aktualny cennik usług budowlanych 2026",
+     "url": "https://www.extradom.pl/porady/artykul-cennik-uslug-budowlanych",
+     "data_zrodla": "2026-01-19",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 70.0,
+     "max": 120.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "kosztorysujemy.com.pl – Stawki robocizny budowlanej 2026",
+     "url": "https://kosztorysujemy.com.pl/stawki-robocizny-budowlanej-2026-aktualny-cennik-dla-wszystkich-branz/",
+     "data_zrodla": "2026-07-27",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 30.0,
+     "max": 55.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": ""
+    }
+   ]
+  },
+  "r_pokrycie_d": {
+   "n": "Pokrycie dachówką ceramiczną (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "uwaga": "Robocizna krycia karpiówką. Materiał osobno.",
+   "zrodla": [
+    {
+     "nazwa": "domiporta.pl – Pokrycie z dachówki karpiówki ceramicznej (październik 2026)",
+     "url": "https://www.domiporta.pl/cennik-uslug-budowlanych/uslugi-budowlane/dachy/wykonanie-pokrycia-z-dachowki-karpiowki-ceramicznej/",
+     "data_zrodla": "2026-10",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 104.0,
+     "max": 132.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": "Karpiówka (nie zakładkowa), dach dwuspadowy, bez materiału."
+    },
+    {
+     "nazwa": "cenauslug.pl – Układanie dachówki ceramicznej",
+     "url": "https://cenauslug.pl/budowa-i-remont/ukladanie-dachowki-ceramicznej",
+     "data_zrodla": "2026-05-12",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 93.0,
+     "max": 135.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "kb.pl – Cennik usług budowlanych 2026",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-uslug-budowlanych/",
+     "data_zrodla": "2026-01-07",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 90.0,
+     "max": 170.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "kb.pl – Cennik dachów i pokryć dachowych 2026",
+     "url": "https://kb.pl/aktualnosci/budowa-domu/cennik-dachow-i-pokryc-dachowych-2026/",
+     "data_zrodla": "2026-03-06",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 98.0,
+     "max": 98.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "extradom.pl – Aktualny cennik usług budowlanych 2026",
+     "url": "https://www.extradom.pl/porady/artykul-cennik-uslug-budowlanych",
+     "data_zrodla": "2026-01-19",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 105.0,
+     "max": 130.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "kosztorysujemy.com.pl – Stawki robocizny budowlanej 2026",
+     "url": "https://kosztorysujemy.com.pl/stawki-robocizny-budowlanej-2026-aktualny-cennik-dla-wszystkich-branz/",
+     "data_zrodla": "2026-07-27",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 40.0,
+     "max": 70.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": ""
+    }
+   ]
+  },
+  "r_rynny": {
+   "n": "Montaż rynien i rur spustowych (robocizna)",
+   "jm": "zł/mb",
+   "k": "r",
+   "uwaga": "Robocizna montażu. Materiał osobno.",
+   "zrodla": [
+    {
+     "nazwa": "cenauslug.pl – Montaż rynien PCV",
+     "url": "https://cenauslug.pl/budowa-i-remont/montaz-rynien-pcv",
+     "data_zrodla": "2026-06-25",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 38.0,
+     "max": 54.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": "'Cena dotyczy samej robocizny'."
+    },
+    {
+     "nazwa": "kb.pl – Cennik montażu rynien lub ich wymiany",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-montazu-rynien-lub-ich-wymiany-robocizna-material/",
+     "data_zrodla": "2026-01-07",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 45.0,
+     "max": 65.0,
+     "vat": "brutto8",
+     "przelicznik": 1,
+     "uwaga": "Ta sama tabela: Montaż rynien stalowych 48,00–75,00 zł/mb."
+    },
+    {
+     "nazwa": "kb.pl – Stawki ekip budowlanych 2026 (aktualności)",
+     "url": "https://kb.pl/aktualnosci/budowa-domu/koszty-robocizny-budowlanej-w-2026-roku/",
+     "data_zrodla": "2026-05-04",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 60.0,
+     "max": 60.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "kosztorysujemy.com.pl – Stawki robocizny budowlanej 2026",
+     "url": "https://kosztorysujemy.com.pl/stawki-robocizny-budowlanej-2026-aktualny-cennik-dla-wszystkich-branz/",
+     "data_zrodla": "2026-07-27",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 35.0,
+     "max": 60.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": ""
+    }
+   ]
+  },
+  "r_okna": {
+   "n": "Montaż okna, ciepły montaż (robocizna)",
+   "jm": "zł/szt",
+   "k": "r",
+   "uwaga": "Ceny za metr obwodu okna przeliczone na sztukę: obwód 5,06 m (okno 1,6 m²). Tylko wariant ciepłego montażu. Ceny za m² pominięte.",
+   "zrodla": [
+    {
+     "nazwa": "extradom.pl – Aktualny cennik usług budowlanych 2026",
+     "url": "https://www.extradom.pl/porady/artykul-cennik-uslug-budowlanych",
+     "data_zrodla": "2026-01-19",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 70.0,
+     "max": 100.0,
+     "vat": "?",
+     "przelicznik": 5.0600000000000005,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "oferteo.pl – Ile kosztują okna w 2026?",
+     "url": "https://www.oferteo.pl/artykuly/ile-kosztuja-okna",
+     "data_zrodla": "2026-03",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 40.0,
+     "max": 55.0,
+     "vat": "?",
+     "przelicznik": 5.0600000000000005,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "cenauslug.pl – Montaż okien i parapetów 2026",
+     "url": "https://cenauslug.pl/przewodnik/montaz-okien-i-parapetow",
+     "data_zrodla": "2026-09-24",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 99.0,
+     "max": 145.0,
+     "vat": "?",
+     "przelicznik": 5.0600000000000005,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "muratordom.pl – Ile kosztuje montaż okien w marcu 2026?",
+     "url": "https://muratordom.pl/budowa/okna/ile-kosztuje-montaz-okien-w-marcu-2026-przewodnik-po-cenach-w-warszawie-krakowie-i-mniejszych-miejscowosciach-aa-RWFM-wiBb-Abpq.html",
+     "data_zrodla": "2026-03-12",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 44.0,
+     "max": 51.0,
+     "vat": "?",
+     "przelicznik": 5.0600000000000005,
+     "uwaga": ""
+    }
+   ]
+  },
+  "r_drzwi": {
+   "n": "Montaż drzwi zewnętrznych (robocizna)",
+   "jm": "zł/szt",
+   "k": "r",
+   "uwaga": "Drzwi zewnętrzne. Montaż w starej ościeżnicy (wymiana) pominięty.",
+   "zrodla": [
+    {
+     "nazwa": "komfort.pl – Ile kosztuje montaż drzwi? Cennik 2026",
+     "url": "https://komfort.pl/porady/ile-kosztuje-montaz-drzwi-cennik-dla-wszystkich-wojewodztw",
+     "data_zrodla": "2026-01-13",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 665.0,
+     "max": 740.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": "Drzwi zewnętrzne jednoskrzydłowe z ościeżnicą; dwuskrzydłowe od ok. 910 do 1020–1040 zł."
+    },
+    {
+     "nazwa": "extradom.pl – Aktualny cennik usług budowlanych 2026",
+     "url": "https://www.extradom.pl/porady/artykul-cennik-uslug-budowlanych",
+     "data_zrodla": "2026-01-19",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 250.0,
+     "max": 450.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": ""
+    },
+    {
+     "nazwa": "cenauslug.pl – Montaż drzwi wewnętrznych i zewnętrznych 2026",
+     "url": "https://cenauslug.pl/przewodnik/montaz-drzwi-wewnetrznych-i-zewnetrznych",
+     "data_zrodla": "2026-09-24",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 1246.0,
+     "max": 1750.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": "Jednostka 'usługa' (=1 szt.)."
+    },
+    {
+     "nazwa": "zbudujsamdom.pl – Ile kosztują drzwi do domu w 2026",
+     "url": "https://www.zbudujsamdom.pl/ile-kosztuja-drzwi-do-domu-w-2026-roku-wejsciowe-i-wewnetrzne-realne-ceny-i-bledy/",
+     "data_zrodla": "2026-04-18",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 500.0,
+     "max": 1500.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": "Nie podano wprost, że sama robocizna."
+    }
+   ]
+  },
+  "r_elewacja": {
+   "n": "Ocieplenie ścian BSO z tynkiem cienkowarstwowym (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "uwaga": "Robocizna całego systemu ocieplenia z tynkiem. Materiał osobno (m_eps_graf, m_etics).",
+   "zrodla": [
+    {
+     "nazwa": "kb.pl – Ocieplenie domu w 2026 roku to szok dla portfela",
+     "url": "https://kb.pl/aktualnosci/budowa-domu/koszty-ocieplenia-domu-i-elewacji-2026/",
+     "data_zrodla": "2026-01-31",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 115.0,
+     "max": 120.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": " [zakres: robocizna]"
+    },
+    {
+     "nazwa": "kb.pl – Cennik elewacji domów i prac elewacyjnych 2026",
+     "url": "https://kb.pl/elewacje-i-ocieplenie/elewacje/cennik-elewacji-i-prac-elewacyjnych/",
+     "data_zrodla": "2026-01-07",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 111.0,
+     "max": 151.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": " [zakres: robocizna]"
+    },
+    {
+     "nazwa": "kb.pl – Cennik usług budowlanych 2026",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-uslug-budowlanych/",
+     "data_zrodla": "2026-01-07",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 100.0,
+     "max": 150.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": " [zakres: robocizna]"
+    },
+    {
+     "nazwa": "kb.pl – Ile dziś kosztuje elewacja domu? (cytuje firmę Allwall)",
+     "url": "https://www.kb.pl/aktualnosci/budowa-domu/ile-kosztuje-metr-elewacji-w-2026-roku/",
+     "data_zrodla": "2026-03-20",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 100.0,
+     "max": 150.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": " [zakres: robocizna]"
+    }
+   ]
+  },
+  "r_poddasze": {
+   "n": "Ocieplenie poddasza wełną z zabudową GK (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "uwaga": "Zakres częściowo bez zabudowy GK, zależnie od źródła. Tylko 2 źródła.",
+   "zrodla": [
+    {
+     "nazwa": "kb.pl – Cennik ocieplenia poddasza użytkowego 2026 w ponad 300 miastach",
+     "url": "https://kb.pl/cenniki/ocieplenie-poddasza-uzytkowego/",
+     "data_zrodla": "2026-09-06",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 124.0,
+     "max": 153.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": " [zakres: robocizna]"
+    },
+    {
+     "nazwa": "cenauslug.pl – Zabudowa poddasza płytami g-k na stelażu",
+     "url": "https://cenauslug.pl/budowa-i-remont/zabudowa-poddasza-plytami-g-k-na-stelazu",
+     "data_zrodla": "2026-05-12",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 125.0,
+     "max": 250.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": " [zakres: robocizna]"
+    }
+   ]
+  },
+  "r_strop_oc": {
+   "n": "Ocieplenie stropu wełną (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "uwaga": "Strop żelbetowy lub Teriva. Strop drewniany pominięty.",
+   "zrodla": [
+    {
+     "nazwa": "kb.pl – Cennik ocieplenia poddaszy w 2026 roku",
+     "url": "https://kb.pl/aktualnosci/budowa-domu/cennik-ocieplenia-poddaszy-w-2026/",
+     "data_zrodla": "2026-02-18",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 43.0,
+     "max": 43.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": " [zakres: robocizna]"
+    },
+    {
+     "nazwa": "kb.pl – Cennik ocieplenia poddasza",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-ocieplenia-poddasza/",
+     "data_zrodla": "2026-01-07 (aktualizacja cen)",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 40.0,
+     "max": 70.0,
+     "vat": "brutto8",
+     "przelicznik": 1,
+     "uwaga": " [zakres: robocizna]"
+    },
+    {
+     "nazwa": "cenauslug.pl – Ocieplenie stropu wełną mineralną",
+     "url": "https://cenauslug.pl/budowa-i-remont/ocieplenie-stropu-welna-mineralna",
+     "data_zrodla": "2026-07-15",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 70.0,
+     "max": 105.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": " [zakres: robocizna]"
+    }
+   ]
+  },
+  "r_tynk": {
+   "n": "Tynk gipsowy maszynowy (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "uwaga": "Tylko robocizna nałożenia tynku. Tynk z materiałem pominięty.",
+   "zrodla": [
+    {
+     "nazwa": "kb.pl – Cennik tynków gipsowych 2026 w ponad 300 miastach",
+     "url": "https://kb.pl/cenniki/tynki-gipsowe/",
+     "data_zrodla": "2026-09-06",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 47.5,
+     "max": 64.9,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": " [zakres: robocizna]"
+    },
+    {
+     "nazwa": "kb.pl – Cennik usług tynkarskich: znamy aktualne ceny 2026",
+     "url": "https://kb.pl/aktualnosci/wnetrza/cennik-uslug-tynkarskich-2026/",
+     "data_zrodla": "2026-02-21",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 43.0,
+     "max": 45.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": " [zakres: robocizna]"
+    },
+    {
+     "nazwa": "cenauslug.pl – Tynkowanie maszynowe gipsowe",
+     "url": "https://cenauslug.pl/budowa-i-remont/tynkowanie-maszynowe-gipsowe",
+     "data_zrodla": "2026-05-12",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 31.0,
+     "max": 45.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": " [zakres: robocizna]"
+    },
+    {
+     "nazwa": "kb.pl – Ceny tynków gipsowych za m2 – szczegółowy cennik",
+     "url": "https://kb.pl/cenniki/uslugi/ceny-tynkow-gipsowych-za-m2/",
+     "data_zrodla": "2026-01-07",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 40.0,
+     "max": 55.0,
+     "vat": "brutto8",
+     "przelicznik": 1,
+     "uwaga": " [zakres: robocizna]"
+    },
+    {
+     "nazwa": "kb.pl – Cennik usług budowlanych 2026",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-uslug-budowlanych/",
+     "data_zrodla": "2026-01-07",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 38.0,
+     "max": 50.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": " [zakres: robocizna]"
+    }
+   ]
+  },
+  "r_wylewka": {
+   "n": "Wylewka cementowa lub miksokret (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "uwaga": "Robocizna wylania. Anhydryt tylko w robocizny (dwa źródła). Wylewki z materiałem pominięte.",
+   "zrodla": [
+    {
+     "nazwa": "muratordom.pl – Tynki wewnętrzne i wylewki cementowe 2026",
+     "url": "https://muratordom.pl/wnetrza/prace-wykonczeniowe/tynki-wewnetrzne-i-wylewki-cementowe-2026-aktualny-cennik-z-robocizna-i-materialem-aa-vXme-fR3P-VUmt.html",
+     "data_zrodla": "2026-05-19",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 15.0,
+     "max": 40.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": " [zakres: robocizna (cementowa maszynowa)]"
+    },
+    {
+     "nazwa": "kb.pl – Ceny wylania posadzek z miksokreta za m2",
+     "url": "https://kb.pl/cenniki/uslugi/ceny-wylania-posadzek-z-miksokreta/",
+     "data_zrodla": "2026-01-07 (aktualizacja cen)",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 33.0,
+     "max": 48.0,
+     "vat": "brutto8",
+     "przelicznik": 1,
+     "uwaga": " [zakres: robocizna (miksokret)]"
+    },
+    {
+     "nazwa": "alleremont.pl – Wylewki i posadzki 2026 – cennik",
+     "url": "https://alleremont.pl/poradniki/wylewki-posadzki-cennik-2026.html",
+     "data_zrodla": "2026-06",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 20.0,
+     "max": 40.0,
+     "vat": "brutto8",
+     "przelicznik": 1,
+     "uwaga": " [zakres: robocizna (miksokret)]"
+    },
+    {
+     "nazwa": "e-remonty-warszawa.pl – Ile zapłacisz za wylewkę anhydrytową w 2026?",
+     "url": "https://e-remonty-warszawa.pl/koszt-wylewki-anhydrytowej",
+     "data_zrodla": "2026-04-26",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 20.0,
+     "max": 30.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": " [zakres: robocizna (anhydrytowa)]"
+    }
+   ]
+  },
+  "i_elektryka": {
+   "n": "Instalacja elektryczna w całym domu (z materiałem i montażem)",
+   "jm": "zł/m²",
+   "k": "i",
+   "uwaga": "Cena całego domu przeliczona na m² podłogi (150 m² i 100 m²). Źródła z ceną za punkt pominięte (dają inne wyniki). Oba źródła z jednego wydawcy.",
+   "zrodla": [
+    {
+     "nazwa": "muratordom.pl – Dom 150 m² i nowa instalacja elektryczna",
+     "url": "https://muratordom.pl/instalacje/instalacja-elektryczna/dom-150-m2-i-nowa-instalacja-elektryczna-sprawdzilismy-ceny-w-polsce-jaki-jest-koszt-robocizny-i-materialow-aa-tPYE-cN27-s6dM.html",
+     "data_zrodla": "2026-10-17",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 25000.0,
+     "max": 45000.0,
+     "vat": "?",
+     "przelicznik": 0.006666666666666667,
+     "uwaga": " [zakres: z materiałem]"
+    },
+    {
+     "nazwa": "muratordom.pl – Ile kosztuje instalacja elektryczna we wrześniu 2026 roku?",
+     "url": "https://muratordom.pl/cenniki-budowlane/ile-kosztuje-instalacja-elektryczna-we-wrzesniu-2026-roku-aktualny-cennik-robocizny-aa-UXtk-Yo6M-r7k1.html",
+     "data_zrodla": "2026-09-11",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 20000.0,
+     "max": 40000.0,
+     "vat": "?",
+     "przelicznik": 0.01,
+     "uwaga": " [zakres: z materiałem]"
+    }
+   ]
+  },
+  "i_wodkan": {
+   "n": "Instalacja wodno-kanalizacyjna w całym domu (z materiałem i montażem)",
+   "jm": "zł/m²",
+   "k": "i",
+   "uwaga": "Jedno źródło: cena domu 120–160 m² przeliczona na m² przy 140 m². Ceny za punkt pominięte. Wycena orientacyjna.",
+   "zrodla": [
+    {
+     "nazwa": "muratordom.pl – Koszt instalacji wodnej w domu 2026",
+     "url": "https://muratordom.pl/cenniki-budowlane/koszt-instalacji-wodnej-w-domu-2026-ile-zaplacisz-za-wod-kan-z-materialem-aa-dHVZ-24JQ-XFoR.html",
+     "data_zrodla": "2026-04-30",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 15000.0,
+     "max": 25000.0,
+     "vat": "?",
+     "przelicznik": 0.007142857142857143,
+     "uwaga": " [zakres: z materiałem]"
+    }
+   ]
+  },
+  "i_co": {
+   "n": "Ogrzewanie podłogowe wodne (z materiałem i montażem)",
+   "jm": "zł/m²",
+   "k": "i",
+   "uwaga": "Pozycje z materiałem i montażem. Samą robociznę pominięto. Ceny za posadzkę pominięto.",
+   "zrodla": [
+    {
+     "nazwa": "muratordom.pl – Ogrzewanie podłogowe wodne – koszt 2026",
+     "url": "https://muratordom.pl/instalacje/ogrzewanie-podlogowe/ogrzewanie-podlogowe-wodne-koszt-2026-cena-za-m2-robocizny-z-materialem-bez-materialu-aa-zFkV-FECU-T5mj.html",
+     "data_zrodla": "2026-06-25",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 120.0,
+     "max": 250.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": " [zakres: z materiałem (wg kontekstu; nie oznaczone wprost)]"
+    },
+    {
+     "nazwa": "kb.pl – Cennik ogrzewania podłogowego: materiały i robocizna za m2",
+     "url": "https://kb.pl/cenniki/uslugi/ogrzewanie-podlogowe/",
+     "data_zrodla": "2026-01-07 (aktualizacja cen)",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 170.0,
+     "max": 220.0,
+     "vat": "brutto8",
+     "przelicznik": 1,
+     "uwaga": " [zakres: z materiałem]"
+    },
+    {
+     "nazwa": "kb.pl – Cennik usług hydraulicznych – aktualne stawki 2026",
+     "url": "https://kb.pl/aktualnosci/budowa-domu/cennik-uslug-hydraulicznych-2026/",
+     "data_zrodla": "2026-02-20",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 192.0,
+     "max": 192.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": " [zakres: z materiałem]"
+    },
+    {
+     "nazwa": "kb.pl – Cennik usług hydraulicznych 2026 w całej Polsce",
+     "url": "https://kb.pl/remont-i-wykonczenie/instalacje-hydrauliczne/cennik-uslug-hydraulicznych/",
+     "data_zrodla": "2026-05-20",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 272.0,
+     "max": 380.0,
+     "vat": "brutto8",
+     "przelicznik": 1,
+     "uwaga": " [zakres: z materiałem]"
+    },
+    {
+     "nazwa": "muratordom.pl – Koszt instalacji wodnej w domu 2026",
+     "url": "https://muratordom.pl/cenniki-budowlane/koszt-instalacji-wodnej-w-domu-2026-ile-zaplacisz-za-wod-kan-z-materialem-aa-dHVZ-24JQ-XFoR.html",
+     "data_zrodla": "2026-04-30",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 250.0,
+     "max": 350.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": " [zakres: z materiałem]"
+    },
+    {
+     "nazwa": "kb.pl – Cennik usług budowlanych 2026",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-uslug-budowlanych/",
+     "data_zrodla": "2026-01-07",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 260.0,
+     "max": 400.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": " [zakres: z materiałem]"
+    }
+   ]
+  },
+  "i_pompa": {
+   "n": "Pompa ciepła powietrze–woda ok. 8 kW z montażem",
+   "jm": "zł/szt",
+   "k": "i",
+   "uwaga": "Urządzenie i montaż razem. Ceny samych urządzeń (katalogi) i samego montażu pominięte. Brak źródła dokładnie dla 8 kW.",
+   "zrodla": [
+    {
+     "nazwa": "kb.pl – Ceny pomp ciepła – ile kosztuje pompa ciepła?",
+     "url": "https://kb.pl/cenniki/produkty/ceny-pomp-ciepla-ile-kosztuje-pompa-ciepla",
+     "data_zrodla": "2026-01-07",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 47000.0,
+     "max": 60100.0,
+     "vat": "brutto8",
+     "przelicznik": 1,
+     "uwaga": " [zakres: urządzenie z montażem]"
+    },
+    {
+     "nazwa": "cenauslug.pl – Ile kosztuje pompa ciepła z montażem w 2026 roku?",
+     "url": "https://cenauslug.pl/poradniki/ile-kosztuje-pompa-ciepla-z-montazem-cennik-urzadzen-i-robocizny",
+     "data_zrodla": "2026-08-04",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 35000.0,
+     "max": 45000.0,
+     "vat": "brutto8",
+     "przelicznik": 1,
+     "uwaga": " [zakres: urządzenie z montażem (powietrze-woda 8–10 kW)]"
+    },
+    {
+     "nazwa": "budotom.pl – Pompa ciepła cena 2026",
+     "url": "https://budotom.pl/pompa-ciepla-cena/",
+     "data_zrodla": "2026-05-14",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 33000.0,
+     "max": 33000.0,
+     "vat": "brutto8",
+     "przelicznik": 1,
+     "uwaga": " [zakres: urządzenie z montażem i CWU (moc nie podana)]"
+    },
+    {
+     "nazwa": "oferteo.pl – Koszt pompy ciepła do domu 100 m²",
+     "url": "https://www.oferteo.pl/artykuly/koszt-pompy-ciepla-do-domu-100-m2",
+     "data_zrodla": "2026-01-16 (aktualizacja)",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 25000.0,
+     "max": 40000.0,
+     "vat": "?",
+     "przelicznik": 1,
+     "uwaga": " [zakres: urządzenie z montażem (powietrze-woda, dom 100 m²; artykuł nie podaje ceny dla 8 kW)]"
+    }
+   ]
+  }
+ }
+}

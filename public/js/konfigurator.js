@@ -58,8 +58,9 @@ function elementy(g){
   if(g.lawy){
     add("fund","fund","Roboty ziemne: wykop",`${f(g.Vwyk)} m³`,[["r_wykop",g.Vwyk,"r"]]);
     add("fund","fund","Ławy fundamentowe",`${f(g.Vlaw)} m³`,[["m_beton",g.Vlaw,"m"],["m_stal",g.Vlaw*70,"m"],["r_lawy",g.Vlaw,"r"]]);
+    add("fund","fund","Szalowanie i zbrojenie ław",`${f(g.Llaw)} mb`,[["r_szal_law",g.Llaw,"r"]]);
     add("fund","fund","Ściany fundamentowe",`${f(g.Afund)} m²`,[["m_sc_fund",g.Afund,"m"],["r_sciany_fund",g.Afund,"r"]]);
-    add("fund","fund","Izolacja i ocieplenie fundamentów",`${f(g.Ahydro)} m²`,[["m_hydro",g.Ahydro,"m"],["m_xps",g.Ahydro*0.10,"m"],["r_hydro",g.Ahydro,"r"]]);
+    add("fund","fund","Izolacja i ocieplenie fundamentów",`${f(g.Ahydro)} m²`,[["m_hydro",g.Ahydro,"m"],["m_xps",g.Ahydro*0.10,"m"],["r_hydro",g.Ahydro,"r"],["r_xps",g.Ahydro,"r"]]);
     add("fund","fund","Podłoga na gruncie",`${f(g.Ai)} m²`,[["m_beton",g.Ai*0.1,"m"],["m_eps_podl",g.Ai*0.15,"m"],["r_podloga",g.Ai,"r"]]);
   } else {
     add("fund","fund","Roboty ziemne: korytowanie",`${f(g.Vwyk)} m³`,[["r_wykop",g.Vwyk,"r"]]);
