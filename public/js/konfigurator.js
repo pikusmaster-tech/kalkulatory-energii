@@ -95,6 +95,7 @@ function wycen(E,w){
 
 /* ---------- wynik ---------- */
 let lastG=null;
+const MOB=matchMedia("(max-width:560px)");
 function licz(){
   if(!DB)return;
   const g=geom();lastG=g;
@@ -115,17 +116,17 @@ function licz(){
   h+=`<p class="mut">Ceny z bazy Budlicz, ${esc(DB.opis)}. Szacunek do planowania, bez projektu, przyłączy, schodów i wykończenia. Wiążąca jest wycena wykonawcy.</p>`;
   $("wynik").innerHTML=h;
   // tabela
-  let t=`<table class="kt"><thead><tr><th>Element</th><th class="num">Ilość</th><th class="num cm">Materiał</th><th class="num cr">Robocizna</th><th class="num">Razem</th></tr></thead>`;
+  let t=`<table class="kt"><thead><tr><th>Element</th><th class="num q">Ilość</th><th class="num cm">Materiał</th><th class="num cr">Robocizna</th><th class="num">Razem</th></tr></thead>`;
   GR.forEach(([gk,gn,st])=>{
     const rows=R.filter(e=>e.gr===gk);if(!rows.length)return;
     const s=rows.reduce((a,e)=>a+e.tot,0);
-    t+=`<tbody><tr class="gh"><th colspan="4">${gn}</th><th class="num">${zl(s)}</th></tr>`;
+    t+=`<tbody><tr class="gh"><th colspan="${MOB.matches?3:4}">${gn}</th><th class="num">${zl(s)}</th></tr>`;
     rows.forEach(e=>{t+=`<tr data-tag="${e.tag}"><td>${esc(e.n)}<span class="qm mut"> · ${e.qty}</span></td><td class="num q">${e.qty}</td>`+
       (e.i?`<td colspan="2" class="num mut cmr">z materiałem</td>`:`<td class="num cm">${zl(e.m)}</td><td class="num cr">${zl(e.r)}</td>`)+`<td class="num"><b>${zl(e.tot)}</b></td></tr>`;});
     t+=`</tbody>`;
   });
-  t+=`<tfoot>`+(i?`<tr><td>Instalacje</td><td></td><td colspan="2" class="num mut cmr">z materiałem</td><td class="num">${zl(i)}</td></tr>`:"")+
-    `<tr><td>Razem</td><td></td><td class="num cm">${zl(m)}</td><td class="num cr">${zl(r)}</td><td class="num">${zl(tot)}</td></tr></tfoot></table>`;
+  t+=`<tfoot>`+(i?`<tr><td>Instalacje</td><td class="q"></td><td colspan="2" class="num mut cmr">z materiałem</td><td class="num">${zl(i)}</td></tr>`:"")+
+    `<tr><td>Razem</td><td class="q"></td><td class="num cm">${zl(m)}</td><td class="num cr">${zl(r)}</td><td class="num">${zl(tot)}</td></tr></tfoot></table>`;
   $("tab").innerHTML=t;
   $("ilosci").innerHTML=`Ściany zewnętrzne ${f(g.extNet)} m² (po odjęciu okien i drzwi), dach ${f(g.Adach)} m², stropy ${f(g.Astrop)} m², ściany wewnętrzne ${f(g.wew)} m na kondygnację.`;
   model.update(g);
@@ -145,6 +146,7 @@ function cenyTab(){
   h+=`<p class="btns"><button class="btn" type="button" id="reset">Przywróć ceny z bazy</button></p>`;
   $("cenyTab").innerHTML=h;
 }
+MOB.addEventListener("change",()=>licz());
 document.addEventListener("input",e=>{
   const id=e.target.dataset&&e.target.dataset.id;
   if(id){const x=parseFloat(e.target.value);if(isFinite(x)&&x>=0)USER[id]=x;else delete USER[id];licz();return;}

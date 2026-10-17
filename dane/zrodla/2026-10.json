@@ -1446,6 +1446,1223 @@
      "uwaga": " [zakres: urządzenie z montażem (powietrze-woda, dom 100 m²; artykuł nie podaje ceny dla 8 kW)]"
     }
    ]
+  },
+  "m_beton": {
+   "n": "Beton towarowy C20/25 (cena za m³)",
+   "jm": "zł/m³",
+   "k": "m",
+   "uwaga": "Cena za m³ bez transportu i pompy. Źródło blogowe i szacunek sprzedawcy pominięte.",
+   "zrodla": [
+    {
+     "nazwa": "gwozdzbet.pl - cennik betonu (betoniarnia Brzeszcze)",
+     "url": "https://gwozdzbet.pl/cennik/",
+     "data_zrodla": "brak daty na stronie; metadane 2026-03-12",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 360.0,
+     "max": 360.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Cena 'od' (startowa). Transport i pompa wyceniane osobno."
+    },
+    {
+     "nazwa": "domy.energetycznyprojekt.pl - Ile kosztuje kubik betonu",
+     "url": "https://domy.energetycznyprojekt.pl/ile-kosztuje-kubik-betonu/",
+     "data_zrodla": "2026-07-03",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 330.0,
+     "max": 370.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Brutto 405-455 zł/m³ wg tej samej tabeli. Gruszka (ok. 8 m³) 200-350 zł netto - strona, bez przeliczenia na m³."
+    },
+    {
+     "nazwa": "wnp.pl - Intercenbud, beton zwykły C 20/25 (B 25)",
+     "url": "https://www.wnp.pl/rynki/gielda-i-notowania/materialy-budowlane/beton-zwykly-z-kruszywa-naturalnego-c-20-25-b-25,24.html",
+     "data_zrodla": "2026-08-17",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 370.93,
+     "max": 370.93,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Strona listy notowań podaje 'Prices exclude 23% VAT'; strona pozycji nie potwierdza. Transport nieznany."
+    },
+    {
+     "nazwa": "kb.pl - cennik betonu po klasach w Polsce",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-betonu-po-klasach-w-calej-polsce-sprawdz-ceny/",
+     "data_zrodla": "2026-01-07 (pierwsza publikacja 2025-04-11)",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 330.0,
+     "max": 380.0,
+     "vat": "brutto8",
+     "przelicznik": 1,
+     "uwaga": "Wartości brutto z 8% VAT (strona: VAT 8% dla inwestora indywidualnego). Netto po przeliczeniu (÷1,08): ok. 306-352 zł/m³ - wyliczenie."
+    },
+    {
+     "nazwa": "kb.pl - cennik betonu B25 w 10 miastach",
+     "url": "https://kb.pl/cenniki/cena-betonu/",
+     "data_zrodla": "2026-04-29",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 656.0,
+     "max": 732.0,
+     "vat": "brutto23",
+     "przelicznik": 1,
+     "uwaga": "Tylko materiał (bez robocizny). Strona podaje 'VAT 23,0%' bez wskazania czy wliczony. Transport i pompa dodatkowo."
+    }
+   ]
+  },
+  "m_stal": {
+   "n": "Pręt żebrowany B500 Ø12 (cena za kg)",
+   "jm": "zł/kg",
+   "k": "m",
+   "uwaga": "Cena za kg. Źródła bez jasnej jednostki i wyraźnie odstające pominięte.",
+   "zrodla": [
+    {
+     "nazwa": "mizopol.pl - pręt zbrojeniowy żebrowany fi 12",
+     "url": "https://mizopol.pl/pl/p/Pret-zbrojeniowy-zebrowany-fi-12/10591",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 3.2,
+     "max": 3.2,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "B500B/B500SP wg strony, atest klasa 1. Min. zakup 2 t. Bez dostawy. Masa teoretyczna 0,89 kg/m."
+    },
+    {
+     "nazwa": "metallco.pl - pręt żebrowany fi 12 B500SP L=12 mb",
+     "url": "https://www.metallco.pl/produkt/pret-zebrowany-fi-12-b500sp-l=12mb-6088",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 3.37,
+     "max": 3.37,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Przelicznik: 2,99 zł/mb ÷ 0,888 kg/m = 3,37 zł/kg netto; brutto 3,68 ÷ 0,888 = 4,14 zł/kg."
+    },
+    {
+     "nazwa": "wnp.pl - Intercenbud, pręt stalowy żebrowany skośnie fi 12 mm",
+     "url": "https://www.wnp.pl/rynki/gielda-i-notowania/materialy-budowlane/pret-stalowy-okragly-zebrowany-skosnie-o-srednicy-12-mm,18.html",
+     "data_zrodla": "2026-08-17",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 3.18,
+     "max": 3.18,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Indeks hurtowy Intercenbud. Strona nie podaje netto/brutto."
+    },
+    {
+     "nazwa": "stalserwis24.pl - pręt żebrowany fi 12 B500SP L=12000 mm",
+     "url": "https://www.stalserwis24.pl/asortyment/prety/prety-zebrowane-zbrojeniowe/pret-zebrowany-fi-12-b500sp-l12000mm/",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 4.11,
+     "max": 4.11,
+     "vat": "brutto23",
+     "przelicznik": 1,
+     "uwaga": "Netto nie podano (przy 23% VAT ok. 3,34 zł/kg - wyliczenie). 11 kg na sztukę 12 m."
+    }
+   ]
+  },
+  "m_sc_fund": {
+   "n": "Bloczek betonowy fundamentowy 24 cm (cena za m² ściany)",
+   "jm": "zł/m²",
+   "k": "m",
+   "uwaga": "Ściana 24 cm, około 21 bloczków na m².",
+   "zrodla": [
+    {
+     "nazwa": "castorama.pl - bloczek betonowy Tregor klasa B15 38x24x12 fundamentowy",
+     "url": "https://www.castorama.pl/bloczek-betonowy-tregor-klasa-b15-38-x-24-x-12-cm-fundamentowy/5902596213237_CAPL.prd",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 140.87,
+     "max": 140.87,
+     "vat": "brutto23",
+     "przelicznik": 1,
+     "uwaga": "Cena za m² podana przez sklep. Przeliczenie: 6,48 zł/szt x ok. 21,7 szt/m² (sklep); wymiary 0,38x0,12 m dają 21,9 szt/m² ściany 24 cm. Strona nie precyzuje VAT."
+    },
+    {
+     "nazwa": "leroymerlin.pl - bloczek betonowy fundamentowy 38x24x12 Prefagbud",
+     "url": "https://www.leroymerlin.pl/produkty/bloczek-betonowy-fundamentowy-38-x-24-x-12-cm-prefagbud-45527510.html",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 146.79,
+     "max": 146.79,
+     "vat": "brutto23",
+     "przelicznik": 1,
+     "uwaga": "Przeliczenie: 6,99 zł/szt x 21 szt/m² (zużycie wg sewera.pl dla ściany 24 cm) = 146,79 zł/m². Zużycia nie podaje sam sklep. Strona nie podaje VAT."
+    },
+    {
+     "nazwa": "sklep.sewera.pl - bloczek betonowy Olbet 12x24x38 klasa 15",
+     "url": "https://sklep.sewera.pl/bloczek-betonowy-12x24x38mm-klasa-15-olbet-p20770",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 93.87,
+     "max": 93.87,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Przeliczenie: 4,47 zł netto x 21 szt/m² = 93,87 zł/m² netto (brutto 5,50 x 21 = 115,50 zł/m²). Zużycie 21 szt/m² podane przez sklep. Paleta 60 szt."
+    }
+   ]
+  },
+  "m_hydro": {
+   "n": "Masa asfaltowo-kauczukowa (dysperbit), na m² przy 2 mm",
+   "jm": "zł/m²",
+   "k": "m",
+   "uwaga": "Zużycie 3,0 kg/m² przy grubości 2 mm wg karty technicznej Izolbet. Grunt (0,2–0,5 kg/m²) nie wliczony.",
+   "zrodla": [
+    {
+     "nazwa": "sklep.sewera.pl - dyspersyjna masa asfaltowa Dysperbit Nexler 20 kg",
+     "url": "https://sklep.sewera.pl/dyspersyjna-masa-asfaltowa-dysperbit-nexler-20kg-p12027",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 2.44,
+     "max": 2.44,
+     "vat": "netto",
+     "przelicznik": 3.0,
+     "uwaga": "Przeliczenie: 48,76 ÷ 20 kg = 2,44 zł/kg netto; brutto 59,97 ÷ 20 = 3,00 zł/kg."
+    },
+    {
+     "nazwa": "obi.pl - Nexler Dysperbit DN 20 kg",
+     "url": "https://www.obi.pl/plynne-produkty-bitumiczne/nexler-dysperbit-dn-20-kg/p/3899036",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 3.15,
+     "max": 3.15,
+     "vat": "brutto23",
+     "przelicznik": 3.0,
+     "uwaga": "Cena za kg podana przez sklep. Netto nie podano."
+    },
+    {
+     "nazwa": "kim24.pl - Masa asfaltowo-kauczukowa Izohan Dysperbit DN 20 kg",
+     "url": "https://kim24.pl/Masa-Asfaltowo-Kauczukowa-Izohan-Dysperbit-DN-20kg",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 3.3,
+     "max": 3.3,
+     "vat": "brutto23",
+     "przelicznik": 3.0,
+     "uwaga": "Przeliczenie: 65,99 ÷ 20 kg = 3,30 zł/kg brutto. Strona podaje 'Chemia i uszczelnienia', nie kategorię izolacji."
+    },
+    {
+     "nazwa": "ekobudsklep.pl - Dysperbit 10 kg Izohan/TES",
+     "url": "https://ekobudsklep.pl/masy-bitumiczne-hydroizolacje/6038-dysperbit-20kg-izohantes-5907572372038.html",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 3.69,
+     "max": 3.69,
+     "vat": "brutto23",
+     "przelicznik": 3.0,
+     "uwaga": "Przeliczenie: 36,90 ÷ 10 kg = 3,69 zł/kg. Opakowanie 10 kg mimo nazwy '20kg' w adresie URL. VAT nie podany."
+    }
+   ]
+  },
+  "m_xps": {
+   "n": "Styropian XPS 10 cm do fundamentów (cena za m³)",
+   "jm": "zł/m³",
+   "k": "m",
+   "uwaga": "Płyty XPS, grubość 10 cm. Ceny sklepowe zakładamy brutto 23%.",
+   "zrodla": [
+    {
+     "nazwa": "castorama.pl - polistyren XPS 100 mm 2,17 m² (3 szt., Finnfoam)",
+     "url": "https://www.castorama.pl/polistyren-xps-100-mm-2-17-m2-3-szt-/4779030930187_CAPL.prd",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 709.82,
+     "max": 709.82,
+     "vat": "brutto23",
+     "przelicznik": 1,
+     "uwaga": "Przeliczenie: 154,03 zł ÷ 0,217 m³ (2,17 m², grubość 100 mm) = 709,82 zł/m³. Producent Finnfoam UAB (Litwa). Wytrzymałość CS nie podana."
+    },
+    {
+     "nazwa": "sklep.sewera.pl - Hoch styropian XPS 300 034 10 cm",
+     "url": "https://sklep.sewera.pl/hoch-styropian-xps-300-034-10cm-p11991",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 434.5,
+     "max": 434.5,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Przeliczenie: 130,35 ÷ 0,3 m³ (opakowanie 3 m², 10 cm) = 434,50 zł/m³ netto; brutto 534,43 zł/m³. Transport wyceniany indywidualnie."
+    },
+    {
+     "nazwa": "bednarek.sklep.pl - Synthos XPS Prime S 10 cm (Hurtownia Bednarek)",
+     "url": "https://bednarek.sklep.pl/styropian-ekstrudowany-xps/2868-synthos-prime-s-10cm-styrodur.html",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 530.0,
+     "max": 530.0,
+     "vat": "brutto23",
+     "przelicznik": 1,
+     "uwaga": "Przeliczenie: 159,00 ÷ 0,3 m³ (4 płyty, 3 m², 10 cm) = 530,00 zł/m³ brutto. Netto nie podano."
+    },
+    {
+     "nazwa": "styronet.pl - cennik styropianu (Swisspor XPS 300)",
+     "url": "https://styronet.pl/cennik-cena-styropianu/",
+     "data_zrodla": "brak jednej daty (strona podaje różne miesiące 2026)",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 511.0,
+     "max": 511.0,
+     "vat": "brutto23",
+     "przelicznik": 1,
+     "uwaga": "Zakres grubości 5-12 cm (fundament); cena za m³ dotyczy opakowania 0,3 m³. Ta sama strona podaje Finnfoam FL-300: 116,31 zł za 0,217 m³ oraz '512 zł/m³' - sprzeczne (przelicznik 536), nieużyte."
+    }
+   ]
+  },
+  "m_eps_podl": {
+   "n": "Styropian podłogowy EPS 100 (cena za m³)",
+   "jm": "zł/m³",
+   "k": "m",
+   "uwaga": "Płyty pod podłogę na gruncie.",
+   "zrodla": [
+    {
+     "nazwa": "producentstyropianu.pl - Styropian dach/podłoga EPS 100-038 Termo-Styl",
+     "url": "https://www.producentstyropianu.pl/styropian-dach-podloga/styropian-dach-podloga-eps100/styropian-dach-podloga-eps-100-038-termo-styl-cena-za-m3_p_174.html",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 263.98,
+     "max": 263.98,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Brutto 324,70 zł/m³ (netto x 1,23). Sprzedaż hurtowa."
+    },
+    {
+     "nazwa": "topstyropian.pl - Styropian dach/podłoga EPS 100-038 Styromap",
+     "url": "https://www.topstyropian.pl/styromap/styropian-dach-podloga/styropian-dach-podloga-eps100/styropian-dach-podloga-eps-100-038-styromap-cena-za-m3_p_136.html",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 272.22,
+     "max": 272.22,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Brutto 334,83 zł/m³."
+    },
+    {
+     "nazwa": "castorama.pl - styropian podłogowy PRO 100 100 mm, 3 m²",
+     "url": "https://www.castorama.pl/styropian-podlogowy-pro-100-100-mm-3-m2/5903771321921_CAPL.prd",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 359.8,
+     "max": 359.8,
+     "vat": "brutto23",
+     "przelicznik": 1,
+     "uwaga": "Przeliczenie: 107,94 zł ÷ 0,3 m³ (6 płyt 1,0x0,5x0,1 m) = 359,80 zł/m³. Klasa EPS nie podana (nazwa 'PRO 100'); producent Styropmin (wg strony)."
+    },
+    {
+     "nazwa": "styropiangrafitowy.warszawa.pl - StyropianPlus EPS 100-038 podłoga/dach",
+     "url": "https://www.styropiangrafitowy.warszawa.pl/styropian-plus/styropian-dach-podloga/styropian-dach-podloga-eps100/styropianplus-eps-100-038-podloga-dach-cena-m3_p_490.html",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 290.0,
+     "max": 290.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Netto/brutto nie podano. Sprzedaż hurtowa, min. 25 m³."
+    },
+    {
+     "nazwa": "izotherm.pl - produkt powiązany EPS 100-038 (STYRO-MAR)",
+     "url": "https://www.izotherm.pl/styropian-dach-podloga/styropian-dach-podloga-eps-100-038-styropianex-cena-za-m3_p_156.html",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 299.0,
+     "max": 299.0,
+     "vat": "brutto23",
+     "przelicznik": 1,
+     "uwaga": "Cena z listingu powiązanego, nie z karty głównego produktu (produkt główny niedostępny). Netto/brutto nie podano. Min. zamówienie 15 m³ (wg strony)."
+    }
+   ]
+  },
+  "m_sc_cer": {
+   "n": "Pustak ceramiczny P+W 25 cm kl. 15 (cena za m² ściany)",
+   "jm": "zł/m²",
+   "k": "m",
+   "uwaga": "Pustaki Porotherm 25 P+W, około 10,7 szt. na m² ściany.",
+   "zrodla": [
+    {
+     "nazwa": "wienerberger.pl - Cennik produktów Wienerberger (PDF)",
+     "url": "https://www.wienerberger.pl/content/dam/wienerberger/poland/marketing/documents-magazines/business-documents/Cennik-produktow-Wienerberger.pdf",
+     "data_zrodla": "brak daty w dokumencie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 116.63,
+     "max": 116.63,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Brutto 13,41 zł/szt.; 143,49 zł/m². 10,7 szt/m²; zaprawa 16 l/m²; 72 szt/paleta; format 250x373x238 mm."
+    },
+    {
+     "nazwa": "bricoman.pl - Porotherm 25 cm kl. 15 P+W (642670)",
+     "url": "https://www.bricoman.pl/porotherm-25cm-kl-15-p-w-dobre-642670.html",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 76.29,
+     "max": 76.29,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Przeliczenie: 7,13 zł/szt x 10,7 szt/m² = 76,29 zł/m² netto; brutto 8,77 x 10,7 = 93,84 zł/m². Zaprawa nie podana."
+    },
+    {
+     "nazwa": "eadamex.pl - pustak Porotherm 25 P+W KL.15 (72 szt/pal)",
+     "url": "https://eadamex.pl/pustaki-tradycyjne/10719-pustak-ceramiczny-porotherm-25-pw-kl15-107szt-m2-72szt-pal.html",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 75.86,
+     "max": 75.86,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Przeliczenie: 7,09 x 10,7 szt/m² = 75,86 zł/m² netto; brutto 8,72 x 10,7 = 93,30 zł/m². Cena z metadanych strony."
+    },
+    {
+     "nazwa": "leroymerlin.pl - Porotherm 25 P+W KL.15 37,3x25x23,8 (LE)",
+     "url": "https://www.leroymerlin.pl/produkty/pustak-ceramiczny-porotherm-25-p-w-kl-15-37-3-x-25-x-23-8-cm-le-wienerberger-45958262.html",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 115.45,
+     "max": 115.45,
+     "vat": "brutto23",
+     "przelicznik": 1,
+     "uwaga": "Przeliczenie: 10,79 zł/szt x 10,7 szt/m² = 115,45 zł/m² (zużycie z innych źródeł; strona nie podaje szt/m²). VAT nie podany."
+    },
+    {
+     "nazwa": "sklep-kowalczyk.pl - pustak PTH 25 P+W kl. 15 (72 szt/pal)",
+     "url": "https://sklep-kowalczyk.pl/pustak-pth-25-p-w-kl-15-72szt-pal-68258125.html",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 90.84,
+     "max": 90.84,
+     "vat": "brutto23",
+     "przelicznik": 1,
+     "uwaga": "Przeliczenie: 8,49 zł/szt x 10,7 szt/m² = 90,84 zł/m² (szt/m² z innych źródeł). Brutto/netto nie podano."
+    }
+   ]
+  },
+  "m_sc_wew": {
+   "n": "Pustak ceramiczny P+W 18,8 cm (cena za m² ściany)",
+   "jm": "zł/m²",
+   "k": "m",
+   "uwaga": "Ściany wewnętrzne nośne, około 8 szt. na m².",
+   "zrodla": [
+    {
+     "nazwa": "wienerberger.pl - Cennik produktów Wienerberger (PDF)",
+     "url": "https://www.wienerberger.pl/content/dam/wienerberger/poland/marketing/documents-magazines/business-documents/Cennik-produktow-Wienerberger.pdf",
+     "data_zrodla": "brak daty w dokumencie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 105.6,
+     "max": 105.6,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Brutto 16,24 zł/szt.; 129,92 zł/m². 8 szt/m²; zaprawa 12 l/m²; format 188x498x238 mm."
+    },
+    {
+     "nazwa": "sklep.sewera.pl - Porotherm 18,8 P+W klasa 15 (Wienerberger)",
+     "url": "https://sklep.sewera.pl/pustak-ceramiczny-porotherm-18-8-pw-klasa-15-wienerberger-p16557",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 89.68,
+     "max": 89.68,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Przeliczenie: 11,21 zł/szt x 8 szt/m² = 89,68 zł/m² netto (brutto 110,32). Rozbieżność z cennikiem Wienerberger (13,20 netto) - do weryfikacji."
+    },
+    {
+     "nazwa": "dachpro.pl - pustak Porotherm 18.8 P+W",
+     "url": "https://www.dachpro.pl/pl/p/Pustak-Porotherm-18.8-P-W-/16302",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 107.04,
+     "max": 107.04,
+     "vat": "brutto23",
+     "przelicznik": 1,
+     "uwaga": "Przeliczenie: 13,38 zł/szt x 8 szt/m² = 107,04 zł/m². Netto/brutto nie podano. Strona: towar niedostępny. Klasa 10/15."
+    },
+    {
+     "nazwa": "eadamex.pl - pustak Porotherm 18,8 P+W KL.10 (72 szt/pal)",
+     "url": "https://eadamex.pl/pustaki-tradycyjne/16547-pustak-ceramiczny-porotherm-188-pw-kl10-8szt-m2-72szt-pal.html",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 102.37,
+     "max": 102.37,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Przeliczenie: 12,796748 zł/szt x 8 szt/m² = 102,37 zł/m² netto (brutto 125,92). Klasa 10, nie 15."
+    }
+   ]
+  },
+  "m_sc_bk": {
+   "n": "Beton komórkowy 24 cm kl. 600 (cena za m² ściany)",
+   "jm": "zł/m²",
+   "k": "m",
+   "uwaga": "Dla sklepu z promocją: minimum to cena promocyjna, maksimum regularna.",
+   "zrodla": [
+    {
+     "nazwa": "sklep.sewera.pl - bloczek komórkowy Termalica T4/600 240x249x599 UZ Bruk-Bet (promocja)",
+     "url": "https://sklep.sewera.pl/bloczek-komorkowy-termalica-t4600-240x249x599mm-uz-bruk-bet-p18709",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 107.07,
+     "max": 137.35,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Min = cena promocyjna, max = cena regularna. Przeliczenie: 15,98 x 6,7 szt/m² = 107,07; 20,50 x 6,7 = 137,35 zł/m² netto. 6,7 szt/m² podane przez sklep (ściana 599x249 mm). Klasa 600 wg nazwy (T4/600)."
+    },
+    {
+     "nazwa": "sklep.sewera.pl - bloczek komórkowy Termobet T 4/600 240x239x590 UZ Bruk-Bet (promocja)",
+     "url": "https://sklep.sewera.pl/bloczek-komorkowy-termobet-t-4600-240x239x590mm-uz-bruk-bet-p18692",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 104.6,
+     "max": 116.66,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Min = promocja, max = regularna. Przeliczenie: 1/(0,590 x 0,239) = 7,09 szt/m² (wyliczenie z wymiaru; brak w źródle); 14,75 x 7,09 = 104,60; 16,45 x 7,09 = 116,66 zł/m² netto."
+    },
+    {
+     "nazwa": "sklep.sewera.pl - bloczek komórkowy Ytong PP4/06 240x199x599 PWU (Xella)",
+     "url": "https://sklep.sewera.pl/bloczek-komorkowy-ytong-pp406-240x199x599mm-pwu-xella-p19158",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 112.42,
+     "max": 112.42,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Przeliczenie: 1/(0,599 x 0,199) = 8,39 szt/m² (wyliczenie z wymiaru); 13,40 x 8,39 = 112,42 zł/m² netto (brutto 138,25). Klasa PP4/0,6 wg nazwy."
+    },
+    {
+     "nazwa": "leroymerlin.pl - beton komórkowy bloczek Termobet z uchwytem 59x24x24 cm (Prefabet, PROMO)",
+     "url": "https://www.leroymerlin.pl/produkty/beton-komorkowy-bloczek-termobet-z-uchwytem-59-x-24-x-24-cm-prefabet-lagisza-promo-45443881.html",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 111.93,
+     "max": 111.93,
+     "vat": "brutto23",
+     "przelicznik": 1,
+     "uwaga": "Przeliczenie: 15,99 zł/szt x 7 szt/m² (strona: 'Zużycie bloczków wynosi tylko 7 sztuk na 1m2 ściany') = 111,93 zł/m². Klasa/odmiana nie podana - do weryfikacji. Kategoria LM pokazuje 17,49 zł (rozbieżność). Netto/brutto nie podano."
+    },
+    {
+     "nazwa": "kb.pl - cennik bloczków z betonu komórkowego 2026 (600/240/240)",
+     "url": "https://kb.pl/cenniki/bloczki-z-betonu-komorkowego/",
+     "data_zrodla": "2026-04-29",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 134.72,
+     "max": 143.82,
+     "vat": "brutto23",
+     "przelicznik": 1,
+     "uwaga": "Przeliczenie: 1/(0,60 x 0,24) = 6,94 szt/m²; 19,40 x 6,94 = 134,72; 20,71 x 6,94 = 143,82 zł/m² brutto. Średnia kb.pl 20,01 zł/szt brutto. Strona podaje ceny szacunkowe."
+    }
+   ]
+  },
+  "m_nadproze": {
+   "n": "Nadproże prefabrykowane 24–25 cm (cena za mb)",
+   "jm": "zł/mb",
+   "k": "m",
+   "uwaga": "Cena za metr bieżący, przeliczona z ceny za sztukę i długości.",
+   "zrodla": [
+    {
+     "nazwa": "wienerberger.pl - Cennik produktów Wienerberger (PDF), belki nadprożowe Porotherm 23,8",
+     "url": "https://www.wienerberger.pl/content/dam/wienerberger/poland/marketing/documents-magazines/business-documents/Cennik-produktow-Wienerberger.pdf",
+     "data_zrodla": "brak daty w dokumencie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 35.45,
+     "max": 61.08,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Przeliczenie cena szt ÷ długość (m), netto: 100 cm 35,45; 125 cm 40,64; 150 cm 40,73; 175 cm 45,34; 200 cm 54,35; 225 cm 55,38; 250 cm 61,08; 275 cm 58,71; 300 cm 58,92; 325 cm 57,98 zł/mb. Pełna lista długości w cenniku (100-325 cm)."
+    },
+    {
+     "nazwa": "sklep.sewera.pl - nadproże betonowe L19 TYP-D/TYP-N (Uciechowski)",
+     "url": "https://sklep.sewera.pl/nadproze-betonowe-l19-120cm-typ-d-9x19x120cm-uciechowski-p18646",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 31.53,
+     "max": 37.47,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Przeliczenie cena szt ÷ długość: 120 cm 31,53; 150 cm 34,29; 180 cm 37,47; 210 cm 33,44; 240 cm 37,18 zł/mb netto. Szerokość 9 cm (TYP-D/N) - dla ściany 24-25 cm wymaga weryfikacji (wariant 12 cm osobno). Brak daty."
+    }
+   ]
+  },
+  "m_teriva": {
+   "n": "Strop Teriva: belki i pustaki (cena za m²)",
+   "jm": "zł/m²",
+   "k": "m",
+   "uwaga": "Sam materiał belek i pustaków. Zbrojenie i nadbeton liczone osobno (z_teriva_beton).",
+   "zrodla": [
+    {
+     "nazwa": "stropy-poddasze.pl - Strop Teriva cena m² 2026",
+     "url": "https://stropy-poddasze.pl/strop-teriva-cena-m2",
+     "data_zrodla": "2026-08-04 (aktualizacja)",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 100.0,
+     "max": 115.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Materiał wg strony: belki, pustaki, zbrojenie, nadbeton (więcej niż belki i pustaki)."
+    },
+    {
+     "nazwa": "kb.pl - Strop za 25 tys. albo prawie 40 tys. zł (zestaw belek i pustaków)",
+     "url": "https://kb.pl/aktualnosci/budowa-domu/strop-teriva-opis-cena-opinie-_z/",
+     "data_zrodla": "2026-10-03",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 80.0,
+     "max": 120.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Zestaw belek i pustaków, nie oznaczony wprost jako Teriva 4.0. Pustak Teriva 4,0/1 wg strony 4-7 zł/szt."
+    },
+    {
+     "nazwa": "stanlux.istore.pl - Teriva I (pustak + belka stropowa 4,5 m)",
+     "url": "https://stanlux.istore.pl/en_US/p/TERIVA-BETARD-Strop-%2C-pustak-stropowy%2C-belka-stropowa/2429431",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 76.87,
+     "max": 88.52,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Przeliczenie (wyliczenie): pustaki 6,7 x 4,16 = 27,87 (żużlowy) lub x 5,90 = 39,53 (keramzyt) + belki 1,67 mb x (132,02 ÷ 4,5 mb = 29,34) = 48,99 zł/m² netto. Teriva I, nie 4.0; bez zbrojenia i nadbetonu."
+    }
+   ]
+  },
+  "m_drewno": {
+   "n": "Drewno konstrukcyjne C24 (cena za m³)",
+   "jm": "zł/m³",
+   "k": "m",
+   "uwaga": "Tylko klasa C24. Ceny kantówek i KVH pominięte.",
+   "zrodla": [
+    {
+     "nazwa": "mgprojekt.com.pl - Więźba dachowa (artykuł o drewnie C24)",
+     "url": "https://www.mgprojekt.com.pl/blog/wiezba-dachowa/",
+     "data_zrodla": "2026-02-20",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 1500.0,
+     "max": 2500.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Cena C24 podana wprost. Strona nie podaje netto/brutto. Tarcica surowa do więźby 1000-1300 zł/m³ (nie C24)."
+    },
+    {
+     "nazwa": "cenauslug.pl - Jak obliczyć ilość drewna na więźbę dachową (poradnik)",
+     "url": "https://cenauslug.pl/poradniki/jak-obliczyc-ilosc-drewna-na-wiezbe-dachowa-kalkulator-i-praktyczne-porady-dla-inwestora",
+     "data_zrodla": "zaktualizowano 2026-08-03",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 1300.0,
+     "max": 1600.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Strona: 'prezentowane ceny są szacunkowe i nie stanowią oferty'. Netto/brutto nie określono."
+    }
+   ]
+  },
+  "z_drewno": {
+   "n": "Zużycie drewna na więźbę (m³ na m² połaci)",
+   "jm": "m³/m²",
+   "k": "m",
+   "uwaga": "Ilość, nie cena.",
+   "zrodla": [
+    {
+     "nazwa": "mgprojekt.com.pl - Więźba dachowa",
+     "url": "https://www.mgprojekt.com.pl/blog/wiezba-dachowa/",
+     "data_zrodla": "2026-02-20",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 0.04,
+     "max": 0.06,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Wartość podana wprost. Dachy wielospadowe: do +1/3 więcej drewna. Więźba prefabrykowana: ok. 30% mniej drewna (wg strony)."
+    },
+    {
+     "nazwa": "cenauslug.pl - Kosztorys materiałowy więźby dachowej (dom 150 m²)",
+     "url": "https://cenauslug.pl/poradniki/kosztorys-materialowy-wiezby-dachowej-budzet-na-drewno-okucia-i-impregnaty-dla-domu-150-m2",
+     "data_zrodla": "zaktualizowano 2026-08-12",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 0.045,
+     "max": 0.055,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Przeliczenie: 10-12 m³ ÷ ok. 220 m² dachu (powierzchnia wg strony, do weryfikacji) = 0,045-0,055 m³/m². Wartość wyliczona z całego domu, nie podana wprost."
+    }
+   ]
+  },
+  "z_teriva_beton": {
+   "n": "Zużycie betonu w stropie Teriva (m³ na m² stropu)",
+   "jm": "m³/m²",
+   "k": "z",
+   "uwaga": "Ilość, nie cena.",
+   "zrodla": [
+    {
+     "nazwa": "stropy-poddasze.pl - Strop Teriva cena m² 2026",
+     "url": "https://stropy-poddasze.pl/strop-teriva-cena-m2",
+     "data_zrodla": "2026-08-04 (aktualizacja)",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 0.08,
+     "max": 0.08,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Wartość podana wprost, bez wskazania producenta ani części stropu (belki/pustaki/nadbeton)."
+    },
+    {
+     "nazwa": "mgprojekt.com.pl - Strop Teriva",
+     "url": "https://www.mgprojekt.com.pl/blog/strop-teriva/",
+     "data_zrodla": "2025-11-07 (zmodyfikowano 2026-09-08)",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 0.08,
+     "max": 0.1,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Strona podaje dwie wartości (0,08 i 0,10 m³/m²) - sprzeczne wewnętrznie; 10 m³/100 m² przeliczone na 0,10."
+    }
+   ]
+  },
+  "m_blacho": {
+   "n": "Blachodachówka modułowa (cena za m² krycia)",
+   "jm": "zł/m²",
+   "k": "m",
+   "uwaga": "Cena za m² krycia (arkusz 0,805 m²). Cenniki kb.pl z 2024 roku pominięte.",
+   "zrodla": [
+    {
+     "nazwa": "bednarek.sklep.pl – Blachodachówka modułowa Budmat Venecja D-Matt Grafit RAL 7016",
+     "url": "https://bednarek.sklep.pl/blachodachowka-modulowa/4974-budmat-venecja-d-matt-grafit-7016.html",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 42.92,
+     "max": 42.92,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Cena za arkusz 0,805 m² powierzchni krycia: 42,50 ÷ 0,805 = 52,80 zł brutto/m² krycia; ÷ 1,23 = netto."
+    },
+    {
+     "nazwa": "dodachu.pl – Budmat Venecja D-Matt Plus",
+     "url": "https://dodachu.pl/pokrycia-dachowe/373-budmat-blachodach%C3%B3wka-modu%C5%82owa-venecja-d-matt.html",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 44.5,
+     "max": 44.5,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "1 arkusz = 0,805 m² krycia; 44,06 ÷ 0,805 = 54,73 zł brutto/m²; ÷ 1,23 = netto."
+    },
+    {
+     "nazwa": "dachowe.com.pl – Budmat Venecja D-Matt 8017",
+     "url": "https://dachowe.com.pl/blachodachowki-modulowe/3002-budmat-venecja-d-matt-8017.html",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 44.51,
+     "max": 44.51,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Arkusz 0,805 m² krycia; 44,07 ÷ 0,805 = 54,75 zł brutto/m²; ÷ 1,23 = netto. Cena po rabacie 32% (wcześniej 64,80 zł brutto, przekreślone)."
+    }
+   ]
+  },
+  "m_dachowka": {
+   "n": "Dachówka ceramiczna (cena za m² krycia)",
+   "jm": "zł/m²",
+   "k": "m",
+   "uwaga": "Sztuki razy sztuki na m² z kart produktów. Rozrzut zależy od glazury i angoby.",
+   "zrodla": [
+    {
+     "nazwa": "sklep.sewera.pl – Dachówka ceramiczna Braas Rubin 13V kasztanowy podstawowa",
+     "url": "https://sklep.sewera.pl/dachowka-ceramiczna-braas-rubin-13v-kasztanowy-podstawowa-p16689",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 35.3,
+     "max": 35.3,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "2,87 × 12,3 szt/m² = 35,30 zł/m² netto (brutto 3,53 × 12,3 = 43,42). Kategoria dachówki nie podana w źródle."
+    },
+    {
+     "nazwa": "sklep.sewera.pl – Dachówka ceramiczna Creaton Koda Nuance angoba antracyt",
+     "url": "https://sklep.sewera.pl/dachowka-ceramiczna-koda-nuance-angoba-antracyt-creaton-p11999",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 58.68,
+     "max": 64.55,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Zakres: 6,52 × 9,0 do 6,52 × 9,9. Cena promocyjna (-17,15%; przed obniżką 7,87 zł netto)."
+    },
+    {
+     "nazwa": "sklep.sewera.pl – Dachówka ceramiczna Braas Rubin 13V czarny błyszczący",
+     "url": "https://sklep.sewera.pl/dachowka-ceramiczna-braas-rubin-13v-czarny-blyszczacy-podstawowa-p16683",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 82.78,
+     "max": 82.78,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "6,73 × 12,3 = 82,78 zł/m² netto. Glazura. Cena promocyjna (-17,20%)."
+    },
+    {
+     "nazwa": "pokrycia-dachowe-sklep.pl – Braas Monier dachówka ceramiczna Rubin 13V",
+     "url": "https://pokrycia-dachowe-sklep.pl/braas-monier-dachowka-ceramiczna-rubin-13v-pl.html",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 109.1,
+     "max": 119.74,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Zakres: 8,87 × 12,3 do 8,87 × 13,5. Cena promocyjna (wcześniej 13,68 zł brutto); minimalne zamówienie 288 szt.; kolor niejednoznaczny. Jednostka zapotrzebowania w źródle podana jako m², wartość w szt."
+    },
+    {
+     "nazwa": "dach-bud.poznan.pl – Ceny dachówek ceramicznych (Wielkopolska, wrzesień 2026)",
+     "url": "https://dach-bud.poznan.pl/dachowka-ceramiczna-cena-za-m2-i-porownanie-marek/",
+     "data_zrodla": "2026-10-01",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 48.78,
+     "max": 65.04,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Źródło podaje brutto (ceny orientacyjne, wrzesień 2026); netto = brutto ÷ 1,23. Zakładkowa angobowana 75–100 zł/m² brutto, glazurowana 95–130 zł/m² brutto (w tym samym źródle). Bez marek i modeli."
+    }
+   ]
+  },
+  "m_membrana": {
+   "n": "Membrana dachowa wysokoparoprzepuszczalna (cena za m²)",
+   "jm": "zł/m²",
+   "k": "m",
+   "uwaga": "Rolka 75 m². Ceny promocyjne jednego sklepu w zestawie.",
+   "zrodla": [
+    {
+     "nazwa": "sklepdekarza.pl – Membrana dachowa Corotop Strong Red 180 g/m², 75 m²",
+     "url": "https://sklepdekarza.pl/pl/p/MEMBRANA-DACHOWA-2-paski-klejace-COROTOP-STRONG-RED-180gm2-75m2-rolka/514",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 4.87,
+     "max": 4.87,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Brutto: 449,00 zł za rolkę (promocja, wcześniej 629,50 zł) = 5,99 zł/m² brutto. Gramatura 180 g/m², rolka 1,50 × 50 m = 75 m², paroprzepuszczalność 3000 g/m²/24h. Dostępność na stronie niejednoznaczna."
+    },
+    {
+     "nazwa": "hanex.pl – Membrana wysokoparoprzepuszczalna Topdach 180 g, 75 m²",
+     "url": "https://hanex.pl/membrana-dachowa-wysokoparoprzepuszczalna-180g-75m2-topdach-180-sk2/",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 6.08,
+     "max": 6.08,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "456,29 ÷ 75 m² = 6,08 zł/m² (wyliczenie z ceny rolki). Brutto/netto nie podane. SD = 0,02 m; 3 warstwy; gramatura 180 g/m²."
+    },
+    {
+     "nazwa": "castorama.pl – Membrana dachowa 4ROOF IZODACH MAX 130 g/m², 75 m²",
+     "url": "https://www.castorama.pl/departments/membrana-dachowa-4roof-izodach-max-130-gr-m-75m2-super-jako-i-cena-1-rolka/5905910461215_CAPL.prd",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 4.53,
+     "max": 4.53,
+     "vat": "brutto23",
+     "przelicznik": 1,
+     "uwaga": "339,54 ÷ 75 m² = 4,53 zł/m² (wyliczenie z ceny rolki). Gramatura ok. 130 g/m²; paroprzepuszczalność podana opisowo, bez wartości liczbowej."
+    }
+   ]
+  },
+  "m_laty": {
+   "n": "Łaty i kontrłaty na m² połaci (pochodna)",
+   "jm": "zł/m²",
+   "k": "m",
+   "uwaga": "Pochodna: 2,68 mb łat na m² razy mediana ceny łaty + 1,7 mb kontrłat na m² razy 2,50 zł/mb. Rozstaw 35–40 cm i 60 cm to założenia z artykułów.",
+   "zrodla": [
+    {
+     "nazwa": "Łaty 2,68 mb/m² (rozstaw 35–40 cm) i kontrłaty 1,7 mb/m² (rozstaw 60 cm), mediany cen",
+     "url": "https://tani-komin.pl/ile-lat-na-100m2-dachu",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 19.19,
+     "max": 19.19,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": ""
+    }
+   ]
+  },
+  "m_rynny": {
+   "n": "Rynna PCV 125 mm (cena za mb)",
+   "jm": "zł/mb",
+   "k": "m",
+   "uwaga": "Rynny. Rury spustowe i akcesoria nie są wliczone. Cennik kb.pl z 2024 roku pominięty.",
+   "zrodla": [
+    {
+     "nazwa": "castorama.pl – Rynna PVC Ocean 125 mm brązowa 4 m",
+     "url": "https://www.castorama.pl/rynna-pvc-ocean-125-mm-brazowa-4-m/5902241611661_CAPL.prd",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 16.5,
+     "max": 16.5,
+     "vat": "brutto23",
+     "przelicznik": 1,
+     "uwaga": "125 mm, dł. 4 m. VAT nie podany."
+    },
+    {
+     "nazwa": "leroymerlin.pl – Rynna dachowa 125 mm 4 mb brązowa Marley",
+     "url": "https://www.leroymerlin.pl/produkty/budowa/dachy-i-rynny/odprowadzanie-wody-deszczowej-z-dachu/systemy-rynnowe-i-akcesoria/rynny/rynna-dachowa-125-mm-4-mb-brazowa-marley-45983182.html",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 22.5,
+     "max": 22.5,
+     "vat": "brutto23",
+     "przelicznik": 1,
+     "uwaga": "Marley 125 mm, 4 mb. VAT nie podany."
+    },
+    {
+     "nazwa": "muratordom.pl – Ile kosztuje orynnowanie domu (marzec 2026)",
+     "url": "https://muratordom.pl/budowa/dach/ile-kosztuje-orynnowanie-domu-ceny-rynien-i-montazu-w-marcu-2026-roku-aa-915A-5an8-QprT.html",
+     "data_zrodla": "2026-03-27",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 10.0,
+     "max": 25.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Rynna PVC 100 mm. Rynna 150 mm w tym samym źródle: 16–29 zł/m.b. VAT nie podany."
+    },
+    {
+     "nazwa": "pytajdekarza.pl – Ile kosztuje orynnowanie domu, cennik materiałów i robocizny 2026",
+     "url": "https://pytajdekarza.pl/ile-kosztuje-orynnowanie-domu-cennik-materialow-i-robocizny-2026/",
+     "data_zrodla": "2026-04-24",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 25.0,
+     "max": 35.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Rynny kwadratowe 30–40 PLN/mb w tym samym źródle. Cena materiału; VAT nie określony."
+    }
+   ]
+  },
+  "m_okno": {
+   "n": "Okno PCV 3-szybowe, Uw ≤ 0,9 (cena za m² okna)",
+   "jm": "zł/m²",
+   "k": "m",
+   "uwaga": "Cena przeliczona na m² okna (1,67 m²). Ceny sklepowe brutto 23%.",
+   "zrodla": [
+    {
+     "nazwa": "leroymerlin.pl – Okno PCV 3-szybowe fasadowe 85/O33 białe 1165x1435 mm (Lupol)",
+     "url": "https://www.leroymerlin.pl/produkty/okno-pcv-3-szybowe-fasadowe-85-o33-biale-1165x1435-mm-otwierane-do-wewnatrz-lewe-45277932.html",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 836.84,
+     "max": 836.84,
+     "vat": "brutto23",
+     "przelicznik": 1,
+     "uwaga": "1399 ÷ 1,671775 m² = 836,8 zł/m². Uw = 0,9 W/m²K (strona). Profil IDEAL 7000, 3-szybowe. VAT nie podany."
+    },
+    {
+     "nazwa": "leroymerlin.pl – Okno PCV 3-szybowe fasadowe O33A 1165x1435 mm TROCAL 76MD",
+     "url": "https://www.leroymerlin.pl/produkty/okno-pcv-3-szybowe-fasadowe-o33a-biale-1165x1435-mm-otwierane-do-wewnatrz-lewe-trocal-76md-witraz-90170763.html",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 1022.27,
+     "max": 1022.27,
+     "vat": "brutto23",
+     "przelicznik": 1,
+     "uwaga": "1709 ÷ 1,671775 = 1022,2 zł/m². Uw = 0,89 (strona). Profil TROCAL 76MD, 3-szybowe. VAT nie podany."
+    },
+    {
+     "nazwa": "castorama.pl – Okna PCV trzyszybowe (listing), rozwierno-uchylne 1165 x 1435 mm prawe białe",
+     "url": "https://www.castorama.pl/s/okna-trzyszybowe",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 764.46,
+     "max": 764.46,
+     "vat": "brutto23",
+     "przelicznik": 1,
+     "uwaga": "1278 ÷ 1,671775 = 764,5 zł/m². Uw nie podany w odczycie listingu – do weryfikacji na karcie produktu. VAT nie podany."
+    },
+    {
+     "nazwa": "impolsklep.pl – Ciepłe Okno Drutex Rozwierno-Uchylne Trzyszybowe 1165 x 1435",
+     "url": "https://impolsklep.pl/Cieple-Okno-Drutex-Rozwierno-Uchylne-Trzyszybowe-1165-x-1435-Rozne-Kolory-p4229",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 1004.32,
+     "max": 1004.32,
+     "vat": "brutto23",
+     "przelicznik": 1,
+     "uwaga": "1679 ÷ 1,671775 = 1004,4 zł/m². Uw 0,85 (profil V-Perfect, IGLO Energy Classic); 3-szybowe wg nazwy. Brutto/netto nie podane."
+    }
+   ]
+  },
+  "m_drzwi": {
+   "n": "Drzwi zewnętrzne stalowe ocieplone, ok. 90 cm (cena za szt.)",
+   "jm": "zł/szt",
+   "k": "m",
+   "uwaga": "Drzwi stalowe ocieplone. Najwyższy model (Ud 0,74) ma wpływ na zakres wyceny.",
+   "zrodla": [
+    {
+     "nazwa": "leroymerlin.pl – Drzwi zewnętrzne stalowe wejściowe 90 prawe antracytowe Didors Cortina",
+     "url": "https://www.leroymerlin.pl/produkty/drzwi-zewnetrzne-stalowe-wejsciowe-90-prawe-antracytowe-didors-cortina-99448707.html",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 1189.0,
+     "max": 1189.0,
+     "vat": "brutto23",
+     "przelicznik": 1,
+     "uwaga": "Ud = 1,1 W/(m²·K) dla drzwi pełnych; wypełnienie EPS (polistyren grafitowy); skrzydło 72 mm. VAT nie podany."
+    },
+    {
+     "nazwa": "castorama.pl – Drzwi zewnętrzne stalowe O.K. Doors Teja 90 prawe antracyt",
+     "url": "https://www.castorama.pl/drzwi-zewnetrzne-stalowe-o-k-doors-teja-90-prawe-antracyt/5905982311289_CAPL.prd",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 1598.0,
+     "max": 1598.0,
+     "vat": "brutto23",
+     "przelicznik": 1,
+     "uwaga": "Ud = 1,3 W/m²K; wypełnienie z polistyrenu spienionego; skrzydło 68 mm. VAT nie podany."
+    },
+    {
+     "nazwa": "castorama.pl – Drzwi zewnętrzne stalowe O.K. Doors Gordo 90 lewe antracyt",
+     "url": "https://www.castorama.pl/drzwi-zewnetrzne-stalowe-o-k-doors-gordo-90-lewe-antracyt/5905982399027_CAPL.prd",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 3498.0,
+     "max": 3498.0,
+     "vat": "brutto23",
+     "przelicznik": 1,
+     "uwaga": "Ud = 0,74 W/m²K; grubość drzwi 90 mm; typ izolacji nie podany (wartość Ud wskazuje na ocieplenie). Górna granica – droższy model."
+    }
+   ]
+  },
+  "m_eps_graf": {
+   "n": "Styropian fasadowy grafitowy λ 0,031–0,033 (cena za m³)",
+   "jm": "zł/m³",
+   "k": "m",
+   "uwaga": "Płyty fasadowe grafitowe. Najwyższe źródło (maldrew) nie zmienia mediany.",
+   "zrodla": [
+    {
+     "nazwa": "bednarek.sklep.pl – Styropian grafitowy elewacyjny NTB EPS 031 Lambda Fasada",
+     "url": "https://bednarek.sklep.pl/styropian-ntb/5021-ntb-eps-031-fasada-grafitowy.html",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 218.7,
+     "max": 218.7,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "λ 0,031 (strona: 'Współczynnik lambda 0,031'); cena za 1 m³. Brutto 269,00 ÷ 1,23 = netto. Strona w dostawie wspomina EPS 032 – potwierdzić model."
+    },
+    {
+     "nazwa": "bednarek.sklep.pl – Styropian grafitowy elewacyjny NTB EPS 032 Lambda Fasada",
+     "url": "https://bednarek.sklep.pl/styropian-ntb/5020-ntb-eps-032-fasada-grafitowy.html",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 208.13,
+     "max": 208.13,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "λ 0,032 (strona); cena za 1 m³. 256,00 ÷ 1,23 = netto. Historia cen pusta."
+    },
+    {
+     "nazwa": "sklep.sewera.pl – Paneltech Styropian fasadowy EPS 60 032 15 cm grafitowy",
+     "url": "https://sklep.sewera.pl/paneltech-styropian-fasadowy-eps-60-032-15cm-grafitowy-p15209",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 222.03,
+     "max": 222.03,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "OPA = 2 m² × 15 cm = 0,3 m³ (4 płyty) wg strony. 66,61 ÷ 0,3 = 222,03 zł/m³ netto (brutto 273,10). λ 0,032 (strona)."
+    },
+    {
+     "nazwa": "muratordom.pl (dawniej muratorplus.pl) – Ceny styropianu, maj 2026",
+     "url": "https://muratordom.pl/remont-domu/remonty-elewacji/ceny-styropianu-w-maju-2026-r-ile-kosztuje-paczka-i-metr-szescienny-w-hurtowniach-i-marketach-aa-umUT-LY5j-uCoS.html",
+     "data_zrodla": "2026-05-04",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 245.0,
+     "max": 285.0,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Brutto/netto nieokreślone; brak marek i sklepów. Ten sam artykuł: paczka 0,3 m³ w marketach 85–110 zł (= 283–367 zł/m³) – niespójne z przedziałem, nie użyto tej wartości."
+    },
+    {
+     "nazwa": "maldrew.com.pl – Styropian Grafitowy 031 Polstyr 15 cm",
+     "url": "https://www.maldrew.com.pl/product/styropian-fasadowy-grafitowy-031-polstyr-15cm",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 447.17,
+     "max": 447.17,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Paczka 2 m² × 15 cm = 0,3 m³ (4 płyty). Netto 134,15 ÷ 0,3 = 447,17 zł/m³; brutto 165 ÷ 0,3 = 550 zł/m³. Cena 'na zamówienie' – wartość wysoka wobec pozostałych. λ nie podana (nazwa 031)."
+    }
+   ]
+  },
+  "m_etics": {
+   "n": "System ETICS: klej, siatka i tynk silikonowy (cena za m²)",
+   "jm": "zł/m²",
+   "k": "m",
+   "uwaga": "Suma mediany klejów, mediany siatek i mediany tynków silikonowych 1,5 mm. Bez dybli i gruntu.",
+   "zrodla": [
+    {
+     "nazwa": "Klej + siatka + tynk silikonowy (sumy mediany składników)",
+     "url": "https://sklep.sewera.pl/klej-do-styropianu-xps-i-zatapianie-siatki",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 27.95,
+     "max": 27.95,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": ""
+    }
+   ]
+  },
+  "m_welna": {
+   "n": "Wełna mineralna poddasze/strop λ 0,035–0,039 (cena za m³)",
+   "jm": "zł/m³",
+   "k": "m",
+   "uwaga": "Wełna 15 cm, cena za m³ z opakowania.",
+   "zrodla": [
+    {
+     "nazwa": "leroymerlin.pl – Wełna mineralna szklana LRR 035 150 mm 4.08 m2 Insulation Expert Knauf",
+     "url": "https://www.leroymerlin.pl/produkty/welna-mineralna-szklana-lrr-035-150-mm-4-08-m2-insulation-expert-knauf-73855574.html",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 224.59,
+     "max": 224.59,
+     "vat": "brutto23",
+     "przelicznik": 1,
+     "uwaga": "Opakowanie 4,08 m² × 0,15 m = 0.612 m³. λ 0,035; przeznaczenie: poddasza użytkowe. VAT nie podany."
+    },
+    {
+     "nazwa": "leroymerlin.pl – Wełna mineralna szklana HOME 37 150 mm URSA",
+     "url": "https://www.leroymerlin.pl/produkty/welna-mineralna-szklana-home-37-150-mm-ursa-45428005.html",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 153.26,
+     "max": 153.26,
+     "vat": "brutto23",
+     "przelicznik": 1,
+     "uwaga": "Opakowanie 4,56 m² × 0,15 m = 0.684 m³. λ 0,037; przeznaczenie: dach | ściana. VAT nie podany."
+    },
+    {
+     "nazwa": "obi.pl – Ursa Wełna mineralna DF35 Premium 150 mm 4,08 m2 niepalna",
+     "url": "https://www.obi.pl/p/2644961/ursa-welna-mineralna-df35-premium-150-mm-4-08-m2-niepalna",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 218.48,
+     "max": 218.48,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Brutto 164,46 zł ÷ 1,23 = 133,71 netto ÷ 0.612 m³ = netto zł/m³. λ 0,035 (strona); poddasze użytkowe. Oferta promocyjna 30.09.2026–20.10.2026."
+    },
+    {
+     "nazwa": "sklep.sewera.pl – Isover Wełna Profit-Mata 035 15 cm rolka",
+     "url": "https://sklep.sewera.pl/isover-welna-profit-mata-035-15cm-rolka-welna-szklana-p13730",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 198.99,
+     "max": 198.99,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": "Zakładam 1 OPA = 1 rolka 4,8 m² (strona: 'm² w opakowaniu 4,8'). 4,8 m² × 0,15 m = 0.720 m³; 143,27 ÷ 0.720 = netto zł/m³. λ 0,035; poddasza użytkowe i nieużytkowe."
+    },
+    {
+     "nazwa": "obi.pl – Isover Wełna Piano 37 150 mm 4,8 m2",
+     "url": "https://www.obi.pl/p/6958193/isover-welna-piano-37-150-mm-4-8-m2",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 189.93,
+     "max": 189.93,
+     "vat": "brutto23",
+     "przelicznik": 1,
+     "uwaga": "Opakowanie 4,8 m² × 0,15 m = 0.720 m³. λ 0,037 z nazwy (nie potwierdzone na stronie). Niedostępne online (odbiór w sklepie). VAT nie podany."
+    }
+   ]
+  },
+  "m_gk": {
+   "n": "Płyta GKB 12,5 mm z profilem CD60 (cena za m²)",
+   "jm": "zł/m²",
+   "k": "m",
+   "uwaga": "Płyta GKB: mediana z trzech sklepów. Profile CD60 co 60 cm to założenie (nie ze źródła), koszt profili 2,14 zł/mb z jednego sklepu. Wkręty i folia nie wliczone.",
+   "zrodla": [
+    {
+     "nazwa": "Płyta GKB 12,5 mm (mediana) + profile CD60 co 60 cm (założenie)",
+     "url": "https://sklep.sewera.pl/plyta-karton-gips-2600mm-x-1200mm",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 13.03,
+     "max": 13.03,
+     "vat": "netto",
+     "przelicznik": 1,
+     "uwaga": ""
+    }
+   ]
+  },
+  "m_tynk": {
+   "n": "Tynk gipsowy maszynowy, 1,5 cm (cena za m²)",
+   "jm": "zł/m²",
+   "k": "m",
+   "uwaga": "Cena na 1 cm przeliczona na warstwę 1,5 cm. Tylko materiał, robocizna osobno.",
+   "zrodla": [
+    {
+     "nazwa": "sklep.sewera.pl – Tynk wewnętrzny gipsowy maszynowy MP 75 Lekki 30kg Knauf",
+     "url": "https://sklep.sewera.pl/tynk-wewnetrzny-gipsowy-maszynowy-mp-75-lekki-30kg-knauf-p9094",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 6.62,
+     "max": 6.62,
+     "vat": "netto",
+     "przelicznik": 1.5,
+     "uwaga": "Zużycie 8 kg/m² przy 10 mm (strona) = 8 kg/m² na 1 cm. 24,84 ÷ 30 kg = 0,828 zł/kg × 8 = 6,62 zł/m² na 1 cm netto. Cena promocyjna (wcześniej 33,72 zł netto)."
+    },
+    {
+     "nazwa": "obi.pl – Knauf Maszynowy tynk gipsowy MP 75 Lekki 25 kg",
+     "url": "https://www.obi.pl/p/5352588/knauf-maszynowy-tynk-gipsowy-mp-75-lekki-25-kg",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 7.67,
+     "max": 7.67,
+     "vat": "netto",
+     "przelicznik": 1.5,
+     "uwaga": "Zużycie 0,8 kg/m² na 1 mm (strona) = 8 kg/m² na 1 cm. Brutto 29,49 ÷ 25 kg × 8 = 9,44 zł/m² na 1 cm brutto; ÷ 1,23 = netto."
+    },
+    {
+     "nazwa": "obi.pl – Knauf Maszynowy tynk gipsowy MP 75 25 kg",
+     "url": "https://www.obi.pl/p/5403282/knauf-maszynowy-tynk-gipsowy-mp-75-25-kg",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 9.52,
+     "max": 9.52,
+     "vat": "netto",
+     "przelicznik": 1.5,
+     "uwaga": "Zużycie 11,5 kg/m² przy 10 mm (strona) = 11,5 kg/m² na 1 cm. Brutto 25,45 ÷ 25 kg × 11,5 = 11,71 zł/m² brutto na 1 cm; ÷ 1,23 = netto. Wersja standardowa (nie 'lekki')."
+    }
+   ]
+  },
+  "m_jastrych": {
+   "n": "Jastrych cementowy, 5 cm (cena za m²)",
+   "jm": "zł/m²",
+   "k": "m",
+   "uwaga": "Cena na 1 cm przeliczona na warstwę 5 cm. Zużycie 18–20 kg/m² na 1 cm.",
+   "zrodla": [
+    {
+     "nazwa": "sklep.sewera.pl – Posadzka cementowa Postar 80 10-80mm 25kg Atlas",
+     "url": "https://sklep.sewera.pl/posadzka-cementowa-postar-80-10-80mm-25kg-atlas-p9794",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 28.5,
+     "max": 28.5,
+     "vat": "netto",
+     "przelicznik": 5,
+     "uwaga": "Zużycie 20 kg/m² na 10 mm (strona) = 20 kg/m² na 1 cm. 35,62 ÷ 25 kg × 20 = 28,50 zł/m² na 1 cm netto (brutto 35,05). Zakres grubości 10–80 mm."
+    },
+    {
+     "nazwa": "obi.pl – Mapei Posadzka cementowa Ultrascreed Easy 25 kg",
+     "url": "https://www.obi.pl/p/3310810/mapei-posadzka-cementowa-ultrascreed-easy-25-kg",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 11.83,
+     "max": 11.83,
+     "vat": "netto",
+     "przelicznik": 5,
+     "uwaga": "Zużycie 20 kg/m² na 1 cm (strona: 'Zużycie [kg/m2/cm]: 20'). Brutto 18,19 ÷ 25 × 20 = 14,55 zł/m² na 1 cm; ÷ 1,23 = netto. Zakres 10–100 mm. Niedostępne online."
+    },
+    {
+     "nazwa": "sklep.sewera.pl – Posadzka cementowa Topcem Pronto C25 25kg Mapei",
+     "url": "https://sklep.sewera.pl/posadzka-cementowa-topcem-pronto-c25-25kg-mapei-p20993",
+     "data_zrodla": "brak daty na stronie",
+     "data_sprawdzenia": "2026-10-17",
+     "min": 8.81,
+     "max": 9.78,
+     "vat": "netto",
+     "przelicznik": 5,
+     "uwaga": "Wydajność 18–20 kg/m² na 1 cm grubości (strona). 12,23 ÷ 25 kg = 0,489 zł/kg × 18–20 = 8,81–9,78 zł/m² na 1 cm netto. Cena promocyjna (wcześniej 18,25 zł netto)."
+    }
+   ]
   }
  }
 }

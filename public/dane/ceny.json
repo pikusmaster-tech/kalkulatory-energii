@@ -1,0 +1,1934 @@
+{
+ "miesiac": "2026-10",
+ "sprawdzone": "2026-10-17",
+ "opis": "stan na 17.10.2026, netto bez VAT",
+ "p": {
+  "r_wykop": {
+   "n": "Wykop pod fundamenty koparką (robocizna)",
+   "jm": "zł/m³",
+   "k": "r",
+   "c": 28.75,
+   "lo": 20.0,
+   "hi": 37.5,
+   "zrodla": [
+    {
+     "nazwa": "cenauslug.pl – Prace ziemne i fundamenty: Cennik usług 2026",
+     "url": "https://cenauslug.pl/przewodnik/prace-ziemne-i-fundamenty",
+     "data_zrodla": "2026-09-24",
+     "vat": "?"
+    },
+    {
+     "nazwa": "ewtrans.pl – Roboty ziemne Warszawa, cennik 2026 (firma)",
+     "url": "https://ewtrans.pl/oferta/roboty-ziemne-warszawa-8211-cennik-2026/",
+     "data_zrodla": "2026 (tytuł cennika, brak daty)",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "izolacjapianka.pl – Ława fundamentowa: cennik i koszt 2026",
+     "url": "https://izolacjapianka.pl/baza-wiedzy/lawa-fundamentowa-cennik-i-koszt-2026.html",
+     "data_zrodla": "2026-08-03",
+     "vat": "?"
+    },
+    {
+     "nazwa": "algrom.pl – Ile kosztuje wylanie fundamentów",
+     "url": "https://algrom.pl/ile-kosztuje-wylanie-fundamentow/",
+     "data_zrodla": "2025-06-19",
+     "vat": "?"
+    }
+   ],
+   "n_zr": 4,
+   "uwaga": "Wykop pod ławy i stopy. Stawki za godzinę koparki pominięte, bo wymagają wydajności. Wywóz urobku osobno.",
+   "zmiana": null
+  },
+  "r_lawy": {
+   "n": "Betonowanie ław fundamentowych (robocizna)",
+   "jm": "zł/m³",
+   "k": "r",
+   "c": 298.25,
+   "lo": 226.5,
+   "hi": 370.0,
+   "zrodla": [
+    {
+     "nazwa": "cenauslug.pl – Wylewanie ław fundamentowych",
+     "url": "https://cenauslug.pl/budowa-i-remont/wylewanie-law-fundamentowych",
+     "data_zrodla": "2026-06-04",
+     "vat": "?"
+    },
+    {
+     "nazwa": "kosztorysujemy.com.pl – Stawki robocizny budowlanej 2026",
+     "url": "https://kosztorysujemy.com.pl/stawki-robocizny-budowlanej-2026-aktualny-cennik-dla-wszystkich-branz/",
+     "data_zrodla": "2026-07-27",
+     "vat": "netto"
+    }
+   ],
+   "n_zr": 2,
+   "uwaga": "Tylko betonowanie, bez szalunku i zbrojenia (te w pozycji r_szal_law). Źródło z 2023 pominięte.",
+   "zmiana": null
+  },
+  "r_szal_law": {
+   "n": "Szalowanie i zbrojenie ław (robocizna)",
+   "jm": "zł/mb",
+   "k": "r",
+   "c": 117.5,
+   "lo": 85.0,
+   "hi": 150.0,
+   "zrodla": [
+    {
+     "nazwa": "kosztorysujemy.com.pl – Stawki robocizny budowlanej 2026",
+     "url": "https://kosztorysujemy.com.pl/stawki-robocizny-budowlanej-2026-aktualny-cennik-dla-wszystkich-branz/",
+     "data_zrodla": "2026-07-27",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "esitolo.pl – Ławy fundamentowe cena robocizny",
+     "url": "https://esitolo.pl/lawy-fundamentowe-cena-robocizny",
+     "data_zrodla": "2026-08-04",
+     "vat": "?"
+    }
+   ],
+   "n_zr": 2,
+   "uwaga": "Zakres szalowania i zbrojenia. Jedno źródło podaje zakres niespójny z własnymi etapami.",
+   "zmiana": null
+  },
+  "r_sciany_fund": {
+   "n": "Murowanie ścian fundamentowych z bloczków (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "c": 95.45,
+   "lo": 78.7,
+   "hi": 110.0,
+   "zrodla": [
+    {
+     "nazwa": "kb.pl – Cennik usług budowlanych 2026",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-uslug-budowlanych/",
+     "data_zrodla": "2026-01-07",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "kb.pl – Cennik budowy ścian fundamentowych",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-budowy-scian-fundamentowych/",
+     "data_zrodla": "2026-01-07",
+     "vat": "brutto8"
+    },
+    {
+     "nazwa": "kosztorysujemy.com.pl – Stawki robocizny budowlanej 2026",
+     "url": "https://kosztorysujemy.com.pl/stawki-robocizny-budowlanej-2026-aktualny-cennik-dla-wszystkich-branz/",
+     "data_zrodla": "2026-07-27",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "domiporta.pl – Budowa ścian fundamentowych (cennik październik 2026)",
+     "url": "https://www.domiporta.pl/cennik-uslug-budowlanych/uslugi-budowlane/fundamenty/budowa-scian-fundamentowych/",
+     "data_zrodla": "2026-10",
+     "vat": "?"
+    },
+    {
+     "nazwa": "esitolo.pl – Ściany fundamentowe z bloczków betonowych",
+     "url": "https://esitolo.pl/sciany-fundamentowe-z-bloczkow-betonowych",
+     "data_zrodla": "2026-05-07",
+     "vat": "?"
+    }
+   ],
+   "n_zr": 5,
+   "uwaga": "Ściany fundamentowe z bloczków betonowych. Szalowanie i betonowanie ścian pominięte.",
+   "zmiana": null
+  },
+  "r_hydro": {
+   "n": "Izolacja przeciwwilgociowa fundamentów (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "c": 62.0,
+   "lo": 57.0,
+   "hi": 67.0,
+   "zrodla": [
+    {
+     "nazwa": "kosztorysujemy.com.pl – Stawki robocizny budowlanej 2026",
+     "url": "https://kosztorysujemy.com.pl/stawki-robocizny-budowlanej-2026-aktualny-cennik-dla-wszystkich-branz/",
+     "data_zrodla": "2026-07-27",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "kb.pl – Cennik budowy i izolacji fundamentów 2026",
+     "url": "https://kb.pl/aktualnosci/budowa-domu/cennik-budowy-i-izolacji-fundamentow-2026/",
+     "data_zrodla": "2026-02-10",
+     "vat": "?"
+    }
+   ],
+   "n_zr": 2,
+   "uwaga": "Sama hydroizolacja. Ocieplenie XPS osobno (r_xps). Dwa źródła.",
+   "zmiana": null
+  },
+  "r_xps": {
+   "n": "Ocieplenie fundamentów XPS (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "c": 80.0,
+   "lo": 70.0,
+   "hi": 92.59,
+   "zrodla": [
+    {
+     "nazwa": "domiporta.pl – Ocieplenie fundamentów styrodurem (październik 2026)",
+     "url": "https://www.domiporta.pl/cennik-uslug-budowlanych/uslugi-budowlane/fundamenty/ocieplenie-fundamentow-styrodurem/",
+     "data_zrodla": "2026-10",
+     "vat": "?"
+    },
+    {
+     "nazwa": "kb.pl – Cennik ocieplenia fundamentów styrodurem z robocizną",
+     "url": "https://kb.pl/cenniki/uslugi/ocieplenie-fundamentow-styrodurem/",
+     "data_zrodla": "2026-01-07",
+     "vat": "brutto8"
+    },
+    {
+     "nazwa": "cenauslug.pl – Ocieplenie fundamentów styrodurem XPS",
+     "url": "https://cenauslug.pl/budowa-i-remont/ocieplenie-fundamentow-styrodurem-xps",
+     "data_zrodla": "2026-05-12",
+     "vat": "?"
+    },
+    {
+     "nazwa": "poilerobocizna.pl – Ocieplenie fundamentów cena robocizny 2026",
+     "url": "https://poilerobocizna.pl/ocieplenie-fundamentow-cena-robocizny",
+     "data_zrodla": "2026-02-24",
+     "vat": "brutto8"
+    },
+    {
+     "nazwa": "kb.pl – Cennik usług budowlanych 2026",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-uslug-budowlanych/",
+     "data_zrodla": "2026-01-07",
+     "vat": "netto"
+    }
+   ],
+   "n_zr": 5,
+   "uwaga": "Montaż płyt XPS na fundamentach, bez materiału. Wariant standardowy z poilerobocizna.",
+   "zmiana": null
+  },
+  "r_podloga": {
+   "n": "Podłoga na gruncie (robocizna, bez materiałów)",
+   "jm": "zł/m²",
+   "k": "r",
+   "c": 38.61,
+   "lo": 27.5,
+   "hi": 50.65,
+   "zrodla": [
+    {
+     "nazwa": "kb.pl – Cennik usług budowlanych 2026",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-uslug-budowlanych/",
+     "data_zrodla": "2026-01-07",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "kb.pl – Cennik zleceń budowlanych",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-zlecen-budowlanych-ile-kosztuja-rozne-prace/",
+     "data_zrodla": "2026-01-07",
+     "vat": "brutto8"
+    },
+    {
+     "nazwa": "bursatm.pl – Podłoga na gruncie cena 2026",
+     "url": "https://bursatm.pl/podloga-na-gruncie-cena",
+     "data_zrodla": "2026-06-10",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "Chudziak: budujmodulowo.pl (Warszawa 45–70 i Kraków 35–55 połączone)",
+     "url": "https://budujmodulowo.pl/chudziak-na-gruncie-co-to-jest-i-kiedy-jest-potrzebny/",
+     "data_zrodla": "2025-03-01",
+     "vat": "netto"
+    }
+   ],
+   "n_zr": 4,
+   "uwaga": "Podsypka, chudziak i izolacja jako jedna pozycja. Zagęszczanie samo (cenauslug) pominięte.",
+   "zmiana": null
+  },
+  "r_plyta": {
+   "n": "Płyta fundamentowa (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "c": 150.0,
+   "lo": 120.0,
+   "hi": 180.0,
+   "zrodla": [
+    {
+     "nazwa": "domprojekt.pro – Płyta fundamentowa cena 2026",
+     "url": "https://domprojekt.pro/wiedza/plyta-fundamentowa-cena/",
+     "data_zrodla": "2026-09-15",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "grunttofundament.pl – Ile kosztują fundamenty pod dom w 2026?",
+     "url": "https://grunttofundament.pl/poradnik/ile-kosztuja-fundamenty-pod-dom-2026/",
+     "data_zrodla": "2026-01-02",
+     "vat": "?"
+    },
+    {
+     "nazwa": "esitolo.pl – Fundamenty koszt robocizny 2026",
+     "url": "https://esitolo.pl/fundamenty-koszt-robocizny",
+     "data_zrodla": "2026-08-16",
+     "vat": "?"
+    }
+   ],
+   "n_zr": 3,
+   "uwaga": "Szalunek, zbrojenie i betonowanie płyty. Źródło z wykopem pominięte.",
+   "zmiana": null
+  },
+  "r_mur": {
+   "n": "Murowanie ścian nośnych zewnętrznych (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "c": 95.0,
+   "lo": 78.0,
+   "hi": 107.0,
+   "zrodla": [
+    {
+     "nazwa": "domiporta.pl – Budowa ścian nośnych (październik 2026)",
+     "url": "https://www.domiporta.pl/cennik-uslug-budowlanych/uslugi-budowlane/sciany/budowa-scian-nosnych/",
+     "data_zrodla": "2026-10",
+     "vat": "?"
+    },
+    {
+     "nazwa": "cenauslug.pl – Murowanie ścian konstrukcyjnych",
+     "url": "https://cenauslug.pl/budowa-i-remont/murowanie-scian-konstrukcyjnych",
+     "data_zrodla": "2026-05-12",
+     "vat": "?"
+    },
+    {
+     "nazwa": "kb.pl – Cennik usług budowlanych 2026",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-uslug-budowlanych/",
+     "data_zrodla": "2026-01-07",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "kb.pl – Stawki ekip budowlanych 2026 (aktualności)",
+     "url": "https://kb.pl/aktualnosci/budowa-domu/koszty-robocizny-budowlanej-w-2026-roku/",
+     "data_zrodla": "2026-05-04",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "extradom.pl – Aktualny cennik usług budowlanych 2026",
+     "url": "https://www.extradom.pl/porady/artykul-cennik-uslug-budowlanych",
+     "data_zrodla": "2026-01-19",
+     "vat": "?"
+    },
+    {
+     "nazwa": "oferteo.pl – Murowanie ścian",
+     "url": "https://www.oferteo.pl/murowanie-scian?pid=63103",
+     "data_zrodla": "2026 (ranking 2026, brak daty FAQ)",
+     "vat": "?"
+    },
+    {
+     "nazwa": "kosztorysujemy.com.pl – Stawki robocizny budowlanej 2026",
+     "url": "https://kosztorysujemy.com.pl/stawki-robocizny-budowlanej-2026-aktualny-cennik-dla-wszystkich-branz/",
+     "data_zrodla": "2026-07-27",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "solidnyfundament.pl – Ile kosztuje murowanie ścian zewnętrznych za m² w 2026",
+     "url": "https://solidnyfundament.pl/ile-kosztuje-murowanie-scian-zewnetrznych-za-m%C2%B2-w-2025/",
+     "data_zrodla": "2026-09",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "kb.pl – Cennik prac murarskich 2026 po województwach",
+     "url": "https://kb.pl/budownictwo/ceny-uslug-budowlanych/cennik-prac-murarskich-po-wojewodztwach/",
+     "data_zrodla": "2026-01-07",
+     "vat": "brutto8"
+    }
+   ],
+   "n_zr": 9,
+   "uwaga": "Pustaki i bloczki (ceramika, beton komórkowy, silikat). Tylko robocizna.",
+   "zmiana": null
+  },
+  "r_mur_wew": {
+   "n": "Murowanie ścian wewnętrznych (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "c": 66.6,
+   "lo": 57.3,
+   "hi": 75.9,
+   "zrodla": [
+    {
+     "nazwa": "domiporta.pl – Budowa ściany działowej (październik 2026)",
+     "url": "https://www.domiporta.pl/cennik-uslug-budowlanych/uslugi-budowlane/sciany/budowa-sciany-dzialowej/",
+     "data_zrodla": "2026-10",
+     "vat": "?"
+    },
+    {
+     "nazwa": "cenauslug.pl – Budowa domów, stany surowe 2026",
+     "url": "https://cenauslug.pl/przewodnik/budowa-domow-stany-surowe",
+     "data_zrodla": "2026-09-24",
+     "vat": "?"
+    },
+    {
+     "nazwa": "kb.pl – Cennik usług budowlanych 2026",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-uslug-budowlanych/",
+     "data_zrodla": "2026-01-07",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "oferteo.pl – Murowanie ścian",
+     "url": "https://www.oferteo.pl/murowanie-scian?pid=63103",
+     "data_zrodla": "2026 (ranking 2026, brak daty FAQ)",
+     "vat": "?"
+    },
+    {
+     "nazwa": "extradom.pl – Aktualny cennik usług budowlanych 2026",
+     "url": "https://www.extradom.pl/porady/artykul-cennik-uslug-budowlanych",
+     "data_zrodla": "2026-01-19",
+     "vat": "?"
+    },
+    {
+     "nazwa": "kosztorysujemy.com.pl – Stawki robocizny budowlanej 2026",
+     "url": "https://kosztorysujemy.com.pl/stawki-robocizny-budowlanej-2026-aktualny-cennik-dla-wszystkich-branz/",
+     "data_zrodla": "2026-07-27",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "kb.pl – Cennik prac murarskich 2026 po województwach",
+     "url": "https://kb.pl/budownictwo/ceny-uslug-budowlanych/cennik-prac-murarskich-po-wojewodztwach/",
+     "data_zrodla": "2026-01-07",
+     "vat": "brutto8"
+    }
+   ],
+   "n_zr": 7,
+   "uwaga": "Ścianki działowe 11,5–12 cm. Nośne ściany wewnętrzne liczone stawką r_mur.",
+   "zmiana": null
+  },
+  "r_wieniec": {
+   "n": "Wieniec żelbetowy (robocizna)",
+   "jm": "zł/mb",
+   "k": "r",
+   "c": 116.75,
+   "lo": 91.0,
+   "hi": 142.5,
+   "zrodla": [
+    {
+     "nazwa": "cenauslug.pl – Wykonanie wieńca żelbetowego",
+     "url": "https://cenauslug.pl/budowa-i-remont/wykonanie-wienca-zelbetowego",
+     "data_zrodla": "2026-05-12",
+     "vat": "?"
+    },
+    {
+     "nazwa": "kosztorysujemy.com.pl – Stawki robocizny budowlanej 2026",
+     "url": "https://kosztorysujemy.com.pl/stawki-robocizny-budowlanej-2026-aktualny-cennik-dla-wszystkich-branz/",
+     "data_zrodla": "2026-07-27",
+     "vat": "netto"
+    }
+   ],
+   "n_zr": 2,
+   "uwaga": "Wieniec około 25×25 cm. Tylko 2 źródła.",
+   "zmiana": null
+  },
+  "r_nadproze": {
+   "n": "Montaż nadproża prefabrykowanego (robocizna)",
+   "jm": "zł/szt",
+   "k": "r",
+   "c": 196.25,
+   "lo": 120.0,
+   "hi": 272.5,
+   "zrodla": [
+    {
+     "nazwa": "cenauslug.pl – Montaż nadproży prefabrykowanych",
+     "url": "https://cenauslug.pl/budowa-i-remont/montaz-nadprozy-prefabrykowanych",
+     "data_zrodla": "2026-05-28",
+     "vat": "?"
+    },
+    {
+     "nazwa": "kb.pl – Stawki ekip budowlanych 2026 (aktualności)",
+     "url": "https://kb.pl/aktualnosci/budowa-domu/koszty-robocizny-budowlanej-w-2026-roku/",
+     "data_zrodla": "2026-05-04",
+     "vat": "?"
+    }
+   ],
+   "n_zr": 2,
+   "uwaga": "Za jeden element. Dwa źródła, zakres wysoki. Wynik orientacyjny. Zleca.pl i solidnyfundament pominięte (remont albo nieokreślony zakres).",
+   "zmiana": null
+  },
+  "r_strop": {
+   "n": "Strop gęstożebrowy Teriva (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "c": 101.25,
+   "lo": 76.67,
+   "hi": 125.0,
+   "zrodla": [
+    {
+     "nazwa": "kb.pl – Cennik usług budowlanych 2026",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-uslug-budowlanych/",
+     "data_zrodla": "2026-01-07",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "kb.pl – Cennik stropów Teriva",
+     "url": "https://kb.pl/cenniki/uslugi/strop-teriva/",
+     "data_zrodla": "2026-01-07",
+     "vat": "brutto8"
+    },
+    {
+     "nazwa": "extradom.pl – Aktualny cennik usług budowlanych 2026",
+     "url": "https://www.extradom.pl/porady/artykul-cennik-uslug-budowlanych",
+     "data_zrodla": "2026-01-19",
+     "vat": "?"
+    },
+    {
+     "nazwa": "kosztorysujemy.com.pl – Stawki robocizny budowlanej 2026",
+     "url": "https://kosztorysujemy.com.pl/stawki-robocizny-budowlanej-2026-aktualny-cennik-dla-wszystkich-branz/",
+     "data_zrodla": "2026-07-27",
+     "vat": "netto"
+    }
+   ],
+   "n_zr": 4,
+   "uwaga": "Montaż stropu Teriva. Źródło blogowe pominięte.",
+   "zmiana": null
+  },
+  "r_wiezba": {
+   "n": "Więźba dachowa (robocizna ciesielska)",
+   "jm": "zł/m²",
+   "k": "r",
+   "c": 75.75,
+   "lo": 60.0,
+   "hi": 90.0,
+   "zrodla": [
+    {
+     "nazwa": "domiporta.pl – Wykonanie więźby dachowej (październik 2026)",
+     "url": "https://www.domiporta.pl/cennik-uslug-budowlanych/uslugi-budowlane/dachy/wykonanie-wiezby-dachowej/",
+     "data_zrodla": "2026-10",
+     "vat": "?"
+    },
+    {
+     "nazwa": "kb.pl – Cennik usług budowlanych 2026",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-uslug-budowlanych/",
+     "data_zrodla": "2026-01-07",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "cenauslug.pl – Ile kosztuje więźba dachowa w 2026?",
+     "url": "https://cenauslug.pl/poradniki/ile-kosztuje-wiezba-dachowa-cennik-drewna-robocizny-i-kompletny-przewodnik-po-konstrukcji-dachu",
+     "data_zrodla": "2026-09-25",
+     "vat": "?"
+    },
+    {
+     "nazwa": "extradom.pl – Aktualny cennik usług budowlanych 2026",
+     "url": "https://www.extradom.pl/porady/artykul-cennik-uslug-budowlanych",
+     "data_zrodla": "2026-01-19",
+     "vat": "?"
+    },
+    {
+     "nazwa": "kosztorysujemy.com.pl – Stawki robocizny budowlanej 2026",
+     "url": "https://kosztorysujemy.com.pl/stawki-robocizny-budowlanej-2026-aktualny-cennik-dla-wszystkich-branz/",
+     "data_zrodla": "2026-07-27",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "dealuj.pl – Wielki Cennik Usług Budowlanych 2026",
+     "url": "https://dealuj.pl/poradniki/cennik-uslug-budowlanych-2026-robocizna/",
+     "data_zrodla": "2026-02-05",
+     "vat": "netto"
+    }
+   ],
+   "n_zr": 6,
+   "uwaga": "Na m² połaci. Źródło podające cenę za m² rzutu przeliczone cosinusem kąta dachu (38°).",
+   "zmiana": null
+  },
+  "r_pokrycie_b": {
+   "n": "Pokrycie blachodachówką (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "c": 95.0,
+   "lo": 82.5,
+   "hi": 111.0,
+   "zrodla": [
+    {
+     "nazwa": "domiporta.pl – Wykonanie pokrycia z blachodachówki (październik 2026)",
+     "url": "https://www.domiporta.pl/cennik-uslug-budowlanych/uslugi-budowlane/dachy/wykonanie-pokrycia-z-blachodachowki/",
+     "data_zrodla": "2026-10",
+     "vat": "?"
+    },
+    {
+     "nazwa": "kb.pl – Cennik usług budowlanych 2026",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-uslug-budowlanych/",
+     "data_zrodla": "2026-01-07",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "kb.pl – Cennik dachów i pokryć dachowych 2026",
+     "url": "https://kb.pl/aktualnosci/budowa-domu/cennik-dachow-i-pokryc-dachowych-2026/",
+     "data_zrodla": "2026-03-06",
+     "vat": "?"
+    },
+    {
+     "nazwa": "extradom.pl – Aktualny cennik usług budowlanych 2026",
+     "url": "https://www.extradom.pl/porady/artykul-cennik-uslug-budowlanych",
+     "data_zrodla": "2026-01-19",
+     "vat": "?"
+    },
+    {
+     "nazwa": "kosztorysujemy.com.pl – Stawki robocizny budowlanej 2026",
+     "url": "https://kosztorysujemy.com.pl/stawki-robocizny-budowlanej-2026-aktualny-cennik-dla-wszystkich-branz/",
+     "data_zrodla": "2026-07-27",
+     "vat": "netto"
+    }
+   ],
+   "n_zr": 5,
+   "uwaga": "Robocizna krycia. Materiał osobno.",
+   "zmiana": null
+  },
+  "r_pokrycie_d": {
+   "n": "Pokrycie dachówką ceramiczną (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "c": 115.75,
+   "lo": 95.5,
+   "hi": 131.0,
+   "zrodla": [
+    {
+     "nazwa": "domiporta.pl – Pokrycie z dachówki karpiówki ceramicznej (październik 2026)",
+     "url": "https://www.domiporta.pl/cennik-uslug-budowlanych/uslugi-budowlane/dachy/wykonanie-pokrycia-z-dachowki-karpiowki-ceramicznej/",
+     "data_zrodla": "2026-10",
+     "vat": "?"
+    },
+    {
+     "nazwa": "cenauslug.pl – Układanie dachówki ceramicznej",
+     "url": "https://cenauslug.pl/budowa-i-remont/ukladanie-dachowki-ceramicznej",
+     "data_zrodla": "2026-05-12",
+     "vat": "?"
+    },
+    {
+     "nazwa": "kb.pl – Cennik usług budowlanych 2026",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-uslug-budowlanych/",
+     "data_zrodla": "2026-01-07",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "kb.pl – Cennik dachów i pokryć dachowych 2026",
+     "url": "https://kb.pl/aktualnosci/budowa-domu/cennik-dachow-i-pokryc-dachowych-2026/",
+     "data_zrodla": "2026-03-06",
+     "vat": "?"
+    },
+    {
+     "nazwa": "extradom.pl – Aktualny cennik usług budowlanych 2026",
+     "url": "https://www.extradom.pl/porady/artykul-cennik-uslug-budowlanych",
+     "data_zrodla": "2026-01-19",
+     "vat": "?"
+    },
+    {
+     "nazwa": "kosztorysujemy.com.pl – Stawki robocizny budowlanej 2026",
+     "url": "https://kosztorysujemy.com.pl/stawki-robocizny-budowlanej-2026-aktualny-cennik-dla-wszystkich-branz/",
+     "data_zrodla": "2026-07-27",
+     "vat": "netto"
+    }
+   ],
+   "n_zr": 6,
+   "uwaga": "Robocizna krycia karpiówką. Materiał osobno.",
+   "zmiana": null
+  },
+  "r_rynny": {
+   "n": "Montaż rynien i rur spustowych (robocizna)",
+   "jm": "zł/mb",
+   "k": "r",
+   "c": 49.21,
+   "lo": 39.83,
+   "hi": 60.0,
+   "zrodla": [
+    {
+     "nazwa": "cenauslug.pl – Montaż rynien PCV",
+     "url": "https://cenauslug.pl/budowa-i-remont/montaz-rynien-pcv",
+     "data_zrodla": "2026-06-25",
+     "vat": "?"
+    },
+    {
+     "nazwa": "kb.pl – Cennik montażu rynien lub ich wymiany",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-montazu-rynien-lub-ich-wymiany-robocizna-material/",
+     "data_zrodla": "2026-01-07",
+     "vat": "brutto8"
+    },
+    {
+     "nazwa": "kb.pl – Stawki ekip budowlanych 2026 (aktualności)",
+     "url": "https://kb.pl/aktualnosci/budowa-domu/koszty-robocizny-budowlanej-w-2026-roku/",
+     "data_zrodla": "2026-05-04",
+     "vat": "?"
+    },
+    {
+     "nazwa": "kosztorysujemy.com.pl – Stawki robocizny budowlanej 2026",
+     "url": "https://kosztorysujemy.com.pl/stawki-robocizny-budowlanej-2026-aktualny-cennik-dla-wszystkich-branz/",
+     "data_zrodla": "2026-07-27",
+     "vat": "netto"
+    }
+   ],
+   "n_zr": 4,
+   "uwaga": "Robocizna montażu. Materiał osobno.",
+   "zmiana": null
+  },
+  "r_okna": {
+   "n": "Montaż okna, ciepły montaż (robocizna)",
+   "jm": "zł/szt",
+   "k": "r",
+   "c": 335.23,
+   "lo": 288.42,
+   "hi": 392.15,
+   "zrodla": [
+    {
+     "nazwa": "extradom.pl – Aktualny cennik usług budowlanych 2026",
+     "url": "https://www.extradom.pl/porady/artykul-cennik-uslug-budowlanych",
+     "data_zrodla": "2026-01-19",
+     "vat": "?"
+    },
+    {
+     "nazwa": "oferteo.pl – Ile kosztują okna w 2026?",
+     "url": "https://www.oferteo.pl/artykuly/ile-kosztuja-okna",
+     "data_zrodla": "2026-03",
+     "vat": "?"
+    },
+    {
+     "nazwa": "cenauslug.pl – Montaż okien i parapetów 2026",
+     "url": "https://cenauslug.pl/przewodnik/montaz-okien-i-parapetow",
+     "data_zrodla": "2026-09-24",
+     "vat": "?"
+    },
+    {
+     "nazwa": "muratordom.pl – Ile kosztuje montaż okien w marcu 2026?",
+     "url": "https://muratordom.pl/budowa/okna/ile-kosztuje-montaz-okien-w-marcu-2026-przewodnik-po-cenach-w-warszawie-krakowie-i-mniejszych-miejscowosciach-aa-RWFM-wiBb-Abpq.html",
+     "data_zrodla": "2026-03-12",
+     "vat": "?"
+    }
+   ],
+   "n_zr": 4,
+   "uwaga": "Ceny za metr obwodu okna przeliczone na sztukę: obwód 5,06 m (okno 1,6 m²). Tylko wariant ciepłego montażu. Ceny za m² pominięte.",
+   "zmiana": null
+  },
+  "r_drzwi": {
+   "n": "Montaż drzwi zewnętrznych (robocizna)",
+   "jm": "zł/szt",
+   "k": "r",
+   "c": 851.25,
+   "lo": 582.5,
+   "hi": 1120.0,
+   "zrodla": [
+    {
+     "nazwa": "komfort.pl – Ile kosztuje montaż drzwi? Cennik 2026",
+     "url": "https://komfort.pl/porady/ile-kosztuje-montaz-drzwi-cennik-dla-wszystkich-wojewodztw",
+     "data_zrodla": "2026-01-13",
+     "vat": "?"
+    },
+    {
+     "nazwa": "extradom.pl – Aktualny cennik usług budowlanych 2026",
+     "url": "https://www.extradom.pl/porady/artykul-cennik-uslug-budowlanych",
+     "data_zrodla": "2026-01-19",
+     "vat": "?"
+    },
+    {
+     "nazwa": "cenauslug.pl – Montaż drzwi wewnętrznych i zewnętrznych 2026",
+     "url": "https://cenauslug.pl/przewodnik/montaz-drzwi-wewnetrznych-i-zewnetrznych",
+     "data_zrodla": "2026-09-24",
+     "vat": "?"
+    },
+    {
+     "nazwa": "zbudujsamdom.pl – Ile kosztują drzwi do domu w 2026",
+     "url": "https://www.zbudujsamdom.pl/ile-kosztuja-drzwi-do-domu-w-2026-roku-wejsciowe-i-wewnetrzne-realne-ceny-i-bledy/",
+     "data_zrodla": "2026-04-18",
+     "vat": "?"
+    }
+   ],
+   "n_zr": 4,
+   "uwaga": "Drzwi zewnętrzne. Montaż w starej ościeżnicy (wymiana) pominięty.",
+   "zmiana": null
+  },
+  "r_elewacja": {
+   "n": "Ocieplenie ścian BSO z tynkiem cienkowarstwowym (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "c": 125.0,
+   "lo": 105.5,
+   "hi": 150.0,
+   "zrodla": [
+    {
+     "nazwa": "kb.pl – Ocieplenie domu w 2026 roku to szok dla portfela",
+     "url": "https://kb.pl/aktualnosci/budowa-domu/koszty-ocieplenia-domu-i-elewacji-2026/",
+     "data_zrodla": "2026-01-31",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "kb.pl – Cennik elewacji domów i prac elewacyjnych 2026",
+     "url": "https://kb.pl/elewacje-i-ocieplenie/elewacje/cennik-elewacji-i-prac-elewacyjnych/",
+     "data_zrodla": "2026-01-07",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "kb.pl – Cennik usług budowlanych 2026",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-uslug-budowlanych/",
+     "data_zrodla": "2026-01-07",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "kb.pl – Ile dziś kosztuje elewacja domu? (cytuje firmę Allwall)",
+     "url": "https://www.kb.pl/aktualnosci/budowa-domu/ile-kosztuje-metr-elewacji-w-2026-roku/",
+     "data_zrodla": "2026-03-20",
+     "vat": "?"
+    }
+   ],
+   "n_zr": 4,
+   "uwaga": "Robocizna całego systemu ocieplenia z tynkiem. Materiał osobno (m_eps_graf, m_etics).",
+   "zmiana": null
+  },
+  "r_poddasze": {
+   "n": "Ocieplenie poddasza wełną z zabudową GK (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "c": 163.0,
+   "lo": 124.5,
+   "hi": 201.5,
+   "zrodla": [
+    {
+     "nazwa": "kb.pl – Cennik ocieplenia poddasza użytkowego 2026 w ponad 300 miastach",
+     "url": "https://kb.pl/cenniki/ocieplenie-poddasza-uzytkowego/",
+     "data_zrodla": "2026-09-06",
+     "vat": "?"
+    },
+    {
+     "nazwa": "cenauslug.pl – Zabudowa poddasza płytami g-k na stelażu",
+     "url": "https://cenauslug.pl/budowa-i-remont/zabudowa-poddasza-plytami-g-k-na-stelazu",
+     "data_zrodla": "2026-05-12",
+     "vat": "?"
+    }
+   ],
+   "n_zr": 2,
+   "uwaga": "Zakres częściowo bez zabudowy GK, zależnie od źródła. Tylko 2 źródła.",
+   "zmiana": null
+  },
+  "r_strop_oc": {
+   "n": "Ocieplenie stropu wełną (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "c": 50.93,
+   "lo": 43.0,
+   "hi": 64.81,
+   "zrodla": [
+    {
+     "nazwa": "kb.pl – Cennik ocieplenia poddaszy w 2026 roku",
+     "url": "https://kb.pl/aktualnosci/budowa-domu/cennik-ocieplenia-poddaszy-w-2026/",
+     "data_zrodla": "2026-02-18",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "kb.pl – Cennik ocieplenia poddasza",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-ocieplenia-poddasza/",
+     "data_zrodla": "2026-01-07 (aktualizacja cen)",
+     "vat": "brutto8"
+    },
+    {
+     "nazwa": "cenauslug.pl – Ocieplenie stropu wełną mineralną",
+     "url": "https://cenauslug.pl/budowa-i-remont/ocieplenie-stropu-welna-mineralna",
+     "data_zrodla": "2026-07-15",
+     "vat": "?"
+    }
+   ],
+   "n_zr": 3,
+   "uwaga": "Strop żelbetowy lub Teriva. Strop drewniany pominięty.",
+   "zmiana": null
+  },
+  "r_tynk": {
+   "n": "Tynk gipsowy maszynowy (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "c": 44.0,
+   "lo": 38.0,
+   "hi": 50.0,
+   "zrodla": [
+    {
+     "nazwa": "kb.pl – Cennik tynków gipsowych 2026 w ponad 300 miastach",
+     "url": "https://kb.pl/cenniki/tynki-gipsowe/",
+     "data_zrodla": "2026-09-06",
+     "vat": "?"
+    },
+    {
+     "nazwa": "kb.pl – Cennik usług tynkarskich: znamy aktualne ceny 2026",
+     "url": "https://kb.pl/aktualnosci/wnetrza/cennik-uslug-tynkarskich-2026/",
+     "data_zrodla": "2026-02-21",
+     "vat": "?"
+    },
+    {
+     "nazwa": "cenauslug.pl – Tynkowanie maszynowe gipsowe",
+     "url": "https://cenauslug.pl/budowa-i-remont/tynkowanie-maszynowe-gipsowe",
+     "data_zrodla": "2026-05-12",
+     "vat": "?"
+    },
+    {
+     "nazwa": "kb.pl – Ceny tynków gipsowych za m2 – szczegółowy cennik",
+     "url": "https://kb.pl/cenniki/uslugi/ceny-tynkow-gipsowych-za-m2/",
+     "data_zrodla": "2026-01-07",
+     "vat": "brutto8"
+    },
+    {
+     "nazwa": "kb.pl – Cennik usług budowlanych 2026",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-uslug-budowlanych/",
+     "data_zrodla": "2026-01-07",
+     "vat": "netto"
+    }
+   ],
+   "n_zr": 5,
+   "uwaga": "Tylko robocizna nałożenia tynku. Tynk z materiałem pominięty.",
+   "zmiana": null
+  },
+  "r_wylewka": {
+   "n": "Wylewka cementowa lub miksokret (robocizna)",
+   "jm": "zł/m²",
+   "k": "r",
+   "c": 27.64,
+   "lo": 19.26,
+   "hi": 38.52,
+   "zrodla": [
+    {
+     "nazwa": "muratordom.pl – Tynki wewnętrzne i wylewki cementowe 2026",
+     "url": "https://muratordom.pl/wnetrza/prace-wykonczeniowe/tynki-wewnetrzne-i-wylewki-cementowe-2026-aktualny-cennik-z-robocizna-i-materialem-aa-vXme-fR3P-VUmt.html",
+     "data_zrodla": "2026-05-19",
+     "vat": "?"
+    },
+    {
+     "nazwa": "kb.pl – Ceny wylania posadzek z miksokreta za m2",
+     "url": "https://kb.pl/cenniki/uslugi/ceny-wylania-posadzek-z-miksokreta/",
+     "data_zrodla": "2026-01-07 (aktualizacja cen)",
+     "vat": "brutto8"
+    },
+    {
+     "nazwa": "alleremont.pl – Wylewki i posadzki 2026 – cennik",
+     "url": "https://alleremont.pl/poradniki/wylewki-posadzki-cennik-2026.html",
+     "data_zrodla": "2026-06",
+     "vat": "brutto8"
+    },
+    {
+     "nazwa": "e-remonty-warszawa.pl – Ile zapłacisz za wylewkę anhydrytową w 2026?",
+     "url": "https://e-remonty-warszawa.pl/koszt-wylewki-anhydrytowej",
+     "data_zrodla": "2026-04-26",
+     "vat": "?"
+    }
+   ],
+   "n_zr": 4,
+   "uwaga": "Robocizna wylania. Anhydryt tylko w robocizny (dwa źródła). Wylewki z materiałem pominięte.",
+   "zmiana": null
+  },
+  "i_elektryka": {
+   "n": "Instalacja elektryczna w całym domu (z materiałem i montażem)",
+   "jm": "zł/m²",
+   "k": "i",
+   "c": 266.67,
+   "lo": 183.33,
+   "hi": 350.0,
+   "zrodla": [
+    {
+     "nazwa": "muratordom.pl – Dom 150 m² i nowa instalacja elektryczna",
+     "url": "https://muratordom.pl/instalacje/instalacja-elektryczna/dom-150-m2-i-nowa-instalacja-elektryczna-sprawdzilismy-ceny-w-polsce-jaki-jest-koszt-robocizny-i-materialow-aa-tPYE-cN27-s6dM.html",
+     "data_zrodla": "2026-10-17",
+     "vat": "?"
+    },
+    {
+     "nazwa": "muratordom.pl – Ile kosztuje instalacja elektryczna we wrześniu 2026 roku?",
+     "url": "https://muratordom.pl/cenniki-budowlane/ile-kosztuje-instalacja-elektryczna-we-wrzesniu-2026-roku-aktualny-cennik-robocizny-aa-UXtk-Yo6M-r7k1.html",
+     "data_zrodla": "2026-09-11",
+     "vat": "?"
+    }
+   ],
+   "n_zr": 2,
+   "uwaga": "Cena całego domu przeliczona na m² podłogi (150 m² i 100 m²). Źródła z ceną za punkt pominięte (dają inne wyniki). Oba źródła z jednego wydawcy.",
+   "zmiana": null
+  },
+  "i_wodkan": {
+   "n": "Instalacja wodno-kanalizacyjna w całym domu (z materiałem i montażem)",
+   "jm": "zł/m²",
+   "k": "i",
+   "c": 142.86,
+   "lo": 107.14,
+   "hi": 178.57,
+   "zrodla": [
+    {
+     "nazwa": "muratordom.pl – Koszt instalacji wodnej w domu 2026",
+     "url": "https://muratordom.pl/cenniki-budowlane/koszt-instalacji-wodnej-w-domu-2026-ile-zaplacisz-za-wod-kan-z-materialem-aa-dHVZ-24JQ-XFoR.html",
+     "data_zrodla": "2026-04-30",
+     "vat": "?"
+    }
+   ],
+   "n_zr": 1,
+   "uwaga": "Jedno źródło: cena domu 120–160 m² przeliczona na m² przy 140 m². Ceny za punkt pominięte. Wycena orientacyjna.",
+   "zmiana": null
+  },
+  "i_co": {
+   "n": "Ogrzewanie podłogowe wodne (z materiałem i montażem)",
+   "jm": "zł/m²",
+   "k": "i",
+   "c": 246.0,
+   "lo": 221.0,
+   "hi": 300.0,
+   "zrodla": [
+    {
+     "nazwa": "muratordom.pl – Ogrzewanie podłogowe wodne – koszt 2026",
+     "url": "https://muratordom.pl/instalacje/ogrzewanie-podlogowe/ogrzewanie-podlogowe-wodne-koszt-2026-cena-za-m2-robocizny-z-materialem-bez-materialu-aa-zFkV-FECU-T5mj.html",
+     "data_zrodla": "2026-06-25",
+     "vat": "?"
+    },
+    {
+     "nazwa": "kb.pl – Cennik ogrzewania podłogowego: materiały i robocizna za m2",
+     "url": "https://kb.pl/cenniki/uslugi/ogrzewanie-podlogowe/",
+     "data_zrodla": "2026-01-07 (aktualizacja cen)",
+     "vat": "brutto8"
+    },
+    {
+     "nazwa": "kb.pl – Cennik usług hydraulicznych – aktualne stawki 2026",
+     "url": "https://kb.pl/aktualnosci/budowa-domu/cennik-uslug-hydraulicznych-2026/",
+     "data_zrodla": "2026-02-20",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "kb.pl – Cennik usług hydraulicznych 2026 w całej Polsce",
+     "url": "https://kb.pl/remont-i-wykonczenie/instalacje-hydrauliczne/cennik-uslug-hydraulicznych/",
+     "data_zrodla": "2026-05-20",
+     "vat": "brutto8"
+    },
+    {
+     "nazwa": "muratordom.pl – Koszt instalacji wodnej w domu 2026",
+     "url": "https://muratordom.pl/cenniki-budowlane/koszt-instalacji-wodnej-w-domu-2026-ile-zaplacisz-za-wod-kan-z-materialem-aa-dHVZ-24JQ-XFoR.html",
+     "data_zrodla": "2026-04-30",
+     "vat": "?"
+    },
+    {
+     "nazwa": "kb.pl – Cennik usług budowlanych 2026",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-uslug-budowlanych/",
+     "data_zrodla": "2026-01-07",
+     "vat": "netto"
+    }
+   ],
+   "n_zr": 6,
+   "uwaga": "Pozycje z materiałem i montażem. Samą robociznę pominięto. Ceny za posadzkę pominięto.",
+   "zmiana": null
+  },
+  "i_pompa": {
+   "n": "Pompa ciepła powietrze–woda ok. 8 kW z montażem",
+   "jm": "zł/szt",
+   "k": "i",
+   "c": 34768.52,
+   "lo": 31481.48,
+   "hi": 40833.33,
+   "zrodla": [
+    {
+     "nazwa": "kb.pl – Ceny pomp ciepła – ile kosztuje pompa ciepła?",
+     "url": "https://kb.pl/cenniki/produkty/ceny-pomp-ciepla-ile-kosztuje-pompa-ciepla",
+     "data_zrodla": "2026-01-07",
+     "vat": "brutto8"
+    },
+    {
+     "nazwa": "cenauslug.pl – Ile kosztuje pompa ciepła z montażem w 2026 roku?",
+     "url": "https://cenauslug.pl/poradniki/ile-kosztuje-pompa-ciepla-z-montazem-cennik-urzadzen-i-robocizny",
+     "data_zrodla": "2026-08-04",
+     "vat": "brutto8"
+    },
+    {
+     "nazwa": "budotom.pl – Pompa ciepła cena 2026",
+     "url": "https://budotom.pl/pompa-ciepla-cena/",
+     "data_zrodla": "2026-05-14",
+     "vat": "brutto8"
+    },
+    {
+     "nazwa": "oferteo.pl – Koszt pompy ciepła do domu 100 m²",
+     "url": "https://www.oferteo.pl/artykuly/koszt-pompy-ciepla-do-domu-100-m2",
+     "data_zrodla": "2026-01-16 (aktualizacja)",
+     "vat": "?"
+    }
+   ],
+   "n_zr": 4,
+   "uwaga": "Urządzenie i montaż razem. Ceny samych urządzeń (katalogi) i samego montażu pominięte. Brak źródła dokładnie dla 8 kW.",
+   "zmiana": null
+  },
+  "m_beton": {
+   "n": "Beton towarowy C20/25 (cena za m³)",
+   "jm": "zł/m³",
+   "k": "m",
+   "c": 360.0,
+   "lo": 360.0,
+   "hi": 370.0,
+   "zrodla": [
+    {
+     "nazwa": "gwozdzbet.pl - cennik betonu (betoniarnia Brzeszcze)",
+     "url": "https://gwozdzbet.pl/cennik/",
+     "data_zrodla": "brak daty na stronie; metadane 2026-03-12",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "domy.energetycznyprojekt.pl - Ile kosztuje kubik betonu",
+     "url": "https://domy.energetycznyprojekt.pl/ile-kosztuje-kubik-betonu/",
+     "data_zrodla": "2026-07-03",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "wnp.pl - Intercenbud, beton zwykły C 20/25 (B 25)",
+     "url": "https://www.wnp.pl/rynki/gielda-i-notowania/materialy-budowlane/beton-zwykly-z-kruszywa-naturalnego-c-20-25-b-25,24.html",
+     "data_zrodla": "2026-08-17",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "kb.pl - cennik betonu po klasach w Polsce",
+     "url": "https://kb.pl/cenniki/uslugi/cennik-betonu-po-klasach-w-calej-polsce-sprawdz-ceny/",
+     "data_zrodla": "2026-01-07 (pierwsza publikacja 2025-04-11)",
+     "vat": "brutto8"
+    },
+    {
+     "nazwa": "kb.pl - cennik betonu B25 w 10 miastach",
+     "url": "https://kb.pl/cenniki/cena-betonu/",
+     "data_zrodla": "2026-04-29",
+     "vat": "brutto23"
+    }
+   ],
+   "n_zr": 5,
+   "uwaga": "Cena za m³ bez transportu i pompy. Źródło blogowe i szacunek sprzedawcy pominięte.",
+   "zmiana": null
+  },
+  "m_stal": {
+   "n": "Pręt żebrowany B500 Ø12 (cena za kg)",
+   "jm": "zł/kg",
+   "k": "m",
+   "c": 3.27,
+   "lo": 3.27,
+   "hi": 3.27,
+   "zrodla": [
+    {
+     "nazwa": "mizopol.pl - pręt zbrojeniowy żebrowany fi 12",
+     "url": "https://mizopol.pl/pl/p/Pret-zbrojeniowy-zebrowany-fi-12/10591",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "metallco.pl - pręt żebrowany fi 12 B500SP L=12 mb",
+     "url": "https://www.metallco.pl/produkt/pret-zebrowany-fi-12-b500sp-l=12mb-6088",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "wnp.pl - Intercenbud, pręt stalowy żebrowany skośnie fi 12 mm",
+     "url": "https://www.wnp.pl/rynki/gielda-i-notowania/materialy-budowlane/pret-stalowy-okragly-zebrowany-skosnie-o-srednicy-12-mm,18.html",
+     "data_zrodla": "2026-08-17",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "stalserwis24.pl - pręt żebrowany fi 12 B500SP L=12000 mm",
+     "url": "https://www.stalserwis24.pl/asortyment/prety/prety-zebrowane-zbrojeniowe/pret-zebrowany-fi-12-b500sp-l12000mm/",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "brutto23"
+    }
+   ],
+   "n_zr": 4,
+   "uwaga": "Cena za kg. Źródła bez jasnej jednostki i wyraźnie odstające pominięte.",
+   "zmiana": null
+  },
+  "m_sc_fund": {
+   "n": "Bloczek betonowy fundamentowy 24 cm (cena za m² ściany)",
+   "jm": "zł/m²",
+   "k": "m",
+   "c": 114.53,
+   "lo": 114.53,
+   "hi": 114.53,
+   "zrodla": [
+    {
+     "nazwa": "castorama.pl - bloczek betonowy Tregor klasa B15 38x24x12 fundamentowy",
+     "url": "https://www.castorama.pl/bloczek-betonowy-tregor-klasa-b15-38-x-24-x-12-cm-fundamentowy/5902596213237_CAPL.prd",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "brutto23"
+    },
+    {
+     "nazwa": "leroymerlin.pl - bloczek betonowy fundamentowy 38x24x12 Prefagbud",
+     "url": "https://www.leroymerlin.pl/produkty/bloczek-betonowy-fundamentowy-38-x-24-x-12-cm-prefagbud-45527510.html",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "brutto23"
+    },
+    {
+     "nazwa": "sklep.sewera.pl - bloczek betonowy Olbet 12x24x38 klasa 15",
+     "url": "https://sklep.sewera.pl/bloczek-betonowy-12x24x38mm-klasa-15-olbet-p20770",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    }
+   ],
+   "n_zr": 3,
+   "uwaga": "Ściana 24 cm, około 21 bloczków na m².",
+   "zmiana": null
+  },
+  "m_hydro": {
+   "n": "Masa asfaltowo-kauczukowa (dysperbit), na m² przy 2 mm",
+   "jm": "zł/m²",
+   "k": "m",
+   "c": 7.87,
+   "lo": 7.87,
+   "hi": 7.87,
+   "zrodla": [
+    {
+     "nazwa": "sklep.sewera.pl - dyspersyjna masa asfaltowa Dysperbit Nexler 20 kg",
+     "url": "https://sklep.sewera.pl/dyspersyjna-masa-asfaltowa-dysperbit-nexler-20kg-p12027",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "obi.pl - Nexler Dysperbit DN 20 kg",
+     "url": "https://www.obi.pl/plynne-produkty-bitumiczne/nexler-dysperbit-dn-20-kg/p/3899036",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "brutto23"
+    },
+    {
+     "nazwa": "kim24.pl - Masa asfaltowo-kauczukowa Izohan Dysperbit DN 20 kg",
+     "url": "https://kim24.pl/Masa-Asfaltowo-Kauczukowa-Izohan-Dysperbit-DN-20kg",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "brutto23"
+    },
+    {
+     "nazwa": "ekobudsklep.pl - Dysperbit 10 kg Izohan/TES",
+     "url": "https://ekobudsklep.pl/masy-bitumiczne-hydroizolacje/6038-dysperbit-20kg-izohantes-5907572372038.html",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "brutto23"
+    }
+   ],
+   "n_zr": 4,
+   "uwaga": "Zużycie 3,0 kg/m² przy grubości 2 mm wg karty technicznej Izolbet. Grunt (0,2–0,5 kg/m²) nie wliczony.",
+   "zmiana": null
+  },
+  "m_xps": {
+   "n": "Styropian XPS 10 cm do fundamentów (cena za m³)",
+   "jm": "zł/m³",
+   "k": "m",
+   "c": 432.7,
+   "lo": 432.7,
+   "hi": 432.7,
+   "zrodla": [
+    {
+     "nazwa": "castorama.pl - polistyren XPS 100 mm 2,17 m² (3 szt., Finnfoam)",
+     "url": "https://www.castorama.pl/polistyren-xps-100-mm-2-17-m2-3-szt-/4779030930187_CAPL.prd",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "brutto23"
+    },
+    {
+     "nazwa": "sklep.sewera.pl - Hoch styropian XPS 300 034 10 cm",
+     "url": "https://sklep.sewera.pl/hoch-styropian-xps-300-034-10cm-p11991",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "bednarek.sklep.pl - Synthos XPS Prime S 10 cm (Hurtownia Bednarek)",
+     "url": "https://bednarek.sklep.pl/styropian-ekstrudowany-xps/2868-synthos-prime-s-10cm-styrodur.html",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "brutto23"
+    },
+    {
+     "nazwa": "styronet.pl - cennik styropianu (Swisspor XPS 300)",
+     "url": "https://styronet.pl/cennik-cena-styropianu/",
+     "data_zrodla": "brak jednej daty (strona podaje różne miesiące 2026)",
+     "vat": "brutto23"
+    }
+   ],
+   "n_zr": 4,
+   "uwaga": "Płyty XPS, grubość 10 cm. Ceny sklepowe zakładamy brutto 23%.",
+   "zmiana": null
+  },
+  "m_eps_podl": {
+   "n": "Styropian podłogowy EPS 100 (cena za m³)",
+   "jm": "zł/m³",
+   "k": "m",
+   "c": 272.22,
+   "lo": 272.22,
+   "hi": 272.22,
+   "zrodla": [
+    {
+     "nazwa": "producentstyropianu.pl - Styropian dach/podłoga EPS 100-038 Termo-Styl",
+     "url": "https://www.producentstyropianu.pl/styropian-dach-podloga/styropian-dach-podloga-eps100/styropian-dach-podloga-eps-100-038-termo-styl-cena-za-m3_p_174.html",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "topstyropian.pl - Styropian dach/podłoga EPS 100-038 Styromap",
+     "url": "https://www.topstyropian.pl/styromap/styropian-dach-podloga/styropian-dach-podloga-eps100/styropian-dach-podloga-eps-100-038-styromap-cena-za-m3_p_136.html",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "castorama.pl - styropian podłogowy PRO 100 100 mm, 3 m²",
+     "url": "https://www.castorama.pl/styropian-podlogowy-pro-100-100-mm-3-m2/5903771321921_CAPL.prd",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "brutto23"
+    },
+    {
+     "nazwa": "styropiangrafitowy.warszawa.pl - StyropianPlus EPS 100-038 podłoga/dach",
+     "url": "https://www.styropiangrafitowy.warszawa.pl/styropian-plus/styropian-dach-podloga/styropian-dach-podloga-eps100/styropianplus-eps-100-038-podloga-dach-cena-m3_p_490.html",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "izotherm.pl - produkt powiązany EPS 100-038 (STYRO-MAR)",
+     "url": "https://www.izotherm.pl/styropian-dach-podloga/styropian-dach-podloga-eps-100-038-styropianex-cena-za-m3_p_156.html",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "brutto23"
+    }
+   ],
+   "n_zr": 5,
+   "uwaga": "Płyty pod podłogę na gruncie.",
+   "zmiana": null
+  },
+  "m_sc_cer": {
+   "n": "Pustak ceramiczny P+W 25 cm kl. 15 (cena za m² ściany)",
+   "jm": "zł/m²",
+   "k": "m",
+   "c": 76.29,
+   "lo": 76.29,
+   "hi": 76.29,
+   "zrodla": [
+    {
+     "nazwa": "wienerberger.pl - Cennik produktów Wienerberger (PDF)",
+     "url": "https://www.wienerberger.pl/content/dam/wienerberger/poland/marketing/documents-magazines/business-documents/Cennik-produktow-Wienerberger.pdf",
+     "data_zrodla": "brak daty w dokumencie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "bricoman.pl - Porotherm 25 cm kl. 15 P+W (642670)",
+     "url": "https://www.bricoman.pl/porotherm-25cm-kl-15-p-w-dobre-642670.html",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "eadamex.pl - pustak Porotherm 25 P+W KL.15 (72 szt/pal)",
+     "url": "https://eadamex.pl/pustaki-tradycyjne/10719-pustak-ceramiczny-porotherm-25-pw-kl15-107szt-m2-72szt-pal.html",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "leroymerlin.pl - Porotherm 25 P+W KL.15 37,3x25x23,8 (LE)",
+     "url": "https://www.leroymerlin.pl/produkty/pustak-ceramiczny-porotherm-25-p-w-kl-15-37-3-x-25-x-23-8-cm-le-wienerberger-45958262.html",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "brutto23"
+    },
+    {
+     "nazwa": "sklep-kowalczyk.pl - pustak PTH 25 P+W kl. 15 (72 szt/pal)",
+     "url": "https://sklep-kowalczyk.pl/pustak-pth-25-p-w-kl-15-72szt-pal-68258125.html",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "brutto23"
+    }
+   ],
+   "n_zr": 5,
+   "uwaga": "Pustaki Porotherm 25 P+W, około 10,7 szt. na m² ściany.",
+   "zmiana": null
+  },
+  "m_sc_wew": {
+   "n": "Pustak ceramiczny P+W 18,8 cm (cena za m² ściany)",
+   "jm": "zł/m²",
+   "k": "m",
+   "c": 96.03,
+   "lo": 96.03,
+   "hi": 96.03,
+   "zrodla": [
+    {
+     "nazwa": "wienerberger.pl - Cennik produktów Wienerberger (PDF)",
+     "url": "https://www.wienerberger.pl/content/dam/wienerberger/poland/marketing/documents-magazines/business-documents/Cennik-produktow-Wienerberger.pdf",
+     "data_zrodla": "brak daty w dokumencie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "sklep.sewera.pl - Porotherm 18,8 P+W klasa 15 (Wienerberger)",
+     "url": "https://sklep.sewera.pl/pustak-ceramiczny-porotherm-18-8-pw-klasa-15-wienerberger-p16557",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "dachpro.pl - pustak Porotherm 18.8 P+W",
+     "url": "https://www.dachpro.pl/pl/p/Pustak-Porotherm-18.8-P-W-/16302",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "brutto23"
+    },
+    {
+     "nazwa": "eadamex.pl - pustak Porotherm 18,8 P+W KL.10 (72 szt/pal)",
+     "url": "https://eadamex.pl/pustaki-tradycyjne/16547-pustak-ceramiczny-porotherm-188-pw-kl10-8szt-m2-72szt-pal.html",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    }
+   ],
+   "n_zr": 4,
+   "uwaga": "Ściany wewnętrzne nośne, około 8 szt. na m².",
+   "zmiana": null
+  },
+  "m_sc_bk": {
+   "n": "Beton komórkowy 24 cm kl. 600 (cena za m² ściany)",
+   "jm": "zł/m²",
+   "k": "m",
+   "c": 112.42,
+   "lo": 107.07,
+   "hi": 116.66,
+   "zrodla": [
+    {
+     "nazwa": "sklep.sewera.pl - bloczek komórkowy Termalica T4/600 240x249x599 UZ Bruk-Bet (promocja)",
+     "url": "https://sklep.sewera.pl/bloczek-komorkowy-termalica-t4600-240x249x599mm-uz-bruk-bet-p18709",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "sklep.sewera.pl - bloczek komórkowy Termobet T 4/600 240x239x590 UZ Bruk-Bet (promocja)",
+     "url": "https://sklep.sewera.pl/bloczek-komorkowy-termobet-t-4600-240x239x590mm-uz-bruk-bet-p18692",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "sklep.sewera.pl - bloczek komórkowy Ytong PP4/06 240x199x599 PWU (Xella)",
+     "url": "https://sklep.sewera.pl/bloczek-komorkowy-ytong-pp406-240x199x599mm-pwu-xella-p19158",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "leroymerlin.pl - beton komórkowy bloczek Termobet z uchwytem 59x24x24 cm (Prefabet, PROMO)",
+     "url": "https://www.leroymerlin.pl/produkty/beton-komorkowy-bloczek-termobet-z-uchwytem-59-x-24-x-24-cm-prefabet-lagisza-promo-45443881.html",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "brutto23"
+    },
+    {
+     "nazwa": "kb.pl - cennik bloczków z betonu komórkowego 2026 (600/240/240)",
+     "url": "https://kb.pl/cenniki/bloczki-z-betonu-komorkowego/",
+     "data_zrodla": "2026-04-29",
+     "vat": "brutto23"
+    }
+   ],
+   "n_zr": 5,
+   "uwaga": "Dla sklepu z promocją: minimum to cena promocyjna, maksimum regularna.",
+   "zmiana": null
+  },
+  "m_nadproze": {
+   "n": "Nadproże prefabrykowane 24–25 cm (cena za mb)",
+   "jm": "zł/mb",
+   "k": "m",
+   "c": 41.38,
+   "lo": 33.49,
+   "hi": 49.27,
+   "zrodla": [
+    {
+     "nazwa": "wienerberger.pl - Cennik produktów Wienerberger (PDF), belki nadprożowe Porotherm 23,8",
+     "url": "https://www.wienerberger.pl/content/dam/wienerberger/poland/marketing/documents-magazines/business-documents/Cennik-produktow-Wienerberger.pdf",
+     "data_zrodla": "brak daty w dokumencie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "sklep.sewera.pl - nadproże betonowe L19 TYP-D/TYP-N (Uciechowski)",
+     "url": "https://sklep.sewera.pl/nadproze-betonowe-l19-120cm-typ-d-9x19x120cm-uciechowski-p18646",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    }
+   ],
+   "n_zr": 2,
+   "uwaga": "Cena za metr bieżący, przeliczona z ceny za sztukę i długości.",
+   "zmiana": null
+  },
+  "m_teriva": {
+   "n": "Strop Teriva: belki i pustaki (cena za m²)",
+   "jm": "zł/m²",
+   "k": "m",
+   "c": 100.0,
+   "lo": 80.0,
+   "hi": 115.0,
+   "zrodla": [
+    {
+     "nazwa": "stropy-poddasze.pl - Strop Teriva cena m² 2026",
+     "url": "https://stropy-poddasze.pl/strop-teriva-cena-m2",
+     "data_zrodla": "2026-08-04 (aktualizacja)",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "kb.pl - Strop za 25 tys. albo prawie 40 tys. zł (zestaw belek i pustaków)",
+     "url": "https://kb.pl/aktualnosci/budowa-domu/strop-teriva-opis-cena-opinie-_z/",
+     "data_zrodla": "2026-10-03",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "stanlux.istore.pl - Teriva I (pustak + belka stropowa 4,5 m)",
+     "url": "https://stanlux.istore.pl/en_US/p/TERIVA-BETARD-Strop-%2C-pustak-stropowy%2C-belka-stropowa/2429431",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    }
+   ],
+   "n_zr": 3,
+   "uwaga": "Sam materiał belek i pustaków. Zbrojenie i nadbeton liczone osobno (z_teriva_beton).",
+   "zmiana": null
+  },
+  "m_drewno": {
+   "n": "Drewno konstrukcyjne C24 (cena za m³)",
+   "jm": "zł/m³",
+   "k": "m",
+   "c": 1725.0,
+   "lo": 1400.0,
+   "hi": 2050.0,
+   "zrodla": [
+    {
+     "nazwa": "mgprojekt.com.pl - Więźba dachowa (artykuł o drewnie C24)",
+     "url": "https://www.mgprojekt.com.pl/blog/wiezba-dachowa/",
+     "data_zrodla": "2026-02-20",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "cenauslug.pl - Jak obliczyć ilość drewna na więźbę dachową (poradnik)",
+     "url": "https://cenauslug.pl/poradniki/jak-obliczyc-ilosc-drewna-na-wiezbe-dachowa-kalkulator-i-praktyczne-porady-dla-inwestora",
+     "data_zrodla": "zaktualizowano 2026-08-03",
+     "vat": "netto"
+    }
+   ],
+   "n_zr": 2,
+   "uwaga": "Tylko klasa C24. Ceny kantówek i KVH pominięte.",
+   "zmiana": null
+  },
+  "z_drewno": {
+   "n": "Zużycie drewna na więźbę (m³ na m² połaci)",
+   "jm": "m³/m²",
+   "k": "m",
+   "c": 0.05,
+   "lo": 0.04,
+   "hi": 0.06,
+   "zrodla": [
+    {
+     "nazwa": "mgprojekt.com.pl - Więźba dachowa",
+     "url": "https://www.mgprojekt.com.pl/blog/wiezba-dachowa/",
+     "data_zrodla": "2026-02-20",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "cenauslug.pl - Kosztorys materiałowy więźby dachowej (dom 150 m²)",
+     "url": "https://cenauslug.pl/poradniki/kosztorys-materialowy-wiezby-dachowej-budzet-na-drewno-okucia-i-impregnaty-dla-domu-150-m2",
+     "data_zrodla": "zaktualizowano 2026-08-12",
+     "vat": "netto"
+    }
+   ],
+   "n_zr": 2,
+   "uwaga": "Ilość, nie cena.",
+   "zmiana": null
+  },
+  "z_teriva_beton": {
+   "n": "Zużycie betonu w stropie Teriva (m³ na m² stropu)",
+   "jm": "m³/m²",
+   "k": "z",
+   "c": 0.08,
+   "lo": 0.08,
+   "hi": 0.09,
+   "zrodla": [
+    {
+     "nazwa": "stropy-poddasze.pl - Strop Teriva cena m² 2026",
+     "url": "https://stropy-poddasze.pl/strop-teriva-cena-m2",
+     "data_zrodla": "2026-08-04 (aktualizacja)",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "mgprojekt.com.pl - Strop Teriva",
+     "url": "https://www.mgprojekt.com.pl/blog/strop-teriva/",
+     "data_zrodla": "2025-11-07 (zmodyfikowano 2026-09-08)",
+     "vat": "netto"
+    }
+   ],
+   "n_zr": 2,
+   "uwaga": "Ilość, nie cena.",
+   "zmiana": null
+  },
+  "m_blacho": {
+   "n": "Blachodachówka modułowa (cena za m² krycia)",
+   "jm": "zł/m²",
+   "k": "m",
+   "c": 44.5,
+   "lo": 44.5,
+   "hi": 44.5,
+   "zrodla": [
+    {
+     "nazwa": "bednarek.sklep.pl – Blachodachówka modułowa Budmat Venecja D-Matt Grafit RAL 7016",
+     "url": "https://bednarek.sklep.pl/blachodachowka-modulowa/4974-budmat-venecja-d-matt-grafit-7016.html",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "dodachu.pl – Budmat Venecja D-Matt Plus",
+     "url": "https://dodachu.pl/pokrycia-dachowe/373-budmat-blachodach%C3%B3wka-modu%C5%82owa-venecja-d-matt.html",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "dachowe.com.pl – Budmat Venecja D-Matt 8017",
+     "url": "https://dachowe.com.pl/blachodachowki-modulowe/3002-budmat-venecja-d-matt-8017.html",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    }
+   ],
+   "n_zr": 3,
+   "uwaga": "Cena za m² krycia (arkusz 0,805 m²). Cenniki kb.pl z 2024 roku pominięte.",
+   "zmiana": null
+  },
+  "m_dachowka": {
+   "n": "Dachówka ceramiczna (cena za m² krycia)",
+   "jm": "zł/m²",
+   "k": "m",
+   "c": 61.61,
+   "lo": 58.68,
+   "hi": 65.04,
+   "zrodla": [
+    {
+     "nazwa": "sklep.sewera.pl – Dachówka ceramiczna Braas Rubin 13V kasztanowy podstawowa",
+     "url": "https://sklep.sewera.pl/dachowka-ceramiczna-braas-rubin-13v-kasztanowy-podstawowa-p16689",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "sklep.sewera.pl – Dachówka ceramiczna Creaton Koda Nuance angoba antracyt",
+     "url": "https://sklep.sewera.pl/dachowka-ceramiczna-koda-nuance-angoba-antracyt-creaton-p11999",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "sklep.sewera.pl – Dachówka ceramiczna Braas Rubin 13V czarny błyszczący",
+     "url": "https://sklep.sewera.pl/dachowka-ceramiczna-braas-rubin-13v-czarny-blyszczacy-podstawowa-p16683",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "pokrycia-dachowe-sklep.pl – Braas Monier dachówka ceramiczna Rubin 13V",
+     "url": "https://pokrycia-dachowe-sklep.pl/braas-monier-dachowka-ceramiczna-rubin-13v-pl.html",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "dach-bud.poznan.pl – Ceny dachówek ceramicznych (Wielkopolska, wrzesień 2026)",
+     "url": "https://dach-bud.poznan.pl/dachowka-ceramiczna-cena-za-m2-i-porownanie-marek/",
+     "data_zrodla": "2026-10-01",
+     "vat": "netto"
+    }
+   ],
+   "n_zr": 5,
+   "uwaga": "Sztuki razy sztuki na m² z kart produktów. Rozrzut zależy od glazury i angoby.",
+   "zmiana": null
+  },
+  "m_membrana": {
+   "n": "Membrana dachowa wysokoparoprzepuszczalna (cena za m²)",
+   "jm": "zł/m²",
+   "k": "m",
+   "c": 4.87,
+   "lo": 4.87,
+   "hi": 4.87,
+   "zrodla": [
+    {
+     "nazwa": "sklepdekarza.pl – Membrana dachowa Corotop Strong Red 180 g/m², 75 m²",
+     "url": "https://sklepdekarza.pl/pl/p/MEMBRANA-DACHOWA-2-paski-klejace-COROTOP-STRONG-RED-180gm2-75m2-rolka/514",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "hanex.pl – Membrana wysokoparoprzepuszczalna Topdach 180 g, 75 m²",
+     "url": "https://hanex.pl/membrana-dachowa-wysokoparoprzepuszczalna-180g-75m2-topdach-180-sk2/",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "castorama.pl – Membrana dachowa 4ROOF IZODACH MAX 130 g/m², 75 m²",
+     "url": "https://www.castorama.pl/departments/membrana-dachowa-4roof-izodach-max-130-gr-m-75m2-super-jako-i-cena-1-rolka/5905910461215_CAPL.prd",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "brutto23"
+    }
+   ],
+   "n_zr": 3,
+   "uwaga": "Rolka 75 m². Ceny promocyjne jednego sklepu w zestawie.",
+   "zmiana": null
+  },
+  "m_laty": {
+   "n": "Łaty i kontrłaty na m² połaci (pochodna)",
+   "jm": "zł/m²",
+   "k": "m",
+   "c": 19.19,
+   "lo": 19.19,
+   "hi": 19.19,
+   "zrodla": [
+    {
+     "nazwa": "Łaty 2,68 mb/m² (rozstaw 35–40 cm) i kontrłaty 1,7 mb/m² (rozstaw 60 cm), mediany cen",
+     "url": "https://tani-komin.pl/ile-lat-na-100m2-dachu",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    }
+   ],
+   "n_zr": 1,
+   "uwaga": "Pochodna: 2,68 mb łat na m² razy mediana ceny łaty + 1,7 mb kontrłat na m² razy 2,50 zł/mb. Rozstaw 35–40 cm i 60 cm to założenia z artykułów.",
+   "zmiana": null
+  },
+  "m_rynny": {
+   "n": "Rynna PCV 125 mm (cena za mb)",
+   "jm": "zł/mb",
+   "k": "m",
+   "c": 17.9,
+   "lo": 15.85,
+   "hi": 21.65,
+   "zrodla": [
+    {
+     "nazwa": "castorama.pl – Rynna PVC Ocean 125 mm brązowa 4 m",
+     "url": "https://www.castorama.pl/rynna-pvc-ocean-125-mm-brazowa-4-m/5902241611661_CAPL.prd",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "brutto23"
+    },
+    {
+     "nazwa": "leroymerlin.pl – Rynna dachowa 125 mm 4 mb brązowa Marley",
+     "url": "https://www.leroymerlin.pl/produkty/budowa/dachy-i-rynny/odprowadzanie-wody-deszczowej-z-dachu/systemy-rynnowe-i-akcesoria/rynny/rynna-dachowa-125-mm-4-mb-brazowa-marley-45983182.html",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "brutto23"
+    },
+    {
+     "nazwa": "muratordom.pl – Ile kosztuje orynnowanie domu (marzec 2026)",
+     "url": "https://muratordom.pl/budowa/dach/ile-kosztuje-orynnowanie-domu-ceny-rynien-i-montazu-w-marcu-2026-roku-aa-915A-5an8-QprT.html",
+     "data_zrodla": "2026-03-27",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "pytajdekarza.pl – Ile kosztuje orynnowanie domu, cennik materiałów i robocizny 2026",
+     "url": "https://pytajdekarza.pl/ile-kosztuje-orynnowanie-domu-cennik-materialow-i-robocizny-2026/",
+     "data_zrodla": "2026-04-24",
+     "vat": "netto"
+    }
+   ],
+   "n_zr": 4,
+   "uwaga": "Rynny. Rury spustowe i akcesoria nie są wliczone. Cennik kb.pl z 2024 roku pominięty.",
+   "zmiana": null
+  },
+  "m_okno": {
+   "n": "Okno PCV 3-szybowe, Uw ≤ 0,9 (cena za m² okna)",
+   "jm": "zł/m²",
+   "k": "m",
+   "c": 748.44,
+   "lo": 748.44,
+   "hi": 748.44,
+   "zrodla": [
+    {
+     "nazwa": "leroymerlin.pl – Okno PCV 3-szybowe fasadowe 85/O33 białe 1165x1435 mm (Lupol)",
+     "url": "https://www.leroymerlin.pl/produkty/okno-pcv-3-szybowe-fasadowe-85-o33-biale-1165x1435-mm-otwierane-do-wewnatrz-lewe-45277932.html",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "brutto23"
+    },
+    {
+     "nazwa": "leroymerlin.pl – Okno PCV 3-szybowe fasadowe O33A 1165x1435 mm TROCAL 76MD",
+     "url": "https://www.leroymerlin.pl/produkty/okno-pcv-3-szybowe-fasadowe-o33a-biale-1165x1435-mm-otwierane-do-wewnatrz-lewe-trocal-76md-witraz-90170763.html",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "brutto23"
+    },
+    {
+     "nazwa": "castorama.pl – Okna PCV trzyszybowe (listing), rozwierno-uchylne 1165 x 1435 mm prawe białe",
+     "url": "https://www.castorama.pl/s/okna-trzyszybowe",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "brutto23"
+    },
+    {
+     "nazwa": "impolsklep.pl – Ciepłe Okno Drutex Rozwierno-Uchylne Trzyszybowe 1165 x 1435",
+     "url": "https://impolsklep.pl/Cieple-Okno-Drutex-Rozwierno-Uchylne-Trzyszybowe-1165-x-1435-Rozne-Kolory-p4229",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "brutto23"
+    }
+   ],
+   "n_zr": 4,
+   "uwaga": "Cena przeliczona na m² okna (1,67 m²). Ceny sklepowe brutto 23%.",
+   "zmiana": null
+  },
+  "m_drzwi": {
+   "n": "Drzwi zewnętrzne stalowe ocieplone, ok. 90 cm (cena za szt.)",
+   "jm": "zł/szt",
+   "k": "m",
+   "c": 1299.19,
+   "lo": 1299.19,
+   "hi": 1299.19,
+   "zrodla": [
+    {
+     "nazwa": "leroymerlin.pl – Drzwi zewnętrzne stalowe wejściowe 90 prawe antracytowe Didors Cortina",
+     "url": "https://www.leroymerlin.pl/produkty/drzwi-zewnetrzne-stalowe-wejsciowe-90-prawe-antracytowe-didors-cortina-99448707.html",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "brutto23"
+    },
+    {
+     "nazwa": "castorama.pl – Drzwi zewnętrzne stalowe O.K. Doors Teja 90 prawe antracyt",
+     "url": "https://www.castorama.pl/drzwi-zewnetrzne-stalowe-o-k-doors-teja-90-prawe-antracyt/5905982311289_CAPL.prd",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "brutto23"
+    },
+    {
+     "nazwa": "castorama.pl – Drzwi zewnętrzne stalowe O.K. Doors Gordo 90 lewe antracyt",
+     "url": "https://www.castorama.pl/drzwi-zewnetrzne-stalowe-o-k-doors-gordo-90-lewe-antracyt/5905982399027_CAPL.prd",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "brutto23"
+    }
+   ],
+   "n_zr": 3,
+   "uwaga": "Drzwi stalowe ocieplone. Najwyższy model (Ud 0,74) ma wpływ na zakres wyceny.",
+   "zmiana": null
+  },
+  "m_eps_graf": {
+   "n": "Styropian fasadowy grafitowy λ 0,031–0,033 (cena za m³)",
+   "jm": "zł/m³",
+   "k": "m",
+   "c": 222.03,
+   "lo": 222.03,
+   "hi": 222.03,
+   "zrodla": [
+    {
+     "nazwa": "bednarek.sklep.pl – Styropian grafitowy elewacyjny NTB EPS 031 Lambda Fasada",
+     "url": "https://bednarek.sklep.pl/styropian-ntb/5021-ntb-eps-031-fasada-grafitowy.html",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "bednarek.sklep.pl – Styropian grafitowy elewacyjny NTB EPS 032 Lambda Fasada",
+     "url": "https://bednarek.sklep.pl/styropian-ntb/5020-ntb-eps-032-fasada-grafitowy.html",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "sklep.sewera.pl – Paneltech Styropian fasadowy EPS 60 032 15 cm grafitowy",
+     "url": "https://sklep.sewera.pl/paneltech-styropian-fasadowy-eps-60-032-15cm-grafitowy-p15209",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "muratordom.pl (dawniej muratorplus.pl) – Ceny styropianu, maj 2026",
+     "url": "https://muratordom.pl/remont-domu/remonty-elewacji/ceny-styropianu-w-maju-2026-r-ile-kosztuje-paczka-i-metr-szescienny-w-hurtowniach-i-marketach-aa-umUT-LY5j-uCoS.html",
+     "data_zrodla": "2026-05-04",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "maldrew.com.pl – Styropian Grafitowy 031 Polstyr 15 cm",
+     "url": "https://www.maldrew.com.pl/product/styropian-fasadowy-grafitowy-031-polstyr-15cm",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    }
+   ],
+   "n_zr": 5,
+   "uwaga": "Płyty fasadowe grafitowe. Najwyższe źródło (maldrew) nie zmienia mediany.",
+   "zmiana": null
+  },
+  "m_etics": {
+   "n": "System ETICS: klej, siatka i tynk silikonowy (cena za m²)",
+   "jm": "zł/m²",
+   "k": "m",
+   "c": 27.95,
+   "lo": 27.95,
+   "hi": 27.95,
+   "zrodla": [
+    {
+     "nazwa": "Klej + siatka + tynk silikonowy (sumy mediany składników)",
+     "url": "https://sklep.sewera.pl/klej-do-styropianu-xps-i-zatapianie-siatki",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    }
+   ],
+   "n_zr": 1,
+   "uwaga": "Suma mediany klejów, mediany siatek i mediany tynków silikonowych 1,5 mm. Bez dybli i gruntu.",
+   "zmiana": null
+  },
+  "m_welna": {
+   "n": "Wełna mineralna poddasze/strop λ 0,035–0,039 (cena za m³)",
+   "jm": "zł/m³",
+   "k": "m",
+   "c": 182.59,
+   "lo": 182.59,
+   "hi": 182.59,
+   "zrodla": [
+    {
+     "nazwa": "leroymerlin.pl – Wełna mineralna szklana LRR 035 150 mm 4.08 m2 Insulation Expert Knauf",
+     "url": "https://www.leroymerlin.pl/produkty/welna-mineralna-szklana-lrr-035-150-mm-4-08-m2-insulation-expert-knauf-73855574.html",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "brutto23"
+    },
+    {
+     "nazwa": "leroymerlin.pl – Wełna mineralna szklana HOME 37 150 mm URSA",
+     "url": "https://www.leroymerlin.pl/produkty/welna-mineralna-szklana-home-37-150-mm-ursa-45428005.html",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "brutto23"
+    },
+    {
+     "nazwa": "obi.pl – Ursa Wełna mineralna DF35 Premium 150 mm 4,08 m2 niepalna",
+     "url": "https://www.obi.pl/p/2644961/ursa-welna-mineralna-df35-premium-150-mm-4-08-m2-niepalna",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "sklep.sewera.pl – Isover Wełna Profit-Mata 035 15 cm rolka",
+     "url": "https://sklep.sewera.pl/isover-welna-profit-mata-035-15cm-rolka-welna-szklana-p13730",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "obi.pl – Isover Wełna Piano 37 150 mm 4,8 m2",
+     "url": "https://www.obi.pl/p/6958193/isover-welna-piano-37-150-mm-4-8-m2",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "brutto23"
+    }
+   ],
+   "n_zr": 5,
+   "uwaga": "Wełna 15 cm, cena za m³ z opakowania.",
+   "zmiana": null
+  },
+  "m_gk": {
+   "n": "Płyta GKB 12,5 mm z profilem CD60 (cena za m²)",
+   "jm": "zł/m²",
+   "k": "m",
+   "c": 13.03,
+   "lo": 13.03,
+   "hi": 13.03,
+   "zrodla": [
+    {
+     "nazwa": "Płyta GKB 12,5 mm (mediana) + profile CD60 co 60 cm (założenie)",
+     "url": "https://sklep.sewera.pl/plyta-karton-gips-2600mm-x-1200mm",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    }
+   ],
+   "n_zr": 1,
+   "uwaga": "Płyta GKB: mediana z trzech sklepów. Profile CD60 co 60 cm to założenie (nie ze źródła), koszt profili 2,14 zł/mb z jednego sklepu. Wkręty i folia nie wliczone.",
+   "zmiana": null
+  },
+  "m_tynk": {
+   "n": "Tynk gipsowy maszynowy, 1,5 cm (cena za m²)",
+   "jm": "zł/m²",
+   "k": "m",
+   "c": 11.5,
+   "lo": 11.5,
+   "hi": 11.5,
+   "zrodla": [
+    {
+     "nazwa": "sklep.sewera.pl – Tynk wewnętrzny gipsowy maszynowy MP 75 Lekki 30kg Knauf",
+     "url": "https://sklep.sewera.pl/tynk-wewnetrzny-gipsowy-maszynowy-mp-75-lekki-30kg-knauf-p9094",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "obi.pl – Knauf Maszynowy tynk gipsowy MP 75 Lekki 25 kg",
+     "url": "https://www.obi.pl/p/5352588/knauf-maszynowy-tynk-gipsowy-mp-75-lekki-25-kg",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "obi.pl – Knauf Maszynowy tynk gipsowy MP 75 25 kg",
+     "url": "https://www.obi.pl/p/5403282/knauf-maszynowy-tynk-gipsowy-mp-75-25-kg",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    }
+   ],
+   "n_zr": 3,
+   "uwaga": "Cena na 1 cm przeliczona na warstwę 1,5 cm. Tylko materiał, robocizna osobno.",
+   "zmiana": null
+  },
+  "m_jastrych": {
+   "n": "Jastrych cementowy, 5 cm (cena za m²)",
+   "jm": "zł/m²",
+   "k": "m",
+   "c": 59.15,
+   "lo": 59.15,
+   "hi": 59.15,
+   "zrodla": [
+    {
+     "nazwa": "sklep.sewera.pl – Posadzka cementowa Postar 80 10-80mm 25kg Atlas",
+     "url": "https://sklep.sewera.pl/posadzka-cementowa-postar-80-10-80mm-25kg-atlas-p9794",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "obi.pl – Mapei Posadzka cementowa Ultrascreed Easy 25 kg",
+     "url": "https://www.obi.pl/p/3310810/mapei-posadzka-cementowa-ultrascreed-easy-25-kg",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    },
+    {
+     "nazwa": "sklep.sewera.pl – Posadzka cementowa Topcem Pronto C25 25kg Mapei",
+     "url": "https://sklep.sewera.pl/posadzka-cementowa-topcem-pronto-c25-25kg-mapei-p20993",
+     "data_zrodla": "brak daty na stronie",
+     "vat": "netto"
+    }
+   ],
+   "n_zr": 3,
+   "uwaga": "Cena na 1 cm przeliczona na warstwę 5 cm. Zużycie 18–20 kg/m² na 1 cm.",
+   "zmiana": null
+  }
+ }
+}
