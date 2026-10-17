@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Współczynnik U ściany i dachu: kalkulator WT 2021</title>
+<meta name="description" content="Ułóż warstwy ściany albo dachu i sprawdź współczynnik U, wymaganie WT 2021, brakującą grubość izolacji i spadek temperatury w przegrodzie.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/style.css"><link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 32 32' aria-hidden='true'%3E%3Crect width='32' height='32' rx='9' fill='%23e8590c'/%3E%3Cpath d='M7 16.5 16 9l9 7.5' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.5 15v8h11v-8' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linejoin='round'/%3E%3Cpath d='M14 19.5h4' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E"><meta name="theme-color" content="#e8590c">
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="logo" href="/" aria-label="Budlicz, strona główna"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#e8590c"/><path d="M7 16.5 16 9l9 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 15v8h11v-8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><path d="M14 19.5h4" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg><span>Bud<b>licz</b></span></a><nav aria-label="Kalkulatory i poradniki"><details class="grp"><summary>Fundamenty</summary><div class="dd"><a href="/beton">Beton i stal</a><a href="/lawy-czy-plyta">Ławy czy płyta</a><a href="/hydroizolacja-fundamentow">Hydroizolacja</a><a href="/wykop">Ziemia z wykopu</a></div></details><details class="grp"><summary>Konstrukcja</summary><div class="dd"><a href="/strop">Strop</a><a href="/schody">Schody</a><a href="/nadproza">Nadproża</a><a href="/dylatacje">Dylatacje</a></div></details><details class="grp cur"><summary>Ściany i dach</summary><div class="dd"><a href="/sciany">Pustaki na ściany</a><a href="/ocieplenie">Ocieplenie ścian</a><a href="/wspolczynnik-u" aria-current="page">Współczynnik U</a><a href="/sciana-dzialowa">Ścianka z płyt GK</a><a href="/dach">Dach</a></div></details><details class="grp"><summary>Wykończenie i teren</summary><div class="dd"><a href="/wylewka">Wylewka</a><a href="/kostka">Kostka i płytki</a><a href="/ogrodzenie">Ogrodzenie</a></div></details><details class="grp"><summary>Energia</summary><div class="dd"><a href="/fotowoltaika">Fotowoltaika</a><a href="/pompa-ciepla">Pompa ciepła</a><a href="/pompa-ciepla-stary-dom">Pompa w starym domu</a></div></details><details class="grp"><summary>Plan budowy</summary><div class="dd"><a href="/etapy-budowy">Etapy budowy</a><a href="/harmonogram">Harmonogram</a><a href="/kredyt">Kredyt na budowę</a><a href="/vat-budowa">VAT 8% czy 23%</a></div></details><details class="grp"><summary>Dla firm</summary><div class="dd"><a href="/kosztorys">Kosztorys ofertowy</a><a href="/rozkroj-pretow">Rozkrój prętów</a></div></details></nav></div></header>
+<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Kalkulatory</div>
+<h1>Współczynnik U: czy ściana spełnia WT 2021</h1>
+<p class="lead">Ułóż warstwy przegrody od środka na zewnątrz. Kalkulator policzy opór cieplny i współczynnik U, porówna go z wymaganiem z warunków technicznych i pokaże, jak spada temperatura w ścianie.</p>
+<section class="calc"><div class="panel">
+<div class="grid">
+<div><label for="typ">Przegroda</label><select id="typ"><option value="sciana">Ściana zewnętrzna</option><option value="dach">Dach, stropodach</option></select></div>
+<div><label for="ti">Temperatura wewnątrz (°C)</label><input id="ti" type="number" value="20" step="1"></div>
+<div><label for="te">Temperatura na zewnątrz (°C)</label><input id="te" type="number" value="-20" step="1"></div>
+</div>
+<p class="sub">Warstwy od wewnątrz</p>
+<div class="rowh u"><span>Materiał</span><span>Grubość (cm)</span><span>λ (W/m·K)</span><span></span></div>
+<div id="warstwy" class="rows"></div>
+<div class="btns"><button class="btn" id="dodaj" type="button">+ Dodaj warstwę</button></div>
+<p class="mut">Wartości λ w liście są przykładowe. Wpisz λ deklarowaną z karty produktu, którą kupujesz.</p>
+</div>
+<div class="out" id="wynik" aria-live="polite"></div></section>
+<figure class="panel fig"><figcaption>Przekrój i temperatura w przegrodzie <span id="opis"></span></figcaption><svg id="przekroj" viewBox="0 0 640 290" role="img" aria-label="Warstwy przegrody w skali grubości i linia temperatury od wnętrza do zewnątrz"></svg><p class="note">Warstwy w skali grubości. Pomarańczowa linia to temperatura przy wpisanych warunkach, niebieska przerywana to 0°C. Mostki cieplne i łączniki pominięto.</p></figure>
+<h2>Wymagania WT 2021</h2>
+<p>Dla pomieszczeń ogrzewanych do co najmniej 16°C warunki techniczne podają maksymalne wartości U. Obowiązują dla projektów składanych od 1 stycznia 2021 r.</p>
+<table><thead><tr><th>Przegroda</th><th class="num">U max, W/(m²·K)</th></tr></thead><tbody>
+<tr><td>Ściany zewnętrzne</td><td class="num">0,20</td></tr>
+<tr><td>Dachy, stropodachy, stropy pod nieogrzewanym poddaszem</td><td class="num">0,15</td></tr>
+<tr><td>Podłogi na gruncie</td><td class="num">0,30</td></tr>
+<tr><td>Okna, drzwi balkonowe</td><td class="num">0,9</td></tr>
+<tr><td>Okna połaciowe</td><td class="num">1,1</td></tr>
+<tr><td>Drzwi zewnętrzne</td><td class="num">1,3</td></tr>
+</tbody></table>
+<p class="mut">Źródło: rozporządzenie w sprawie warunków technicznych, jakim powinny odpowiadać budynki i ich usytuowanie (Dz.U. z 2019 r. poz. 1065 ze zm.), zestawienie w <a href="https://muratordom.pl/prawo/formalnosci-budowlane/warunki-techniczne-w-budownictwie-2021-aa-9R3S-4m58-DwiL.html">Muratorze</a>. Sprawdzone 17.10.2026. Przed projektem sprawdź aktualne brzmienie przepisów.</p>
+<h2>Na czym ludzie się mylą</h2>
+<div class="tip"><b>U pustaka to nie U ściany.</b> Producent często podaje U samego muru albo muru z tynkiem. Ściana to wszystkie warstwy razem z oporami przejmowania ciepła po obu stronach.</div>
+<div class="tip"><b>λ z karty, nie „około”.</b> Ten sam opór daje warstwa o grubości proporcjonalnej do λ. Styropian o λ 0,040 musi być o 29% grubszy niż grafitowy o λ 0,031, żeby izolować tak samo.</div>
+<div class="tip"><b>WT to minimum.</b> Spełnienie wymagania nie znaczy, że ściana jest najtańsza w użytkowaniu. Grubszą izolację warto policzyć razem z ceną ogrzewania.</div>
+<div class="tip"><b>Mostki cieplne zostają.</b> Nadproża, wieńce, płyty balkonowe i łączniki mechaniczne obniżają izolacyjność. Kalkulator liczy ścianę w polu, bez nich.</div>
+<details><summary>Jak liczymy</summary>
+<p>Opór warstwy to grubość w metrach podzielona przez λ. Opór całej przegrody to suma oporów warstw plus opory przejmowania ciepła: Rsi 0,13 dla ściany i 0,10 dla dachu (ciepło płynie w górę), Rse 0,04, według PN-EN ISO 6946. U to odwrotność całkowitego oporu.</p>
+<p>Strumień ciepła to U razy różnica temperatur. Na każdej warstwie temperatura spada o strumień razy opór tej warstwy, stąd linia na rysunku. Brakująca grubość izolacji to różnica między oporem wymaganym (1 / U max) a obecnym, razy λ izolacji o najniższej λ w przegrodzie.</p>
+</details>
+<p>Powiązane: <a href="/ocieplenie">ocieplenie ścian: ile styropianu i kleju</a>, <a href="/sciany">pustaki na ściany</a>, <a href="/pompa-ciepla">pompa ciepła</a>.</p>
+</main>
+<footer><div class="wrap"><span><b>Budlicz</b> · kalkulatory budowlane. Wyniki to szacunki, wiążący jest projekt i wycena wykonawcy.</span><span><a href="/polityka-prywatnosci">Prywatność</a> · <a href="/o-serwisie">O serwisie</a> · <a href="/">Wszystkie kalkulatory</a></span></div></footer>
+<script>
+const $=id=>document.getElementById(id);
+const v=id=>parseFloat($(id).value)||0;
+const f=(n,d=2)=>Number(n).toLocaleString("pl-PL",{maximumFractionDigits:d});
+const zl=n=>Number(n).toLocaleString("pl-PL",{minimumFractionDigits:2,maximumFractionDigits:2})+" zł";
+const T=(x,y,t,c="t",a="start")=>`<text class="${c}" x="${x}" y="${y}" text-anchor="${a}">${t}</text>`;
+const pl=(n,a,b,c)=>{n=Math.abs(Math.round(n));return n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c;};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const MAT={tg:["Tynk gipsowy",0.40,"jastrych"],tcw:["Tynk cementowo-wapienny",0.82,"jastrych"],tc:["Tynk cienkowarstwowy",0.70,"jastrych"],gk:["Płyta gipsowo-kartonowa",0.25,"jastrych"],pu:["Pustak ceramiczny",0.30,"mur"],bk:["Beton komórkowy 600",0.17,"mur"],si:["Bloczek silikatowy",0.90,"mur"],zb:["Żelbet",2.30,"beton"],eps:["Styropian EPS biały",0.038,"eps"],epsg:["Styropian grafitowy",0.031,"eps"],we:["Wełna mineralna",0.036,"welna"],xps:["Polistyren XPS",0.035,"xps"],pir:["Płyta PIR",0.022,"xps"],dr:["Drewno iglaste",0.13,"drewno"],inny:["Inny materiał",0.50,"jastrych"]};
+const PRESET={sciana:[["tg",1.5],["pu",25],["epsg",15],["tc",0.5]],dach:[["gk",1.25],["we",20],["we",10]]};
+let rows=[],dirty=false;
+const load=t=>{rows=PRESET[t].map(([m,d])=>({m,d,l:MAT[m][1]}));};
+function render(){
+  $("warstwy").innerHTML=rows.map((r,i)=>`<div class="row u" data-i="${i}">
+<label class="cell"><span>Warstwa ${i+1}</span><select data-k="m" aria-label="Materiał warstwy ${i+1}">${Object.entries(MAT).map(([k,m])=>`<option value="${k}"${k===r.m?" selected":""}>${m[0]}</option>`).join("")}</select></label>
+<label class="cell"><span>Grubość (cm)</span><input data-k="d" type="number" min="0" step="0.5" value="${r.d}" aria-label="Grubość warstwy ${i+1} w cm"></label>
+<label class="cell"><span>λ (W/m·K)</span><input data-k="l" type="number" min="0.001" step="0.001" value="${r.l}" aria-label="Lambda warstwy ${i+1}"></label>
+<button class="btn x" type="button" data-del="${i}" aria-label="Usuń warstwę ${i+1}" title="Usuń warstwę">×</button></div>`).join("");
+}
+$("warstwy").addEventListener("input",e=>{
+  const row=e.target.closest(".row"),k=e.target.dataset.k; if(!row||!k)return;
+  const r=rows[+row.dataset.i]; dirty=true;
+  if(k==="m"){r.m=e.target.value;r.l=MAT[r.m][1];row.querySelector('[data-k="l"]').value=r.l;}
+  else r[k]=parseFloat(e.target.value)||0;
+  licz();
+});
+$("warstwy").addEventListener("click",e=>{const b=e.target.closest("[data-del]");if(!b)return;rows.splice(+b.dataset.del,1);dirty=true;render();licz();});
+$("dodaj").addEventListener("click",()=>{rows.push({m:"we",d:5,l:MAT.we[1]});dirty=true;render();licz();});
+$("typ").addEventListener("input",()=>{if(!dirty){load($("typ").value);render();}licz();});
+["ti","te"].forEach(id=>$(id).addEventListener("input",licz));
+function licz(){
+  const dach=$("typ").value==="dach", Rsi=dach?0.10:0.13, Rse=0.04, Umax=dach?0.15:0.20, ti=v("ti"), te=v("te");
+  const L=rows.filter(r=>r.d>0&&r.l>0);
+  if(!L.length){$("wynik").innerHTML="Dodaj co najmniej jedną warstwę z grubością i λ.";$("przekroj").innerHTML="";$("opis").textContent="";return;}
+  const Rl=L.map(r=>r.d/100/r.l), R=Rsi+Rse+Rl.reduce((a,b)=>a+b,0), U=1/R, ok=U<=Umax+1e-9;
+  const best=L.reduce((a,r)=>r.l<a.l?r:a,L[0]), ins=best.l<=0.06?best:{m:"epsg",l:MAT.epsg[1]};
+  const brak=Math.max(0,1/Umax-R)*ins.l*100, dT=ti-te, q=U*dT, grub=L.reduce((a,r)=>a+r.d,0);
+  let h=`Współczynnik U: <b>${f(U,3)} W/(m²·K)</b><br>`+
+    `WT 2021 dla ${dach?"dachu":"ściany"}: U ≤ ${Umax.toFixed(2).replace(".",",")}, ${ok?'<span class="ok">spełnia</span>':'<span class="warn">nie spełnia</span>'}<br>`;
+  h+=ok?`Zapas względem wymagania: ${f((1-U/Umax)*100,0)}%<br>`:`Brakuje ok. <b>${f(Math.ceil(brak),0)} cm</b> warstwy: ${MAT[ins.m][0].toLowerCase()} (λ ${f(ins.l,3)})<br>`;
+  h+=`Opór cieplny R: ${f(R,2)} m²·K/W<br>Grubość przegrody: ${f(grub,1)} cm<br>`;
+  if(dT>0)h+=`Strata ciepła: ${f(q,1)} W na m², ${f(q/10,2)} kW na 100 m²`;
+  h+=`<p class="mut">Bez mostków cieplnych i łączników. Wiążące jest obliczenie w projekcie.</p>`;
+  $("wynik").innerHTML=h;
+  $("opis").textContent=`U = ${f(U,3)}, ${L.length} ${pl(L.length,"warstwa","warstwy","warstw")}`;
+  rysuj(L,Rl,Rsi,Rse,U,ti,te);
+}
+let lastArgs=null;
+addEventListener("resize",()=>{if(lastArgs)rysuj(...lastArgs);});
+function rysuj(L,Rl,Rsi,Rse,U,ti,te){
+  lastArgs=[L,Rl,Rsi,Rse,U,ti,te];
+  const VW=$("przekroj").clientWidth<520?400:640, E=VW===400?46:90;
+  const X0=E+20,X1=VW-E-20,Y0=46,Y1=236,W=X1-X0, sum=L.reduce((a,r)=>a+r.d,0);
+  let w=L.map(r=>Math.max(5,r.d/sum*W)); const sk=W/w.reduce((a,b)=>a+b,0); w=w.map(x=>x*sk);
+  let g="",x=X0; const xs=[X0];
+  L.forEach((r,i)=>{
+    g+=`<rect class="${MAT[r.m][2]}" x="${x.toFixed(1)}" y="${Y0}" width="${w[i].toFixed(1)}" height="${Y1-Y0}"/>`;
+    if(w[i]>=18)g+=`<text class="tm halo" transform="translate(${(x+w[i]/2+4).toFixed(1)} ${Y1-10}) rotate(-90)">${MAT[r.m][0]}</text>`;
+    if(w[i]>=34)g+=T((x+w[i]/2).toFixed(1),Y1+16,`${f(r.d,1)} cm`,"tm","middle");
+    x+=w[i];xs.push(x);
+  });
+  g+=T(X0-14,Y1+16,"wnętrze","tm","end")+T(X1+14,Y1+16,"zewnątrz","tm","start");
+  const q=U*(ti-te); let Tc=ti-q*Rsi; const P=[[X0-E,ti],[X0,Tc]];
+  Rl.forEach((r,i)=>{Tc-=q*r;P.push([xs[i+1],Tc]);});
+  P.push([X1+E,te]);
+  const span=Math.abs(ti-te)>0.01?ti-te:1, Y=t=>Y0+14+(ti-t)/span*(Y1-Y0-28);
+  if(te<0&&ti>0){const y0=Y(0).toFixed(1);g+=`<path class="mroz" d="M${X0-E-6} ${y0}H${X1+E+6}"/>`+T(X1+E+2,(Y(0)-6).toFixed(1),"0°C","tm halo","end");}
+  g+=`<path class="temp draw" pathLength="1" d="M${P.map(p=>p[0].toFixed(1)+" "+Y(p[1]).toFixed(1)).join(" L")}"/>`;
+  let lastX=-99,lastC=-99;
+  P.slice(1,-1).forEach((p,i,a)=>{
+    if(p[0]-lastC>=8||i===a.length-1){g+=`<circle class="pkt" cx="${p[0].toFixed(1)}" cy="${Y(p[1]).toFixed(1)}" r="3.5"/>`;lastC=p[0];}
+    const first=i===0,last=i===a.length-1;
+    if(first)g+=T(p[0]-8,(Y(p[1])-8).toFixed(1),`${f(p[1],1)}°`,"t halo","end");
+    else if(last)g+=T(p[0]+8,(Y(p[1])-8).toFixed(1),`${f(p[1],1)}°`,"t halo","start");
+    else if(p[0]-lastX>=34&&a[a.length-1][0]-p[0]>=34)g+=T(p[0].toFixed(1),(Y(p[1])-9).toFixed(1),`${f(p[1],1)}°`,"tm halo","middle");
+    else return;
+    lastX=p[0];
+  });
+  g+=T(8,Y0-14,`wewnątrz ${f(ti,0)}°C`,"t")+T(VW-8,Y0-14,`na zewnątrz ${f(te,0)}°C`,"t","end");
+  const sv=$("przekroj");sv.setAttribute("viewBox",`0 0 ${VW} 290`);sv.innerHTML=g;
+}
+load("sciana");render();licz();
+document.addEventListener("click",e=>{document.querySelectorAll(".grp[open]").forEach(d=>{if(!d.contains(e.target))d.open=false})});
+</script>
+</body>
+</html>

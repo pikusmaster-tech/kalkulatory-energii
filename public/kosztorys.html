@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kosztorys ofertowy online: robocizna, materiał, narzuty, VAT</title>
+<meta name="description" content="Prosty kosztorys ofertowy dla firmy budowlanej: pozycje z nakładami, stawka roboczogodziny, koszty pośrednie, zysk i VAT. Tabela do oferty, kopiowanie do Excela, wydruk.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/style.css"><link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 32 32' aria-hidden='true'%3E%3Crect width='32' height='32' rx='9' fill='%23e8590c'/%3E%3Cpath d='M7 16.5 16 9l9 7.5' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.5 15v8h11v-8' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linejoin='round'/%3E%3Cpath d='M14 19.5h4' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E"><meta name="theme-color" content="#e8590c">
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="logo" href="/" aria-label="Budlicz, strona główna"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#e8590c"/><path d="M7 16.5 16 9l9 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 15v8h11v-8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><path d="M14 19.5h4" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg><span>Bud<b>licz</b></span></a><nav aria-label="Kalkulatory i poradniki"><details class="grp"><summary>Fundamenty</summary><div class="dd"><a href="/beton">Beton i stal</a><a href="/lawy-czy-plyta">Ławy czy płyta</a><a href="/hydroizolacja-fundamentow">Hydroizolacja</a><a href="/wykop">Ziemia z wykopu</a></div></details><details class="grp"><summary>Konstrukcja</summary><div class="dd"><a href="/strop">Strop</a><a href="/schody">Schody</a><a href="/nadproza">Nadproża</a><a href="/dylatacje">Dylatacje</a></div></details><details class="grp"><summary>Ściany i dach</summary><div class="dd"><a href="/sciany">Pustaki na ściany</a><a href="/ocieplenie">Ocieplenie ścian</a><a href="/wspolczynnik-u">Współczynnik U</a><a href="/sciana-dzialowa">Ścianka z płyt GK</a><a href="/dach">Dach</a></div></details><details class="grp"><summary>Wykończenie i teren</summary><div class="dd"><a href="/wylewka">Wylewka</a><a href="/kostka">Kostka i płytki</a><a href="/ogrodzenie">Ogrodzenie</a></div></details><details class="grp"><summary>Energia</summary><div class="dd"><a href="/fotowoltaika">Fotowoltaika</a><a href="/pompa-ciepla">Pompa ciepła</a><a href="/pompa-ciepla-stary-dom">Pompa w starym domu</a></div></details><details class="grp"><summary>Plan budowy</summary><div class="dd"><a href="/etapy-budowy">Etapy budowy</a><a href="/harmonogram">Harmonogram</a><a href="/kredyt">Kredyt na budowę</a><a href="/vat-budowa">VAT 8% czy 23%</a></div></details><details class="grp cur"><summary>Dla firm</summary><div class="dd"><a href="/kosztorys" aria-current="page">Kosztorys ofertowy</a><a href="/rozkroj-pretow">Rozkrój prętów</a></div></details></nav></div></header>
+<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Dla firm</div>
+<h1 class="noprint">Kosztorys ofertowy: robocizna, materiał, narzuty</h1>
+<p class="printonly"><b>Kosztorys ofertowy</b>, <span id="dzis"></span></p>
+<p class="lead noprint">Wpisz pozycje robót z nakładami i cenami, swoją stawkę roboczogodziny i narzuty. Dostaniesz cenę jednostkową każdej pozycji, wartość oferty netto i brutto oraz tabelę gotową do skopiowania albo wydruku.</p>
+<section class="calc wide"><div class="panel">
+<div class="grid g4">
+<div><label for="stawka">Stawka r-g (zł, przykład)</label><input id="stawka" type="number" min="0" step="1" value="50"></div>
+<div><label for="kp">Koszty pośrednie Kp (% od R i S)</label><input id="kp" type="number" min="0" step="1" value="60"></div>
+<div><label for="kz">Koszty zakupu Kz (% od M)</label><input id="kz" type="number" min="0" step="0.5" value="5"></div>
+<div><label for="zy">Zysk Z (%)</label><input id="zy" type="number" min="0" step="0.5" value="10"></div>
+<div><label for="zod">Zysk naliczany od</label><select id="zod"><option value="rs">R + S + Kp</option><option value="all">wszystkich składników</option></select></div>
+<div><label for="vat">VAT</label><select id="vat"><option value="8">8% (budownictwo mieszkaniowe)</option><option value="23">23%</option></select></div>
+</div>
+<p class="sub">Pozycje kosztorysu</p>
+<div class="rowh k"><span>Opis roboty</span><span>j.m.</span><span>Ilość</span><span>r-g / j.m.</span><span>Materiał zł / j.m.</span><span>Sprzęt zł / j.m.</span><span></span></div>
+<div id="poz" class="rows"></div>
+<div class="btns"><button class="btn" id="dodaj" type="button">+ Dodaj pozycję</button></div>
+<p class="mut">Pozycje, nakłady i ceny w formularzu są przykładowe. Wpisz własne albo z katalogów nakładów (KNR) i aktualnych cenników.</p>
+</div>
+<div class="out noprint" id="wynik" aria-live="polite"></div></section>
+<h2>Zestawienie do oferty</h2>
+<div id="tab"></div>
+<div class="btns noprint"><button class="btn" id="kopiuj" type="button">Kopiuj do Excela</button><button class="btn" id="druk" type="button">Drukuj albo zapisz PDF</button><span class="mut" id="kop" aria-live="polite"></span></div>
+<figure class="panel fig noprint"><figcaption>Z czego składa się cena <span id="opis"></span></figcaption><svg id="str" viewBox="0 0 640 130" role="img" aria-label="Struktura wartości netto: robocizna, materiały, sprzęt, koszty pośrednie, koszty zakupu i zysk"></svg></figure>
+<h2 class="noprint">Na czym ludzie się mylą</h2>
+<div class="tip"><b>Narzuty to Twoje koszty, nie cudze.</b> Koszty pośrednie obejmują biuro, dojazdy, ubezpieczenia, sprzęt drobny i czas na wyceny. Średnie publikują wydawnictwa cenowe, ale prawdziwy procent wynika z kosztów Twojej firmy.</div>
+<div class="tip"><b>Nakład r-g z normy to nie zawsze nakład Twojej ekipy.</b> Katalogi nakładów podają średnie. Porównaj je z tym, ile Twoja ekipa robi naprawdę, i popraw stawki po kilku budowach.</div>
+<div class="tip"><b>Stawka VAT zależy od obiektu.</b> Przy budowie domu do 300 m² powierzchni użytkowej usługa ma zwykle 8%, powyżej limitu część wartości ma 23%. Policz to w <a href="/vat-budowa">kalkulatorze VAT 8% czy 23%</a>.</div>
+<div class="tip"><b>Materiał w ofercie z kosztami zakupu.</b> Transport, rozładunek, magazyn i straty na budowie to koszty zakupu. Bez nich materiał w ofercie wychodzi taniej, niż kosztuje Cię naprawdę.</div>
+<details><summary>Jak liczymy</summary>
+<p>Robocizna R to ilość razy nakład r-g razy stawka. Materiały M to ilość razy cena materiału, sprzęt S to ilość razy koszt sprzętu. Koszty pośrednie Kp to procent od R i S. Koszty zakupu Kz to procent od M. Zysk Z to procent od sumy R, S i Kp albo, po zmianie ustawienia, od wszystkich składników.</p>
+<p>Cena jednostkowa pozycji to suma R, M, S, Kp, Kz i Z podzielona przez ilość. Wartość netto oferty to suma pozycji, a brutto to netto plus VAT.</p>
+</details>
+<p class="noprint">Powiązane: <a href="/rozkroj-pretow">rozkrój prętów i zestawienie stali</a>, <a href="/vat-budowa">VAT 8% czy 23%</a>, <a href="/harmonogram">harmonogram budowy</a>.</p>
+</main>
+<footer><div class="wrap"><span><b>Budlicz</b> · kalkulatory budowlane. Wyniki to szacunki, wiążący jest projekt i wycena wykonawcy.</span><span><a href="/polityka-prywatnosci">Prywatność</a> · <a href="/o-serwisie">O serwisie</a> · <a href="/">Wszystkie kalkulatory</a></span></div></footer>
+<script>
+const $=id=>document.getElementById(id);
+const v=id=>parseFloat($(id).value)||0;
+const f=(n,d=2)=>Number(n).toLocaleString("pl-PL",{maximumFractionDigits:d});
+const zl=n=>Number(n).toLocaleString("pl-PL",{minimumFractionDigits:2,maximumFractionDigits:2})+" zł";
+const T=(x,y,t,c="t",a="start")=>`<text class="${c}" x="${x}" y="${y}" text-anchor="${a}">${t}</text>`;
+const pl=(n,a,b,c)=>{n=Math.abs(Math.round(n));return n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c;};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const JM=["m²","m³","mb","szt.","kpl.","t","kg"];
+let rows=[{o:"Murowanie ścian z pustaków ceramicznych 25 cm",j:"m²",q:120,r:1.1,m:95,s:4},{o:"Wieniec żelbetowy z betonem i stalą",j:"m³",q:4,r:14,m:1000,s:60},{o:"Tynk gipsowy maszynowy",j:"m²",q:380,r:0.3,m:18,s:3}], last=null;
+function render(){
+  $("poz").innerHTML=rows.map((r,i)=>`<div class="row k" data-i="${i}">
+<label class="cell o"><span>Opis roboty</span><input data-k="o" type="text" value="${esc(r.o)}" aria-label="Opis pozycji ${i+1}"></label>
+<label class="cell"><span>j.m.</span><select data-k="j" aria-label="Jednostka pozycji ${i+1}">${JM.map(j=>`<option${j===r.j?" selected":""}>${j}</option>`).join("")}</select></label>
+<label class="cell"><span>Ilość</span><input data-k="q" type="number" min="0" step="0.01" value="${r.q}" aria-label="Ilość pozycji ${i+1}"></label>
+<label class="cell"><span>r-g / j.m.</span><input data-k="r" type="number" min="0" step="0.01" value="${r.r}" aria-label="Nakład roboczogodzin na jednostkę, pozycja ${i+1}"></label>
+<label class="cell"><span>Materiał zł / j.m.</span><input data-k="m" type="number" min="0" step="0.01" value="${r.m}" aria-label="Materiał w zł na jednostkę, pozycja ${i+1}"></label>
+<label class="cell"><span>Sprzęt zł / j.m.</span><input data-k="s" type="number" min="0" step="0.01" value="${r.s}" aria-label="Sprzęt w zł na jednostkę, pozycja ${i+1}"></label>
+<button class="btn x" type="button" data-del="${i}" aria-label="Usuń pozycję ${i+1}" title="Usuń pozycję">×</button></div>`).join("");
+}
+$("poz").addEventListener("input",e=>{const row=e.target.closest(".row"),k=e.target.dataset.k;if(!row||!k)return;const r=rows[+row.dataset.i];r[k]=(k==="o"||k==="j")?e.target.value:(parseFloat(e.target.value)||0);licz();});
+$("poz").addEventListener("click",e=>{const b=e.target.closest("[data-del]");if(!b)return;rows.splice(+b.dataset.del,1);render();licz();});
+$("dodaj").addEventListener("click",()=>{rows.push({o:"",j:"m²",q:1,r:0,m:0,s:0});render();licz();});
+["stawka","kp","kz","zy","zod","vat"].forEach(id=>$(id).addEventListener("input",licz));
+$("druk").addEventListener("click",()=>window.print());
+$("kopiuj").addEventListener("click",()=>{
+  if(!last)return; const n2=x=>x.toFixed(2).replace(".",",");
+  const t=[["Lp.","Opis","j.m.","Ilość","Cena jedn. netto","Wartość netto"].join("\t")].concat(last.L.map((r,i)=>[i+1,r.o,r.j,String(r.q).replace(".",","),n2(r.cj),n2(r.W)].join("\t")),["","Razem netto","","","",n2(last.net)].join("\t"),["",`VAT ${last.vp}%`,"","","",n2(last.vat)].join("\t"),["","Razem brutto","","","",n2(last.net+last.vat)].join("\t")).join("\n");
+  (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>$("kop").textContent="Skopiowano. Wklej w arkuszu.",()=>$("kop").textContent="Przeglądarka nie pozwoliła skopiować. Zaznacz tabelę ręcznie.");
+});
+function licz(){
+  const st=v("stawka"),kp=v("kp")/100,kz=v("kz")/100,zy=v("zy")/100,vp=+$("vat").value,all=$("zod").value==="all";
+  const t={R:0,M:0,S:0,Kp:0,Kz:0,Z:0};
+  const L=rows.map(r=>{const R=r.q*r.r*st,M=r.q*r.m,S=r.q*r.s,Kp=(R+S)*kp,Kz=M*kz,Z=(R+S+Kp+(all?M+Kz:0))*zy,W=R+M+S+Kp+Kz+Z;
+    t.R+=R;t.M+=M;t.S+=S;t.Kp+=Kp;t.Kz+=Kz;t.Z+=Z;return Object.assign({},r,{W,cj:r.q>0?W/r.q:0});});
+  const net=L.reduce((a,r)=>a+r.W,0),vat=net*vp/100;
+  last={L,net,vat,vp};
+  $("wynik").innerHTML=`<div class="cols2"><div>Wartość netto: <b>${zl(net)}</b><br>VAT ${vp}%: ${zl(vat)}<br>Wartość brutto: <b>${zl(net+vat)}</b></div>`+
+    `<div>Robocizna R: ${zl(t.R)}<br>Materiały M: ${zl(t.M)}<br>Sprzęt S: ${zl(t.S)}<br>Koszty pośrednie Kp: ${zl(t.Kp)}<br>Koszty zakupu Kz: ${zl(t.Kz)}<br>Zysk Z: ${zl(t.Z)}</div></div>`+
+    `<p class="mut">Pozycje, nakłady i ceny są przykładowe. Wynik to kalkulacja, nie wycena wiążąca.</p>`;
+  const tr=L.map((r,i)=>`<tr><td>${i+1}</td><td>${esc(r.o)||"bez opisu"}</td><td>${r.j}</td><td class="num">${f(r.q,2)}</td><td class="num">${zl(r.cj)}</td><td class="num">${zl(r.W)}</td></tr>`).join("");
+  $("tab").innerHTML=`<div class="scrollx"><table><thead><tr><th>Lp.</th><th>Opis</th><th>j.m.</th><th class="num">Ilość</th><th class="num">Cena jedn. netto</th><th class="num">Wartość netto</th></tr></thead><tbody>${tr}</tbody><tfoot><tr><td></td><td colspan="4">Razem netto</td><td class="num">${zl(net)}</td></tr><tr><td></td><td colspan="4">VAT ${vp}%</td><td class="num">${zl(vat)}</td></tr><tr><td></td><td colspan="4">Razem brutto</td><td class="num">${zl(net+vat)}</td></tr></tfoot></table></div>`;
+  rysuj(t,net);
+}
+function rysuj(t,net){
+  const P=[["R","Robocizna","s1"],["M","Materiały","s2"],["S","Sprzęt","s3"],["Kp","Koszty pośrednie","s4"],["Kz","Koszty zakupu","s5"],["Z","Zysk","s6"]];
+  let g="",x=10;const W=620;
+  if(net<=0){$("str").innerHTML=T(10,40,"Brak pozycji z wartością.","tm");$("opis").textContent="";return;}
+  P.forEach(([k,,c],i)=>{const w=t[k]/net*W;if(w<=0)return;g+=`<rect class="${c} pop" style="animation-delay:${i*60}ms" x="${x.toFixed(1)}" y="14" width="${w.toFixed(1)}" height="34"/>`;if(w>=40)g+=T((x+w/2).toFixed(1),36,`${f(t[k]/net*100,0)}%`,"tw","middle");x+=w;});
+  P.forEach(([k,n,c],i)=>{const cx=10+(i%3)*210,cy=74+Math.floor(i/3)*26;g+=`<rect class="${c}" x="${cx}" y="${cy-10}" width="12" height="12" rx="2"/>`+T(cx+18,cy,`${n}: ${f(t[k]/net*100,1)}%`,"tm");});
+  $("str").innerHTML=g;$("opis").textContent=`robocizna ${f(t.R/net*100,0)}%, materiały ${f(t.M/net*100,0)}%`;
+}
+$("dzis").textContent=new Date().toLocaleDateString("pl-PL",{day:"numeric",month:"long",year:"numeric"});
+render();licz();
+document.addEventListener("click",e=>{document.querySelectorAll(".grp[open]").forEach(d=>{if(!d.contains(e.target))d.open=false})});
+</script>
+</body>
+</html>

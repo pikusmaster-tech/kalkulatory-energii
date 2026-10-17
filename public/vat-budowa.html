@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VAT na budowę domu: 8% czy 23%, limit 300 m²</title>
+<meta name="description" content="Policz VAT na usługę budowy domu: 8% do 300 m² powierzchni użytkowej, proporcja 8% i 23% powyżej limitu oraz różnica przy materiałach kupowanych samodzielnie.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/style.css"><link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 32 32' aria-hidden='true'%3E%3Crect width='32' height='32' rx='9' fill='%23e8590c'/%3E%3Cpath d='M7 16.5 16 9l9 7.5' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.5 15v8h11v-8' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linejoin='round'/%3E%3Cpath d='M14 19.5h4' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E"><meta name="theme-color" content="#e8590c">
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="logo" href="/" aria-label="Budlicz, strona główna"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#e8590c"/><path d="M7 16.5 16 9l9 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 15v8h11v-8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><path d="M14 19.5h4" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg><span>Bud<b>licz</b></span></a><nav aria-label="Kalkulatory i poradniki"><details class="grp"><summary>Fundamenty</summary><div class="dd"><a href="/beton">Beton i stal</a><a href="/lawy-czy-plyta">Ławy czy płyta</a><a href="/hydroizolacja-fundamentow">Hydroizolacja</a><a href="/wykop">Ziemia z wykopu</a></div></details><details class="grp"><summary>Konstrukcja</summary><div class="dd"><a href="/strop">Strop</a><a href="/schody">Schody</a><a href="/nadproza">Nadproża</a><a href="/dylatacje">Dylatacje</a></div></details><details class="grp"><summary>Ściany i dach</summary><div class="dd"><a href="/sciany">Pustaki na ściany</a><a href="/ocieplenie">Ocieplenie ścian</a><a href="/wspolczynnik-u">Współczynnik U</a><a href="/sciana-dzialowa">Ścianka z płyt GK</a><a href="/dach">Dach</a></div></details><details class="grp"><summary>Wykończenie i teren</summary><div class="dd"><a href="/wylewka">Wylewka</a><a href="/kostka">Kostka i płytki</a><a href="/ogrodzenie">Ogrodzenie</a></div></details><details class="grp"><summary>Energia</summary><div class="dd"><a href="/fotowoltaika">Fotowoltaika</a><a href="/pompa-ciepla">Pompa ciepła</a><a href="/pompa-ciepla-stary-dom">Pompa w starym domu</a></div></details><details class="grp cur"><summary>Plan budowy</summary><div class="dd"><a href="/etapy-budowy">Etapy budowy</a><a href="/harmonogram">Harmonogram</a><a href="/kredyt">Kredyt na budowę</a><a href="/vat-budowa" aria-current="page">VAT 8% czy 23%</a></div></details><details class="grp"><summary>Dla firm</summary><div class="dd"><a href="/kosztorys">Kosztorys ofertowy</a><a href="/rozkroj-pretow">Rozkrój prętów</a></div></details></nav></div></header>
+<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Kalkulatory</div>
+<h1>VAT na budowę domu: 8% czy 23%</h1>
+<p class="lead">Usługa budowy domu ma zwykle 8% VAT, ale tylko do 300 m² powierzchni użytkowej. Wpisz metraż i wartość robót, a kalkulator rozdzieli VAT na część 8% i 23% oraz pokaże, ile kosztuje kupowanie materiałów samemu.</p>
+<section class="calc"><div class="panel"><div class="grid">
+<div><label for="rodz">Obiekt</label><select id="rodz"><option value="300">Dom (limit 300 m²)</option><option value="150">Mieszkanie (limit 150 m²)</option></select></div>
+<div><label for="pu">Powierzchnia użytkowa (m²)</label><input id="pu" type="number" min="1" step="1" value="180"></div>
+<div><label for="net">Wartość usługi netto (zł, przykład)</label><input id="net" type="number" min="0" step="1000" value="400000"></div>
+<div><label for="mat">W tym materiały (zł netto)</label><input id="mat" type="number" min="0" step="1000" value="200000"></div>
+</div></div>
+<div class="out" id="wynik" aria-live="polite"></div></section>
+<figure class="panel fig"><figcaption>Stawka a powierzchnia i kto kupuje materiały <span id="opis"></span></figcaption><svg id="wyk" viewBox="0 0 640 196" role="img" aria-label="Podział powierzchni na część z VAT 8% i 23% oraz porównanie kosztu brutto przy materiałach od wykonawcy i kupowanych samodzielnie"></svg><p class="note">Górny pasek: powierzchnia użytkowa, pomarańczowa część ma 8%, a część ponad limit 23%. Dolne paski: koszt brutto całej inwestycji w dwóch wariantach zakupu materiałów.</p></figure>
+<h2>Kiedy jest 8%</h2>
+<ul>
+<li><b>Rodzaj pracy:</b> budowa, remont, modernizacja, termomodernizacja, przebudowa albo roboty konserwacyjne.</li>
+<li><b>Rodzaj obiektu:</b> budynek mieszkalny stałego zamieszkania (dział 11 PKOB) albo lokal mieszkalny, czyli budownictwo objęte społecznym programem mieszkaniowym.</li>
+<li><b>Limit powierzchni:</b> dom jednorodzinny do 300 m² powierzchni użytkowej, mieszkanie do 150 m². Powyżej limitu 8% dotyczy tylko części wartości odpowiadającej limitowi.</li>
+<li><b>Muszą być spełnione oba warunki naraz:</b> właściwa praca i właściwy obiekt. Montowane elementy powinny być trwale związane z budynkiem.</li>
+</ul>
+<h2>Kiedy jest 23%</h2>
+<ul>
+<li>Część wartości przypadająca na powierzchnię ponad limit.</li>
+<li>Materiały kupione samodzielnie w sklepie albo hurtowni. Sprzedaż towaru to nie usługa budowlana, więc ma stawkę podstawową.</li>
+<li>Obiekty, które nie są budownictwem mieszkaniowym, oraz prace, które nie są budową ani remontem.</li>
+</ul>
+<h2>Na czym ludzie się mylą</h2>
+<div class="tip"><b>Materiał od wykonawcy bywa tańszy o różnicę stawek.</b> Jeśli wykonawca kupuje materiał i rozlicza go w usłudze, materiał ma stawkę usługi. Ten sam materiał kupiony samemu ma 23%. Przy dużych zakupach to realne pieniądze, ale porównuj ceny netto, bo wykonawca dolicza swoje koszty zakupu.</div>
+<div class="tip"><b>Liczy się powierzchnia użytkowa, nie zabudowy.</b> Weź ją z projektu. Powierzchnia zabudowy i całkowita to inne liczby.</div>
+<div class="tip"><b>Garaż w bryle domu to inna sprawa niż wolnostojący.</b> To, czy dana część jest budownictwem mieszkaniowym, zależy od klasyfikacji obiektu. W wątpliwych sprawach zapytaj Krajową Informację Skarbową albo złóż wniosek o interpretację.</div>
+<details><summary>Jak liczymy</summary>
+<p>Jeśli powierzchnia użytkowa nie przekracza limitu, VAT to 8% wartości netto. Jeśli przekracza, 8% stosujemy do części wartości równej udziałowi limitu w całej powierzchni (na przykład 300 / 360 = 83,3%), a 23% do reszty.</p>
+<p>Wariant „materiały kupuję sam” zakłada te same ceny netto materiałów, ale ze stawką 23%, a usługa wykonawcy bez materiałów ma stawkę jak wyżej.</p>
+</details>
+<p class="mut">Podstawa: ustawa o podatku od towarów i usług, art. 41 ust. 12–12c (stawka 8%, limity 300 m² i 150 m², proporcja), na podstawie <a href="https://ksiegowosc.infor.pl/podatki/vat/stawki-vat/5351325,Stawka-8-VAT-w-budownictwie-mieszkaniowym.html">omówienia w serwisie INFOR</a>. Sprawdzone 17.10.2026. Kalkulator nie jest poradą podatkową, a wiążące są przepisy i interpretacja dla Twojej sytuacji.</p>
+<p>Powiązane: <a href="/kosztorys">kosztorys ofertowy</a>, <a href="/kredyt">kredyt na budowę</a>, <a href="/harmonogram">harmonogram budowy</a>.</p>
+</main>
+<footer><div class="wrap"><span><b>Budlicz</b> · kalkulatory budowlane. Wyniki to szacunki, wiążący jest projekt i wycena wykonawcy.</span><span><a href="/polityka-prywatnosci">Prywatność</a> · <a href="/o-serwisie">O serwisie</a> · <a href="/">Wszystkie kalkulatory</a></span></div></footer>
+<script>
+const $=id=>document.getElementById(id);
+const v=id=>parseFloat($(id).value)||0;
+const f=(n,d=2)=>Number(n).toLocaleString("pl-PL",{maximumFractionDigits:d});
+const zl=n=>Number(n).toLocaleString("pl-PL",{minimumFractionDigits:2,maximumFractionDigits:2})+" zł";
+const T=(x,y,t,c="t",a="start")=>`<text class="${c}" x="${x}" y="${y}" text-anchor="${a}">${t}</text>`;
+const pl=(n,a,b,c)=>{n=Math.abs(Math.round(n));return n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c;};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function licz(){
+  const lim=+$("rodz").value,pu=Math.max(1,v("pu")),net=Math.max(0,v("net")),mat=Math.min(Math.max(0,v("mat")),net);
+  const u8=Math.min(1,lim/pu),stawka=u8*0.08+(1-u8)*0.23,vat=net*stawka;
+  const usl=net-mat,bruA=net+vat,bruB=usl*(1+stawka)+mat*1.23,roz=bruB-bruA;
+  let h=pu<=lim?`Stawka: <b>8% na całość</b><br>`:`Stawka: <b>8% na ${f(u8*100,1)}%</b> wartości, 23% na resztę<br>Średnio: <b>${f(stawka*100,2)}%</b><br>`;
+  h+=`VAT: <b>${zl(vat)}</b><br>Brutto: <b>${zl(bruA)}</b><br>`;
+  if(mat>0)h+=`Materiały kupione samemu: <span class="warn">+${zl(roz)}</span> brutto`;
+  h+=`<p class="mut">Przy założeniu tych samych cen netto materiałów. Kalkulator nie jest poradą podatkową.</p>`;
+  $("wynik").innerHTML=h;$("opis").textContent=pu<=lim?"cała powierzchnia w limicie":`${f(pu-lim,0)} m² ponad limit`;
+  const N=$("wyk").clientWidth<520,VW=N?380:640,X0=N?8:150,W=N?364:470,s=W/Math.max(pu,lim),Y=N?24:34,BH=N?24:28,xl=X0+lim*s;
+  let g=N?T(X0,14,"Powierzchnia użytkowa","t"):T(X0-10,Y+18,"Powierzchnia","t","end");
+  const w8=Math.min(pu,lim)*s;
+  if(pu<lim)g+=`<rect class="trk" x="${X0}" y="${Y}" width="${W}" height="${BH}" rx="4"/>`;
+  g+=`<rect class="odsetki pop" x="${X0}" y="${Y}" width="${w8.toFixed(1)}" height="${BH}" rx="4"/>`;
+  if(w8>=90)g+=T((X0+w8/2).toFixed(1),Y+BH/2+4,`${f(Math.min(pu,lim),0)} m² · 8%`,"tw","middle");
+  if(pu>lim){const w2=(pu-lim)*s;g+=`<rect class="kapital pop" style="animation-delay:80ms" x="${(X0+w8).toFixed(1)}" y="${Y}" width="${w2.toFixed(1)}" height="${BH}" rx="4"/>`;if(w2>=90)g+=T((X0+w8+w2/2).toFixed(1),Y+BH/2+4,`${f(pu-lim,0)} m² · 23%`,"tw","middle");}
+  const la=xl>X0+W-60?"end":"middle";
+  g+=`<path class="dim ms" d="M${xl.toFixed(1)} ${Y-(N?4:8)}V${Y+BH+(N?4:8)}"/>`+(N?T(xl.toFixed(1),Y+BH+17,`limit ${lim} m²`,"tm",la):T(xl.toFixed(1),Y-13,`limit ${lim} m²`,"tm",la));
+  const mx=Math.max(bruA,bruB,1),k=W/mx,thr=N?110:170;
+  [[bruA,"Materiał od wykonawcy","odsetki",N?86:94],[bruB,"Materiał kupiony samemu","kapital",N?140:144]].forEach(([b,n,c,y],i)=>{
+    const by=N?y+6:y+4;
+    g+=N?T(X0,y,n,"t"):T(X0-10,y+18,n.split(" ").slice(0,2).join(" "),"t","end")+T(X0-10,y+32,n.split(" ").slice(2).join(" "),"tm","end");
+    g+=`<rect class="${c} pop" style="animation-delay:${160+i*80}ms" x="${X0}" y="${by}" width="${Math.max(2,b*k).toFixed(1)}" height="${BH}" rx="4"/>`;
+    g+=b*k>=thr?T((X0+b*k-8).toFixed(1),by+BH/2+4,zl(b),"tw","end"):T((X0+b*k+8).toFixed(1),by+BH/2+4,zl(b),"t","start");
+  });
+  $("wyk").setAttribute("viewBox",`0 0 ${VW} ${N?176:196}`);
+  $("wyk").innerHTML=g;
+}
+let rz;addEventListener("resize",()=>{clearTimeout(rz);rz=setTimeout(licz,150);});
+document.querySelectorAll("input,select").forEach(e=>e.addEventListener("input",licz));licz();
+document.addEventListener("click",e=>{document.querySelectorAll(".grp[open]").forEach(d=>{if(!d.contains(e.target))d.open=false})});
+</script>
+</body>
+</html>

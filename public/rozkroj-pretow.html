@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rozkrój prętów zbrojeniowych i zestawienie stali</title>
+<meta name="description" content="Wpisz pręty z zestawienia: średnica, długość, liczba sztuk. Kalkulator policzy masę stali, liczbę prętów 12 m do zamówienia i plan cięcia z najmniejszym odpadem.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/style.css"><link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 32 32' aria-hidden='true'%3E%3Crect width='32' height='32' rx='9' fill='%23e8590c'/%3E%3Cpath d='M7 16.5 16 9l9 7.5' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.5 15v8h11v-8' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linejoin='round'/%3E%3Cpath d='M14 19.5h4' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E"><meta name="theme-color" content="#e8590c">
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="logo" href="/" aria-label="Budlicz, strona główna"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#e8590c"/><path d="M7 16.5 16 9l9 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 15v8h11v-8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><path d="M14 19.5h4" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg><span>Bud<b>licz</b></span></a><nav aria-label="Kalkulatory i poradniki"><details class="grp"><summary>Fundamenty</summary><div class="dd"><a href="/beton">Beton i stal</a><a href="/lawy-czy-plyta">Ławy czy płyta</a><a href="/hydroizolacja-fundamentow">Hydroizolacja</a><a href="/wykop">Ziemia z wykopu</a></div></details><details class="grp"><summary>Konstrukcja</summary><div class="dd"><a href="/strop">Strop</a><a href="/schody">Schody</a><a href="/nadproza">Nadproża</a><a href="/dylatacje">Dylatacje</a></div></details><details class="grp"><summary>Ściany i dach</summary><div class="dd"><a href="/sciany">Pustaki na ściany</a><a href="/ocieplenie">Ocieplenie ścian</a><a href="/wspolczynnik-u">Współczynnik U</a><a href="/sciana-dzialowa">Ścianka z płyt GK</a><a href="/dach">Dach</a></div></details><details class="grp"><summary>Wykończenie i teren</summary><div class="dd"><a href="/wylewka">Wylewka</a><a href="/kostka">Kostka i płytki</a><a href="/ogrodzenie">Ogrodzenie</a></div></details><details class="grp"><summary>Energia</summary><div class="dd"><a href="/fotowoltaika">Fotowoltaika</a><a href="/pompa-ciepla">Pompa ciepła</a><a href="/pompa-ciepla-stary-dom">Pompa w starym domu</a></div></details><details class="grp"><summary>Plan budowy</summary><div class="dd"><a href="/etapy-budowy">Etapy budowy</a><a href="/harmonogram">Harmonogram</a><a href="/kredyt">Kredyt na budowę</a><a href="/vat-budowa">VAT 8% czy 23%</a></div></details><details class="grp cur"><summary>Dla firm</summary><div class="dd"><a href="/kosztorys">Kosztorys ofertowy</a><a href="/rozkroj-pretow" aria-current="page">Rozkrój prętów</a></div></details></nav></div></header>
+<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Dla firm</div>
+<h1>Rozkrój prętów i zestawienie stali</h1>
+<p class="lead noprint">Wpisz pozycje z zestawienia stali. Kalkulator policzy masę według średnic, ile prętów handlowych zamówić i jak je pociąć, żeby odpad był jak najmniejszy.</p>
+<section class="calc"><div class="panel">
+<div class="grid">
+<div><label for="stock">Długość pręta handlowego (m)</label><input id="stock" type="number" min="1" step="0.5" value="12"></div>
+<div><label for="rzaz">Strata na cięcie (mm na cięcie)</label><input id="rzaz" type="number" min="0" step="1" value="0"></div>
+<div><label for="resz">Resztki do wykorzystania od (m)</label><input id="resz" type="number" min="0" step="0.1" value="1"></div>
+</div>
+<p class="sub">Pozycje zestawienia</p>
+<div class="rowh p"><span>Opis</span><span>Średnica</span><span>Długość (m)</span><span>Sztuk</span><span></span></div>
+<div id="prety" class="rows"></div>
+<div class="btns"><button class="btn" id="dodaj" type="button">+ Dodaj pozycję</button></div>
+<p class="mut">Długość pręta wpisz razem z hakami, odgięciami i zakładami, tak jak w zestawieniu z projektu.</p>
+</div>
+<div class="out" id="wynik" aria-live="polite"></div></section>
+<h2>Zestawienie stali</h2>
+<div id="tab"></div>
+<div class="btns noprint"><button class="btn" id="kopiuj" type="button">Kopiuj do Excela</button><button class="btn" id="druk" type="button">Drukuj albo zapisz PDF</button><span class="mut" id="kop" aria-live="polite"></span></div>
+<figure class="panel fig"><figcaption>Plan cięcia prętów <span id="opis"></span></figcaption><svg id="plan" viewBox="0 0 640 200" role="img" aria-label="Plan cięcia prętów handlowych z odcinkami i odpadem"></svg><p class="note">Każdy wiersz to jeden sposób pocięcia pręta handlowego, liczba z przodu mówi, ile prętów tniesz tak samo. Szare pole to odpad albo resztka.</p></figure>
+<h2 class="noprint">Na czym ludzie się mylą</h2>
+<div class="tip"><b>Masa z zestawienia to nie masa do zamówienia.</b> Hurtownia sprzedaje całe pręty. Do masy z projektu dochodzi odpad z cięcia, który przy krótkich i długich pozycjach potrafi być spory.</div>
+<div class="tip"><b>Długie pozycje tnij najpierw.</b> Krótkie odcinki, na przykład strzemiona, dobrze wypełniają resztki po długich prętach tej samej średnicy. Dlatego liczymy rozkrój dla wszystkich pozycji danej średnicy razem.</div>
+<div class="tip"><b>Pręt dłuższy niż handlowy to łączenie.</b> Takiej pozycji nie da się wyciąć z jednego pręta. Długość i miejsce zakładu podaje projekt, a w kalkulatorze wpisz osobno odcinki do zakładu.</div>
+<div class="tip"><b>Resztki mają wartość.</b> Odcinki powyżej metra przydadzą się na dodatki, szpilki czy zbrojenie nadproży. Kalkulator wylicza je osobno, żeby nie trafiły od razu na złom.</div>
+<details><summary>Jak liczymy</summary>
+<p>Masa metra pręta to pole przekroju razy gęstość stali 7850 kg/m³, czyli dla Ø12 to 0,888 kg/m. Masa pozycji to łączna długość razy masa metra.</p>
+<p>Rozkrój liczymy osobno dla każdej średnicy. Odcinki sortujemy od najdłuższego i każdy kładziemy w tym pręcie, w którym zostanie najmniej wolnego miejsca. Gdy żaden nie pasuje, zaczynamy nowy pręt. To szybka metoda, która daje wynik bliski najlepszemu, ale nie zawsze idealny.</p>
+</details>
+<p class="noprint">Powiązane: <a href="/beton">beton i stal na ławy, płytę i strop</a>, <a href="/kosztorys">kosztorys ofertowy</a>.</p>
+</main>
+<footer><div class="wrap"><span><b>Budlicz</b> · kalkulatory budowlane. Wyniki to szacunki, wiążący jest projekt i wycena wykonawcy.</span><span><a href="/polityka-prywatnosci">Prywatność</a> · <a href="/o-serwisie">O serwisie</a> · <a href="/">Wszystkie kalkulatory</a></span></div></footer>
+<script>
+const $=id=>document.getElementById(id);
+const v=id=>parseFloat($(id).value)||0;
+const f=(n,d=2)=>Number(n).toLocaleString("pl-PL",{maximumFractionDigits:d});
+const zl=n=>Number(n).toLocaleString("pl-PL",{minimumFractionDigits:2,maximumFractionDigits:2})+" zł";
+const T=(x,y,t,c="t",a="start")=>`<text class="${c}" x="${x}" y="${y}" text-anchor="${a}">${t}</text>`;
+const pl=(n,a,b,c)=>{n=Math.abs(Math.round(n));return n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c;};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const FI=[6,8,10,12,14,16,20,25,28,32], kgm=d=>Math.PI*Math.pow(d/1000,2)/4*7850;
+let rows=[{o:"Ławy, pręty główne",d:12,l:4.35,n:16},{o:"Ławy, pręty montażowe",d:12,l:2.8,n:10},{o:"Strzemiona ław",d:8,l:1.1,n:120},{o:"Wieniec, pręty podłużne",d:12,l:6.2,n:8}], last=[];
+function render(){
+  $("prety").innerHTML=rows.map((r,i)=>`<div class="row p" data-i="${i}">
+<label class="cell o"><span>Opis</span><input data-k="o" type="text" value="${esc(r.o)}" aria-label="Opis pozycji ${i+1}"></label>
+<label class="cell"><span>Średnica</span><select data-k="d" aria-label="Średnica pozycji ${i+1}">${FI.map(d=>`<option value="${d}"${d===r.d?" selected":""}>Ø${d}</option>`).join("")}</select></label>
+<label class="cell"><span>Długość (m)</span><input data-k="l" type="number" min="0" step="0.05" value="${r.l}" aria-label="Długość pręta pozycji ${i+1} w metrach"></label>
+<label class="cell"><span>Sztuk</span><input data-k="n" type="number" min="0" step="1" value="${r.n}" aria-label="Liczba sztuk pozycji ${i+1}"></label>
+<button class="btn x" type="button" data-del="${i}" aria-label="Usuń pozycję ${i+1}" title="Usuń pozycję">×</button></div>`).join("");
+}
+$("prety").addEventListener("input",e=>{const row=e.target.closest(".row"),k=e.target.dataset.k;if(!row||!k)return;const r=rows[+row.dataset.i];r[k]=k==="o"?e.target.value:(parseFloat(e.target.value)||0);licz();});
+$("prety").addEventListener("click",e=>{const b=e.target.closest("[data-del]");if(!b)return;rows.splice(+b.dataset.del,1);render();licz();});
+$("dodaj").addEventListener("click",()=>{rows.push({o:"",d:12,l:3,n:10});render();licz();});
+["stock","rzaz","resz"].forEach(id=>$(id).addEventListener("input",licz));
+$("druk").addEventListener("click",()=>window.print());
+$("kopiuj").addEventListener("click",()=>{
+  const t=[["Średnica","Długość łączna (m)","kg/m","Masa (kg)","Pręty handlowe (szt.)","Masa zakupu (kg)","Odpad (%)"].join("\t")].concat(last.map(g=>[`Ø${g.d}`,f(g.len/1000,2),f(kgm(g.d),3),f(g.len/1000*kgm(g.d),1),g.bars.length,f(g.buy/1000*kgm(g.d),1),f(g.buy?g.odp/g.buy*100:0,1)].join("\t"))).join("\n");
+  (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>$("kop").textContent="Skopiowano. Wklej w arkuszu.",()=>$("kop").textContent="Przeglądarka nie pozwoliła skopiować. Zaznacz tabelę ręcznie.");
+});
+function licz(){
+  const S=Math.round(v("stock")*1000), k=Math.max(0,Math.round(v("rzaz"))), minOff=Math.round(v("resz")*1000), by={};
+  let cut=false;
+  rows.forEach(r=>{const L=Math.round(r.l*1000),n=Math.max(0,Math.floor(r.n));if(L<=0||n<=0||S<=0)return;
+    const g=by[r.d]=by[r.d]||{d:r.d,pcs:[],len:0,dlugie:0};g.len+=L*n;
+    if(L>S){g.dlugie+=n;return;}
+    for(let i=0;i<n;i++){if(g.pcs.length>=20000){cut=true;break;}g.pcs.push(L);}});
+  last=Object.values(by).sort((a,b)=>a.d-b.d).map(g=>{
+    g.pcs.sort((a,b)=>b-a); const bars=[];
+    for(const p of g.pcs){const need=p+k;let best=-1,br=Infinity;
+      for(let j=0;j<bars.length;j++){const r=bars[j].rem;if(r>=need&&r<br){br=r;best=j;}}
+      if(best<0){bars.push({rem:S+k,items:[]});best=bars.length-1;}
+      bars[best].rem-=need;bars[best].items.push(p);}
+    const pat={};bars.forEach(b=>{const key=b.items.join(",");(pat[key]=pat[key]||{items:b.items,n:0,odp:Math.max(0,b.rem-k)}).n++;});
+    const used=g.pcs.reduce((a,b)=>a+b,0),buy=bars.length*S,offc=bars.map(b=>Math.max(0,b.rem-k)).filter(x=>minOff>0&&x>=minOff);
+    return Object.assign(g,{bars,pat:Object.values(pat).sort((a,b)=>b.n-a.n),used,buy,odp:buy-used,offc});
+  });
+  if(!last.length){$("wynik").innerHTML="Dodaj pozycję z długością i liczbą sztuk.";$("tab").innerHTML="";$("plan").innerHTML="";$("opis").textContent="";return;}
+  const mPro=last.reduce((a,g)=>a+g.len/1000*kgm(g.d),0), mBuy=last.reduce((a,g)=>a+g.buy/1000*kgm(g.d),0), nBar=last.reduce((a,g)=>a+g.bars.length,0);
+  const oBuy=last.reduce((a,g)=>a+g.buy,0), oOdp=last.reduce((a,g)=>a+g.odp,0), resz=last.reduce((a,g)=>a+g.offc.reduce((x,y)=>x+y,0),0), dl=last.reduce((a,g)=>a+g.dlugie,0);
+  let h=`Masa według zestawienia: <b>${f(mPro,1)} kg</b><br>Do zamówienia: <b>${nBar} ${pl(nBar,"pręt","pręty","prętów")} po&nbsp;${f(S/1000,2)}&nbsp;m</b><br>Masa zakupu: <b>${f(mBuy,1)} kg</b>${dl?" bez pozycji dłuższych niż pręt handlowy":""}<br>Odpad i resztki: ${f(oBuy?oOdp/oBuy*100:0,1)}% długości`;
+  if(resz>0)h+=`, z czego ${f(resz/1000,1)} m to resztki do wykorzystania`;
+  h+=`<br>`+last.map(g=>`Ø${g.d}: ${g.bars.length} szt., ${f(g.buy/1000*kgm(g.d),1)} kg`).join("<br>");
+  if(dl)h+=`<br><span class="warn">${dl} szt. dłuższych niż pręt handlowy</span>: rozbij je na odcinki z zakładem według projektu`;
+  if(cut)h+=`<br><span class="warn">Bardzo dużo sztuk</span>: rozkrój policzony dla pierwszych 20 000 odcinków danej średnicy`;
+  h+=`<p class="mut">Masa z gęstości stali 7850 kg/m³. Pręty dłuższe od handlowego liczymy do masy, ale nie do rozkroju.</p>`;
+  $("wynik").innerHTML=h;
+  const tr=last.map(g=>`<tr><td>Ø${g.d}</td><td class="num">${f(g.len/1000,2)}</td><td class="num">${f(kgm(g.d),3)}</td><td class="num">${f(g.len/1000*kgm(g.d),1)}</td><td class="num">${g.bars.length}</td><td class="num">${f(g.buy/1000*kgm(g.d),1)}</td><td class="num">${f(g.buy?g.odp/g.buy*100:0,1)}%</td></tr>`).join("");
+  $("tab").innerHTML=`<div class="scrollx"><table><thead><tr><th>Średnica</th><th class="num">Długość łączna (m)</th><th class="num">kg/m</th><th class="num">Masa (kg)</th><th class="num">Pręty ${f(S/1000,2)} m</th><th class="num">Masa zakupu (kg)</th><th class="num">Odpad</th></tr></thead><tbody>${tr}</tbody><tfoot><tr><td>Razem</td><td class="num">${f(last.reduce((a,g)=>a+g.len,0)/1000,2)}</td><td></td><td class="num">${f(mPro,1)}</td><td class="num">${nBar}</td><td class="num">${f(mBuy,1)}</td><td class="num">${f(oBuy?oOdp/oBuy*100:0,1)}%</td></tr></tfoot></table></div>`;
+  rysuj(S);
+}
+let rz;addEventListener("resize",()=>{clearTimeout(rz);rz=setTimeout(licz,150);});
+function rysuj(S){
+  const N=$("plan").clientWidth<520,VW=N?380:640,LX=N?40:78,RX=VW-(N?8:12),RH=24,MAXR=32; let y=10,g="",shown=0,all=0;
+  last.forEach(gr=>{
+    all+=gr.pat.length; if(shown>=MAXR)return;
+    g+=T(4,y+14,`Ø${gr.d}`,"t")+T(LX,y+14,`${gr.bars.length} ${gr.bars.length===1?"pręt":gr.bars.length%10>=2&&gr.bars.length%10<=4&&(gr.bars.length%100<10||gr.bars.length%100>=20)?"pręty":"prętów"} po ${f(S/1000,2)} m`,"tm");
+    y+=22;
+    gr.pat.forEach(p=>{
+      if(shown>=MAXR)return; shown++;
+      g+=T(LX-10,y+RH/2+2,`${p.n} ×`,"t","end");
+      let x=LX; const sc=(RX-LX)/S;
+      p.items.forEach((L,i)=>{const w=L*sc;g+=`<rect class="${i%2?"pc2":"pc1"}" x="${x.toFixed(1)}" y="${y}" width="${Math.max(1,w-1).toFixed(1)}" height="${RH-6}" rx="2"/>`;
+        if(w>=30)g+=T((x+w/2).toFixed(1),y+RH/2+1,f(L/1000,2),"tp","middle");x+=w;});
+      if(p.odp>0){const w=RX-x;g+=`<rect class="odp" x="${x.toFixed(1)}" y="${y}" width="${Math.max(0.5,w).toFixed(1)}" height="${RH-6}" rx="2"/>`;if(w>=40)g+=T((x+w/2).toFixed(1),y+RH/2+1,f(p.odp/1000,2),"tp","middle");}
+      y+=RH;
+    });
+    y+=8;
+  });
+  if(all>shown){g+=T(4,y+12,`Pokazano ${shown} z ${all} sposobów cięcia.`,"tm");y+=20;}
+  const svg=$("plan");svg.setAttribute("viewBox",`0 0 ${VW} ${Math.max(60,y+4)}`);svg.innerHTML=g;
+  $("opis").textContent=`${all} ${all===1?"sposób":all%10>=2&&all%10<=4&&(all%100<10||all%100>=20)?"sposoby":"sposobów"} cięcia`;
+}
+render();licz();
+document.addEventListener("click",e=>{document.querySelectorAll(".grp[open]").forEach(d=>{if(!d.contains(e.target))d.open=false})});
+</script>
+</body>
+</html>
