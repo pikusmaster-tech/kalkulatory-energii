@@ -5,29 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ile pustaków na dom? Kalkulator ścian: ceramika, silikat, beton komórkowy</title>
 <meta name="description" content="Policz, ile pustaków ceramicznych, bloczków silikatowych lub z betonu komórkowego potrzeba na ściany domu, po odjęciu okien i drzwi. Z podpowiedziami, na czym ludzie najczęściej się mylą.">
-<style>
-:root{--bg:#fff;--fg:#1d2430;--mut:#5b6575;--acc:#e8a317;--box:#f5f7fa;--br:#dde2ea}
-@media (prefers-color-scheme:dark){:root{--bg:#12161c;--fg:#e8ecf2;--mut:#9aa4b2;--box:#1b2129;--br:#2c3440}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,sans-serif}
-main{max-width:760px;margin:0 auto;padding:24px 16px 64px}
-h1{font-size:1.7rem;line-height:1.2}label{display:block;margin:12px 0 4px;font-weight:600}
-input,select{width:100%;padding:10px;border:1px solid var(--br);border-radius:8px;background:var(--box);color:var(--fg);font-size:1rem}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}@media(max-width:560px){.grid{grid-template-columns:1fr}}
-.out{background:var(--box);border:1px solid var(--br);border-radius:12px;padding:16px;margin:24px 0}
-.out b{font-size:1.25rem}.mut{color:var(--mut);font-size:.9rem}
-.cta{display:block;text-align:center;background:var(--acc);color:#1d2430;font-weight:700;padding:14px;border-radius:10px;text-decoration:none}
-details{margin-top:16px}
-h2{margin-top:32px;font-size:1.25rem}li{margin:6px 0}
-.tip{border-left:3px solid var(--acc);padding:4px 0 4px 12px;margin:16px 0}
-table{border-collapse:collapse;width:100%;margin:12px 0}td,th{border-bottom:1px solid var(--br);padding:8px 6px;text-align:left;vertical-align:top}
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/style.css"><link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 32 32' aria-hidden='true'%3E%3Crect width='32' height='32' rx='9' fill='%23e8590c'/%3E%3Cpath d='M7 16.5 16 9l9 7.5' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.5 15v8h11v-8' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linejoin='round'/%3E%3Cpath d='M14 19.5h4' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E"><meta name="theme-color" content="#e8590c">
 </head>
 <body>
-<main>
-<nav class="mut"><a href="/"><b>Budlicz</b></a> · <a href="/beton">Beton i stal</a> · <a href="/sciany">Ściany</a> · <a href="/dach">Dach</a> · <a href="/wylewka">Wylewka</a> · <a href="/lawy-czy-plyta">Ławy czy płyta</a></nav>
+<header class="top"><div class="wrap"><a class="logo" href="/" aria-label="Budlicz, strona główna"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#e8590c"/><path d="M7 16.5 16 9l9 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 15v8h11v-8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><path d="M14 19.5h4" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg><span>Bud<b>licz</b></span></a><nav><a href="/beton">Beton i stal</a><a href="/sciany" aria-current="page">Ściany</a><a href="/dach">Dach</a><a href="/wylewka">Wylewka</a><a href="/lawy-czy-plyta">Ławy czy płyta</a><a href="/fotowoltaika">Energia</a></nav></div></header>
+<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Kalkulatory</div>
 <h1>Ile pustaków na ściany? Kalkulator</h1>
-<p>Liczysz ściany zewnętrzne albo jedną ścianę działową. Podaj długość, wysokość i otwory, wybierz materiał. Liczba sztuk na m² wynika z wymiarów elementu i spoiny. Jeśli Twój producent podaje inną wartość w karcie technicznej, wpisz ją ręcznie.</p>
-<div class="grid">
+<p class="lead">Liczysz ściany zewnętrzne albo jedną ścianę działową. Podaj długość, wysokość i otwory, wybierz materiał. Liczba sztuk na m² wynika z wymiarów elementu i spoiny. Jeśli Twój producent podaje inną wartość w karcie technicznej, wpisz ją ręcznie.</p>
+<section class="calc"><div class="panel"><div class="grid">
 <div><label for="mat">Materiał</label><select id="mat">
 <option value="10.7">Pustak ceramiczny 25 cm, 373×250×238 (ok. 10,7 szt./m²)</option>
 <option value="8.3">Beton komórkowy 24 cm, 599×240×199 (ok. 8,3 szt./m²)</option>
@@ -39,8 +25,8 @@ table{border-collapse:collapse;width:100%;margin:12px 0}td,th{border-bottom:1px 
 <div><label for="otw">Okna i drzwi razem (m²)</label><input id="otw" type="number" value="24" step="0.5"></div>
 <div><label for="zapas">Zapas na docinki i stłuczki (%)</label><input id="zapas" type="number" value="5" step="1"></div>
 <div><label for="cena">Cena za sztukę (zł, opcjonalnie)</label><input id="cena" type="number" value="0" step="0.1"></div>
-</div>
-<div class="out" id="wynik" aria-live="polite"></div>
+</div></div>
+<div class="out" id="wynik" aria-live="polite"></div></section>
 
 <h2>Skąd wziąć liczby do kalkulatora</h2>
 <ul>
@@ -56,6 +42,7 @@ table{border-collapse:collapse;width:100%;margin:12px 0}td,th{border-bottom:1px 
 <div class="tip"><b>Nadproża.</b> Nad otworami są nadproża prefabrykowane albo wylewane. W tym miejscu też nie ma pustaków, ale to zwykle pas o wysokości 20–25 cm, więc przy małej liczbie okien różnica jest niewielka.</div>
 <p class="mut">Wynik to szacunek do pierwszego zamówienia. Dokładne zestawienie materiałów robi kierownik budowy albo dział techniczny producenta, często bezpłatnie na podstawie projektu.</p>
 </main>
+<footer><div class="wrap"><span><b>Budlicz</b> · kalkulatory budowlane. Wyniki to szacunki, wiążący jest projekt i wycena wykonawcy.</span><span><a href="/">Wszystkie kalkulatory</a></span></div></footer>
 <script>
 const v=id=>parseFloat(document.getElementById(id).value)||0;
 function licz(){

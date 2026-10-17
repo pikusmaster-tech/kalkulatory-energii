@@ -5,44 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kalkulator wylewki: ile worków jastrychu na m² i jak długo schnie</title>
 <meta name="description" content="Policz objętość wylewki, liczbę worków gotowej mieszanki i orientacyjny czas schnięcia. Jaka grubość na styropianie i nad ogrzewaniem podłogowym, i kiedy można kłaść panele.">
-<style>
-:root{--bg:#fff;--fg:#1d2430;--mut:#5b6575;--acc:#e8a317;--box:#f5f7fa;--br:#dde2ea}
-@media (prefers-color-scheme:dark){:root{--bg:#12161c;--fg:#e8ecf2;--mut:#9aa4b2;--box:#1b2129;--br:#2c3440}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,sans-serif}
-main{max-width:760px;margin:0 auto;padding:24px 16px 64px}
-h1{font-size:1.7rem;line-height:1.2}label{display:block;margin:12px 0 4px;font-weight:600}
-input,select{width:100%;padding:10px;border:1px solid var(--br);border-radius:8px;background:var(--box);color:var(--fg);font-size:1rem}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}@media(max-width:560px){.grid{grid-template-columns:1fr}}
-.out{background:var(--box);border:1px solid var(--br);border-radius:12px;padding:16px;margin:24px 0}
-.out b{font-size:1.25rem}.mut{color:var(--mut);font-size:.9rem}
-.cta{display:block;text-align:center;background:var(--acc);color:#1d2430;font-weight:700;padding:14px;border-radius:10px;text-decoration:none}
-details{margin-top:16px}
-h2{margin-top:32px;font-size:1.25rem}li{margin:6px 0}
-.tip{border-left:3px solid var(--acc);padding:4px 0 4px 12px;margin:16px 0}
-table{border-collapse:collapse;width:100%;margin:12px 0}td,th{border-bottom:1px solid var(--br);padding:8px 6px;text-align:left;vertical-align:top}
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/style.css"><link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 32 32' aria-hidden='true'%3E%3Crect width='32' height='32' rx='9' fill='%23e8590c'/%3E%3Cpath d='M7 16.5 16 9l9 7.5' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.5 15v8h11v-8' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linejoin='round'/%3E%3Cpath d='M14 19.5h4' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E"><meta name="theme-color" content="#e8590c">
 </head>
 <body>
-<main>
-<nav class="mut"><a href="/"><b>Budlicz</b></a> · <a href="/beton">Beton i stal</a> · <a href="/sciany">Ściany</a> · <a href="/dach">Dach</a> · <a href="/wylewka">Wylewka</a> · <a href="/lawy-czy-plyta">Ławy czy płyta</a></nav>
+<header class="top"><div class="wrap"><a class="logo" href="/" aria-label="Budlicz, strona główna"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#e8590c"/><path d="M7 16.5 16 9l9 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 15v8h11v-8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><path d="M14 19.5h4" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg><span>Bud<b>licz</b></span></a><nav><a href="/beton">Beton i stal</a><a href="/sciany">Ściany</a><a href="/dach">Dach</a><a href="/wylewka" aria-current="page">Wylewka</a><a href="/lawy-czy-plyta">Ławy czy płyta</a><a href="/fotowoltaika">Energia</a></nav></div></header>
+<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Kalkulatory</div>
 <h1>Kalkulator wylewki (jastrychu)</h1>
-<p>Podaj powierzchnię i grubość, a policzymy objętość, liczbę worków gotowej mieszanki i orientacyjny czas schnięcia. Gotowe mieszanki mają zużycie ok. 2 kg na m² na każdy milimetr grubości. Dokładną wartość znajdziesz na worku, możesz ją poprawić niżej.</p>
-<div class="grid">
+<p class="lead">Podaj powierzchnię i grubość, a policzymy objętość, liczbę worków gotowej mieszanki i orientacyjny czas schnięcia. Gotowe mieszanki mają zużycie ok. 2 kg na m² na każdy milimetr grubości. Dokładną wartość znajdziesz na worku, możesz ją poprawić niżej.</p>
+<section class="calc"><div class="panel"><div class="grid">
 <div><label for="pow">Powierzchnia (m²)</label><input id="pow" type="number" value="100" step="1"></div>
 <div><label for="gr">Grubość wylewki (cm)</label><input id="gr" type="number" value="6" step="0.5"></div>
 <div><label for="zuz">Zużycie mieszanki (kg/m²/mm)</label><input id="zuz" type="number" value="2" step="0.1"></div>
 <div><label for="worek">Worek (kg)</label><input id="worek" type="number" value="25" step="1"></div>
 <div><label for="cena">Cena worka (zł, opcjonalnie)</label><input id="cena" type="number" value="0" step="0.5"></div>
-</div>
-<div class="out" id="wynik" aria-live="polite"></div>
+</div></div>
+<div class="out" id="wynik" aria-live="polite"></div></section>
 
 <h2>Jaka grubość?</h2>
-<table>
+<div class="tablewrap"><table>
 <tr><th>Sytuacja</th><th>Typowa grubość jastrychu cementowego</th></tr>
 <tr><td>Na styropianie, bez ogrzewania podłogowego</td><td>ok. 5 cm</td></tr>
 <tr><td>Nad ogrzewaniem podłogowym</td><td>min. 4,5 cm nad rurami, razem z rurą zwykle 6–7 cm</td></tr>
 <tr><td>Na stropie, bez izolacji (warstwa związana)</td><td>od ok. 2,5–3 cm</td></tr>
-</table>
+</table></div>
 <p class="mut">Ostateczną grubość podaje projekt. Jastrych anhydrytowy może być cieńszy niż cementowy, sprawdź kartę produktu.</p>
 
 <h2>Kiedy można kłaść podłogę</h2>
@@ -51,6 +37,7 @@ table{border-collapse:collapse;width:100%;margin:12px 0}td,th{border-bottom:1px 
 <div class="tip"><b>Wygrzewanie podłogówki</b> to procedura z protokołem, a nie „podkręcenie pieca”. Temperaturę podnosi się stopniowo według zaleceń producenta systemu, zwykle po ok. 3 tygodniach od wylania jastrychu cementowego.</div>
 <div class="tip"><b>Dylatacje.</b> Przy ścianach układa się taśmę dylatacyjną, a duże powierzchnie i progi między pomieszczeniami dzieli szczelinami. Wylewka bez dylatacji pęka, a pęknięcia przechodzą potem na płytki.</div>
 </main>
+<footer><div class="wrap"><span><b>Budlicz</b> · kalkulatory budowlane. Wyniki to szacunki, wiążący jest projekt i wycena wykonawcy.</span><span><a href="/">Wszystkie kalkulatory</a></span></div></footer>
 <script>
 const v=id=>parseFloat(document.getElementById(id).value)||0;
 function licz(){
