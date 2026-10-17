@@ -21,6 +21,7 @@
 <div><label for="cena">Cena worka (zł, opcjonalnie)</label><input id="cena" type="number" value="0" step="0.5"></div>
 </div></div>
 <div class="out" id="wynik" aria-live="polite"></div></section>
+<figure class="panel fig"><figcaption>Warstwy podłogi <span>w skali wpisanej grubości</span></figcaption><svg id="warstwy" viewBox="0 0 640 290" role="img" aria-label="Przekrój warstw podłogi z wylewką"></svg><p class="note">Przy grubości od ok. 5,5 cm rysunek pokazuje wariant z ogrzewaniem podłogowym.</p></figure>
 
 <h2>Jaka grubość?</h2>
 <div class="tablewrap"><table>
@@ -51,7 +52,25 @@ function licz(){
   h+=`<p class="mut">Przy ${f(obj)} m³ warto porównać cenę worków z wylewką maszynową (miksokretem), którą wykonawcy zwykle wyceniają za m².</p>`;
   document.getElementById("wynik").innerHTML=h;
 }
-document.querySelectorAll("input").forEach(e=>e.addEventListener("input",licz));licz();
+const f=n=>n.toLocaleString("pl-PL",{maximumFractionDigits:1});
+function rysuj(){
+  const svg=document.getElementById("warstwy"), gr=Math.min(12,Math.max(2,v("gr"))), s=9, hj=gr*s;
+  const W=640, x0=60, w=420, yb=270; let g="", y=yb;
+  const T=(x,yy,t,c="t",a="start")=>`<text class="${c}" x="${x}" y="${yy}" text-anchor="${a}">${t}</text>`;
+  const lab=(yy,t,ly=yy)=>`<path class="dim" fill="none" d="M${x0+w+6} ${yy}L${x0+w+22} ${ly}H${x0+w+30}"/>`+T(x0+w+34,ly+4,t);
+  g+=`<rect class="beton" x="${x0}" y="${y-50}" width="${w}" height="50"/>`+lab(y-25,"strop / płyta nośna");y-=50;
+  g+=`<rect class="eps" x="${x0}" y="${y-40}" width="${w}" height="40"/>`+lab(y-20,"styropian podłogowy",y-8);y-=40;
+  g+=`<path d="M${x0} ${y-1}h${w}" stroke="#1c7ed6" stroke-width="2"/>`+lab(y-1,"folia",y-2);
+  const pod=gr>=5.5;
+  g+=`<rect class="jastrych" x="${x0}" y="${y-hj}" width="${w}" height="${hj}"/>`;
+  if(pod){for(let x=x0+30;x<x0+w;x+=60)g+=`<circle class="rura pop" cx="${x}" cy="${y-10}" r="8"/>`;g+=lab(y-10,"rury ogrzewania",y-30);}
+  g+=lab(y-hj/2,`jastrych ${f(gr)} cm`,y-58);
+  g+=`<rect class="mur" x="${x0-34}" y="${y-hj-60}" width="30" height="${yb-(y-hj-60)}"/><rect x="${x0-4}" y="${y-hj}" width="5" height="${hj+40}" fill="#7950f2" opacity=".8"/>`;
+  g+=T(x0-4,y-hj-70,"taśma dylatacyjna przy ścianie","tm","start");
+  g+=`<path class="dim" d="M${x0+w-12} ${y}v${-hj}M${x0+w-18} ${y}h12M${x0+w-18} ${y-hj}h12"/>`;
+  svg.innerHTML=g;
+}
+document.querySelectorAll("input").forEach(e=>e.addEventListener("input",()=>{licz();rysuj();}));licz();rysuj();
 </script>
 </body>
 </html>

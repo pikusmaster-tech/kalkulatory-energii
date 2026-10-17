@@ -26,6 +26,7 @@
 <div id="wSzt" hidden><label for="szt">Dachówek na m² (z karty producenta)</label><input id="szt" type="number" value="12" step="0.5"></div>
 </div></div>
 <div class="out" id="wynik" aria-live="polite"></div></section>
+<figure class="panel fig"><figcaption>Model 3D <span>przeciągnij, żeby obrócić</span></figcaption><canvas id="model3d" aria-label="Obracany model domu z dachem o wpisanych wymiarach"></canvas><p class="note">Model zmienia się razem z wymiarami, kątem i kształtem dachu. Proporcje są zachowane, detale uproszczone.</p></figure>
 
 <h2>Jak czytać wynik</h2>
 <ul>
@@ -43,6 +44,7 @@
 </details>
 </main>
 <footer><div class="wrap"><span><b>Budlicz</b> · kalkulatory budowlane. Wyniki to szacunki, wiążący jest projekt i wycena wykonawcy.</span><span><a href="/">Wszystkie kalkulatory</a></span></div></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 const v=id=>parseFloat(document.getElementById(id).value)||0;
 function licz(){
@@ -60,7 +62,54 @@ function licz(){
   h+=`<p class="mut">Zapas na docinki ${Math.round(zapas*100)}%. Bez gąsiorów, obróbek i okien dachowych.</p>`;
   document.getElementById("wynik").innerHTML=h;
 }
-document.querySelectorAll("input,select").forEach(e=>e.addEventListener("input",licz));licz();
+const model=(()=>{
+  const cv=document.getElementById("model3d");
+  if(!window.THREE||!cv)return {update(){}};
+  const r=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});
+  r.setPixelRatio(Math.min(2,window.devicePixelRatio||1));
+  const sc=new THREE.Scene(), cam=new THREE.PerspectiveCamera(35,1,0.1,500);
+  sc.add(new THREE.HemisphereLight(0xffffff,0x8a7a66,0.85));
+  const sun=new THREE.DirectionalLight(0xffffff,0.75);sun.position.set(20,30,15);sc.add(sun);
+  const grp=new THREE.Group();sc.add(grp);
+  const mWall=new THREE.MeshLambertMaterial({color:0xf1ece2}), mRoof=new THREE.MeshLambertMaterial({color:0x8c2f1b,side:THREE.DoubleSide}),
+        mGround=new THREE.MeshLambertMaterial({color:0x7f9b70}), mGable=new THREE.MeshLambertMaterial({color:0xe6dfd2,side:THREE.DoubleSide}),
+        mWin=new THREE.MeshLambertMaterial({color:0x37506b});
+  const ground=new THREE.Mesh(new THREE.CircleGeometry(40,48),mGround);ground.rotation.x=-Math.PI/2;sc.add(ground);
+  function poly(pts,faces,mat){const g=new THREE.BufferGeometry();const a=[];faces.forEach(fc=>fc.forEach(i=>a.push(...pts[i])));g.setAttribute("position",new THREE.Float32BufferAttribute(a,3));g.computeVertexNormals();return new THREE.Mesh(g,mat);}
+  let ang=0.7, drag=null, auto=!matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function update(L,S,o,katDeg,cztery){
+    while(grp.children.length)grp.remove(grp.children[0]);
+    const a=katDeg*Math.PI/180, t=Math.tan(a), H=2.9, Hw=H+o*t, lx=L/2+o, wz=S/2+o, top=H+wz*t;
+    const box=new THREE.Mesh(new THREE.BoxGeometry(L,Hw,S),mWall);box.position.y=Hw/2;grp.add(box);
+    for(let i=-1;i<=1;i++){const w=new THREE.Mesh(new THREE.BoxGeometry(1.4,1.3,0.05),mWin);w.position.set(i*L/3.2,1.5,S/2+0.01);grp.add(w);}
+    if(!cztery){
+      const P=[[-lx,H,-wz],[lx,H,-wz],[lx,H,wz],[-lx,H,wz],[-lx,top,0],[lx,top,0]];
+      grp.add(poly(P,[[0,1,5],[0,5,4],[3,4,5],[3,5,2]],mRoof));
+      [-1,1].forEach(sg=>{const x=sg*L/2;grp.add(poly([[x,Hw,-S/2],[x,Hw,S/2],[x,top-o*t*0,0]],[[0,1,2]],mGable));});
+    } else {
+      const lr=Math.max(0,lx-wz);
+      const P=[[-lx,H,-wz],[lx,H,-wz],[lx,H,wz],[-lx,H,wz],[-lr,top,0],[lr,top,0]];
+      grp.add(poly(P,[[0,1,5],[0,5,4],[3,4,5],[3,5,2],[0,4,3],[1,2,5]],mRoof));
+    }
+    cam.userData.R=Math.hypot(L,S)/2+o+1; cam.userData.Hh=top*0.5+3; cam.userData.h=top*0.42;
+  }
+  function frame(){
+    const w=cv.clientWidth,h=cv.clientHeight;
+    if(cv.width!==Math.round(w*r.getPixelRatio())){r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();}
+    if(auto&&!drag)ang+=0.004;
+    const u=cam.userData, asp=cam.aspect||1, d=1.08*Math.max((u.Hh||8)/0.315,(u.R||8)/(0.315*asp));cam.position.set(Math.sin(ang)*d,d*0.42,Math.cos(ang)*d);cam.lookAt(0,cam.userData.h||3,0);
+    r.render(sc,cam);requestAnimationFrame(frame);
+  }
+  cv.addEventListener("pointerdown",e=>{drag={x:e.clientX,a:ang};cv.setPointerCapture(e.pointerId);});
+  cv.addEventListener("pointermove",e=>{if(drag)ang=drag.a-(e.clientX-drag.x)*0.01;});
+  cv.addEventListener("pointerup",()=>{drag=null;});
+  requestAnimationFrame(frame);
+  return {update};
+})();
+function rysuj(){
+  model.update(Math.max(3,v("dl")),Math.max(3,v("sz")),v("okap")/100,Math.min(60,Math.max(5,v("kat"))),document.getElementById("typ").value==="4");
+}
+document.querySelectorAll("input,select").forEach(e=>e.addEventListener("input",()=>{licz();rysuj();}));licz();rysuj();
 </script>
 </body>
 </html>

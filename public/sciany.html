@@ -27,6 +27,7 @@
 <div><label for="cena">Cena za sztukę (zł, opcjonalnie)</label><input id="cena" type="number" value="0" step="0.1"></div>
 </div></div>
 <div class="out" id="wynik" aria-live="polite"></div></section>
+<figure class="panel fig"><figcaption>Fragment ściany, 6 m <span id="figOpis"></span></figcaption><svg id="mur" viewBox="0 0 650 320" role="img" aria-label="Widok fragmentu ściany z elementów murowych, z oknem i drzwiami"></svg><p class="note">Elementy narysowane w skali. Otwory i nadproża to miejsca, w których pustaków nie ma, dlatego odejmujemy je od powierzchni.</p></figure>
 
 <h2>Skąd wziąć liczby do kalkulatora</h2>
 <ul>
@@ -57,7 +58,28 @@ function licz(){
   h+=`<p class="mut">${f(szt_m2)} szt./m², zapas ${v("zapas")}%. Bez elementów uzupełniających, zaprawy i nadproży.</p>`;
   document.getElementById("wynik").innerHTML=h;
 }
-document.querySelectorAll("input,select").forEach(e=>e.addEventListener("input",licz));licz();
+const f=n=>n.toLocaleString("pl-PL",{maximumFractionDigits:1});
+function rysuj(){
+  const m=document.getElementById("mat").value, svg=document.getElementById("mur");
+  const dims={"10.7":[37.3,23.8,"pustak ceramiczny"],"8.3":[59.9,19.9,"beton komórkowy"],"15":[33.3,19.8,"bloczek silikatowy"],"inny":[40,20,"element"]}[m];
+  const L=600, hM=Math.min(3.2,Math.max(2,v("wys"))), s=100, H=hM*s, x0=20, y0=20, bw=dims[0], bh=dims[1];
+  let g=`<defs><clipPath id="sc"><rect x="${x0}" y="${y0}" width="${L}" height="${H}"/></clipPath></defs><g clip-path="url(#sc)">`;
+  let row=0;
+  for(let y=y0+H;y>y0-bh;y-=bh,row++){
+    const off=(row%2)*bw/2;
+    for(let x=x0-off;x<x0+L;x+=bw)g+=`<rect class="mur" x="${x}" y="${y-bh}" width="${bw}" height="${bh}"/>`;
+  }
+  g+=`</g>`;
+  const ow=150,oh=150,ox=x0+120,oy=y0+H-90-oh;
+  g+=`<rect x="${ox}" y="${oy}" width="${ow}" height="${oh}" fill="var(--surface)" stroke="#37506b" stroke-width="3"/><path d="M${ox+ow/2} ${oy}v${oh}M${ox} ${oy+oh/2}h${ow}" stroke="#37506b" stroke-width="2"/>`;
+  g+=`<rect x="${ox-15}" y="${oy-24}" width="${ow+30}" height="24" class="beton"/>`;
+  g+=`<rect x="${x0+400}" y="${y0+H-210}" width="100" height="210" fill="var(--surface)" stroke="#37506b" stroke-width="3"/>`;
+  g+=`<text class="tm halo" x="${ox+ow/2}" y="${oy-30}" text-anchor="middle">nadproże</text><text class="tm halo" x="${ox+ow/2}" y="${oy+oh+16}" text-anchor="middle">okno 150×150: −2,25 m²</text><text class="tm halo" x="${x0+450}" y="${y0+H-218}" text-anchor="middle">drzwi: −2,1 m²</text>`;
+  g+=`<path class="dim" d="M${x0+L+10} ${y0}v${H}M${x0+L+4} ${y0}h12M${x0+L+4} ${y0+H}h12"/><text class="t" x="${x0+L+8}" y="${y0+H+18}" text-anchor="end">${f(hM)} m</text>`;
+  svg.setAttribute("viewBox",`0 0 650 ${H+50}`);svg.innerHTML=g;
+  document.getElementById("figOpis").textContent=`${dims[2]}, układ z przesunięciem o pół elementu`;
+}
+document.querySelectorAll("input,select").forEach(e=>e.addEventListener("input",()=>{licz();rysuj();}));licz();rysuj();
 </script>
 </body>
 </html>
