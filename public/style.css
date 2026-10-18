@@ -170,6 +170,12 @@ label.cell span{display:none}
 }
 .out .ok{color:#8ce99a;font-weight:700}
 .out .warn{color:#ffc078;font-weight:700}
+.rowh.pl,.row.pl{align-items:start}
+@media(min-width:561px){.rowh.pl,.row.pl{grid-template-columns:minmax(0,2.6fr) minmax(0,.8fr) minmax(0,.9fr) minmax(0,.9fr) 36px}}
+.pn b{display:block;font-size:.95rem;margin-bottom:6px}
+.pn select{font-size:.92rem}
+.pn .hint{display:block;font-size:.8rem;color:var(--muted);margin-top:6px;line-height:1.4}
+@media(max-width:560px){.pl>.ph{display:none}}
 .calc.wide{grid-template-columns:minmax(0,1fr)}
 .calc.wide .out{position:static}
 .grid.g4{grid-template-columns:repeat(3,minmax(0,1fr))}

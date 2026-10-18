@@ -220,19 +220,20 @@ licz();'''
 
 # ---------------------------------------------------------------- przyłącza
 CALC4['przylacza']=dict(title='Przyłącza do domu: koszt z ofert',
- desc='Wpisz długości i stawki za metr z ofert na prąd, wodę, kanalizację i gaz. Kalkulator policzy sumę i pokaże, ile dołoży każde 10 metrów więcej.',
+ desc='Wybierz typ każdego przyłącza, wpisz długość i stawkę z oferty. Kalkulator policzy sumę i koszt każdych 10 metrów więcej.',
  main=r'''<main class="wrap">
 <div class="crumbs"><a href="/">Budlicz</a> › Kalkulatory</div>
 <h1>Przyłącza do domu: porównaj oferty</h1>
-<p class="lead">Ceny przyłączy zależą od odległości od sieci i od firmy. Wpisz długość i stawkę za metr z każdej oferty, a kalkulator policzy sumę i pokaże koszt każdych kolejnych 10 metrów.</p>
+<p class="lead">Ceny przyłączy zależą od odległości od sieci, od typu przyłącza i od firmy. Wybierz typ, wpisz długość i stawkę za metr z oferty. Kalkulator policzy sumę i pokaże, ile dołoży każde 10 metrów więcej.</p>
 <section class="calc"><div class="panel">
-<div class="rowh p"><span>Przyłącze</span><span>Długość (m)</span><span>zł za m</span><span>Opłata (zł)</span><span></span></div>
+<div class="rowh p pl"><span>Przyłącze i typ</span><span>Długość (m)</span><span>zł za m</span><span>Opłata (zł)</span><span></span></div>
 <div class="rows" id="media"></div>
-<p class="mut">Pole zostaw puste, jeśli media nie są potrzebne albo wykonasz je sam. Opłaty za warunki przyłączenia dopisz osobno.</p>
+<p class="mut">Pole zostaw puste, jeśli media nie są potrzebne albo wykonasz je sam. Opłaty za warunki przyłączenia wpisz osobno, w kolumnie opłat.</p>
 </div>
 <div class="out" id="wynik" aria-live="polite"></div></section>
 <h2>Co dokładnie porównujesz</h2>
 <table><thead><tr><th>Pozycja w ofercie</th><th>Dlaczego ma znaczenie</th></tr></thead><tbody>
+<tr><td>Typ i średnica</td><td>Trójfazowe prąd, grubsza rura albo przepompownia zmieniają cenę. Porównuj oferty na tym samym typie.</td></tr>
 <tr><td>Długość przyłącza</td><td>Różnica między sąsiadującymi ofertami zwykle wynika z długości, a nie ze stawki.</td></tr>
 <tr><td>Odtworzenie nawierzchni</td><td>Kostka, trawnik albo asfalt po wykopie często są poza stawką za metr.</td></tr>
 <tr><td>Opłaty za warunki i odbiór</td><td>Dokumenty i odbiór zakładu lub wodociągów zwykle płaci się osobno.</td></tr>
@@ -241,31 +242,42 @@ CALC4['przylacza']=dict(title='Przyłącza do domu: koszt z ofert',
 <h2>Na czym ludzie się mylą</h2>
 <div class="tip"><b>Oferta bez opłat nie jest pełna.</b> Warunki przyłączenia wydaje dostawca mediów i ich koszt bywa wyższy niż samo wykonanie. Zapytaj, co jest w cenie.</div>
 <div class="tip"><b>Najtańszy metr nie daje najtańszego przyłącza.</b> Firma z niższą stawką może liczyć dłuższe przyłącze albo doliczać odtworzenie nawierzchni.</div>
-<div class="tip"><b>Przyłącze to nie wszystko.</b> Do domu dochodzi jeszcze wewnętrzna instalacja, którą liczy konfigurator domu.</div>
+<div class="tip"><b>Szambo to nie przyłącze.</b> Jeśli kanalizacji nie ma w ulicy, zbiornik bezodpływowy albo oczyszczalnia to osobna inwestycja i osobne koszty wywozu.</div>
 <details><summary>Jak liczymy</summary>
-<p>Dla każdego medium koszt to długość razy stawka za metr plus jednorazowa opłata. Suma to wszystkie media razem. Koszt każdych kolejnych 10 metrów to 10 razy suma stawek za metr, bez opłat jednorazowych. Kalkulator nie zna cen na Twojej działce, więc liczy tylko z tego, co wpiszesz.</p>
+<p>Dla każdego medium koszt to długość razy stawka za metr plus jednorazowa opłata. Suma to wszystkie media razem. Koszt każdych kolejnych 10 metrów to 10 razy suma stawek za metr, bez opłat jednorazowych i bez szamba, bo przy zbiorniku długość nie jest długością rury. Kalkulator nie zna cen na Twojej działce, więc liczy tylko z tego, co wpiszesz.</p>
 </details>
 <p>Powiązane: <a href="/konfigurator-domu">konfigurator domu z kosztem elementów</a>, <a href="/ceny-budowlane">ceny materiałów i robocizny</a>.</p>
 </main>''',
- script=_H+r'''const MEDIA=[["Prąd (linia i kabel)"],["Woda z wodociągu"],["Kanalizacja sanitarna"],["Gaz"]];
+ script=_H+r'''const MEDIA=[
+ {n:"Prąd",o:[["jednofazowe 230 V","Dla mniejszych odbiorów. Moc przyłącza ustala projekt instalacji."],["trójfazowe 400 V","Dla większych odbiorów. Zapytaj dostawcę, czy przy Twojej mocy wystarczy jednofazowe."]]},
+ {n:"Woda",o:[["rura PE 32 mm","Najczęściej spotykana w domach jednorodzinnych."],["rura PE 40 mm","Dla dłuższej trasy albo większego poboru wody."]]},
+ {n:"Kanalizacja",o:[["grawitacyjna","Spadek wystarcza do kanału, bez przepompowni."],["ciśnieniowa z przepompownią","Gdy dom leży niżej niż kanał. Oferta powinna wyceniać przepompownię osobno."],["szambo zamiast kanalizacji","To zbiornik, nie przyłącze. Długość to odległość od domu do zbiornika, a w cenie są zbiornik i wywóz."]]},
+ {n:"Gaz",o:[["sieciowy, niskie ciśnienie","Gaz z sieci niskiego ciśnienia, dla domu jednorodzinnego."],["sieciowy, średnie ciśnienie","Gdy sieć jest średniego ciśnienia. Oferta powinna wyceniać stację redukcyjną, jeśli jest potrzebna."],["zbiornik LPG","Zbiornik nie jest przyłączem. Długość to instalacja od zbiornika do domu."]]}
+];
 const num=x=>{const y=parseFloat(x);return isFinite(y)?y:NaN;};
-$("media").innerHTML=MEDIA.map(([n],i)=>`<div class="row p" data-i="${i}">
-<label class="cell"><span>${n}</span></label>
-<input type="number" min="0" step="1" data-k="d" aria-label="Długość: ${n}" placeholder="0">
-<input type="number" min="0" step="1" data-k="s" aria-label="Stawka za metr: ${n}" placeholder="0">
-<input type="number" min="0" step="1" data-k="o" aria-label="Opłata: ${n}" placeholder="0">
-<span></span></div>`).join("");
+$("media").innerHTML=MEDIA.map((m,i)=>`<div class="row p pl" data-i="${i}">
+<div class="cell pn"><b>${m.n}</b>
+<select data-k="t" aria-label="Typ: ${m.n}">${m.o.map(([t],j)=>`<option value="${j}">${t}</option>`).join("")}</select>
+<small class="hint"></small></div>
+<label class="cell"><span>Długość (m)</span><input type="number" min="0" step="1" data-k="d" aria-label="Długość: ${m.n} w metrach" placeholder="0"></label>
+<label class="cell"><span>zł za m</span><input type="number" min="0" step="1" data-k="s" aria-label="Stawka za metr: ${m.n}" placeholder="0"></label>
+<label class="cell"><span>Opłata (zł)</span><input type="number" min="0" step="1" data-k="o" aria-label="Opłata: ${m.n}" placeholder="0"></label>
+<span class="ph"></span></div>`).join("");
 function licz(){
-  let suma=0,perM=0,any=false;
+  let suma=0,perM=0,any=false,typy=[];
   document.querySelectorAll("#media .row").forEach(r=>{
+    const m=MEDIA[+r.dataset.i], sel=r.querySelector('[data-k="t"]'), t=m.o[+sel.value];
+    r.querySelector(".hint").textContent=t[1];
     const d=num(r.querySelector('[data-k="d"]').value), s=num(r.querySelector('[data-k="s"]').value), o=num(r.querySelector('[data-k="o"]').value);
     if(!isFinite(d)&&!isFinite(s)&&!isFinite(o))return;
     any=true;
     const dd=isFinite(d)?d:0, ss=isFinite(s)?s:0, oo=isFinite(o)?o:0;
-    suma+=dd*ss+oo; perM+=ss;
+    suma+=dd*ss+oo;
+    if(!t[0].startsWith("szambo"))perM+=ss;
+    typy.push(`${m.n.toLowerCase()}: ${t[0]}`);
   });
-  if(!any){$("wynik").innerHTML="Wpisz długość i stawkę z przynajmniej jednej oferty.";return;}
-  $("wynik").innerHTML=`Razem media <b>${f(suma,0)} zł</b><br>Każde 10 m więcej <b>${f(10*perM,0)} zł</b><div class="mut">Suma zawiera długość razy stawkę i opłaty jednorazowe. Kwoty dotyczą tylko wpisanych pozycji i nie obejmują odtworzenia nawierzchni, jeśli oferta jej nie zawiera.</div>`;
+  if(!any){$("wynik").innerHTML="Wybierz typ, wpisz długość i stawkę z przynajmniej jednej oferty.";return;}
+  $("wynik").innerHTML=`Razem media <b>${f(suma,0)} zł</b><br>Każde 10 m więcej <b>${f(10*perM,0)} zł</b><div class="mut">Wybrane typy: ${typy.join(", ")}. Suma zawiera długość razy stawkę i opłaty jednorazowe. Kwoty dotyczą tylko wpisanych pozycji i nie obejmują odtworzenia nawierzchni, jeśli oferta jej nie zawiera.</div>`;
 }
 document.querySelector("section.calc").addEventListener("input",licz);
 licz();'''
