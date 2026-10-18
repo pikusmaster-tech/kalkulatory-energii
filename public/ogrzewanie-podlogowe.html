@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ogrzewanie podłogowe: ile rur i pętli</title>
+<meta name="description" content="Policz długość rury PEX, liczbę pętli, obiegi rozdzielacza i rolki dla ogrzewania podłogowego. Wynik zależy od rozstawu rur i powierzchni.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/style.css"><link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 32 32' aria-hidden='true'%3E%3Crect width='32' height='32' rx='9' fill='%23e8590c'/%3E%3Cpath d='M7 16.5 16 9l9 7.5' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.5 15v8h11v-8' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linejoin='round'/%3E%3Cpath d='M14 19.5h4' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E"><meta name="theme-color" content="#e8590c">
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="logo" href="/" aria-label="Budlicz, strona główna"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#e8590c"/><path d="M7 16.5 16 9l9 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 15v8h11v-8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><path d="M14 19.5h4" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg><span>Bud<b>licz</b></span></a><nav aria-label="Kalkulatory i poradniki"><details class="grp"><summary>Fundamenty</summary><div class="dd"><a href="/beton">Beton i stal</a><a href="/lawy-czy-plyta">Ławy czy płyta</a><a href="/hydroizolacja-fundamentow">Hydroizolacja</a><a href="/wykop">Ziemia z wykopu</a></div></details><details class="grp"><summary>Konstrukcja</summary><div class="dd"><a href="/strop">Strop</a><a href="/schody">Schody</a><a href="/nadproza">Nadproża</a><a href="/dylatacje">Dylatacje</a></div></details><details class="grp"><summary>Ściany i dach</summary><div class="dd"><a href="/sciany">Pustaki na ściany</a><a href="/ocieplenie">Ocieplenie ścian</a><a href="/wspolczynnik-u">Współczynnik U</a><a href="/sciana-dzialowa">Ścianka z płyt GK</a><a href="/dach">Dach</a></div></details><details class="grp"><summary>Wykończenie i teren</summary><div class="dd"><a href="/wylewka">Wylewka</a><a href="/kostka">Kostka i płytki</a><a href="/ogrodzenie">Ogrodzenie</a><a href="/taras">Taras</a></div></details><details class="grp cur"><summary>Energia</summary><div class="dd"><a href="/fotowoltaika">Fotowoltaika</a><a href="/pompa-ciepla">Pompa ciepła</a><a href="/pompa-ciepla-stary-dom">Pompa w starym domu</a><a href="/moc-grzewcza">Moc grzewcza</a><a href="/ogrzewanie-podlogowe" aria-current="page">Ogrzewanie podłogowe</a></div></details><details class="grp"><summary>Plan budowy</summary><div class="dd"><a href="/konfigurator-domu">Konfigurator domu 3D</a><a href="/ceny-budowlane">Ceny materiałów</a><a href="/etapy-budowy">Etapy budowy</a><a href="/harmonogram">Harmonogram</a><a href="/kredyt">Kredyt na budowę</a><a href="/vat-budowa">VAT 8% czy 23%</a><a href="/dzialka-zabudowa">Wskaźnik zabudowy</a><a href="/przylacza">Przyłącza</a></div></details><details class="grp"><summary>Dla firm</summary><div class="dd"><a href="/kosztorys">Kosztorys ofertowy</a><a href="/rozkroj-pretow">Rozkrój prętów</a></div></details></nav></div></header>
+<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Kalkulatory</div>
+<h1>Ogrzewanie podłogowe: ile rury i ile pętli</h1>
+<p class="lead">Podaj powierzchnię do ogrzania i rozstaw rur. Kalkulator policzy, ile metrów rury kupić, na ile pętli ją podzielić i ile obiegów powinien mieć rozdzielacz.</p>
+<section class="calc"><div class="panel">
+<div class="grid">
+<div><label for="pow">Powierzchnia do ogrzania (m²)</label><input id="pow" type="number" value="80" min="0" step="1"></div>
+<div><label for="odl">Pod meblami i zabudową, bez rur (m²)</label><input id="odl" type="number" value="8" min="0" step="0.5"></div>
+<div><label for="roz">Rozstaw rur (cm)</label><select id="roz"><option value="10">10 cm, więcej mocy</option><option value="15" selected>15 cm</option><option value="20">20 cm, mniej rury</option></select></div>
+<div><label for="maxp">Maks. długość jednej pętli (m)</label><input id="maxp" type="number" value="100" min="10" step="5"></div>
+<div><label for="rol">Długość rolki rury (m)</label><input id="rol" type="number" value="200" min="10" step="10"></div>
+</div>
+<p class="mut">Maksymalną długość pętli sprawdź w karcie systemu. Dla rury 16 × 2 mm to zwykle około 100 m, ale producenci podają różne wartości.</p>
+</div>
+<div class="out" id="wynik" aria-live="polite"></div></section>
+<h2>Jak liczymy</h2>
+<p>Rury układa się tam, gdzie ma być ciepło. Pod szafkami i wyspą kuchenną rury nie są potrzebne, więc odejmujemy tę powierzchnię. Długość rury to powierzchnia netto podzielona przez rozstaw, plus 10 % na zagięcia i dojazdy do rozdzielacza. Pętle dzielimy tak, żeby żadna nie przekraczała maksymalnej długości.</p>
+<h2>Na czym ludzie się mylą</h2>
+<div class="tip"><b>Mniejszy rozstaw to więcej rury.</b> Przy 10 cm zamiast 15 cm rury jest o jedną trzecią więcej, ale więcej ciepła idzie do podłogi. Łazienka zwykle bierze gęstszy rozstaw.</div>
+<div class="tip"><b>Pętle powinny być podobnej długości.</b> Nierówne pętle dają nierówne temperatury w pomieszczeniach. Rozdzielacz i pętle dobiera się razem, nie osobno.</div>
+<div class="tip"><b>Rozdzielacz ma zapas.</b> Liczba obiegów z kalkulatora to minimum. Zwykle bierze się najbliższy większy rozdzielacz, bo dodatkowy obieg przydaje się przy późniejszej zmianie układu.</div>
+<details><summary>Ile rury na m²</summary>
+<p>Przy rozstawie 15 cm wychodzi około 6,7 m rury na każdy metr kwadratowy, a z zapasem 10 % około 7,3 m. Przy 10 cm te wartości rosną do około 10 m na m². To miara do porównania ofert, bo producenci liczą to różnie.</p>
+</details>
+<p>Powiązane: <a href="/wylewka">wylewka</a>, <a href="/moc-grzewcza">moc grzewcza domu</a>, <a href="/pompa-ciepla">pompa ciepła</a>.</p>
+</main>
+<footer><div class="wrap"><span><b>Budlicz</b> · kalkulatory budowlane. Wyniki to szacunki, wiążący jest projekt i wycena wykonawcy.<br>Serwis prowadzi 3D Automation sp. z o.o., KRS&nbsp;0000632953.</span><span><a href="/polityka-prywatnosci">Prywatność</a> · <a href="/o-serwisie">O serwisie</a> · <a href="/">Wszystkie kalkulatory</a></span></div></footer>
+<script>
+const $=id=>document.getElementById(id);
+const v=id=>parseFloat($(id).value)||0;
+const f=(n,d=2)=>Number(n).toLocaleString("pl-PL",{maximumFractionDigits:d});
+const zl=n=>Number(n).toLocaleString("pl-PL",{minimumFractionDigits:2,maximumFractionDigits:2})+" zł";
+const T=(x,y,t,c="t",a="start")=>`<text class="${c}" x="${x}" y="${y}" text-anchor="${a}">${t}</text>`;
+const pl=(n,a,b,c)=>{n=Math.abs(Math.round(n));return n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c;};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const num=id=>{const x=parseFloat($(id).value);return isFinite(x)?x:NaN;};
+const n0=id=>num(id)||0;
+function licz(){
+  const area=n0("pow"), odl=n0("odl"), roz=parseFloat($("roz").value)/100, maxp=n0("maxp"), rol=n0("rol");
+  const net=Math.max(0,area-odl);
+  if(net<=0||maxp<=0||roz<=0){$("wynik").innerHTML="Podaj powierzchnię większą niż to, co odejmujesz.";return;}
+  const len=net/roz*1.1;
+  const pet=Math.ceil(len/maxp), sred=len/pet, rolek=rol>0?Math.ceil(len/rol):0;
+  const obiegi=pet<=12?`${pet} ${pl(pet,"obieg","obiegi","obiegów")}`:`${pet} obiegów, czyli więcej niż jeden rozdzielacz`;
+  $("wynik").innerHTML=`Rury łącznie <b>${f(len,0)} m</b><br>Pętle <b>${pet}</b>, średnio ${f(sred,0)} m każda<br>Rozdzielacz: ${obiegi}<br>Rolek po ${f(rol,0)} m: <b>${rolek}</b><div class="mut">Na m² ogrzewanej powierzchni ${f(len/net,1)} m rury. Zapas 10 % na zagięcia i dojazdy. Maksymalna długość pętli ${f(maxp,0)} m, sprawdź w karcie systemu.</div>`;
+}
+document.querySelector("section.calc").addEventListener("input",licz);
+licz();
+document.addEventListener("click",e=>{document.querySelectorAll(".grp[open]").forEach(d=>{if(!d.contains(e.target))d.open=false})});
+</script>
+</body>
+</html>

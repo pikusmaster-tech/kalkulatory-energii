@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Przyłącza do domu: koszt z ofert</title>
+<meta name="description" content="Wpisz długości i stawki za metr z ofert na prąd, wodę, kanalizację i gaz. Kalkulator policzy sumę i pokaże, ile dołoży każde 10 metrów więcej.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/style.css"><link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 32 32' aria-hidden='true'%3E%3Crect width='32' height='32' rx='9' fill='%23e8590c'/%3E%3Cpath d='M7 16.5 16 9l9 7.5' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.5 15v8h11v-8' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linejoin='round'/%3E%3Cpath d='M14 19.5h4' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E"><meta name="theme-color" content="#e8590c">
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="logo" href="/" aria-label="Budlicz, strona główna"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#e8590c"/><path d="M7 16.5 16 9l9 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 15v8h11v-8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><path d="M14 19.5h4" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg><span>Bud<b>licz</b></span></a><nav aria-label="Kalkulatory i poradniki"><details class="grp"><summary>Fundamenty</summary><div class="dd"><a href="/beton">Beton i stal</a><a href="/lawy-czy-plyta">Ławy czy płyta</a><a href="/hydroizolacja-fundamentow">Hydroizolacja</a><a href="/wykop">Ziemia z wykopu</a></div></details><details class="grp"><summary>Konstrukcja</summary><div class="dd"><a href="/strop">Strop</a><a href="/schody">Schody</a><a href="/nadproza">Nadproża</a><a href="/dylatacje">Dylatacje</a></div></details><details class="grp"><summary>Ściany i dach</summary><div class="dd"><a href="/sciany">Pustaki na ściany</a><a href="/ocieplenie">Ocieplenie ścian</a><a href="/wspolczynnik-u">Współczynnik U</a><a href="/sciana-dzialowa">Ścianka z płyt GK</a><a href="/dach">Dach</a></div></details><details class="grp"><summary>Wykończenie i teren</summary><div class="dd"><a href="/wylewka">Wylewka</a><a href="/kostka">Kostka i płytki</a><a href="/ogrodzenie">Ogrodzenie</a><a href="/taras">Taras</a></div></details><details class="grp"><summary>Energia</summary><div class="dd"><a href="/fotowoltaika">Fotowoltaika</a><a href="/pompa-ciepla">Pompa ciepła</a><a href="/pompa-ciepla-stary-dom">Pompa w starym domu</a><a href="/moc-grzewcza">Moc grzewcza</a><a href="/ogrzewanie-podlogowe">Ogrzewanie podłogowe</a></div></details><details class="grp cur"><summary>Plan budowy</summary><div class="dd"><a href="/konfigurator-domu">Konfigurator domu 3D</a><a href="/ceny-budowlane">Ceny materiałów</a><a href="/etapy-budowy">Etapy budowy</a><a href="/harmonogram">Harmonogram</a><a href="/kredyt">Kredyt na budowę</a><a href="/vat-budowa">VAT 8% czy 23%</a><a href="/dzialka-zabudowa">Wskaźnik zabudowy</a><a href="/przylacza" aria-current="page">Przyłącza</a></div></details><details class="grp"><summary>Dla firm</summary><div class="dd"><a href="/kosztorys">Kosztorys ofertowy</a><a href="/rozkroj-pretow">Rozkrój prętów</a></div></details></nav></div></header>
+<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Kalkulatory</div>
+<h1>Przyłącza do domu: porównaj oferty</h1>
+<p class="lead">Ceny przyłączy zależą od odległości od sieci i od firmy. Wpisz długość i stawkę za metr z każdej oferty, a kalkulator policzy sumę i pokaże koszt każdych kolejnych 10 metrów.</p>
+<section class="calc"><div class="panel">
+<div class="rowh p"><span>Przyłącze</span><span>Długość (m)</span><span>zł za m</span><span>Opłata (zł)</span><span></span></div>
+<div class="rows" id="media"></div>
+<p class="mut">Pole zostaw puste, jeśli media nie są potrzebne albo wykonasz je sam. Opłaty za warunki przyłączenia dopisz osobno.</p>
+</div>
+<div class="out" id="wynik" aria-live="polite"></div></section>
+<h2>Co dokładnie porównujesz</h2>
+<table><thead><tr><th>Pozycja w ofercie</th><th>Dlaczego ma znaczenie</th></tr></thead><tbody>
+<tr><td>Długość przyłącza</td><td>Różnica między sąsiadującymi ofertami zwykle wynika z długości, a nie ze stawki.</td></tr>
+<tr><td>Odtworzenie nawierzchni</td><td>Kostka, trawnik albo asfalt po wykopie często są poza stawką za metr.</td></tr>
+<tr><td>Opłaty za warunki i odbiór</td><td>Dokumenty i odbiór zakładu lub wodociągów zwykle płaci się osobno.</td></tr>
+<tr><td>Wspólny wykop</td><td>Kilka mediów w jednym wykopie może obniżyć koszt, jeśli wykonuje to jedna firma.</td></tr>
+</tbody></table>
+<h2>Na czym ludzie się mylą</h2>
+<div class="tip"><b>Oferta bez opłat nie jest pełna.</b> Warunki przyłączenia wydaje dostawca mediów i ich koszt bywa wyższy niż samo wykonanie. Zapytaj, co jest w cenie.</div>
+<div class="tip"><b>Najtańszy metr nie daje najtańszego przyłącza.</b> Firma z niższą stawką może liczyć dłuższe przyłącze albo doliczać odtworzenie nawierzchni.</div>
+<div class="tip"><b>Przyłącze to nie wszystko.</b> Do domu dochodzi jeszcze wewnętrzna instalacja, którą liczy konfigurator domu.</div>
+<details><summary>Jak liczymy</summary>
+<p>Dla każdego medium koszt to długość razy stawka za metr plus jednorazowa opłata. Suma to wszystkie media razem. Koszt każdych kolejnych 10 metrów to 10 razy suma stawek za metr, bez opłat jednorazowych. Kalkulator nie zna cen na Twojej działce, więc liczy tylko z tego, co wpiszesz.</p>
+</details>
+<p>Powiązane: <a href="/konfigurator-domu">konfigurator domu z kosztem elementów</a>, <a href="/ceny-budowlane">ceny materiałów i robocizny</a>.</p>
+</main>
+<footer><div class="wrap"><span><b>Budlicz</b> · kalkulatory budowlane. Wyniki to szacunki, wiążący jest projekt i wycena wykonawcy.<br>Serwis prowadzi 3D Automation sp. z o.o., KRS&nbsp;0000632953.</span><span><a href="/polityka-prywatnosci">Prywatność</a> · <a href="/o-serwisie">O serwisie</a> · <a href="/">Wszystkie kalkulatory</a></span></div></footer>
+<script>
+const $=id=>document.getElementById(id);
+const v=id=>parseFloat($(id).value)||0;
+const f=(n,d=2)=>Number(n).toLocaleString("pl-PL",{maximumFractionDigits:d});
+const zl=n=>Number(n).toLocaleString("pl-PL",{minimumFractionDigits:2,maximumFractionDigits:2})+" zł";
+const T=(x,y,t,c="t",a="start")=>`<text class="${c}" x="${x}" y="${y}" text-anchor="${a}">${t}</text>`;
+const pl=(n,a,b,c)=>{n=Math.abs(Math.round(n));return n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c;};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const MEDIA=[["Prąd (linia i kabel)"],["Woda z wodociągu"],["Kanalizacja sanitarna"],["Gaz"]];
+const num=x=>{const y=parseFloat(x);return isFinite(y)?y:NaN;};
+$("media").innerHTML=MEDIA.map(([n],i)=>`<div class="row p" data-i="${i}">
+<label class="cell"><span>${n}</span></label>
+<input type="number" min="0" step="1" data-k="d" aria-label="Długość: ${n}" placeholder="0">
+<input type="number" min="0" step="1" data-k="s" aria-label="Stawka za metr: ${n}" placeholder="0">
+<input type="number" min="0" step="1" data-k="o" aria-label="Opłata: ${n}" placeholder="0">
+<span></span></div>`).join("");
+function licz(){
+  let suma=0,perM=0,any=false;
+  document.querySelectorAll("#media .row").forEach(r=>{
+    const d=num(r.querySelector('[data-k="d"]').value), s=num(r.querySelector('[data-k="s"]').value), o=num(r.querySelector('[data-k="o"]').value);
+    if(!isFinite(d)&&!isFinite(s)&&!isFinite(o))return;
+    any=true;
+    const dd=isFinite(d)?d:0, ss=isFinite(s)?s:0, oo=isFinite(o)?o:0;
+    suma+=dd*ss+oo; perM+=ss;
+  });
+  if(!any){$("wynik").innerHTML="Wpisz długość i stawkę z przynajmniej jednej oferty.";return;}
+  $("wynik").innerHTML=`Razem media <b>${f(suma,0)} zł</b><br>Każde 10 m więcej <b>${f(10*perM,0)} zł</b><div class="mut">Suma zawiera długość razy stawkę i opłaty jednorazowe. Kwoty dotyczą tylko wpisanych pozycji i nie obejmują odtworzenia nawierzchni, jeśli oferta jej nie zawiera.</div>`;
+}
+document.querySelector("section.calc").addEventListener("input",licz);
+licz();
+document.addEventListener("click",e=>{document.querySelectorAll(".grp[open]").forEach(d=>{if(!d.contains(e.target))d.open=false})});
+</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moc grzewcza domu: straty ciepła, kalkulator</title>
+<meta name="description" content="Oblicz straty ciepła domu przez ściany, dach, podłogę, okna i wentylację. Wynik w kW pomaga dobrać pompę ciepła lub kocioł.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/style.css"><link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 32 32' aria-hidden='true'%3E%3Crect width='32' height='32' rx='9' fill='%23e8590c'/%3E%3Cpath d='M7 16.5 16 9l9 7.5' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.5 15v8h11v-8' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linejoin='round'/%3E%3Cpath d='M14 19.5h4' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E"><meta name="theme-color" content="#e8590c">
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="logo" href="/" aria-label="Budlicz, strona główna"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#e8590c"/><path d="M7 16.5 16 9l9 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 15v8h11v-8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><path d="M14 19.5h4" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg><span>Bud<b>licz</b></span></a><nav aria-label="Kalkulatory i poradniki"><details class="grp"><summary>Fundamenty</summary><div class="dd"><a href="/beton">Beton i stal</a><a href="/lawy-czy-plyta">Ławy czy płyta</a><a href="/hydroizolacja-fundamentow">Hydroizolacja</a><a href="/wykop">Ziemia z wykopu</a></div></details><details class="grp"><summary>Konstrukcja</summary><div class="dd"><a href="/strop">Strop</a><a href="/schody">Schody</a><a href="/nadproza">Nadproża</a><a href="/dylatacje">Dylatacje</a></div></details><details class="grp"><summary>Ściany i dach</summary><div class="dd"><a href="/sciany">Pustaki na ściany</a><a href="/ocieplenie">Ocieplenie ścian</a><a href="/wspolczynnik-u">Współczynnik U</a><a href="/sciana-dzialowa">Ścianka z płyt GK</a><a href="/dach">Dach</a></div></details><details class="grp"><summary>Wykończenie i teren</summary><div class="dd"><a href="/wylewka">Wylewka</a><a href="/kostka">Kostka i płytki</a><a href="/ogrodzenie">Ogrodzenie</a><a href="/taras">Taras</a></div></details><details class="grp cur"><summary>Energia</summary><div class="dd"><a href="/fotowoltaika">Fotowoltaika</a><a href="/pompa-ciepla">Pompa ciepła</a><a href="/pompa-ciepla-stary-dom">Pompa w starym domu</a><a href="/moc-grzewcza" aria-current="page">Moc grzewcza</a><a href="/ogrzewanie-podlogowe">Ogrzewanie podłogowe</a></div></details><details class="grp"><summary>Plan budowy</summary><div class="dd"><a href="/konfigurator-domu">Konfigurator domu 3D</a><a href="/ceny-budowlane">Ceny materiałów</a><a href="/etapy-budowy">Etapy budowy</a><a href="/harmonogram">Harmonogram</a><a href="/kredyt">Kredyt na budowę</a><a href="/vat-budowa">VAT 8% czy 23%</a><a href="/dzialka-zabudowa">Wskaźnik zabudowy</a><a href="/przylacza">Przyłącza</a></div></details><details class="grp"><summary>Dla firm</summary><div class="dd"><a href="/kosztorys">Kosztorys ofertowy</a><a href="/rozkroj-pretow">Rozkrój prętów</a></div></details></nav></div></header>
+<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Kalkulatory</div>
+<h1>Moc grzewcza domu: ile ciepła ucieka</h1>
+<p class="lead">Wpisz wymiary, współczynniki U przegród i temperatury. Kalkulator policzy straty ciepła przez każdą część domu oraz na wentylację. Suma to moc, którą musi dać ogrzewanie w najzimniejszy dzień.</p>
+<section class="calc"><div class="panel">
+<div class="grid">
+<div><label for="dl">Długość budynku (m)</label><input id="dl" type="number" value="12" min="0" step="0.1"></div>
+<div><label for="sz">Szerokość budynku (m)</label><input id="sz" type="number" value="9.5" min="0" step="0.1"></div>
+<div><label for="kond">Kondygnacje ogrzewane</label><select id="kond"><option value="1">Parter</option><option value="2" selected>Dwie kondygnacje</option></select></div>
+<div><label for="h">Wysokość kondygnacji (m)</label><input id="h" type="number" value="3" min="2" step="0.1"></div>
+<div><label for="usc">U ścian zewnętrznych (W/m²K)</label><input id="usc" type="number" value="0.20" min="0" step="0.01"></div>
+<div><label for="udach">U dachu lub stropu (W/m²K)</label><input id="udach" type="number" value="0.15" min="0" step="0.01"></div>
+<div><label for="up">U podłogi na gruncie (W/m²K)</label><input id="up" type="number" value="0.30" min="0" step="0.01"></div>
+<div><label for="pok">Powierzchnia okien (m²)</label><input id="pok" type="number" value="24" min="0" step="0.5"></div>
+<div><label for="uok">U okien (W/m²K)</label><input id="uok" type="number" value="0.9" min="0" step="0.1"></div>
+<div><label for="ndr">Drzwi zewnętrzne (szt.)</label><input id="ndr" type="number" value="1" min="0" step="1"></div>
+<div><label for="udr">U drzwi (W/m²K)</label><input id="udr" type="number" value="1.3" min="0" step="0.1"></div>
+<div><label for="went">Wentylacja</label><select id="went"><option value="gr" selected>Grawitacyjna (0,5 wymiany/h)</option><option value="rek">Rekuperacja, odzysk 80 %</option></select></div>
+<div><label for="ti">Temperatura w domu (°C)</label><input id="ti" type="number" value="20" step="1"></div>
+<div><label for="te">Najzimniejsza temperatura w Twojej okolicy (°C)</label><input id="te" type="number" value="-20" step="1"></div>
+</div>
+<p class="mut">Wartości U to przykład zgodny z WT 2021. Wpisz U z kart produktów albo z kalkulatora U, jeśli liczyłeś swoją ścianę.</p>
+</div>
+<div class="out" id="wynik" aria-live="polite"></div></section>
+<div id="rozbicie"></div>
+<h2>Jak liczymy</h2>
+<p>Straty przez przegrody to suma U razy powierzchnia razy różnica temperatur, dla każdej przegrody osobno. Straty na wentylację to 0,34 razy wymiana powietrza razy kubatura razy różnica temperatur. Wymiana 0,5 na godzinę to typowa wartość dla wentylacji grawitacyjnej. Rekuperacja z odzyskiem 80 % ogranicza tę stratę do około jednej piątej.</p>
+<h2>Na czym ludzie się mylą</h2>
+<div class="tip"><b>Najzimniejszy dzień, nie średnia.</b> Moc liczy się dla temperatury obliczeniowej, a nie dla zimy jako całości. Średnia roczna daje zaniżoną moc.</div>
+<div class="tip"><b>Wentylacja potrafi być większa niż ściany.</b> W domu bez rekuperacji wymiana powietrza zwykle odpowiada za dużą część strat. Sam dobry dach tego nie naprawi.</div>
+<div class="tip"><b>Pompa z zapasem, ale nie na oko.</b> Moc z kalkulatora to punkt wyjścia. Dobór pompy robi się wg karty producenta przy tej temperaturze, a nie wg metrażu.</div>
+<details><summary>Dlaczego podłoga jest zawyżona</summary>
+<p>Podłoga na gruncie oddaje ciepło do ziemi wolniej niż powietrzu, a tutaj liczymy ją z pełną różnicą temperatur. Wynik jest więc po stronie bezpiecznej. Dokładny wynik wymaga normy dla podłóg na gruncie i zależy od obwodu płyty.</p>
+</details>
+<p>Powiązane: <a href="/wspolczynnik-u">współczynnik U ściany i dachu</a>, <a href="/pompa-ciepla">pompa ciepła</a>, <a href="/fotowoltaika">fotowoltaika</a>.</p>
+</main>
+<footer><div class="wrap"><span><b>Budlicz</b> · kalkulatory budowlane. Wyniki to szacunki, wiążący jest projekt i wycena wykonawcy.<br>Serwis prowadzi 3D Automation sp. z o.o., KRS&nbsp;0000632953.</span><span><a href="/polityka-prywatnosci">Prywatność</a> · <a href="/o-serwisie">O serwisie</a> · <a href="/">Wszystkie kalkulatory</a></span></div></footer>
+<script>
+const $=id=>document.getElementById(id);
+const v=id=>parseFloat($(id).value)||0;
+const f=(n,d=2)=>Number(n).toLocaleString("pl-PL",{maximumFractionDigits:d});
+const zl=n=>Number(n).toLocaleString("pl-PL",{minimumFractionDigits:2,maximumFractionDigits:2})+" zł";
+const T=(x,y,t,c="t",a="start")=>`<text class="${c}" x="${x}" y="${y}" text-anchor="${a}">${t}</text>`;
+const pl=(n,a,b,c)=>{n=Math.abs(Math.round(n));return n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c;};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const num=id=>{const x=parseFloat($(id).value);return isFinite(x)?x:NaN;};
+const n0=id=>num(id)||0;
+function licz(){
+  const L=n0("dl"),W=n0("sz"),k=parseFloat($("kond").value)||1,hk=n0("h");
+  const dT=n0("ti")-n0("te");
+  if(L<=0||W<=0||hk<=0||dT<=0){$("wynik").innerHTML="Sprawdź wymiary i temperatury. Różnica temperatur musi być dodatnia.";$("rozbicie").innerHTML="";return;}
+  const H=hk*k, pok=n0("pok"), ndr=n0("ndr"), adr=ndr*2;
+  const asc=Math.max(0,2*(L+W)*H-pok-adr);
+  const rows=[
+    ["Ściany zewnętrzne",asc,n0("usc")],
+    ["Dach lub strop nad ostatnią kondygnacją",L*W,n0("udach")],
+    ["Podłoga na gruncie (zawyżona, patrz niżej)",L*W,n0("up")],
+    ["Okna",pok,n0("uok")],
+    ["Drzwi zewnętrzne",adr,n0("udr")]
+  ].map(([n,a,u])=>({n,a,u,q:a*u*dT}));
+  const n=$("went").value==="rek"?0.5*(1-0.8):0.5, vol=L*W*H;
+  rows.push({n:"Wentylacja",a:vol,u:null,q:0.34*n*vol*dT,vol:true});
+  const sum=rows.reduce((s,r)=>s+r.q,0), kw=sum/1000, pm=sum/(L*W*k);
+  const top=rows.reduce((b,r)=>r.q>b.q?r:b,rows[0]);
+  $("wynik").innerHTML=`Moc grzewcza <b>${f(kw,1)} kW</b><br>Na m² ogrzewanej powierzchni <b>${f(pm,0)} W/m²</b><br>Największa strata: ${top.n.toLowerCase()}, ${f(100*top.q/sum,0)} % całości<div class="mut">Różnica temperatur ${f(dT,0)} K. Powierzchnia ogrzewana ${f(L*W*k,0)} m². Wynik orientacyjny, dobór pompy wg projektu i karty producenta.</div>`;
+  $("rozbicie").innerHTML=`<h2>Rozbicie strat</h2><div class="tablewrap"><table><thead><tr><th>Element</th><th class="num">Powierzchnia lub kubatura</th><th class="num">U</th><th class="num">Strata, W</th><th class="num">Udział</th></tr></thead><tbody>`+
+    rows.map(r=>`<tr><td>${r.n}</td><td class="num">${f(r.a,r.vol?0:1)}</td><td class="num">${r.u===null?"0,34 · n":f(r.u,2)}</td><td class="num">${f(r.q,0)}</td><td class="num">${f(100*r.q/sum,0)} %</td></tr>`).join("")+
+    `</tbody><tfoot><tr><td><b>Razem</b></td><td></td><td></td><td class="num"><b>${f(sum,0)}</b></td><td class="num">100 %</td></tr></tfoot></table></div>`;
+}
+document.querySelector("section.calc").addEventListener("input",licz);
+licz();
+document.addEventListener("click",e=>{document.querySelectorAll(".grp[open]").forEach(d=>{if(!d.contains(e.target))d.open=false})});
+</script>
+</body>
+</html>

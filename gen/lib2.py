@@ -11,9 +11,9 @@ GROUPS=[
  ("Fundamenty",[("/beton","Beton i stal"),("/lawy-czy-plyta","Ławy czy płyta"),("/hydroizolacja-fundamentow","Hydroizolacja"),("/wykop","Ziemia z wykopu")]),
  ("Konstrukcja",[("/strop","Strop"),("/schody","Schody"),("/nadproza","Nadproża"),("/dylatacje","Dylatacje")]),
  ("Ściany i dach",[("/sciany","Pustaki na ściany"),("/ocieplenie","Ocieplenie ścian"),("/wspolczynnik-u","Współczynnik U"),("/sciana-dzialowa","Ścianka z płyt GK"),("/dach","Dach")]),
- ("Wykończenie i teren",[("/wylewka","Wylewka"),("/kostka","Kostka i płytki"),("/ogrodzenie","Ogrodzenie")]),
- ("Energia",[("/fotowoltaika","Fotowoltaika"),("/pompa-ciepla","Pompa ciepła"),("/pompa-ciepla-stary-dom","Pompa w starym domu")]),
- ("Plan budowy",[("/konfigurator-domu","Konfigurator domu 3D"),("/ceny-budowlane","Ceny materiałów"),("/etapy-budowy","Etapy budowy"),("/harmonogram","Harmonogram"),("/kredyt","Kredyt na budowę"),("/vat-budowa","VAT 8% czy 23%")]),
+ ("Wykończenie i teren",[("/wylewka","Wylewka"),("/kostka","Kostka i płytki"),("/ogrodzenie","Ogrodzenie"),("/taras","Taras")]),
+ ("Energia",[("/fotowoltaika","Fotowoltaika"),("/pompa-ciepla","Pompa ciepła"),("/pompa-ciepla-stary-dom","Pompa w starym domu"),("/moc-grzewcza","Moc grzewcza"),("/ogrzewanie-podlogowe","Ogrzewanie podłogowe")]),
+ ("Plan budowy",[("/konfigurator-domu","Konfigurator domu 3D"),("/ceny-budowlane","Ceny materiałów"),("/etapy-budowy","Etapy budowy"),("/harmonogram","Harmonogram"),("/kredyt","Kredyt na budowę"),("/vat-budowa","VAT 8% czy 23%"),("/dzialka-zabudowa","Wskaźnik zabudowy"),("/przylacza","Przyłącza")]),
  ("Dla firm",[("/kosztorys","Kosztorys ofertowy"),("/rozkroj-pretow","Rozkrój prętów")]),
 ]
 def nav(cur):

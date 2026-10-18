@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taras: ile desek, legarów i stóp</title>
+<meta name="description" content="Policz deski tarasowe, legary i stopy dla tarasu drewnianego albo kompozytowego. Wynik z zapasem na docinki i odpad.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/style.css"><link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 32 32' aria-hidden='true'%3E%3Crect width='32' height='32' rx='9' fill='%23e8590c'/%3E%3Cpath d='M7 16.5 16 9l9 7.5' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.5 15v8h11v-8' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linejoin='round'/%3E%3Cpath d='M14 19.5h4' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E"><meta name="theme-color" content="#e8590c">
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="logo" href="/" aria-label="Budlicz, strona główna"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#e8590c"/><path d="M7 16.5 16 9l9 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 15v8h11v-8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><path d="M14 19.5h4" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg><span>Bud<b>licz</b></span></a><nav aria-label="Kalkulatory i poradniki"><details class="grp"><summary>Fundamenty</summary><div class="dd"><a href="/beton">Beton i stal</a><a href="/lawy-czy-plyta">Ławy czy płyta</a><a href="/hydroizolacja-fundamentow">Hydroizolacja</a><a href="/wykop">Ziemia z wykopu</a></div></details><details class="grp"><summary>Konstrukcja</summary><div class="dd"><a href="/strop">Strop</a><a href="/schody">Schody</a><a href="/nadproza">Nadproża</a><a href="/dylatacje">Dylatacje</a></div></details><details class="grp"><summary>Ściany i dach</summary><div class="dd"><a href="/sciany">Pustaki na ściany</a><a href="/ocieplenie">Ocieplenie ścian</a><a href="/wspolczynnik-u">Współczynnik U</a><a href="/sciana-dzialowa">Ścianka z płyt GK</a><a href="/dach">Dach</a></div></details><details class="grp cur"><summary>Wykończenie i teren</summary><div class="dd"><a href="/wylewka">Wylewka</a><a href="/kostka">Kostka i płytki</a><a href="/ogrodzenie">Ogrodzenie</a><a href="/taras" aria-current="page">Taras</a></div></details><details class="grp"><summary>Energia</summary><div class="dd"><a href="/fotowoltaika">Fotowoltaika</a><a href="/pompa-ciepla">Pompa ciepła</a><a href="/pompa-ciepla-stary-dom">Pompa w starym domu</a><a href="/moc-grzewcza">Moc grzewcza</a><a href="/ogrzewanie-podlogowe">Ogrzewanie podłogowe</a></div></details><details class="grp"><summary>Plan budowy</summary><div class="dd"><a href="/konfigurator-domu">Konfigurator domu 3D</a><a href="/ceny-budowlane">Ceny materiałów</a><a href="/etapy-budowy">Etapy budowy</a><a href="/harmonogram">Harmonogram</a><a href="/kredyt">Kredyt na budowę</a><a href="/vat-budowa">VAT 8% czy 23%</a><a href="/dzialka-zabudowa">Wskaźnik zabudowy</a><a href="/przylacza">Przyłącza</a></div></details><details class="grp"><summary>Dla firm</summary><div class="dd"><a href="/kosztorys">Kosztorys ofertowy</a><a href="/rozkroj-pretow">Rozkrój prętów</a></div></details></nav></div></header>
+<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Kalkulatory</div>
+<h1>Taras: ile desek, legarów i stóp kupić</h1>
+<p class="lead">Podaj wymiary tarasu i deski, którą wybierasz. Kalkulator policzy deski, legary i podpory z zapasem na docinki. Wymiary deski i rozstaw legarów zwykle są w karcie produktu.</p>
+<section class="calc"><div class="panel">
+<div class="grid">
+<div><label for="dl">Długość tarasu (m)</label><input id="dl" type="number" value="4" min="0" step="0.1"></div>
+<div><label for="sz">Szerokość tarasu (m)</label><input id="sz" type="number" value="3" min="0" step="0.1"></div>
+<div><label for="kier">Deski biegną wzdłuż</label><select id="kier"><option value="dl" selected>długości tarasu</option><option value="sz">szerokości tarasu</option></select></div>
+<div><label for="szd">Szerokość deski (mm)</label><select id="szd"><option value="90">90</option><option value="120">120</option><option value="140" selected>140</option><option value="145">145</option></select></div>
+<div><label for="dld">Długość deski (m)</label><select id="dld"><option value="2.4">2,4</option><option value="3">3,0</option><option value="3.6">3,6</option><option value="4" selected>4,0</option><option value="4.8">4,8</option></select></div>
+<div><label for="szc">Szczelina między deskami (mm)</label><input id="szc" type="number" value="5" min="0" step="1"></div>
+<div><label for="roz">Rozstaw legarów (cm)</label><select id="roz"><option value="40" selected>40</option><option value="50">50</option><option value="60">60</option></select></div>
+<div><label for="stop">Rozstaw stóp pod legarami (m)</label><input id="stop" type="number" value="1.5" min="0.5" step="0.1"></div>
+</div>
+<p class="mut">Szczelinę i rozstaw legarów podaje producent. Rozstaw legarów zależy od deski i producenta. Kompozyt zwykle wymaga 40 cm, a drewno w grubej desce nawet 60 cm.</p>
+</div>
+<div class="out" id="wynik" aria-live="polite"></div></section>
+<h2>Jak liczymy</h2>
+<p>Deski układamy w poprzek kierunku legarów. Liczba desek to szerokość tarasu podzielona przez szerokość deski plus szczelinę. Do tego dodajemy 8 % na docinki i odpad. Legary biegną prostopadle do desek, a ich liczba zależy od rozstawu. Stopy stoją w siatce, co rozstaw stóp w obu kierunkach.</p>
+<h2>Na czym ludzie się mylą</h2>
+<div class="tip"><b>Kierunek desek zmienia ilość docinków.</b> Deski układane wzdłuż dłuższego boku dają mniej łączeń i mniej odpadu. Przy krótkim tarasie różnica jest mała, przy długim spora.</div>
+<div class="tip"><b>Legary na stopach, nie na gruncie.</b> Legar leżący bezpośrednio na ziemi szybko chłonie wilgoć. Stopy regulowane pozwalają wypoziomować taras na nierównym terenie.</div>
+<div class="tip"><b>Zapas na docinki to nie błąd.</b> Każda deska ma przycięte końce. Kupując tylko tyle, ile wyszło, kończysz z jedną deską za mało.</div>
+<details><summary>Ile wychodzi odpadu</summary>
+<p>Odpad zależy od tego, ile docinków wychodzi z każdego rzędu. Im krótsza deska względem długości tarasu, tym więcej łączeń i tym większy odpad. Kalkulator dolicza 8 %, co zwykle wystarcza przy desce dłuższej niż połowa tarasu. Przy krótszych deskach warto dać więcej.</p>
+</details>
+<p>Powiązane: <a href="/kostka">kostka i płytki</a>, <a href="/ogrodzenie">ogrodzenie</a>, <a href="/wylewka">wylewka</a>.</p>
+</main>
+<footer><div class="wrap"><span><b>Budlicz</b> · kalkulatory budowlane. Wyniki to szacunki, wiążący jest projekt i wycena wykonawcy.<br>Serwis prowadzi 3D Automation sp. z o.o., KRS&nbsp;0000632953.</span><span><a href="/polityka-prywatnosci">Prywatność</a> · <a href="/o-serwisie">O serwisie</a> · <a href="/">Wszystkie kalkulatory</a></span></div></footer>
+<script>
+const $=id=>document.getElementById(id);
+const v=id=>parseFloat($(id).value)||0;
+const f=(n,d=2)=>Number(n).toLocaleString("pl-PL",{maximumFractionDigits:d});
+const zl=n=>Number(n).toLocaleString("pl-PL",{minimumFractionDigits:2,maximumFractionDigits:2})+" zł";
+const T=(x,y,t,c="t",a="start")=>`<text class="${c}" x="${x}" y="${y}" text-anchor="${a}">${t}</text>`;
+const pl=(n,a,b,c)=>{n=Math.abs(Math.round(n));return n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c;};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const num=id=>{const x=parseFloat($(id).value);return isFinite(x)?x:NaN;};
+const n0=id=>num(id)||0;
+function licz(){
+  const L=n0("dl"),W=n0("sz"),dl=parseFloat($("dld").value),szd=n0("szd")/1000,szc=n0("szc")/1000;
+  const rozst=parseFloat($("roz").value)/100, stop=n0("stop");
+  if(L<=0||W<=0||stop<=0){$("wynik").innerHTML="Podaj wymiary tarasu i rozstaw stóp.";return;}
+  const A=$("kier").value==="dl"?L:W, B=$("kier").value==="dl"?W:L;
+  const nd=Math.ceil(B/(szd+szc));
+  const mbDeski=nd*A*1.08, sztDeski=Math.ceil(mbDeski/dl);
+  const nLeg=Math.floor(A/rozst)+1, mbLeg=nLeg*B*1.05, sztLeg=nLeg*Math.ceil(B/4);
+  const nA=Math.floor(A/stop)+1, nB=Math.floor(B/stop)+1, stopy=nA*nB;
+  $("wynik").innerHTML=`Deski <b>${sztDeski} szt.</b> po ${f(dl,1)} m, razem ${f(mbDeski,1)} mb<br>Legary <b>${nLeg}</b> rzędów, ${f(mbLeg,1)} mb, sztuk po 4 m: ${sztLeg}<br>Stopy pod legary: <b>${stopy} szt.</b><div class="mut">Deski liczone z 8 % zapasu, legary z 5 %. Liczba stóp to siatka ${nA} × ${nB} co ${f(stop,1)} m. Przed zakupem sprawdź nośność legarów w karcie producenta.</div>`;
+}
+document.querySelector("section.calc").addEventListener("input",licz);
+licz();
+document.addEventListener("click",e=>{document.querySelectorAll(".grp[open]").forEach(d=>{if(!d.contains(e.target))d.open=false})});
+</script>
+</body>
+</html>

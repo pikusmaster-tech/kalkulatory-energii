@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wskaźnik zabudowy działki: kalkulator</title>
+<meta name="description" content="Policz wskaźnik powierzchni zabudowy, intensywność zabudowy i powierzchnię biologicznie czynną działki. Porównaj wynik z planem miejscowym.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/style.css"><link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 32 32' aria-hidden='true'%3E%3Crect width='32' height='32' rx='9' fill='%23e8590c'/%3E%3Cpath d='M7 16.5 16 9l9 7.5' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.5 15v8h11v-8' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linejoin='round'/%3E%3Cpath d='M14 19.5h4' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E"><meta name="theme-color" content="#e8590c">
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="logo" href="/" aria-label="Budlicz, strona główna"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#e8590c"/><path d="M7 16.5 16 9l9 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 15v8h11v-8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><path d="M14 19.5h4" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg><span>Bud<b>licz</b></span></a><nav aria-label="Kalkulatory i poradniki"><details class="grp"><summary>Fundamenty</summary><div class="dd"><a href="/beton">Beton i stal</a><a href="/lawy-czy-plyta">Ławy czy płyta</a><a href="/hydroizolacja-fundamentow">Hydroizolacja</a><a href="/wykop">Ziemia z wykopu</a></div></details><details class="grp"><summary>Konstrukcja</summary><div class="dd"><a href="/strop">Strop</a><a href="/schody">Schody</a><a href="/nadproza">Nadproża</a><a href="/dylatacje">Dylatacje</a></div></details><details class="grp"><summary>Ściany i dach</summary><div class="dd"><a href="/sciany">Pustaki na ściany</a><a href="/ocieplenie">Ocieplenie ścian</a><a href="/wspolczynnik-u">Współczynnik U</a><a href="/sciana-dzialowa">Ścianka z płyt GK</a><a href="/dach">Dach</a></div></details><details class="grp"><summary>Wykończenie i teren</summary><div class="dd"><a href="/wylewka">Wylewka</a><a href="/kostka">Kostka i płytki</a><a href="/ogrodzenie">Ogrodzenie</a><a href="/taras">Taras</a></div></details><details class="grp"><summary>Energia</summary><div class="dd"><a href="/fotowoltaika">Fotowoltaika</a><a href="/pompa-ciepla">Pompa ciepła</a><a href="/pompa-ciepla-stary-dom">Pompa w starym domu</a><a href="/moc-grzewcza">Moc grzewcza</a><a href="/ogrzewanie-podlogowe">Ogrzewanie podłogowe</a></div></details><details class="grp cur"><summary>Plan budowy</summary><div class="dd"><a href="/konfigurator-domu">Konfigurator domu 3D</a><a href="/ceny-budowlane">Ceny materiałów</a><a href="/etapy-budowy">Etapy budowy</a><a href="/harmonogram">Harmonogram</a><a href="/kredyt">Kredyt na budowę</a><a href="/vat-budowa">VAT 8% czy 23%</a><a href="/dzialka-zabudowa" aria-current="page">Wskaźnik zabudowy</a><a href="/przylacza">Przyłącza</a></div></details><details class="grp"><summary>Dla firm</summary><div class="dd"><a href="/kosztorys">Kosztorys ofertowy</a><a href="/rozkroj-pretow">Rozkrój prętów</a></div></details></nav></div></header>
+<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Kalkulatory</div>
+<h1>Wskaźnik zabudowy działki: czy dom się zmieści</h1>
+<p class="lead">Wpisz wymiary działki i budynku. Kalkulator policzy wskaźnik powierzchni zabudowy, intensywność zabudowy i udział powierzchni biologicznie czynnej. Jeśli znasz wartości z miejscowego planu, wpisz je, a kalkulator powie, ile zostało do limitu.</p>
+<section class="calc"><div class="panel">
+<div class="grid">
+<div><label for="dz">Powierzchnia działki (m²)</label><input id="dz" type="number" value="1000" min="1" step="10"></div>
+<div><label for="kond">Kondygnacje nadziemne</label><select id="kond"><option value="1">Parter</option><option value="2" selected>Piętro</option></select></div>
+<div><label for="dl">Długość budynku (m)</label><input id="dl" type="number" value="12" min="0" step="0.1"></div>
+<div><label for="sz">Szerokość budynku (m)</label><input id="sz" type="number" value="9.5" min="0" step="0.1"></div>
+<div><label for="gar">Garaż, wiata, zadaszenie (m²)</label><input id="gar" type="number" value="0" min="0" step="1"></div>
+<div><label for="utw">Podjazd, taras i inne utwardzenia (m²)</label><input id="utw" type="number" value="60" min="0" step="1"></div>
+<div><label for="mz">Maks. wskaźnik zabudowy z planu (%)</label><input id="mz" type="number" placeholder="np. 30" min="0" step="1"></div>
+<div><label for="mb">Min. powierzchnia biologicznie czynna z planu (%)</label><input id="mb" type="number" placeholder="np. 50" min="0" step="1"></div>
+</div>
+<p class="mut">Pól z planu nie musisz wypełniać. Bez nich kalkulator policzy same wskaźniki.</p>
+</div>
+<div class="out" id="wynik" aria-live="polite"></div></section>
+<h2>Co liczy kalkulator</h2>
+<table><thead><tr><th>Wskaźnik</th><th>Jak go liczymy</th></tr></thead><tbody>
+<tr><td>Powierzchnia zabudowy</td><td>Rzut budynku na teren, czyli długość razy szerokość, plus garaż i zadaszenia.</td></tr>
+<tr><td>Wskaźnik powierzchni zabudowy</td><td>Powierzchnia zabudowy podzielona przez działkę, w procentach.</td></tr>
+<tr><td>Intensywność zabudowy</td><td>Powierzchnia wszystkich kondygnacji nadziemnych podzielona przez działkę, w procentach.</td></tr>
+<tr><td>Powierzchnia biologicznie czynna</td><td>Działka pomniejszona o zabudowę i wszystkie utwardzenia, w procentach.</td></tr>
+</tbody></table>
+<h2>Na czym ludzie się mylą</h2>
+<div class="tip"><b>Plan wygrywa z kalkulatorem.</b> Wskaźniki liczy się wg definicji zapisanej w miejscowym planie albo w decyzji o warunkach zabudowy. Ten kalkulator daje wynik orientacyjny.</div>
+<div class="tip"><b>Podjazd też się liczy.</b> Kostka i podjazd nie są budynkiem, ale zabierają powierzchnię biologicznie czynną. Płyty ażurowe plan czasem liczy częściowo, sprawdź to w zapisach.</div>
+<div class="tip"><b>Dwa piętra to nie większa zabudowa.</b> Ten sam rzut na dwóch kondygnacjach podnosi intensywność, ale nie wskaźnik zabudowy. Plan zwykle ogranicza oba.</div>
+<details><summary>Jak liczymy</summary>
+<p>Kalkulator liczy rzut ścian zewnętrznych bez okapu. Jeśli plan wlicza okap, prawdziwy wskaźnik zabudowy jest wyższy, a kalkulator go zaniży. Przy okapie 0,6 m i budynku 12 × 9,5 m różnica to około 27 m², czyli 2,7 punktu procentowego na działce 1000 m².</p>
+<p>Powierzchnia biologicznie czynna jest liczona jako działka minus zabudowa minus utwardzenia. Plan może zaliczać część utwardzeń do tej powierzchni, np. kratki trawnikowe, wtedy wynik będzie wyższy niż tutaj.</p>
+</details>
+<p>Powiązane: <a href="/kostka">kostka i płytki</a>, <a href="/ogrodzenie">ogrodzenie</a>, <a href="/dach">dach</a>.</p>
+</main>
+<footer><div class="wrap"><span><b>Budlicz</b> · kalkulatory budowlane. Wyniki to szacunki, wiążący jest projekt i wycena wykonawcy.<br>Serwis prowadzi 3D Automation sp. z o.o., KRS&nbsp;0000632953.</span><span><a href="/polityka-prywatnosci">Prywatność</a> · <a href="/o-serwisie">O serwisie</a> · <a href="/">Wszystkie kalkulatory</a></span></div></footer>
+<script>
+const $=id=>document.getElementById(id);
+const v=id=>parseFloat($(id).value)||0;
+const f=(n,d=2)=>Number(n).toLocaleString("pl-PL",{maximumFractionDigits:d});
+const zl=n=>Number(n).toLocaleString("pl-PL",{minimumFractionDigits:2,maximumFractionDigits:2})+" zł";
+const T=(x,y,t,c="t",a="start")=>`<text class="${c}" x="${x}" y="${y}" text-anchor="${a}">${t}</text>`;
+const pl=(n,a,b,c)=>{n=Math.abs(Math.round(n));return n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c;};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const num=id=>{const x=parseFloat($(id).value);return isFinite(x)?x:NaN;};
+const n0=id=>num(id)||0;
+function licz(){
+  const dz=n0("dz"),L=n0("dl"),W=n0("sz"),k=parseFloat($("kond").value)||1,gar=n0("gar"),utw=n0("utw"),mz=num("mz"),mb=num("mb");
+  if(dz<=0||L<=0||W<=0){$("wynik").innerHTML="Wpisz wymiary działki i budynku.";return;}
+  const rzut=L*W, zab=rzut+gar, cal=rzut*k+gar, uts=zab+utw, pbc=Math.max(0,dz-uts);
+  const wz=zab/dz*100, wi=cal/dz*100, wb=pbc/dz*100;
+  let h=`Wskaźnik zabudowy <b>${f(wz,1)} %</b><br>Intensywność zabudowy <b>${f(wi,1)} %</b><br>Biologicznie czynna <b>${f(wb,1)} %</b>`;
+  h+=`<div class="mut">Zabudowa ${f(zab,0)} m², powierzchnia całkowita ${f(cal,0)} m², zabudowa razem z utwardzeniami ${f(uts,0)} m².</div>`;
+  if(!isNaN(mz)){const lim=mz/100*dz;
+    h+=wz<=mz?`<br><span class="ok">Mieści się w planie.</span> Zostaje ${f(lim-zab,0)} m² do limitu.`:`<br><span class="warn">Przekracza plan.</span> Trzeba zmniejszyć zabudowę o ${f(zab-lim,0)} m².`;}
+  if(!isNaN(mb)){const need=mb/100*dz;
+    h+=wb>=mb?`<br><span class="ok">Biologicznie czynna spełnia plan.</span>`:`<br><span class="warn">Brakuje ${f(need-pbc,0)} m² powierzchni biologicznie czynnej.</span>`;}
+  $("wynik").innerHTML=h;
+}
+document.querySelector("section.calc").addEventListener("input",licz);
+licz();
+document.addEventListener("click",e=>{document.querySelectorAll(".grp[open]").forEach(d=>{if(!d.contains(e.target))d.open=false})});
+</script>
+</body>
+</html>
