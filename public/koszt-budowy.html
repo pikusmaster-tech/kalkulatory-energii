@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Koszt budowy domu: stan surowy, deweloperski, pod klucz</title>
+<meta name="description" content="Policz koszt budowy domu dla stanu surowego, deweloperskiego i pod klucz. Wpisz metraż i własne stawki z ofert, a kalkulator pokaże różnicę.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/style.css"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' aria-hidden='true'%3E%3Crect width='32' height='32' rx='9' fill='%23e8590c'/%3E%3Cpath d='M7 16.5 16 9l9 7.5' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.5 15v8h11v-8' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linejoin='round'/%3E%3Cpath d='M14 19.5h4' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E"><meta name="theme-color" content="#e8590c">
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="logo" href="/" aria-label="Budlicz, strona główna"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#e8590c"/><path d="M7 16.5 16 9l9 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 15v8h11v-8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><path d="M14 19.5h4" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg><span>Bud<b>licz</b></span></a><nav aria-label="Kalkulatory i poradniki"><details class="grp"><summary>Fundamenty</summary><div class="dd"><a href="/beton">Beton i stal</a><a href="/lawy-czy-plyta">Ławy czy płyta</a><a href="/hydroizolacja-fundamentow">Hydroizolacja</a><a href="/wykop">Ziemia z wykopu</a></div></details><details class="grp"><summary>Konstrukcja</summary><div class="dd"><a href="/strop">Strop</a><a href="/schody">Schody</a><a href="/nadproza">Nadproża</a><a href="/dylatacje">Dylatacje</a></div></details><details class="grp"><summary>Ściany i dach</summary><div class="dd"><a href="/sciany">Pustaki na ściany</a><a href="/ocieplenie">Ocieplenie ścian</a><a href="/wspolczynnik-u">Współczynnik U</a><a href="/sciana-dzialowa">Ścianka z płyt GK</a><a href="/dach">Dach</a></div></details><details class="grp"><summary>Wykończenie i teren</summary><div class="dd"><a href="/wylewka">Wylewka</a><a href="/kostka">Kostka i płytki</a><a href="/ogrodzenie">Ogrodzenie</a><a href="/taras">Taras</a></div></details><details class="grp"><summary>Energia</summary><div class="dd"><a href="/fotowoltaika">Fotowoltaika</a><a href="/pompa-ciepla">Pompa ciepła</a><a href="/pompa-ciepla-stary-dom">Pompa w starym domu</a><a href="/moc-grzewcza">Moc grzewcza</a><a href="/ogrzewanie-podlogowe">Ogrzewanie podłogowe</a></div></details><details class="grp cur"><summary>Plan budowy</summary><div class="dd"><a href="/koszt-budowy" aria-current="page">Koszt budowy domu</a><a href="/konfigurator-domu">Konfigurator domu 3D</a><a href="/ceny-budowlane">Ceny materiałów</a><a href="/etapy-budowy">Etapy budowy</a><a href="/harmonogram">Harmonogram</a><a href="/kredyt">Kredyt na budowę</a><a href="/vat-budowa">VAT 8% czy 23%</a><a href="/dzialka-zabudowa">Wskaźnik zabudowy</a><a href="/przylacza">Przyłącza</a></div></details><details class="grp"><summary>Dla firm</summary><div class="dd"><a href="/kosztorys">Kosztorys ofertowy</a><a href="/rozkroj-pretow">Rozkrój prętów</a></div></details></nav></div></header>
+<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Kalkulatory</div>
+<h1>Koszt budowy domu: stan surowy, deweloperski czy pod klucz</h1>
+<p class="lead">Podaj metraż i stawkę za metr z ofert wykonawców. Kalkulator pokaże koszt dla każdego standardu i różnicę między nimi. Stawki w polach są przykładowe, zamień je na własne.</p>
+<section class="calc"><div class="panel">
+<div class="grid">
+<div><label for="m2">Powierzchnia użytkowa (m²)</label><input id="m2" type="number" value="120" min="0" step="1"></div>
+<div><label for="std">Standard, który liczysz</label><select id="std"><option value="0">stan surowy zamknięty</option><option value="1" selected>stan deweloperski</option><option value="2">pod klucz</option></select></div>
+<div><label for="kor">Korekta regionalna (%)</label><input id="kor" type="number" value="0" step="1"></div>
+<div><label for="zap">Zapas na nieprzewidziane (%)</label><input id="zap" type="number" value="10" min="0" step="1"></div>
+</div>
+<h3>Stawki netto za m² (przykładowe, wpisz z ofert)</h3>
+<div class="grid">
+<div><label for="s0">Stan surowy zamknięty (zł/m²)</label><input id="s0" type="number" value="1800" min="0" step="10"></div>
+<div><label for="s1">Stan deweloperski (zł/m²)</label><input id="s1" type="number" value="3000" min="0" step="10"></div>
+<div><label for="s2">Pod klucz (zł/m²)</label><input id="s2" type="number" value="4200" min="0" step="10"></div>
+</div>
+<p class="mut">Stawki i zapas to przykłady, nie dane rynkowe. Korekta regionalna to różnica między Twoim regionem a ofertami, 0 oznacza bez korekty. Bazę cen jednostkowych znajdziesz na <a href="/ceny-budowlane">stronie cen</a>.</p>
+</div>
+<div class="out" id="wynik" aria-live="polite"></div></section>
+<h2>Jak liczymy</h2>
+<p>Koszt netto to metraż razy stawka za metr wybranego standardu. Potem dolicza się korektę regionalną i zapas na nieprzewidziane. VAT nie jest wliczony. Jego stawka zależy od umowy i warunków, więc sprawdź ją na <a href="/vat-budowa">stronie o VAT 8% czy 23%</a>.</p>
+<h2>Co zwykle jest w każdym standardzie</h2>
+<table><thead><tr><th>Standard</th><th>Zwykle w cenie</th></tr></thead><tbody>
+<tr><td>Stan surowy zamknięty</td><td>Fundamenty, ściany, strop, dach z pokryciem, okna i drzwi zewnętrzne.</td></tr>
+<tr><td>Stan deweloperski</td><td>To samo co wyżej, plus tynki, wylewki i instalacje doprowadzone do punktów. Podłóg i łazienek zwykle nie ma.</td></tr>
+<tr><td>Pod klucz</td><td>Wykończenie gotowe do mieszkania: podłogi, łazienki, kuchnia i malowanie.</td></tr>
+</tbody></table>
+<h2>Na czym ludzie się mylą</h2>
+<div class="tip"><b>Stan deweloperski to nie pod klucz.</b> Różnica często wychodzi dopiero przy odbiorze. Sprawdź w specyfikacji, czy tynki, wylewki i instalacje są w cenie.</div>
+<div class="tip"><b>Najniższa stawka może nie mieć wszystkiego.</b> Oferta bez instalacji albo bez ogrzewania wygląda tanio tylko na papierze. Porównuj oferty z tym samym zakresem.</div>
+<div class="tip"><b>Poza stawką za m² zostają przyłącza, projekt i zagospodarowanie działki.</b> Liczy się je osobno. Zobacz <a href="/przylacza">przyłącza do domu</a>.</div>
+<h2>Finansowanie</h2>
+<p>Jeśli budujesz na kredyt, porównaj oferty przed podpisaniem umowy. Sprawdzaj RRSO i całkowity koszt kredytu, a nie tylko wysokość raty.</p>
+<a class="cta" href="#" rel="sponsored nofollow">Porównaj oferty kredytu hipotecznego</a>
+<p class="mut">To link partnerski. Kalkulator raty znajdziesz na <a href="/kredyt">stronie kredytu</a>.</p>
+<p>Powiązane: <a href="/konfigurator-domu">konfigurator domu z kosztem elementów</a>, <a href="/harmonogram">harmonogram budowy</a>, <a href="/ceny-budowlane">ceny materiałów i robocizny</a>.</p>
+</main>
+<footer><div class="wrap"><span><b>Budlicz</b> · kalkulatory budowlane. Wyniki to szacunki, wiążący jest projekt i wycena wykonawcy.<br>Serwis prowadzi 3D Automation sp. z o.o., KRS&nbsp;0000632953.</span><span><a href="/polityka-prywatnosci">Prywatność</a> · <a href="/o-serwisie">O serwisie</a> · <a href="/">Wszystkie kalkulatory</a></span></div></footer>
+<script>
+const $=id=>document.getElementById(id);
+const v=id=>parseFloat($(id).value)||0;
+const f=(n,d=2)=>Number(n).toLocaleString("pl-PL",{maximumFractionDigits:d});
+const zl=n=>Number(n).toLocaleString("pl-PL",{minimumFractionDigits:2,maximumFractionDigits:2})+" zł";
+const T=(x,y,t,c="t",a="start")=>`<text class="${c}" x="${x}" y="${y}" text-anchor="${a}">${t}</text>`;
+const pl=(n,a,b,c)=>{n=Math.abs(Math.round(n));return n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c;};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const STD=["stan surowy zamknięty","stan deweloperski","pod klucz"];
+function kosztCalc(m2,st,kor,zap){return m2*st*(1+kor/100)*(1+zap/100);}
+function licz(){
+  const m2=v("m2"), kor=v("kor"), zap=v("zap"), sel=+$("std").value;
+  const r=[v("s0"),v("s1"),v("s2")];
+  const tot=r.map(st=>kosztCalc(m2,st,kor,zap));
+  const d1=tot[1]-tot[0], d2=tot[2]-tot[1];
+  $("wynik").innerHTML=`Koszt netto, ${STD[sel]}: <b>${f(tot[sel],0)} zł</b><br>Dla tego samego metrażu:<br>${STD.map((n,i)=>`${n}: <b>${f(tot[i],0)} zł</b>`).join("<br>")}<br>Z surowego do deweloperskiego dopłacasz <b>${f(d1,0)} zł</b>, z deweloperskiego do pod klucz <b>${f(d2,0)} zł</b>.<div class="mut">Metraż ${f(m2,0)} m², zapas ${f(zap,0)} %, korekta regionalna ${f(kor,0)} %. Stawki są przykładowe. Wynik to szacunek, nie wycena. VAT nie jest wliczony.</div>`;
+}
+document.querySelector("section.calc").addEventListener("input",licz);
+document.querySelector("section.calc").addEventListener("change",licz);
+licz();
+document.addEventListener("click",e=>{document.querySelectorAll(".grp[open]").forEach(d=>{if(!d.contains(e.target))d.open=false})});
+</script>
+</body>
+</html>

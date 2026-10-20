@@ -1,11 +1,12 @@
 import re, glob, os, sys
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
-import lib2, calc2, guides2, calc3, calc4, konfigurator, cennik
+import lib2, calc2, guides2, calc3, calc4, calc5, konfigurator, cennik
 from lib2 import BASE, page, CLOSE_JS, header
 NEW={}
 for k,p in calc2.CALC.items(): NEW[k]=(p['title'],p['desc'],p['main'],p['script'])
 for k,p in calc3.CALC3.items(): NEW[k]=(p['title'],p['desc'],p['main'],p['script'])
 for k,p in calc4.CALC4.items(): NEW[k]=(p['title'],p['desc'],p['main'],p['script'])
+for k,p in calc5.CALC5.items(): NEW[k]=(p['title'],p['desc'],p['main'],p['script'])
 for k,p in guides2.GUIDE.items(): NEW[k]=(p['title'],p['desc'],p['main'],'')
 for k,p in konfigurator.KONF.items(): NEW[k]=(p['title'],p['desc'],p['main'],p['script'])
 for k,p in cennik.CENNIK.items(): NEW[k]=(p['title'],p['desc'],p['main'],p['script'])
@@ -50,6 +51,7 @@ NEWTILES={
  '/moc-grzewcza':('Energia','Moc grzewcza domu','Straty ciepła przez przegrody i wentylację. Wynik w kW do doboru pompy lub kotła.','<rect x="4" y="5" width="16" height="11" rx="2"/><path d="M8 20h8M9 9v3M12 9v3M15 9v3"/>'),
  '/ogrzewanie-podlogowe':('Energia','Ogrzewanie podłogowe','Długość rury, liczba pętli i obiegów rozdzielacza przy zadanym rozstawie.','<path d="M3 17h18M3 13c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/>'),
  '/taras':('Wykończenie i teren','Taras: deski i legary','Deski, legary i stopy z zapasem na docinki, dla drewna i kompozytu.','<path d="M3 8h18M3 12h18M3 16h18"/><path d="M6 16v4M18 16v4"/>'),
+ '/koszt-budowy':('Plan budowy','Koszt budowy domu','Stan surowy, deweloperski czy pod klucz: koszt z metrażu i stawek z ofert, z różnicą między standardami.','<path d="M4 19h16"/><path d="M6 19V9l6-4 6 4v10"/><path d="M10 14h4"/>'),
  '/przylacza':('Plan budowy','Przyłącza do domu','Porównaj oferty na prąd, wodę, kanalizację i gaz: suma i koszt każdych 10 m.','<path d="M9 3v5M15 3v5M7 8h10v4a5 5 0 0 1-10 0z"/><path d="M12 17v4"/>'),
 }
 FEAT='<a class="feat" href="/konfigurator-domu"><span class="tag">Nowość</span><b>Konfigurator domu 3D</b><span>Ustaw wymiary, dach i ściany. Model rośnie od fundamentów do elewacji, a pod nim widzisz koszt każdego elementu, osobno materiał i robocizna.</span><span class="go">Otwórz konfigurator</span></a>'
@@ -64,7 +66,7 @@ GROUPS_IDX=[
  ('Ściany i dach',['/sciany','/ocieplenie','/wspolczynnik-u','/sciana-dzialowa','/dach']),
  ('Wykończenie i teren',['/wylewka','/kostka','/ogrodzenie','/taras']),
  ('Energia',['/fotowoltaika','/pompa-ciepla','/pompa-ciepla-stary-dom','/moc-grzewcza','/ogrzewanie-podlogowe']),
- ('Plan budowy',['/konfigurator-domu','/ceny-budowlane','/etapy-budowy','/harmonogram','/kredyt','/vat-budowa','/dzialka-zabudowa','/przylacza']),
+ ('Plan budowy',['/koszt-budowy','/konfigurator-domu','/ceny-budowlane','/etapy-budowy','/harmonogram','/kredyt','/vat-budowa','/dzialka-zabudowa','/przylacza']),
  ('Dla firm',['/kosztorys','/rozkroj-pretow']),
 ]
 main='<main class="wrap">\n'+hero+'\n'+FEAT+'\n'
