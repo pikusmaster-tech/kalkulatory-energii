@@ -52,6 +52,7 @@ NEWTILES={
  '/ogrzewanie-podlogowe':('Energia','Ogrzewanie podłogowe','Długość rury, liczba pętli i obiegów rozdzielacza przy zadanym rozstawie.','<path d="M3 17h18M3 13c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/>'),
  '/taras':('Wykończenie i teren','Taras: deski i legary','Deski, legary i stopy z zapasem na docinki, dla drewna i kompozytu.','<path d="M3 8h18M3 12h18M3 16h18"/><path d="M6 16v4M18 16v4"/>'),
  '/koszt-budowy':('Plan budowy','Koszt budowy domu','Stan surowy, deweloperski czy pod klucz: koszt z metrażu i stawek z ofert, z różnicą między standardami.','<path d="M4 19h16"/><path d="M6 19V9l6-4 6 4v10"/><path d="M10 14h4"/>'),
+ '/malowanie':('Wykończenie i teren','Malowanie: ile farby','Litry farby na ściany i sufit z odjęciem okien i drzwi, zapasem i liczbą opakowań.','<rect x="4" y="3" width="13" height="6" rx="1"/><path d="M17 6h3v5h-3M10 9v4M9 13h5v7H9z"/>'),
  '/przylacza':('Plan budowy','Przyłącza do domu','Porównaj oferty na prąd, wodę, kanalizację i gaz: suma i koszt każdych 10 m.','<path d="M9 3v5M15 3v5M7 8h10v4a5 5 0 0 1-10 0z"/><path d="M12 17v4"/>'),
 }
 FEAT='<a class="feat" href="/konfigurator-domu"><span class="tag">Nowość</span><b>Konfigurator domu 3D</b><span>Ustaw wymiary, dach i ściany. Model rośnie od fundamentów do elewacji, a pod nim widzisz koszt każdego elementu, osobno materiał i robocizna.</span><span class="go">Otwórz konfigurator</span></a>'
@@ -64,7 +65,7 @@ GROUPS_IDX=[
  ('Fundamenty',['/beton','/lawy-czy-plyta','/hydroizolacja-fundamentow','/wykop']),
  ('Konstrukcja',['/strop','/schody','/nadproza','/dylatacje']),
  ('Ściany i dach',['/sciany','/ocieplenie','/wspolczynnik-u','/sciana-dzialowa','/dach']),
- ('Wykończenie i teren',['/wylewka','/kostka','/ogrodzenie','/taras']),
+ ('Wykończenie i teren',['/wylewka','/kostka','/ogrodzenie','/taras','/malowanie']),
  ('Energia',['/fotowoltaika','/pompa-ciepla','/pompa-ciepla-stary-dom','/moc-grzewcza','/ogrzewanie-podlogowe']),
  ('Plan budowy',['/koszt-budowy','/konfigurator-domu','/ceny-budowlane','/etapy-budowy','/harmonogram','/kredyt','/vat-budowa','/dzialka-zabudowa','/przylacza']),
  ('Dla firm',['/kosztorys','/rozkroj-pretow']),

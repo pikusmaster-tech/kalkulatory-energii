@@ -56,3 +56,52 @@ document.querySelector("section.calc").addEventListener("input",licz);
 document.querySelector("section.calc").addEventListener("change",licz);
 licz();'''
 )
+
+CALC5['malowanie']=dict(title='Malowanie: ile farby na ściany i sufit',
+ desc='Policz litry farby na ściany i sufit pokoju z odjęciem okien i drzwi. Wpisz wydajność z karty produktu, a kalkulator doliczy zapas i opakowania.',
+ main=r'''<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Kalkulatory</div>
+<h1>Malowanie: ile farby na ściany i sufit</h1>
+<p class="lead">Podaj wymiary pokoju, powierzchnię okien i drzwi oraz wydajność farby z karty produktu. Kalkulator policzy litry i liczbę opakowań z zapasem.</p>
+<section class="calc"><div class="panel">
+<div class="grid">
+<div><label for="dl">Długość pokoju (m)</label><input id="dl" type="number" value="4" min="0" step="0.1"></div>
+<div><label for="sz">Szerokość pokoju (m)</label><input id="sz" type="number" value="3" min="0" step="0.1"></div>
+<div><label for="wy">Wysokość ścian (m)</label><input id="wy" type="number" value="2.6" min="0" step="0.1"></div>
+<div><label for="otw">Okna i drzwi (m²)</label><input id="otw" type="number" value="3" min="0" step="0.1"></div>
+<div><label for="suf">Malujemy sufit</label><select id="suf"><option value="1" selected>tak</option><option value="0">nie</option></select></div>
+<div><label for="war">Liczba warstw</label><select id="war"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option></select></div>
+<div><label for="wyd">Wydajność farby (m² z 1 l na warstwę)</label><input id="wyd" type="number" value="10" min="0" step="0.5"></div>
+<div><label for="poj">Pojemność opakowania (l)</label><select id="poj"><option value="2.5">2,5</option><option value="5" selected>5</option><option value="10">10</option></select></div>
+<div><label for="zap">Zapas (%)</label><input id="zap" type="number" value="10" min="0" step="1"></div>
+</div>
+<p class="mut">Wydajność 10 m² z litra to przykład. Wpisz wartość z karty swojej farby, bo zależy ona od podłoża i producenta.</p>
+</div>
+<div class="out" id="wynik" aria-live="polite"></div></section>
+<h2>Jak liczymy</h2>
+<p>Ściany to obwód pokoju razy wysokość, minus okna i drzwi. Sufit to długość razy szerokość, jeśli go malujesz. Powierzchnię mnożymy przez liczbę warstw, dzielimy przez wydajność z karty i dodajemy zapas. Opakowania liczymy w górę, bo farby nie kupisz na sztuki.</p>
+<h2>Na czym ludzie się mylą</h2>
+<div class="tip"><b>Okna i drzwi odejmij, ale nie zapominaj o ościeżach.</b> Boki otworu i ościeżnice też się maluje. Przy dużych otworach dolicz trochę farby, zamiast odejmować je co do centymetra.</div>
+<div class="tip"><b>Sufit to osobna pozycja.</b> Jeśli go nie malujesz, wybierz „nie”, bo inaczej farby kupisz za dużo.</div>
+<div class="tip"><b>Wydajność z etykiety to wartość idealna.</b> Na chłonnym tynku i przy dwóch warstwach zużycie rośnie. Zostaw zapas.</div>
+<div class="tip"><b>Odcienie z różnych partii bywają różne.</b> Kup całą ilość naraz, nawet z zapasem, żeby ściana nie miała dwóch kolorów.</div>
+<p>Powiązane: <a href="/wylewka">wylewka</a>, <a href="/ocieplenie">ocieplenie ścian</a>, <a href="/kostka">kostka i płytki</a>.</p>
+</main>''',
+ script=_H+r'''function malCalc(dl,sz,wy,otw,suf,war,wyd,zap,poj){
+  const sc=Math.max(0,2*(dl+sz)*wy-otw);
+  const sf=suf?dl*sz:0;
+  const m2=(sc+sf)*war;
+  const litry=m2/wyd*(1+zap/100);
+  const opak=Math.ceil(litry/poj-1e-9);
+  return {sc,sf,m2,litry,opak};
+}
+function licz(){
+  const wyd=v("wyd");
+  if(!(wyd>0)){$("wynik").innerHTML="Wpisz wydajność farby z karty produktu, większą od zera.";return;}
+  const r=malCalc(v("dl"),v("sz"),v("wy"),v("otw"),$("suf").value==="1",+$("war").value,wyd,v("zap"),+$("poj").value);
+  $("wynik").innerHTML=`Pole do malowania: <b>${f(r.m2,1)} m²</b><br>Ściany: ${f(r.sc,1)} m², sufit: ${f(r.sf,1)} m²<br>Farby z zapasem: <b>${f(r.litry,1)} l</b><br>Opakowania po ${f(+$("poj").value,1)} l: <b>${r.opak} szt.</b><div class="mut">Wynik to szacunek. Wydajność sprawdź w karcie produktu, a przy zakupie weź zapas z tej samej partii.</div>`;
+}
+document.querySelector("section.calc").addEventListener("input",licz);
+document.querySelector("section.calc").addEventListener("change",licz);
+licz();'''
+)
