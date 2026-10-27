@@ -105,3 +105,49 @@ document.querySelector("section.calc").addEventListener("input",licz);
 document.querySelector("section.calc").addEventListener("change",licz);
 licz();'''
 )
+
+CALC5['tynk']=dict(title='Tynk na ściany: ile worków kupić',
+ desc='Policz, ile worków tynku na ściany pokoju, z odjęciem okien i drzwi. Grubość i zużycie wpisz z karty produktu, a kalkulator doda zapas.',
+ main=r'''<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Kalkulatory</div>
+<h1>Tynk na ściany: ile worków kupić</h1>
+<p class="lead">Podaj wymiary pokoju, okna i drzwi, grubość warstwy oraz zużycie z karty produktu. Kalkulator policzy kilogramy tynku i liczbę worków z zapasem.</p>
+<section class="calc"><div class="panel">
+<div class="grid">
+<div><label for="dl">Długość pokoju (m)</label><input id="dl" type="number" value="4" min="0" step="0.1"></div>
+<div><label for="sz">Szerokość pokoju (m)</label><input id="sz" type="number" value="3" min="0" step="0.1"></div>
+<div><label for="wy">Wysokość ścian (m)</label><input id="wy" type="number" value="2.6" min="0" step="0.1"></div>
+<div><label for="otw">Okna i drzwi (m²)</label><input id="otw" type="number" value="3" min="0" step="0.1"></div>
+<div><label for="gr">Grubość warstwy (mm)</label><input id="gr" type="number" value="10" min="0" step="1"></div>
+<div><label for="zuz">Zużycie z karty (kg na m² na 1 mm)</label><input id="zuz" type="number" value="1.5" min="0" step="0.05"></div>
+<div><label for="wrk">Pojemność worka (kg)</label><select id="wrk"><option value="20">20</option><option value="25" selected>25</option><option value="30">30</option></select></div>
+<div><label for="zap">Zapas (%)</label><input id="zap" type="number" value="10" min="0" step="1"></div>
+</div>
+<p class="mut">Grubość 10 mm i zużycie 1,5 kg na m² na 1 mm to przykłady. Wpisz wartości z karty swojego tynku, bo zależą od rodzaju tynku i podłoża. Pole sufitu kalkulator nie liczy.</p>
+</div>
+<div class="out" id="wynik" aria-live="polite"></div></section>
+<h2>Jak liczymy</h2>
+<p>Powierzchnia ścian to obwód pokoju razy wysokość, minus okna i drzwi. Zużycie z karty podaje, ile kilogramów tynku idzie na 1 m² przy grubości 1 mm. Mnożymy to przez grubość warstwy i powierzchnię, dodajemy zapas, a worki liczymy w górę.</p>
+<h2>Na czym ludzie się mylą</h2>
+<div class="tip"><b>Grubość na ścianie to nie zawsze grubość z karty.</b> Nierówna ściana wymaga grubszej warstwy w miejscach ubytków. Przy większej grubości zużycie rośnie, więc zostaw zapas.</div>
+<div class="tip"><b>Zużycie zależy od podłoża.</b> Na mocno chłonnym bloczku tynk wsiąka szybciej, a zużycie rośnie. Sprawdź warunki na karcie produktu.</div>
+<div class="tip"><b>Otwarty albo zawilgocony worek traci jakość.</b> Kupuj tyle, ile zużyjesz w ciągu kilku dni, a resztę dokupuj w razie potrzeby.</div>
+<div class="tip"><b>Sufit to osobna pozycja.</b> Ten kalkulator liczy same ściany. Sufit policz osobno, bo grubość i zużycie bywają inne.</div>
+<p>Powiązane: <a href="/malowanie">malowanie: ile farby</a>, <a href="/wylewka">wylewka</a>, <a href="/ocieplenie">ocieplenie ścian</a>.</p>
+</main>''',
+ script=_H+r'''function tynkCalc(dl,sz,wy,otw,gr,zuz,wrk,zap){
+  const sc=Math.max(0,2*(dl+sz)*wy-otw);
+  const kg=sc*gr*zuz*(1+zap/100);
+  const worki=Math.ceil(kg/wrk-1e-9);
+  return {sc,kg,worki};
+}
+function licz(){
+  const gr=v("gr"), zuz=v("zuz");
+  if(!(gr>0)||!(zuz>0)){$("wynik").innerHTML="Wpisz grubość warstwy i zużycie z karty produktu, większe od zera.";return;}
+  const r=tynkCalc(v("dl"),v("sz"),v("wy"),v("otw"),gr,zuz,+$("wrk").value,v("zap"));
+  $("wynik").innerHTML=`Powierzchnia ścian: <b>${f(r.sc,1)} m²</b><br>Tynku z zapasem: <b>${f(r.kg,0)} kg</b><br>Worki po ${f(+$("wrk").value,0)} kg: <b>${r.worki} szt.</b><div class="mut">Wynik to szacunek. Zużycie i grubość sprawdź w karcie produktu. Sufit nie jest wliczony.</div>`;
+}
+document.querySelector("section.calc").addEventListener("input",licz);
+document.querySelector("section.calc").addEventListener("change",licz);
+licz();'''
+)
