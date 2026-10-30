@@ -151,3 +151,50 @@ document.querySelector("section.calc").addEventListener("input",licz);
 document.querySelector("section.calc").addEventListener("change",licz);
 licz();'''
 )
+
+CALC5['sufit-gk']=dict(title='Sufit z płyt GK: ile płyt i profili',
+ desc='Policz płyty GK i profile nośne na sufit podwieszany. Podaj wymiary pomieszczenia, rozstaw i długość profilu z karty systemu, a kalkulator doda zapas.',
+ main=r'''<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Kalkulatory</div>
+<h1>Sufit z płyt GK: ile płyt i profili kupić</h1>
+<p class="lead">Podaj wymiary pomieszczenia, wielkość płyty i rozstaw profili z karty systemu. Kalkulator policzy płyty i metry profili z zapasem.</p>
+<section class="calc"><div class="panel">
+<div class="grid">
+<div><label for="dl">Długość pomieszczenia (m)</label><input id="dl" type="number" value="4" min="0" step="0.1"></div>
+<div><label for="sz">Szerokość pomieszczenia (m)</label><input id="sz" type="number" value="3" min="0" step="0.1"></div>
+<div><label for="pl">Płyta GK, długość</label><select id="pl"><option value="2" selected>1200 × 2000 mm</option><option value="2.5">1200 × 2500 mm</option></select></div>
+<div><label for="roz">Rozstaw profili nośnych (cm)</label><select id="roz"><option value="40">40</option><option value="50">50</option><option value="60" selected>60</option></select></div>
+<div><label for="osi">Profile biegną wzdłuż</label><select id="osi"><option value="L" selected>długości pomieszczenia</option><option value="W">szerokości pomieszczenia</option></select></div>
+<div><label for="dp">Długość profilu (m)</label><select id="dp"><option value="3">3,0</option><option value="3.6" selected>3,6</option><option value="4">4,0</option></select></div>
+<div><label for="zap">Zapas (%)</label><input id="zap" type="number" value="10" min="0" step="1"></div>
+</div>
+<p class="mut">Zapas 10 % to założenie, zmień je wg uznania. Rozstaw i długość profilu podaj z karty systemu, bo zależą od obciążenia i producenta.</p>
+</div>
+<div class="out" id="wynik" aria-live="polite"></div></section>
+<h2>Jak liczymy</h2>
+<p>Powierzchnia to długość razy szerokość pomieszczenia. Płyty liczymy z powierzchni z zapasem, dzieląc ją przez powierzchnię jednej płyty: 1,2 m szerokości razy jej długość. Wynik zaokrąglamy w górę. Profile nośne: liczba rzędów to odległość między ścianami podzielona przez rozstaw, plus rząd przy ścianie. Każdy rząd ma długość wybranej osi pomieszczenia. Metry bieżące mnożymy przez zapas i dzielimy na profile po wybranej długości.</p>
+<h2>Na czym ludzie się mylą</h2>
+<div class="tip"><b>Rozstaw zależy od systemu, a nie od wygody montażu.</b> Płyta cięższa albo lampa w suficie wymaga gęstszego rozstawu. Wpisz wartość z karty systemu, zanim kupisz profile.</div>
+<div class="tip"><b>Profile obwodowe i wieszaki to osobna pozycja.</b> Kalkulator liczy profile nośne i płyty. Wieszaki, wkręty i profile przy ścianach policz wg systemu producenta.</div>
+<div class="tip"><b>W wilgotnych pomieszczeniach materiał jest inny.</b> W łazience i kuchni stosuje się płyty odporne na wilgoć. Wymiary te same, ale cena i zalecenia już inne.</div>
+<p>Powiązane: <a href="/malowanie">malowanie: ile farby</a>, <a href="/tynk">tynk na ściany</a>, <a href="/sciana-dzialowa">ścianka z płyt GK</a>.</p>
+</main>''',
+ script=_H+r'''function gkCalc(L,W,plDl,roz,osi,zap,dp){
+  const A=L*W;
+  const plA=1.2*plDl;
+  const plyty=Math.ceil(A*(1+zap/100)/plA-1e-9);
+  const across=osi==="L"?W:L;
+  const along=osi==="L"?L:W;
+  const rzedy=Math.floor(across*100/roz+1e-9)+1;
+  const mb=rzedy*along*(1+zap/100);
+  const sztuk=Math.ceil(mb/dp-1e-9);
+  return {A,plyty,rzedy,mb,sztuk};
+}
+function licz(){
+  const r=gkCalc(v("dl"),v("sz"),+$("pl").value,+$("roz").value,$("osi").value,v("zap"),+$("dp").value);
+  $("wynik").innerHTML=`Powierzchnia sufitu: <b>${f(r.A,1)} m²</b><br>Płyty GK z zapasem: <b>${r.plyty} szt.</b><br>Profile nośne: <b>${f(r.mb,1)} mb</b>, czyli <b>${r.sztuk} szt.</b> po ${f(+$("dp").value,1)} m<div class="mut">Rzędów profili: ${r.rzedy}. Wieszaki, wkręty i profile obwodowe liczy się osobno. Wynik to szacunek, nie projekt.</div>`;
+}
+document.querySelector("section.calc").addEventListener("input",licz);
+document.querySelector("section.calc").addEventListener("change",licz);
+licz();'''
+)

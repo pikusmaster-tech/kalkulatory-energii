@@ -54,6 +54,7 @@ NEWTILES={
  '/koszt-budowy':('Plan budowy','Koszt budowy domu','Stan surowy, deweloperski czy pod klucz: koszt z metrażu i stawek z ofert, z różnicą między standardami.','<path d="M4 19h16"/><path d="M6 19V9l6-4 6 4v10"/><path d="M10 14h4"/>'),
  '/malowanie':('Wykończenie i teren','Malowanie: ile farby','Litry farby na ściany i sufit z odjęciem okien i drzwi, zapasem i liczbą opakowań.','<rect x="4" y="3" width="13" height="6" rx="1"/><path d="M17 6h3v5h-3M10 9v4M9 13h5v7H9z"/>'),
  '/tynk':('Wykończenie i teren','Tynk na ściany','Worki tynku z powierzchni ścian, grubości warstwy i zużycia z karty produktu, z zapasem.','<path d="M4 20l5-5"/><path d="M10 14l8-8 3 3-8 8z"/>'),
+ '/sufit-gk':('Wykończenie i teren','Sufit z płyt GK','Płyty i profile nośne na sufit podwieszany, z zapasem i długością profilu z karty systemu.','<rect x="3" y="5" width="18" height="4" rx="1"/><path d="M3 14h18M8 14v5M16 14v5"/>'),
  '/przylacza':('Plan budowy','Przyłącza do domu','Porównaj oferty na prąd, wodę, kanalizację i gaz: suma i koszt każdych 10 m.','<path d="M9 3v5M15 3v5M7 8h10v4a5 5 0 0 1-10 0z"/><path d="M12 17v4"/>'),
 }
 FEAT='<a class="feat" href="/konfigurator-domu"><span class="tag">Nowość</span><b>Konfigurator domu 3D</b><span>Ustaw wymiary, dach i ściany. Model rośnie od fundamentów do elewacji, a pod nim widzisz koszt każdego elementu, osobno materiał i robocizna.</span><span class="go">Otwórz konfigurator</span></a>'
@@ -66,7 +67,7 @@ GROUPS_IDX=[
  ('Fundamenty',['/beton','/lawy-czy-plyta','/hydroizolacja-fundamentow','/wykop']),
  ('Konstrukcja',['/strop','/schody','/nadproza','/dylatacje']),
  ('Ściany i dach',['/sciany','/ocieplenie','/wspolczynnik-u','/sciana-dzialowa','/dach']),
- ('Wykończenie i teren',['/wylewka','/kostka','/ogrodzenie','/taras','/malowanie','/tynk']),
+ ('Wykończenie i teren',['/wylewka','/kostka','/ogrodzenie','/taras','/malowanie','/tynk','/sufit-gk']),
  ('Energia',['/fotowoltaika','/pompa-ciepla','/pompa-ciepla-stary-dom','/moc-grzewcza','/ogrzewanie-podlogowe']),
  ('Plan budowy',['/koszt-budowy','/konfigurator-domu','/ceny-budowlane','/etapy-budowy','/harmonogram','/kredyt','/vat-budowa','/dzialka-zabudowa','/przylacza']),
  ('Dla firm',['/kosztorys','/rozkroj-pretow']),

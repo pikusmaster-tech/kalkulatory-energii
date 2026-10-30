@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sufit z płyt GK: ile płyt i profili</title>
+<meta name="description" content="Policz płyty GK i profile nośne na sufit podwieszany. Podaj wymiary pomieszczenia, rozstaw i długość profilu z karty systemu, a kalkulator doda zapas.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/style.css"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' aria-hidden='true'%3E%3Crect width='32' height='32' rx='9' fill='%23e8590c'/%3E%3Cpath d='M7 16.5 16 9l9 7.5' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.5 15v8h11v-8' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linejoin='round'/%3E%3Cpath d='M14 19.5h4' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E"><meta name="theme-color" content="#e8590c">
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="logo" href="/" aria-label="Budlicz, strona główna"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#e8590c"/><path d="M7 16.5 16 9l9 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 15v8h11v-8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><path d="M14 19.5h4" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg><span>Bud<b>licz</b></span></a><nav aria-label="Kalkulatory i poradniki"><details class="grp"><summary>Fundamenty</summary><div class="dd"><a href="/beton">Beton i stal</a><a href="/lawy-czy-plyta">Ławy czy płyta</a><a href="/hydroizolacja-fundamentow">Hydroizolacja</a><a href="/wykop">Ziemia z wykopu</a></div></details><details class="grp"><summary>Konstrukcja</summary><div class="dd"><a href="/strop">Strop</a><a href="/schody">Schody</a><a href="/nadproza">Nadproża</a><a href="/dylatacje">Dylatacje</a></div></details><details class="grp"><summary>Ściany i dach</summary><div class="dd"><a href="/sciany">Pustaki na ściany</a><a href="/ocieplenie">Ocieplenie ścian</a><a href="/wspolczynnik-u">Współczynnik U</a><a href="/sciana-dzialowa">Ścianka z płyt GK</a><a href="/dach">Dach</a></div></details><details class="grp cur"><summary>Wykończenie i teren</summary><div class="dd"><a href="/wylewka">Wylewka</a><a href="/kostka">Kostka i płytki</a><a href="/ogrodzenie">Ogrodzenie</a><a href="/taras">Taras</a><a href="/malowanie">Malowanie</a><a href="/tynk">Tynk na ściany</a><a href="/sufit-gk" aria-current="page">Sufit z GK</a></div></details><details class="grp"><summary>Energia</summary><div class="dd"><a href="/fotowoltaika">Fotowoltaika</a><a href="/pompa-ciepla">Pompa ciepła</a><a href="/pompa-ciepla-stary-dom">Pompa w starym domu</a><a href="/moc-grzewcza">Moc grzewcza</a><a href="/ogrzewanie-podlogowe">Ogrzewanie podłogowe</a></div></details><details class="grp"><summary>Plan budowy</summary><div class="dd"><a href="/koszt-budowy">Koszt budowy domu</a><a href="/konfigurator-domu">Konfigurator domu 3D</a><a href="/ceny-budowlane">Ceny materiałów</a><a href="/etapy-budowy">Etapy budowy</a><a href="/harmonogram">Harmonogram</a><a href="/kredyt">Kredyt na budowę</a><a href="/vat-budowa">VAT 8% czy 23%</a><a href="/dzialka-zabudowa">Wskaźnik zabudowy</a><a href="/przylacza">Przyłącza</a></div></details><details class="grp"><summary>Dla firm</summary><div class="dd"><a href="/kosztorys">Kosztorys ofertowy</a><a href="/rozkroj-pretow">Rozkrój prętów</a></div></details></nav></div></header>
+<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Kalkulatory</div>
+<h1>Sufit z płyt GK: ile płyt i profili kupić</h1>
+<p class="lead">Podaj wymiary pomieszczenia, wielkość płyty i rozstaw profili z karty systemu. Kalkulator policzy płyty i metry profili z zapasem.</p>
+<section class="calc"><div class="panel">
+<div class="grid">
+<div><label for="dl">Długość pomieszczenia (m)</label><input id="dl" type="number" value="4" min="0" step="0.1"></div>
+<div><label for="sz">Szerokość pomieszczenia (m)</label><input id="sz" type="number" value="3" min="0" step="0.1"></div>
+<div><label for="pl">Płyta GK, długość</label><select id="pl"><option value="2" selected>1200 × 2000 mm</option><option value="2.5">1200 × 2500 mm</option></select></div>
+<div><label for="roz">Rozstaw profili nośnych (cm)</label><select id="roz"><option value="40">40</option><option value="50">50</option><option value="60" selected>60</option></select></div>
+<div><label for="osi">Profile biegną wzdłuż</label><select id="osi"><option value="L" selected>długości pomieszczenia</option><option value="W">szerokości pomieszczenia</option></select></div>
+<div><label for="dp">Długość profilu (m)</label><select id="dp"><option value="3">3,0</option><option value="3.6" selected>3,6</option><option value="4">4,0</option></select></div>
+<div><label for="zap">Zapas (%)</label><input id="zap" type="number" value="10" min="0" step="1"></div>
+</div>
+<p class="mut">Zapas 10 % to założenie, zmień je wg uznania. Rozstaw i długość profilu podaj z karty systemu, bo zależą od obciążenia i producenta.</p>
+</div>
+<div class="out" id="wynik" aria-live="polite"></div></section>
+<h2>Jak liczymy</h2>
+<p>Powierzchnia to długość razy szerokość pomieszczenia. Płyty liczymy z powierzchni z zapasem, dzieląc ją przez powierzchnię jednej płyty: 1,2 m szerokości razy jej długość. Wynik zaokrąglamy w górę. Profile nośne: liczba rzędów to odległość między ścianami podzielona przez rozstaw, plus rząd przy ścianie. Każdy rząd ma długość wybranej osi pomieszczenia. Metry bieżące mnożymy przez zapas i dzielimy na profile po wybranej długości.</p>
+<h2>Na czym ludzie się mylą</h2>
+<div class="tip"><b>Rozstaw zależy od systemu, a nie od wygody montażu.</b> Płyta cięższa albo lampa w suficie wymaga gęstszego rozstawu. Wpisz wartość z karty systemu, zanim kupisz profile.</div>
+<div class="tip"><b>Profile obwodowe i wieszaki to osobna pozycja.</b> Kalkulator liczy profile nośne i płyty. Wieszaki, wkręty i profile przy ścianach policz wg systemu producenta.</div>
+<div class="tip"><b>W wilgotnych pomieszczeniach materiał jest inny.</b> W łazience i kuchni stosuje się płyty odporne na wilgoć. Wymiary te same, ale cena i zalecenia już inne.</div>
+<p>Powiązane: <a href="/malowanie">malowanie: ile farby</a>, <a href="/tynk">tynk na ściany</a>, <a href="/sciana-dzialowa">ścianka z płyt GK</a>.</p>
+</main>
+<footer><div class="wrap"><span><b>Budlicz</b> · kalkulatory budowlane. Wyniki to szacunki, wiążący jest projekt i wycena wykonawcy.<br>Serwis prowadzi 3D Automation sp. z o.o., KRS&nbsp;0000632953.</span><span><a href="/polityka-prywatnosci">Prywatność</a> · <a href="/o-serwisie">O serwisie</a> · <a href="/">Wszystkie kalkulatory</a></span></div></footer>
+<script>
+const $=id=>document.getElementById(id);
+const v=id=>parseFloat($(id).value)||0;
+const f=(n,d=2)=>Number(n).toLocaleString("pl-PL",{maximumFractionDigits:d});
+const zl=n=>Number(n).toLocaleString("pl-PL",{minimumFractionDigits:2,maximumFractionDigits:2})+" zł";
+const T=(x,y,t,c="t",a="start")=>`<text class="${c}" x="${x}" y="${y}" text-anchor="${a}">${t}</text>`;
+const pl=(n,a,b,c)=>{n=Math.abs(Math.round(n));return n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c;};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function gkCalc(L,W,plDl,roz,osi,zap,dp){
+  const A=L*W;
+  const plA=1.2*plDl;
+  const plyty=Math.ceil(A*(1+zap/100)/plA-1e-9);
+  const across=osi==="L"?W:L;
+  const along=osi==="L"?L:W;
+  const rzedy=Math.floor(across*100/roz+1e-9)+1;
+  const mb=rzedy*along*(1+zap/100);
+  const sztuk=Math.ceil(mb/dp-1e-9);
+  return {A,plyty,rzedy,mb,sztuk};
+}
+function licz(){
+  const r=gkCalc(v("dl"),v("sz"),+$("pl").value,+$("roz").value,$("osi").value,v("zap"),+$("dp").value);
+  $("wynik").innerHTML=`Powierzchnia sufitu: <b>${f(r.A,1)} m²</b><br>Płyty GK z zapasem: <b>${r.plyty} szt.</b><br>Profile nośne: <b>${f(r.mb,1)} mb</b>, czyli <b>${r.sztuk} szt.</b> po ${f(+$("dp").value,1)} m<div class="mut">Rzędów profili: ${r.rzedy}. Wieszaki, wkręty i profile obwodowe liczy się osobno. Wynik to szacunek, nie projekt.</div>`;
+}
+document.querySelector("section.calc").addEventListener("input",licz);
+document.querySelector("section.calc").addEventListener("change",licz);
+licz();
+document.addEventListener("click",e=>{document.querySelectorAll(".grp[open]").forEach(d=>{if(!d.contains(e.target))d.open=false})});
+</script>
+</body>
+</html>
