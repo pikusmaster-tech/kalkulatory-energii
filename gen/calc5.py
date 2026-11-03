@@ -198,3 +198,46 @@ document.querySelector("section.calc").addEventListener("input",licz);
 document.querySelector("section.calc").addEventListener("change",licz);
 licz();'''
 )
+
+CALC5['panele-podlogowe']=dict(title='Panele podłogowe: ile paczek kupić',
+ desc='Ile paczek paneli kupić na podłogę. Podaj wymiary pokoju, zapas na docinki i m² w paczce z karty produktu, a kalkulator policzy resztę.',
+ main=r'''<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Kalkulatory</div>
+<h1>Panele podłogowe: ile paczek kupić</h1>
+<p class="lead">Podaj wymiary pokoju, zapas na docinki i ilość m² w paczce z karty produktu. Kalkulator policzy liczbę paczek i ile zostanie z nich na zapas.</p>
+<section class="calc"><div class="panel">
+<div class="grid">
+<div><label for="dl">Długość pokoju (m)</label><input id="dl" type="number" value="4" min="0" step="0.1"></div>
+<div><label for="sz">Szerokość pokoju (m)</label><input id="sz" type="number" value="3" min="0" step="0.1"></div>
+<div><label for="zap">Zapas na docinki (%)</label><input id="zap" type="number" value="10" min="0" step="1"></div>
+<div><label for="m2p">m² w paczce (z karty produktu)</label><input id="m2p" type="number" value="2" min="0" step="0.01"></div>
+</div>
+<p class="mut">Zapas 10 % to założenie, zmień je wg układu. Ilość m² w paczce podaj z karty swojego produktu, bo różni się między producentami. Wartość 2 m² to przykład.</p>
+</div>
+<div class="out" id="wynik" aria-live="polite"></div></section>
+<h2>Jak liczymy</h2>
+<p>Powierzchnia to długość razy szerokość pokoju. Dodajemy zapas na docinki przy ścianach i progach, a wynik dzielimy przez m² w paczce. Liczbę paczek zaokrąglamy w górę, bo panelu nie kupisz na sztuki.</p>
+<h2>Na czym ludzie się mylą</h2>
+<div class="tip"><b>Układ na skos i wąski pokój zjadają więcej docinków.</b> Przy 10 % zapasu proste układy się mieszczą, ale przy skosie warto dać więcej.</div>
+<div class="tip"><b>Paczki z różnych partii mogą różnić się odcieniem.</b> Kupuj komplet z jednej partii, a zapas zostaw w tej samej.</div>
+<div class="tip"><b>Panele nie wybaczą nierównego podłoża.</b> Na krzywej wylewce zaczną skrzypieć i odstawać. To kwestia podłoża, nie ilości paczek.</div>
+<div class="tip"><b>Podkład i listwy to osobna pozycja.</b> Kalkulator liczy same panele. Podkład, listwy i profile dylatacyjne kupuj osobno.</div>
+<p>Powiązane: <a href="/wylewka">wylewka pod podłogę</a>, <a href="/kostka">kostka i płytki</a>, <a href="/malowanie">malowanie ścian</a>.</p>
+</main>''',
+ script=_H+r'''function paneleCalc(dl,sz,zap,m2p){
+  const A=dl*sz;
+  const potrzeba=A*(1+zap/100);
+  const paczki=Math.ceil(potrzeba/m2p-1e-9);
+  const razem=paczki*m2p;
+  return {A,potrzeba,paczki,razem,nadwyzka:razem-A};
+}
+function licz(){
+  const m2p=v("m2p");
+  if(!(m2p>0)){$("wynik").innerHTML="Wpisz ilość m² w paczce z karty produktu, większą od zera.";return;}
+  const r=paneleCalc(v("dl"),v("sz"),v("zap"),m2p);
+  $("wynik").innerHTML=`Powierzchnia pokoju: <b>${f(r.A,2)} m²</b><br>Z zapasem na docinki: <b>${f(r.potrzeba,2)} m²</b><br>Paczek do kupienia: <b>${r.paczki} szt.</b><br>Razem w paczkach: ${f(r.razem,2)} m², nadwyżka ${f(r.nadwyzka,2)} m²<div class="mut">Wynik to szacunek. Podkład i listwy liczy się osobno. Sprawdź m² w paczce w karcie produktu.</div>`;
+}
+document.querySelector("section.calc").addEventListener("input",licz);
+document.querySelector("section.calc").addEventListener("change",licz);
+licz();'''
+)
