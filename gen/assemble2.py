@@ -56,6 +56,7 @@ NEWTILES={
  '/tynk':('Wykończenie i teren','Tynk na ściany','Worki tynku z powierzchni ścian, grubości warstwy i zużycia z karty produktu, z zapasem.','<path d="M4 20l5-5"/><path d="M10 14l8-8 3 3-8 8z"/>'),
  '/sufit-gk':('Wykończenie i teren','Sufit z płyt GK','Płyty i profile nośne na sufit podwieszany, z zapasem i długością profilu z karty systemu.','<rect x="3" y="5" width="18" height="4" rx="1"/><path d="M3 14h18M8 14v5M16 14v5"/>'),
  '/panele-podlogowe':('Wykończenie i teren','Panele podłogowe','Ile paczek paneli kupić: powierzchnia pokoju, zapas na docinki i m² w paczce z karty produktu.','<path d="M3 7h18v10H3z"/><path d="M3 12h18M9 7v5M15 12v5"/>'),
+ '/welna-strop':('Ściany i dach','Wełna na strop poddasza','Ile opakowań wełny na strop poddasza z zapasem, z objętością i grubością warstwy z projektu.','<path d="M3 10l9-6 9 6"/><path d="M5 10v9h14v-9"/><path d="M3 15h18"/>'),
  '/przylacza':('Plan budowy','Przyłącza do domu','Porównaj oferty na prąd, wodę, kanalizację i gaz: suma i koszt każdych 10 m.','<path d="M9 3v5M15 3v5M7 8h10v4a5 5 0 0 1-10 0z"/><path d="M12 17v4"/>'),
 }
 FEAT='<a class="feat" href="/konfigurator-domu"><span class="tag">Nowość</span><b>Konfigurator domu 3D</b><span>Ustaw wymiary, dach i ściany. Model rośnie od fundamentów do elewacji, a pod nim widzisz koszt każdego elementu, osobno materiał i robocizna.</span><span class="go">Otwórz konfigurator</span></a>'
@@ -67,7 +68,7 @@ def tile(href):
 GROUPS_IDX=[
  ('Fundamenty',['/beton','/lawy-czy-plyta','/hydroizolacja-fundamentow','/wykop']),
  ('Konstrukcja',['/strop','/schody','/nadproza','/dylatacje']),
- ('Ściany i dach',['/sciany','/ocieplenie','/wspolczynnik-u','/sciana-dzialowa','/dach']),
+ ('Ściany i dach',['/sciany','/ocieplenie','/wspolczynnik-u','/sciana-dzialowa','/dach','/welna-strop']),
  ('Wykończenie i teren',['/wylewka','/kostka','/ogrodzenie','/taras','/malowanie','/tynk','/sufit-gk','/panele-podlogowe']),
  ('Energia',['/fotowoltaika','/pompa-ciepla','/pompa-ciepla-stary-dom','/moc-grzewcza','/ogrzewanie-podlogowe']),
  ('Plan budowy',['/koszt-budowy','/konfigurator-domu','/ceny-budowlane','/etapy-budowy','/harmonogram','/kredyt','/vat-budowa','/dzialka-zabudowa','/przylacza']),

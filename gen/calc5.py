@@ -241,3 +241,49 @@ document.querySelector("section.calc").addEventListener("input",licz);
 document.querySelector("section.calc").addEventListener("change",licz);
 licz();'''
 )
+
+CALC5['welna-strop']=dict(title='Wełna na strop poddasza: ile opakowań kupić',
+ desc='Ile opakowań wełny na strop poddasza. Podaj wymiary stropu, grubość z projektu i m² w opakowaniu z karty produktu, a kalkulator doliczy zapas.',
+ main=r'''<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Kalkulatory</div>
+<h1>Wełna na strop poddasza: ile opakowań kupić</h1>
+<p class="lead">Podaj wymiary stropu, grubość warstwy z projektu oraz m² w opakowaniu z karty produktu. Kalkulator policzy opakowania z zapasem i objętość wełny.</p>
+<section class="calc"><div class="panel">
+<div class="grid">
+<div><label for="dl">Długość stropu (m)</label><input id="dl" type="number" value="6" min="0" step="0.1"></div>
+<div><label for="sz">Szerokość stropu (m)</label><input id="sz" type="number" value="5" min="0" step="0.1"></div>
+<div><label for="prz">Odejmij przeszkody (m²)</label><input id="prz" type="number" value="0" min="0" step="0.1"></div>
+<div><label for="gr">Grubość warstwy z projektu (cm)</label><input id="gr" type="number" value="20" min="0" step="1"></div>
+<div><label for="m2o">m² w opakowaniu (z karty produktu)</label><input id="m2o" type="number" value="3.6" min="0" step="0.01"></div>
+<div><label for="zap">Zapas na docinki (%)</label><input id="zap" type="number" value="10" min="0" step="1"></div>
+</div>
+<p class="mut">Grubość 20 cm i 3,6 m² w opakowaniu to przykłady. Grubość bierz z projektu, a m² z karty produktu. Zapas 10 % to założenie.</p>
+</div>
+<div class="out" id="wynik" aria-live="polite"></div></section>
+<h2>Jak liczymy</h2>
+<p>Powierzchnia stropu to długość razy szerokość, minus przeszkody, na przykład komin albo właz. Dodajemy zapas na docinki przy belkach i krawędziach. Opakowania liczymy w górę. Objętość wełny to powierzchnia z zapasem razy grubość warstwy, bo tyle materiału realnie się układa.</p>
+<h2>Na czym ludzie się mylą</h2>
+<div class="tip"><b>Grubość bierze się z projektu, nie z oferty sprzedawcy.</b> Wymagany współczynnik U wynika z przepisów. Sprawdź go na stronie o <a href="/wspolczynnik-u">współczynniku U</a>, zanim kupisz wełnę.</div>
+<div class="tip"><b>Wełny nie ściskaj na siłę.</b> Wciśnięta między belki traci grubość i część izolacyjności. Lepiej dobrać wełnę na rozstaw belek niż ją wciskać.</div>
+<div class="tip"><b>Od strony ciepłej potrzebna jest paroizolacja.</b> Bez niej para z domu skrapla się w wełnie, a ona przestaje izolować. Folię kupujesz osobno.</div>
+<div class="tip"><b>Docinki przy belkach zjadają zapas.</b> Rozstaw belek rzadko jest idealnie równy. Zostaw zapas, a nie kupuj na styk.</div>
+<p>Powiązane: <a href="/ocieplenie">ocieplenie ścian</a>, <a href="/dach">dach</a>, <a href="/wspolczynnik-u">współczynnik U ściany i dachu</a>.</p>
+</main>''',
+ script=_H+r'''function welnaCalc(dl,sz,prz,gr,m2o,zap){
+  const A=Math.max(0,dl*sz-prz);
+  const potrzeba=A*(1+zap/100);
+  const opak=Math.ceil(potrzeba/m2o-1e-9);
+  const razem=opak*m2o;
+  const obj=potrzeba*gr/100;
+  return {A,potrzeba,opak,razem,obj};
+}
+function licz(){
+  const m2o=v("m2o");
+  if(!(m2o>0)){$("wynik").innerHTML="Wpisz ilość m² w opakowaniu z karty produktu, większą od zera.";return;}
+  const r=welnaCalc(v("dl"),v("sz"),v("prz"),v("gr"),m2o,v("zap"));
+  $("wynik").innerHTML=`Powierzchnia stropu: <b>${f(r.A,2)} m²</b><br>Z zapasem na docinki: <b>${f(r.potrzeba,2)} m²</b><br>Opakowań do kupienia: <b>${r.opak} szt.</b><br>Razem w opakowaniach: ${f(r.razem,2)} m²<br>Objętość wełny z zapasem: <b>${f(r.obj,2)} m³</b><div class="mut">Wynik to szacunek. Grubość i współczynnik U sprawdź w projekcie. Paroizolacji nie wliczono.</div>`;
+}
+document.querySelector("section.calc").addEventListener("input",licz);
+document.querySelector("section.calc").addEventListener("change",licz);
+licz();'''
+)
