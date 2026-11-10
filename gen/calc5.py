@@ -287,3 +287,46 @@ document.querySelector("section.calc").addEventListener("input",licz);
 document.querySelector("section.calc").addEventListener("change",licz);
 licz();'''
 )
+
+CALC5['listwy-przypodlogowe']=dict(title='Listwy przypodłogowe: ile metrów kupić',
+ desc='Ile metrów bieżących listew przypodłogowych kupić. Podaj wymiary pokoju, szerokość drzwi i długość listwy z karty produktu, a kalkulator doliczy zapas.',
+ main=r'''<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Kalkulatory</div>
+<h1>Listwy przypodłogowe: ile metrów kupić</h1>
+<p class="lead">Podaj wymiary pokoju, liczbę drzwi i ich szerokość oraz długość listwy z karty produktu. Kalkulator policzy metry bieżące i liczbę sztuk z zapasem.</p>
+<section class="calc"><div class="panel">
+<div class="grid">
+<div><label for="dl">Długość pokoju (m)</label><input id="dl" type="number" value="4" min="0" step="0.1"></div>
+<div><label for="sz">Szerokość pokoju (m)</label><input id="sz" type="number" value="3" min="0" step="0.1"></div>
+<div><label for="nd">Liczba drzwi w obwodzie</label><input id="nd" type="number" value="1" min="0" step="1"></div>
+<div><label for="szd">Szerokość jednych drzwi (m)</label><input id="szd" type="number" value="0.9" min="0" step="0.05"></div>
+<div><label for="ld">Długość listwy z karty (m)</label><select id="ld"><option value="2">2,0</option><option value="2.5" selected>2,5</option><option value="3">3,0</option></select></div>
+<div><label for="zap">Zapas na cięcia i narożniki (%)</label><input id="zap" type="number" value="10" min="0" step="1"></div>
+</div>
+<p class="mut">Szerokość drzwi 0,9 m to przykład, wpisz wymiar swoich drzwi. Zapas 10 % to założenie, zwiększ go przy wielu narożnikach.</p>
+</div>
+<div class="out" id="wynik" aria-live="polite"></div></section>
+<h2>Jak liczymy</h2>
+<p>Obwód pokoju to dwa razy suma długości i szerokości. Od obwodu odejmujemy szerokości drzwi, bo tam listwy nie ma. Do wyniku dodajemy zapas na cięcia pod kątem 45 stopni w narożnikach. Liczbę listew zaokrąglamy w górę, według długości z karty.</p>
+<h2>Na czym ludzie się mylą</h2>
+<div class="tip"><b>Odejmij przejścia i drzwi, ale nie okna.</b> Pod oknem ściana zwykle też stoi przy podłodze, więc listwa biegnie dalej.</div>
+<div class="tip"><b>Narożniki zjadają materiał.</b> Każde cięcie pod kątem 45 stopni coś kosztuje. Przy wielu narożnikach zostaw większy zapas.</div>
+<div class="tip"><b>Listwa z tej samej kolekcji co podłoga.</b> Kolor i wykończenie bywają różne między kolekcjami, więc zamawiaj razem z panelami.</div>
+<p>Powiązane: <a href="/panele-podlogowe">panele podłogowe: ile paczek</a>, <a href="/malowanie">malowanie ścian</a>, <a href="/wylewka">wylewka pod podłogę</a>.</p>
+</main>''',
+ script=_H+r'''function listwyCalc(dl,sz,nd,szd,ld,zap){
+  const obw=2*(dl+sz);
+  const mb=Math.max(0,obw-nd*szd);
+  const zm=mb*(1+zap/100);
+  const sztuk=Math.ceil(zm/ld-1e-9);
+  return {obw,mb,zm,sztuk,razem:sztuk*ld};
+}
+function licz(){
+  const ld=+$("ld").value;
+  const r=listwyCalc(v("dl"),v("sz"),v("nd"),v("szd"),ld,v("zap"));
+  $("wynik").innerHTML=`Obwód pokoju: <b>${f(r.obw,2)} m</b><br>Listwa bez drzwi: <b>${f(r.mb,2)} mb</b><br>Z zapasem: <b>${f(r.zm,2)} mb</b><br>Listew do kupienia: <b>${r.sztuk} szt.</b> po ${f(ld,1)} m, razem ${f(r.razem,1)} m<div class="mut">Wynik to szacunek. Długość listwy i zapas sprawdź w karcie produktu i na swoim rzucie.</div>`;
+}
+document.querySelector("section.calc").addEventListener("input",licz);
+document.querySelector("section.calc").addEventListener("change",licz);
+licz();'''
+)
