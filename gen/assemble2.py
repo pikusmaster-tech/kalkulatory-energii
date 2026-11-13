@@ -58,6 +58,7 @@ NEWTILES={
  '/panele-podlogowe':('Wykończenie i teren','Panele podłogowe','Ile paczek paneli kupić: powierzchnia pokoju, zapas na docinki i m² w paczce z karty produktu.','<path d="M3 7h18v10H3z"/><path d="M3 12h18M9 7v5M15 12v5"/>'),
  '/welna-strop':('Ściany i dach','Wełna na strop poddasza','Ile opakowań wełny na strop poddasza z zapasem, z objętością i grubością warstwy z projektu.','<path d="M3 10l9-6 9 6"/><path d="M5 10v9h14v-9"/><path d="M3 15h18"/>'),
  '/listwy-przypodlogowe':('Wykończenie i teren','Listwy przypodłogowe','Metry listew przypodłogowych z odjęciem drzwi, zapasem na narożniki i liczbą sztuk.','<path d="M3 17h18v3H3z"/><path d="M7 17v-3h10v3"/>'),
+ '/rynny':('Ściany i dach','Rynny i rury spustowe','Odcinki rynny i rur spustowych z zapasem na łączniki, z podziałem na piony.','<path d="M3 6h18v4H3z"/><path d="M9 10v10M15 10v10"/>'),
  '/przylacza':('Plan budowy','Przyłącza do domu','Porównaj oferty na prąd, wodę, kanalizację i gaz: suma i koszt każdych 10 m.','<path d="M9 3v5M15 3v5M7 8h10v4a5 5 0 0 1-10 0z"/><path d="M12 17v4"/>'),
 }
 FEAT='<a class="feat" href="/konfigurator-domu"><span class="tag">Nowość</span><b>Konfigurator domu 3D</b><span>Ustaw wymiary, dach i ściany. Model rośnie od fundamentów do elewacji, a pod nim widzisz koszt każdego elementu, osobno materiał i robocizna.</span><span class="go">Otwórz konfigurator</span></a>'
@@ -69,7 +70,7 @@ def tile(href):
 GROUPS_IDX=[
  ('Fundamenty',['/beton','/lawy-czy-plyta','/hydroizolacja-fundamentow','/wykop']),
  ('Konstrukcja',['/strop','/schody','/nadproza','/dylatacje']),
- ('Ściany i dach',['/sciany','/ocieplenie','/wspolczynnik-u','/sciana-dzialowa','/dach','/welna-strop']),
+ ('Ściany i dach',['/sciany','/ocieplenie','/wspolczynnik-u','/sciana-dzialowa','/dach','/welna-strop','/rynny']),
  ('Wykończenie i teren',['/wylewka','/kostka','/ogrodzenie','/taras','/malowanie','/tynk','/sufit-gk','/panele-podlogowe','/listwy-przypodlogowe']),
  ('Energia',['/fotowoltaika','/pompa-ciepla','/pompa-ciepla-stary-dom','/moc-grzewcza','/ogrzewanie-podlogowe']),
  ('Plan budowy',['/koszt-budowy','/konfigurator-domu','/ceny-budowlane','/etapy-budowy','/harmonogram','/kredyt','/vat-budowa','/dzialka-zabudowa','/przylacza']),

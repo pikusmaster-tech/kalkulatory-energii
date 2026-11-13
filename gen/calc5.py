@@ -330,3 +330,50 @@ document.querySelector("section.calc").addEventListener("input",licz);
 document.querySelector("section.calc").addEventListener("change",licz);
 licz();'''
 )
+
+CALC5['rynny']=dict(title='Rynny i rury spustowe: ile metrów kupić',
+ desc='Ile rynny i rur spustowych kupić. Podaj długość okapu, rozstaw rur i wysokość pionów, a kalkulator policzy odcinki z zapasem na łączniki.',
+ main=r'''<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Kalkulatory</div>
+<h1>Rynny i rury spustowe: ile metrów kupić</h1>
+<p class="lead">Podaj długość okapu, rozstaw rur spustowych i wysokość pionów. Kalkulator policzy odcinki rynny i rur z zapasem na łączniki.</p>
+<section class="calc"><div class="panel">
+<div class="grid">
+<div><label for="ok">Długość okapu, czyli rynny (m)</label><input id="ok" type="number" value="12" min="0" step="0.1"></div>
+<div><label for="roz">Rozstaw rur spustowych (m)</label><input id="roz" type="number" value="10" min="0.5" step="0.5"></div>
+<div><label for="h">Wysokość pionu od rynny do gruntu (m)</label><input id="h" type="number" value="6" min="0" step="0.1"></div>
+<div><label for="dlr">Długość odcinka rynny z karty (m)</label><select id="dlr"><option value="3">3,0</option><option value="4" selected>4,0</option></select></div>
+<div><label for="dlp">Długość odcinka rury z karty (m)</label><select id="dlp"><option value="2">2,0</option><option value="3" selected>3,0</option></select></div>
+<div><label for="zap">Zapas na łączniki i narożniki (%)</label><input id="zap" type="number" value="10" min="0" step="1"></div>
+</div>
+<p class="mut">Okap 12 m, rozstaw rur 10 m i wysokość 6 m to przykłady. Wpisz wymiary ze swojego rzutu i z projektu. Zapas 10 % to założenie.</p>
+</div>
+<div class="out" id="wynik" aria-live="polite"></div></section>
+<h2>Jak liczymy</h2>
+<p>Liczba pionów to okap podzielony przez rozstaw rur, zaokrąglony w górę, ale nie mniej niż jeden. Rynnę liczymy z zapasem na łączniki i narożniki, a potem dzielimy na odcinki z karty. Każdy pion to wysokość podzielona przez długość odcinka rury, w górę. Pionów mnożymy przez liczbę odcinków.</p>
+<h2>Na czym ludzie się mylą</h2>
+<div class="tip"><b>Rynna musi mieć spadek w stronę rury.</b> Bez spadku woda stoi w rynnie, zalega w łączeniach i z czasem przecieka.</div>
+<div class="tip"><b>Piony trzeba postawić też w narożnikach.</b> Dodaj je tam, gdzie woda spływa z dwóch połaci, nawet jeśli wypadają blisko siebie.</div>
+<div class="tip"><b>Woda z dachu musi odpłynąć od fundamentów.</b> Rury kończą się nad opaską albo odprowadzeniem. Zobacz <a href="/hydroizolacja-fundamentow">hydroizolację fundamentów</a>.</div>
+<div class="tip"><b>Systemy PVC i metalowe mają inne odcinki i łączniki.</b> Sprawdź kartę wybranego systemu, zanim policzysz.</div>
+<p>Powiązane: <a href="/dach">dach</a>, <a href="/ocieplenie">ocieplenie ścian</a>.</p>
+</main>''',
+ script=_H+r'''function rynnyCalc(ok,roz,h,dlr,dlp,zap){
+  const n=ok>0?Math.max(1,Math.ceil(ok/roz-1e-9)):0;
+  const rynnaMb=ok*(1+zap/100);
+  const rynnaSzt=ok>0?Math.ceil(rynnaMb/dlr-1e-9):0;
+  const pionSzt=h>0?Math.ceil(h/dlp-1e-9):0;
+  const rurySzt=n*pionSzt;
+  return {n,rynnaMb,rynnaSzt,pionSzt,rurySzt,ruryMb:n*h};
+}
+function licz(){
+  const roz=v("roz");
+  if(!(roz>0)){$("wynik").innerHTML="Wpisz rozstaw rur spustowych większy od zera.";return;}
+  const dlr=+$("dlr").value, dlp=+$("dlp").value;
+  const r=rynnyCalc(v("ok"),roz,v("h"),dlr,dlp,v("zap"));
+  $("wynik").innerHTML=`Rynna z zapasem: <b>${f(r.rynnaMb,2)} mb</b>, czyli <b>${r.rynnaSzt} szt.</b> po ${f(dlr,1)} m<br>Piony rur spustowych: <b>${r.n} szt.</b><br>Rury: <b>${r.rurySzt} szt.</b> (na pion: ${r.pionSzt}, odcinki po ${f(dlp,1)} m), łącznie ${f(r.ruryMb,1)} mb<div class="mut">Wynik to szacunek. Rozstaw rur i spadek sprawdź w projekcie. Narożniki, uchwyty i denka liczy się osobno.</div>`;
+}
+document.querySelector("section.calc").addEventListener("input",licz);
+document.querySelector("section.calc").addEventListener("change",licz);
+licz();'''
+)
