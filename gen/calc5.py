@@ -377,3 +377,64 @@ document.querySelector("section.calc").addEventListener("input",licz);
 document.querySelector("section.calc").addEventListener("change",licz);
 licz();'''
 )
+
+CALC5['plytki']=dict(title='Płytki w łazience: ile m², kleju i fugi',
+ desc='Ile płytek, worków kleju i fugi kupić do łazienki lub kuchni. Podaj wymiary pokoju, otwory i wymiar płytki, a kalkulator doliczy zapas.',
+ main=r'''<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Kalkulatory</div>
+<h1>Płytki w łazience: ile m², kleju i fugi</h1>
+<p class="lead">Podaj wymiary pomieszczenia, otwory i wymiar płytki. Kalkulator policzy metry płytek z zapasem, worki kleju i fugi.</p>
+<section class="calc"><div class="panel">
+<div class="grid">
+<div><label for="dl">Długość pomieszczenia (m)</label><input id="dl" type="number" value="2.5" min="0" step="0.1"></div>
+<div><label for="sz">Szerokość pomieszczenia (m)</label><input id="sz" type="number" value="2" min="0" step="0.1"></div>
+<div><label for="tryb">Co płytkujemy</label><select id="tryb"><option value="pw" selected>Podłogę i ściany</option><option value="p">Tylko podłogę</option><option value="s">Tylko ściany</option></select></div>
+<div><label for="wy">Wysokość płytek na ścianie (m)</label><input id="wy" type="number" value="2.4" min="0" step="0.1"></div>
+<div><label for="otw">Drzwi, okna, wnęki (m²)</label><input id="otw" type="number" value="1.6" min="0" step="0.1"></div>
+<div><label for="dlp">Długość płytki (cm)</label><input id="dlp" type="number" value="60" min="1" step="1"></div>
+<div><label for="szp">Szerokość płytki (cm)</label><input id="szp" type="number" value="30" min="1" step="1"></div>
+<div><label for="zap">Zapas na docinki (%)</label><input id="zap" type="number" value="10" min="0" step="1"></div>
+<div><label for="opak">Metry kwadratowe w opakowaniu (z karty)</label><input id="opak" type="number" value="1.44" min="0" step="0.01"></div>
+<div><label for="klej">Zużycie kleju (kg na m²)</label><input id="klej" type="number" value="5" min="0" step="0.5"></div>
+<div><label for="wklej">Worek kleju (kg)</label><select id="wklej"><option value="20">20</option><option value="25" selected>25</option></select></div>
+<div><label for="gr">Grubość płytki (mm)</label><input id="gr" type="number" value="8" min="0" step="1"></div>
+<div><label for="spo">Szerokość spoiny (mm)</label><input id="spo" type="number" value="2" min="0" step="0.5"></div>
+<div><label for="gf">Gęstość fugi (kg na dm³)</label><input id="gf" type="number" value="1.6" min="0" step="0.1"></div>
+<div><label for="wfuga">Worek fugi (kg)</label><select id="wfuga"><option value="2">2</option><option value="5" selected>5</option><option value="10">10</option></select></div>
+</div>
+<p class="mut">Pokój 2,5 × 2 m, płytki 60 × 30 cm, drzwi 0,8 × 2,0 m i zużycie kleju to przykłady. Wpisz dane ze swojego projektu i z kart produktów. Zapas dotyczy płytek, na układ na skos zwiększ go.</p>
+</div>
+<div class="out" id="wynik" aria-live="polite"></div></section>
+<h2>Jak liczymy</h2>
+<p>Podłoga to długość razy szerokość pokoju. Ściany to obwód razy wysokość płytek, minus otwory. Do płytek dolicz zapas i zaokrąglij liczbę opakowań w górę. Klej liczymy od powierzchni bez zapasu, bo zapas dotyczy tylko płytek. Fugę liczymy ze standardowego wzoru: (długość + szerokość płytki) podzielone przez ich iloczyn, razy grubość płytki, szerokość spoiny i gęstość fugi.</p>
+<h2>Na czym ludzie się mylą</h2>
+<div class="tip"><b>Płytki kupuj od razu w całości, z jednej partii.</b> Kolejna partia może mieć lekko inny odcień, a dokupienie tej samej bywa niemożliwe.</div>
+<div class="tip"><b>Wysokość płytek nie zawsze równa się wysokości ściany.</b> Często płytkuje się do określonej wysokości, a wyżej zostaje farba. Wpisz wysokość, na której faktycznie kładziesz płytki.</div>
+<div class="tip"><b>Narożniki i połączenie ze ścianą wypełnia się silikonem.</b> Fuga cementowa w narożniku pęka, bo ściana i podłoga pracują inaczej.</div>
+<div class="tip"><b>Zużycie kleju zależy od zębatki i formatu płytki.</b> Duże płytki wymagają większej zębatki, a więc więcej kleju na metr. Sprawdź zalecenia na opakowaniu kleju.</div>
+<p>Powiązane: <a href="/wylewka">wylewka</a>, <a href="/tynk">tynk na ściany</a>, <a href="/kostka">kostka i płytki na zewnątrz</a>.</p>
+</main>''',
+ script=_H+r'''function plytkiCalc(p){
+  const podl=p.dl*p.sz;
+  const sc=Math.max(0,2*(p.dl+p.sz)*p.wy-p.otw);
+  const base=(p.tryb!=="s"?podl:0)+(p.tryb!=="p"?sc:0);
+  const m2=base*(1+p.zap/100);
+  const opak=Math.ceil(m2/p.opak-1e-9);
+  const klejKg=base*p.klej;
+  const workiKleju=p.wklej>0?Math.ceil(klejKg/p.wklej-1e-9):0;
+  const fugaM2=(p.L+p.W)/(p.L*p.W)*p.gr*p.spo*p.gf;
+  const fugaKg=base*fugaM2;
+  const workiFugi=p.wfuga>0?Math.ceil(fugaKg/p.wfuga-1e-9):0;
+  return {podl,sc,base,m2,opak,klejKg,workiKleju,fugaM2,fugaKg,workiFugi};
+}
+function licz(){
+  const L=v("dlp")*10, W=v("szp")*10, opak=v("opak");
+  if(!(opak>0)||!(L>0)||!(W>0)){$("wynik").innerHTML="Wpisz wymiary płytki i metry kwadratowe w opakowaniu, większe od zera.";return;}
+  const wklej=+$("wklej").value, wfuga=+$("wfuga").value;
+  const r=plytkiCalc({dl:v("dl"),sz:v("sz"),wy:v("wy"),otw:v("otw"),tryb:$("tryb").value,L,W,zap:v("zap"),opak,klej:v("klej"),wklej,gr:v("gr"),spo:v("spo"),gf:v("gf"),wfuga});
+  $("wynik").innerHTML=`Powierzchnia do płytkowania: <b>${f(r.base,2)} m²</b><br>Płytki z zapasem: <b>${f(r.m2,2)} m²</b>, opakowań: <b>${r.opak}</b> (po ${f(opak,2)} m²)<br>Klej: <b>${f(r.klejKg,0)} kg</b>, worków: <b>${r.workiKleju}</b> (po ${f(wklej,0)} kg)<br>Fuga: <b>${f(r.fugaKg,1)} kg</b> (ok. ${f(r.fugaM2,3)} kg na m²), worków: <b>${r.workiFugi}</b> (po ${f(wfuga,0)} kg)<div class="mut">Wynik to szacunek. Zużycie kleju i gęstość fugi sprawdź w kartach produktów. Płytki liczone są z zapasem, klej i fugę liczymy od powierzchni bez zapasu.</div>`;
+}
+document.querySelector("section.calc").addEventListener("input",licz);
+document.querySelector("section.calc").addEventListener("change",licz);
+licz();'''
+)
