@@ -438,3 +438,53 @@ document.querySelector("section.calc").addEventListener("input",licz);
 document.querySelector("section.calc").addEventListener("change",licz);
 licz();'''
 )
+
+CALC5['gladz']=dict(title='Gładź gipsowa: ile worków na ściany i sufit',
+ desc='Ile worków gładzi gipsowej kupić na ściany i sufit. Podaj wymiary pokoju, otwory, grubość warstwy i zużycie z karty, a kalkulator doda zapas.',
+ main=r'''<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Kalkulatory</div>
+<h1>Gładź gipsowa: ile worków na ściany i sufit</h1>
+<p class="lead">Podaj wymiary pokoju, okna i drzwi oraz grubość warstwy. Kalkulator policzy kilogramy gładzi i liczbę worków z zapasem, na same ściany albo razem z sufitem.</p>
+<section class="calc"><div class="panel">
+<div class="grid">
+<div><label for="dl">Długość pokoju (m)</label><input id="dl" type="number" value="4" min="0" step="0.1"></div>
+<div><label for="sz">Szerokość pokoju (m)</label><input id="sz" type="number" value="3" min="0" step="0.1"></div>
+<div><label for="wy">Wysokość ścian (m)</label><input id="wy" type="number" value="2.6" min="0" step="0.1"></div>
+<div><label for="otw">Okna i drzwi (m²)</label><input id="otw" type="number" value="3" min="0" step="0.1"></div>
+<div><label for="suf">Dolicz sufit?</label><select id="suf"><option value="tak" selected>Tak, ściany i sufit</option><option value="nie">Nie, same ściany</option></select></div>
+<div><label for="gr">Grubość warstwy (mm)</label><input id="gr" type="number" value="3" min="0" step="0.5"></div>
+<div><label for="zuz">Zużycie z karty (kg na m² na 1 mm)</label><input id="zuz" type="number" value="1" min="0" step="0.05"></div>
+<div><label for="wrk">Pojemność worka (kg)</label><select id="wrk"><option value="20" selected>20</option><option value="25">25</option></select></div>
+<div><label for="zap">Zapas (%)</label><input id="zap" type="number" value="10" min="0" step="1"></div>
+</div>
+<p class="mut">Grubość 3 mm i zużycie 1 kg na m² na 1 mm to przykłady. Wpisz wartości z karty swojej gładzi, bo zależą od produktu i podłoża.</p>
+</div>
+<div class="out" id="wynik" aria-live="polite"></div></section>
+<h2>Jak liczymy</h2>
+<p>Powierzchnia to obwód pokoju razy wysokość ścian, minus okna i drzwi. Jeśli wybierzesz sufit, dodajemy do niego długość razy szerokość pokoju. Zużycie z karty podaje, ile kilogramów gładzi idzie na 1 m² przy grubości 1 mm. Mnożymy to przez grubość warstwy i powierzchnię, dodajemy zapas, a worki liczymy w górę.</p>
+<h2>Na czym ludzie się mylą</h2>
+<div class="tip"><b>Grubsza warstwa nie oznacza szybszego wykończenia.</b> Gładź nałożona za grubo pęka i długo schnie. Lepiej nałożyć dwie cienkie warstwy niż jedną grubą.</div>
+<div class="tip"><b>Podłoże zagruntuj przed gładzią.</b> Chłonne podłoże wciąga wodę z gładzi i osłabia jej przyczepność. Grunt dobierz zgodnie z kartą produktu.</div>
+<div class="tip"><b>Ościeża to dodatkowa powierzchnia.</b> Boki otworów trzeba też wygładzić. Kalkulator ich nie liczy, więc dolicz je ręcznie albo zwiększ zapas.</div>
+<div class="tip"><b>Malujesz dopiero po wyschnięciu.</b> Mokra gładź pod farbą zmienia kolor i może pylić. Czas schnięcia podaje karta produktu i zależy od grubości oraz wilgotności pomieszczenia.</div>
+<p>Powiązane: <a href="/tynk">tynk na ściany</a>, <a href="/malowanie">malowanie: ile farby</a>, <a href="/sufit-gk">sufit z płyt GK</a>.</p>
+</main>''',
+ script=_H+r'''function gladzCalc(dl,sz,wy,otw,suf,gr,zuz,wrk,zap){
+  const sc=Math.max(0,2*(dl+sz)*wy-otw);
+  const sufit=suf?dl*sz:0;
+  const A=sc+sufit;
+  const kg=A*gr*zuz*(1+zap/100);
+  const worki=Math.ceil(kg/wrk-1e-9);
+  return {sc,sufit,A,kg,worki};
+}
+function licz(){
+  const gr=v("gr"), zuz=v("zuz");
+  if(!(gr>0)||!(zuz>0)){$("wynik").innerHTML="Wpisz grubość warstwy i zużycie z karty produktu, większe od zera.";return;}
+  const wrk=+$("wrk").value, suf=$("suf").value==="tak";
+  const r=gladzCalc(v("dl"),v("sz"),v("wy"),v("otw"),suf,gr,zuz,wrk,v("zap"));
+  $("wynik").innerHTML=`Powierzchnia ścian: <b>${f(r.sc,1)} m²</b>${suf?`<br>Sufit: <b>${f(r.sufit,1)} m²</b>`:""}<br>Gładzi z zapasem: <b>${f(r.kg,0)} kg</b><br>Worki po ${f(wrk,0)} kg: <b>${r.worki} szt.</b><div class="mut">Wynik to szacunek. Zużycie i grubość sprawdź w karcie produktu. Ościeży i wnęk kalkulator nie liczy.</div>`;
+}
+document.querySelector("section.calc").addEventListener("input",licz);
+document.querySelector("section.calc").addEventListener("change",licz);
+licz();'''
+)
