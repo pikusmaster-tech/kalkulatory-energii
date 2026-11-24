@@ -488,3 +488,49 @@ document.querySelector("section.calc").addEventListener("input",licz);
 document.querySelector("section.calc").addEventListener("change",licz);
 licz();'''
 )
+
+CALC5['parapety']=dict(title='Parapety: ile metrów kupić',
+ desc='Ile parapetów wewnętrznych i zewnętrznych kupić do okien. Podaj liczbę i szerokość okien oraz długości odcinków z karty produktu, a kalkulator policzy zapas i odcinki.',
+ main=r'''<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Kalkulatory</div>
+<h1>Parapety: ile metrów kupić</h1>
+<p class="lead">Podaj liczbę okien i ich szerokość. Kalkulator policzy parapety wewnętrzne i zewnętrzne, a potem odcinki z kart produktów, z zapasem na przycięcia.</p>
+<section class="calc"><div class="panel">
+<div class="grid">
+<div><label for="n">Liczba okien (szt.)</label><input id="n" type="number" value="6" min="0" step="1"></div>
+<div><label for="szer">Szerokość okna z ramą (cm)</label><input id="szer" type="number" value="120" min="0" step="1"></div>
+<div><label for="zak">Zakład w ścianę z każdej strony (cm)</label><input id="zak" type="number" value="5" min="0" step="1"></div>
+<div><label for="zap">Zapas na przycięcia (%)</label><input id="zap" type="number" value="10" min="0" step="1"></div>
+<div><label for="dlw">Długość odcinka parapetu wewnętrznego z karty (cm)</label><input id="dlw" type="number" value="200" min="1" step="1"></div>
+<div><label for="dlz">Długość odcinka parapetu zewnętrznego z karty (cm)</label><input id="dlz" type="number" value="200" min="1" step="1"></div>
+</div>
+<p class="mut">Szerokość 120 cm, zakład 5 cm, zapas 10 % i odcinki 200 cm to przykłady. Wpisz wymiary swoich okien i długości z kart produktów.</p>
+</div>
+<div class="out" id="wynik" aria-live="polite"></div></section>
+<h2>Jak liczymy</h2>
+<p>Długość jednego parapetu to szerokość okna plus zakład z każdej strony. Do liczby okien dolicz zapas na przycięcia. Potem sprawdzamy, ile całych parapetów zmieści się w jednym odcinku z karty. Jeśli parapet jest dłuższy niż odcinek, na jeden parapet bierzemy kilka odcinków.</p>
+<h2>Na czym ludzie się mylą</h2>
+<div class="tip"><b>Mierz okno z ramą, nie otwór w murze.</b> Parapet leży pod ramą. Otwór w ścianie jest szerszy o szczelinę montażową, więc to zły wymiar.</div>
+<div class="tip"><b>Zakład liczy się z obu stron.</b> Parapet wchodzi w ścianę z lewej i z prawej. Gdy policzysz tylko szerokość okna, element wyjdzie za krótki.</div>
+<div class="tip"><b>Zewnętrzny parapet ma spadek od budynku.</b> Woda ma spływać od ściany, a nie po niej. Bez spadku i wysunięcia nad elewację woda zalega i brudzi mur.</div>
+<p>Powiązane: <a href="/gladz">gładź gipsowa</a>, <a href="/ocieplenie">ocieplenie ścian</a>, <a href="/rynny">rynny i rury spustowe</a>.</p>
+</main>''',
+ script=_H+r'''function parapetCalc(n,szer,zak,zap,dl){
+  const len=szer+2*zak;
+  const sztuk=Math.max(0,Math.ceil(n*(1+zap/100)-1e-9));
+  const naOdc=Math.floor(dl/len+1e-9);
+  const odcinki=Math.max(0,naOdc>=1?Math.ceil(sztuk/naOdc-1e-9):sztuk*Math.ceil(len/dl-1e-9));
+  return {len,sztuk,naOdc,odcinki,mb:odcinki*dl/100};
+}
+function licz(){
+  const szer=v("szer"), dlw=v("dlw"), dlz=v("dlz");
+  if(!(szer>0)||!(dlw>0)||!(dlz>0)){$("wynik").innerHTML="Wpisz szerokość okna i długości odcinków z kart produktów, większe od zera.";return;}
+  const n=v("n"), zak=v("zak"), zap=v("zap");
+  const w=parapetCalc(n,szer,zak,zap,dlw);
+  const z=parapetCalc(n,szer,zak,zap,dlz);
+  $("wynik").innerHTML=`Parapet na jedno okno: <b>${f(w.len,0)} cm</b>, sztuk z zapasem: <b>${w.sztuk}</b><br>Wewnętrzne: odcinków z karty <b>${w.odcinki}</b> (łącznie ${f(w.mb,1)} mb)<br>Zewnętrzne: odcinków z karty <b>${z.odcinki}</b> (łącznie ${f(z.mb,1)} mb)<div class="mut">Wynik to szacunek. Długość odcinków i ich cenę sprawdź u sprzedawcy. Kalkulator tnie tylko całe parapety z jednego odcinka.</div>`;
+}
+document.querySelector("section.calc").addEventListener("input",licz);
+document.querySelector("section.calc").addEventListener("change",licz);
+licz();'''
+)
