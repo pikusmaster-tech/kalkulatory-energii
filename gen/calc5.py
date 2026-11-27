@@ -534,3 +534,52 @@ document.querySelector("section.calc").addEventListener("input",licz);
 document.querySelector("section.calc").addEventListener("change",licz);
 licz();'''
 )
+
+CALC5['folia']=dict(title='Folia paroizolacyjna: ile rolek kupić',
+ desc='Ile rolek folii paroizolacyjnej lub membrany kupić na połać lub ścianę. Podaj wymiary powierzchni i rolki z karty, a kalkulator policzy pasy, zakłady i rolki.',
+ main=r'''<main class="wrap">
+<div class="crumbs"><a href="/">Budlicz</a> › Kalkulatory</div>
+<h1>Folia paroizolacyjna: ile rolek kupić</h1>
+<p class="lead">Podaj wymiary połaci albo ściany oraz szerokość i długość rolki z karty. Kalkulator policzy pasy folii, zakłady i liczbę rolek.</p>
+<section class="calc"><div class="panel">
+<div class="grid">
+<div><label for="n">Liczba takich powierzchni (szt.)</label><input id="n" type="number" value="2" min="0" step="1"></div>
+<div><label for="L">Długość powierzchni wzdłuż okapu lub ściany (m)</label><input id="L" type="number" value="10" min="0" step="0.1"></div>
+<div><label for="H">Długość po skosie od okapu do kalenicy lub wysokość (m)</label><input id="H" type="number" value="4.5" min="0" step="0.1"></div>
+<div><label for="Wr">Szerokość rolki z karty (m)</label><input id="Wr" type="number" value="1.5" min="0.1" step="0.05"></div>
+<div><label for="Dr">Długość rolki z karty (m)</label><input id="Dr" type="number" value="50" min="0.1" step="1"></div>
+<div><label for="zak">Zakład między pasami (cm)</label><input id="zak" type="number" value="10" min="0" step="1"></div>
+<div><label for="nad">Naddatek na każdym końcu pasa (cm)</label><input id="nad" type="number" value="10" min="0" step="1"></div>
+<div><label for="zap">Zapas na pasy (%)</label><input id="zap" type="number" value="10" min="0" step="1"></div>
+</div>
+<p class="mut">Dwie połacie po 10 m i 4,5 m, rolka 1,5 × 50 m, zakład 10 cm, naddatek 10 cm i zapas 10 % to przykłady. Wpisz wymiary z projektu i dane rolki z karty produktu.</p>
+</div>
+<div class="out" id="wynik" aria-live="polite"></div></section>
+<h2>Jak liczymy</h2>
+<p>Pasy układamy poziomo, wzdłuż okapu, jeden nad drugim. Każdy pas dostaje naddatki na obu końcach. Szerokość pasa zmniejsza się o zakład, bo pasy zachodzą na siebie. Pasy liczymy z zapasem, a potem sprawdzamy, ile pasów zmieści się w jednej rolce. Jeśli pas jest dłuższy niż rolka, bierzemy na niego kilka rolek.</p>
+<h2>Na czym ludzie się mylą</h2>
+<div class="tip"><b>Paroizolacja idzie od strony ciepłej, membrana od zewnątrz.</b> Folia paroszczelna chroni wełnę przed parą z wnętrza. Membrana paroprzepuszczalna działa odwrotnie, więc nie wolno ich zamienić.</div>
+<div class="tip"><b>Łączenia klei się taśmą do folii.</b> Sam zakład to za mało. Zwykła taśma nie trzyma na folii, więc użyj taśmy zalecanej przez producenta.</div>
+<div class="tip"><b>Krótki pas i długa rolka to odpad.</b> Na małym dachu duża rolka zostawia dużo końcówek. Jeśli sprzedawca ma krótszą rolkę, weź ją.</div>
+<div class="tip"><b>Folia ma przylegać, a nie zwisać.</b> Luźna płachta zbiera wilgoć i może dotykać izolacji. Mocuj ją zgodnie z instrukcją producenta.</div>
+<p>Powiązane: <a href="/welna-strop">wełna na strop poddasza</a>, <a href="/dach">dach</a>, <a href="/ocieplenie">ocieplenie ścian</a>.</p>
+</main>''',
+ script=_H+r'''function folCalc(n,L,H,Wr,Dr,zak,nad,zap){
+  const weff=Wr-zak/100;
+  const Lp=L+2*nad/100;
+  const pOne=Math.max(0,Math.ceil(H/weff-1e-9));
+  const P=Math.max(0,Math.ceil(n*pOne*(1+zap/100)-1e-9));
+  const naRolke=Lp<=Dr?Math.floor(Dr/Lp+1e-9):0;
+  const R=P===0?0:(naRolke>=1?Math.ceil(P/naRolke-1e-9):P*Math.ceil(Lp/Dr-1e-9));
+  return {weff,Lp,P,R,kupione:R*Dr*Wr,potrzebne:n*L*H};
+}
+function licz(){
+  const L=v("L"), H=v("H"), Wr=v("Wr"), Dr=v("Dr"), zak=v("zak");
+  if(!(L>0)||!(H>0)||!(Wr>0)||!(Dr>0)||!(Wr*100>zak)){$("wynik").innerHTML="Wpisz wymiary powierzchni i rolki większe od zera. Zakład musi być mniejszy od szerokości rolki.";return;}
+  const r=folCalc(v("n"),L,H,Wr,Dr,zak,v("nad"),v("zap"));
+  $("wynik").innerHTML=`Pas folii: <b>${f(r.Lp,2)} m</b> długości, pasów łącznie z zapasem: <b>${r.P}</b><br>Rolek: <b>${r.R} szt.</b> (po ${f(Dr,0)} m × ${f(Wr,2)} m)<br>Pole kupionych rolek: <b>${f(r.kupione,1)} m²</b>, pole powierzchni bez zakładów: <b>${f(r.potrzebne,1)} m²</b><div class="mut">Wynik to szacunek. Szerokość, długość rolki i sposób łączenia sprawdź w karcie produktu. Różnica między polami to odpad z końcówek i zakłady.</div>`;
+}
+document.querySelector("section.calc").addEventListener("input",licz);
+document.querySelector("section.calc").addEventListener("change",licz);
+licz();'''
+)
